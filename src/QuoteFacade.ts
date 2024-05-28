@@ -1,7 +1,11 @@
+import QuoteRepository from "./QuoteRepository";
+import Quote from "./Quote";
+
 export class QuoteFacade{
 
-    getQuote():string{
-        return 'aa';
+    getQuote():Array<Quote>{
+        const repo=new QuoteRepository();
+        return repo.index;
     }
 
 }
