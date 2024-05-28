@@ -2,7 +2,7 @@
   "compilerOptions": {
     "incremental": true,
     "target": "es2022",
-    "module": "Node16",
+    "module": "ES6",
     "declaration": true,
     "sourceMap": true,
     "outDir": "./lib",
@@ -16,7 +16,7 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
 
-    "moduleResolution": "Node16",
+    "moduleResolution": "bundler",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true
   },

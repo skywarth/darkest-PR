@@ -1,6 +1,9 @@
 import { Probot } from "probot";
+import {QuoteFacade} from "./QuoteFacade";
 
 export default (app: Probot) => {
+
+  const quoteFacade=new QuoteFacade();
   app.on("issues.opened", async (context) => {
 
     context.log.info(context.payload);
@@ -13,6 +16,8 @@ export default (app: Probot) => {
 
   app.on("issue_comment.created", async (context) => {
 
+
+    quoteFacade.getQuote();
 
     context.log.info(context.payload);
 
