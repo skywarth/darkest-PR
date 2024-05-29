@@ -39,4 +39,13 @@ export default class Quote{
     }
 
 
+    public hasEmotions(emotions:Array<Emotion.Types>):boolean{
+        return emotions.every(e=>this.emotions.includes(e));
+    }
+
+    public hasTags(tags:Array<string>):boolean{
+        return tags.every(t=>this.tags.includes(t));
+    }
+
+
 }

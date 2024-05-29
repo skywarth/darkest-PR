@@ -5,7 +5,7 @@ export class QuoteFacade{
 
     getQuote():Array<Quote>{
         const repo=new QuoteRepository();
-        return repo.index;
+        return repo.index();
     }
 
 }
