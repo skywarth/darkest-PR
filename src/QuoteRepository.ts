@@ -3,10 +3,18 @@ import Quote from "./Quote";
 import {Emotion} from "./enums/Emotion";
 export default class QuoteRepository{
     #quotes:Array<Quote>=[];
+    static #instance:QuoteRepository;
 
 
-    constructor() {
+    private constructor() {
         this.loadQuotes();
+    }
+
+    public static getInstance():QuoteRepository{
+        if (!this.#instance) {
+            this.#instance = new this();
+        }
+        return this.#instance;
     }
 
 
@@ -15,6 +23,7 @@ export default class QuoteRepository{
             new Quote('Lorem ipsum dolor sit amet, consectetur adipiscing elit.','foo',Sentiment.Neutral,[Emotion.Joy.Happiness],[]),
             new Quote('Maecenas nunc mauris, interdum ut dapibus vitae, sollicitudin in arcu.','bar',Sentiment.Negative,[Emotion.Sadness.Grief,Emotion.Disgust.Contempt],['brooding','dark']),
             new Quote('Suspendisse ut porttitor diam. Integer varius elit vitae condimentum iaculis.','baz',Sentiment.Positive,[Emotion.Joy.Relief,Emotion.Interest.Kindness],['hopeful']),
+            new Quote('A setback, but not the end of things!','setback',Sentiment.Positive,[Emotion.Joy.Relief],['hopeful']),
         ];
     }
 

@@ -39,3 +39,9 @@ It has a client (your localhost) library for the target, available in node.js
 Probot basically runs this in the background (when you?) start the app in local
 
 - I suppose `WEBHOOK_PROXY_URL` is to be change when you deploy, I mean why would it use Smee if not in local?
+
+
+### Event/action types
+
+- https://github.com/octokit/webhooks.js/#webhook-events
+- https://docs.github.com/en/webhooks/webhook-events-and-payloads#issues
