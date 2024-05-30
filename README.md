@@ -45,3 +45,14 @@ Probot basically runs this in the background (when you?) start the app in local
 
 - https://github.com/octokit/webhooks.js/#webhook-events
 - https://docs.github.com/en/webhooks/webhook-events-and-payloads#issues
+
+### Blunder of imports
+
+Node.js refuses to allow extensionless imports, e.g: `import {QuoteFacade} from "./QuoteFacade";`
+
+Therefor you have to add `.js` extension to each import. Which is looking very dumb to do in typescript
+
+- https://stackoverflow.com/questions/75807785/why-do-i-need-to-include-js-extension-in-typescript-import-for-custom-module
+- https://stackoverflow.com/questions/72491392/when-do-we-need-to-add-file-extension-when-importing-javascript-modules
+
+Ridiculous.

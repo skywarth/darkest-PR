@@ -1,4 +1,5 @@
-import {Emotion} from "./enums/Emotion";
+import {Emotion} from "./enums/Emotion.js";
+import {Sentiment} from "./enums/Sentiment.js";
 
 export default class Quote{
     #text:string;

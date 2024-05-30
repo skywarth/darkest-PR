@@ -1,18 +1,14 @@
 import { Probot } from "probot";
-import {QuoteFacade} from "./QuoteFacade";
+import {QuoteFacade} from "./QuoteFacade.js";
+import PullRequestOpenedStrategy from "./ActionHandler/PullRequest/PullRequestOpenedStrategy.js";
+import PullRequestClosedStrategy from "./ActionHandler/PullRequest/PullRequestClosedStrategy.js";
 
 export default (app: Probot) => {
 
   const quoteFacade=new QuoteFacade();
-  app.on("issues.opened", async (context) => {
+  app.on("pull_request.opened", new PullRequestOpenedStrategy().handle);
 
-    context.log.info(context.payload);
-
-    const issueComment = context.issue({
-      body: "Thanks for opening this issue!",
-    });
-    await context.octokit.issues.createComment(issueComment);
-  });
+  app.on("pull_request.closed", new PullRequestClosedStrategy().handle);
 
   app.on("issue_comment.created", async (context) => {
 
@@ -24,7 +20,8 @@ export default (app: Probot) => {
     const issueComment = context.issue({
       body: "We are many, you're but one",
     });
-    if(context.payload.comment.user.type!=='Bot'){
+    //if(context.payload.comment.user.type!=='Bot'){
+    if(!context.isBot){
       await context.octokit.issues.createComment(issueComment);
     }
 

@@ -1,4 +1,4 @@
-enum Sentiment{
+export enum Sentiment{
     Negative,
     Positive,
     Neutral

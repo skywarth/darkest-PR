@@ -1,5 +1,5 @@
-import QuoteRepository from "./QuoteRepository";
-import Quote from "./Quote";
+import QuoteRepository from "./QuoteRepository.js";
+import Quote from "./Quote.js";
 
 export class QuoteFacade{
 
