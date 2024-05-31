@@ -65,5 +65,11 @@ export namespace Emotion {
 
     export type Types = Anger | Sadness | Fear | Joy | Interest | Surprise | Disgust | Shame;
 
+    export type Temperature= 1|2|3|4|5;
+
+    export type EmotionMetric={
+        emotion:Emotion.Types,
+        temperature:Temperature
+    };
 
 }

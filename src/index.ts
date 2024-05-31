@@ -1,7 +1,10 @@
-import { Probot } from "probot";
+import {Context, Probot} from "probot";
 import {QuoteFacade} from "./QuoteFacade.js";
 import PullRequestOpenedStrategy from "./ActionHandler/PullRequest/PullRequestOpenedStrategy.js";
 import PullRequestClosedStrategy from "./ActionHandler/PullRequest/PullRequestClosedStrategy.js";
+import {Sentiment} from "./enums/Sentiment";
+import {Emotion} from "./enums/Emotion";
+
 
 export default (app: Probot) => {
 
@@ -10,12 +13,12 @@ export default (app: Probot) => {
 
   app.on("pull_request.closed", new PullRequestClosedStrategy().handle);
 
-  app.on("issue_comment.created", async (context) => {
+  app.on("issue_comment.created", async (context:Context<'issue_comment.created'>) => {
 
 
-    quoteFacade.getQuote();
+    quoteFacade.getQuote(Sentiment.Neutral,[Emotion.Joy.Happiness]);
 
-    context.log.info(context.payload);
+    context.log.info(context.payload.action);
 
     const issueComment = context.issue({
       body: "We are many, you're but one",

@@ -21,6 +21,29 @@ docker build -t darkest-PR .
 docker run -e APP_ID=<app-id> -e PRIVATE_KEY=<pem-value> darkest-PR
 ```
 
+
+## Use-case analysis
+
+### PR
+
+- PR opened
+  - Fresh PR
+  - Re-open of PR after previous one gets cancelled
+  - Re-open of PR after previous one gets approved and merged
+- PR closed (no merge)
+  - No discussion/review
+  - Short discussion/review
+  - Long discussion/review, multiple review
+  - Closed previously as well
+  - No Review
+- PR Review
+  - Approved
+  - Rejected (change request)
+  - Just comment
+
+###
+
+
 ## Roadmap
 
 - Including voice lines as sound file to comments
