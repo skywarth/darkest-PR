@@ -9,7 +9,8 @@ export class QuoteFacade{
         const repo=QuoteRepository.getInstance();
         let quotes=repo.index().filterBySentiment(sentiment).orderByEmotionScoreDesc(emotionMetrics);
         //console.info(quotes.data.map(x=>x.getJSON()));
-        return quotes.data[0];
+
+        return quotes.data[0];//TODO: pick random among first N quotes
     }
 
 }
