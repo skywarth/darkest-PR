@@ -5,12 +5,27 @@ import {Emotion} from "./enums/Emotion.js";
 
 export class QuoteFacade{
 
-    getQuote(sentiment:Sentiment,emotionMetrics:Array<Emotion.EmotionMetric>):Quote{
+    //singleton pattern
+    static #instance:QuoteFacade;
+
+
+    private constructor() {
+
+    }
+
+    public static getInstance():QuoteFacade{
+        if (!this.#instance) {
+            this.#instance = new this();
+        }
+        return this.#instance;
+    }
+
+    getQuote(sentiment:Sentiment,emotionMetrics:Array<Emotion.EmotionMetric>,tags:Array<string>):Quote{
         const repo=QuoteRepository.getInstance();
-        let quotes=repo.index().filterBySentiment(sentiment).orderByEmotionScoreDesc(emotionMetrics);
+        let quotes=repo.index().filterBySentiment(sentiment).filterByTags(tags).orderByEmotionScoreDesc(emotionMetrics);
         //console.info(quotes.data.map(x=>x.getJSON()));
 
-        return quotes.data[0];//TODO: pick random among first N quotes
+        return quotes.randomApplicable;
     }
 
 }

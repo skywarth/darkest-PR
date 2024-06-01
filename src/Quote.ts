@@ -1,5 +1,6 @@
 import {Emotion} from "./enums/Emotion.js";
 import {Sentiment} from "./enums/Sentiment.js";
+import Utils from "./Utils.js";
 
 export class Quote{
     #text:string;
@@ -108,6 +109,13 @@ export class QuoteCollection{
 
     public filterBySentiment(sentiment:Sentiment):QuoteCollection{
         return new QuoteCollection(this.data.filter(q=>q.sentiment===sentiment));
+    }
+
+    public get randomApplicable():Quote{
+        const divisionModifier:number=3;
+        const originalAmount=this.data.length;
+        const applicableCount:number=(Math.round(originalAmount/divisionModifier))>=2?(originalAmount/divisionModifier):originalAmount;
+        return Utils.shuffleArray([...this.data].splice(0,applicableCount))[0];
     }
 
 

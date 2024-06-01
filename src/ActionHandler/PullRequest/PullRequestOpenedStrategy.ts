@@ -9,14 +9,26 @@ import {Quote} from "../../Quote.js";
 export default class PullRequestOpenedStrategy extends PullRequestStrategy{
     protected executePrStrategy(ghContext: Context): void {
 
-        const quoteFacade:QuoteFacade=new QuoteFacade();
-        const contextEmotionMetrics:Array<Emotion.EmotionMetric>=[
-            {emotion:Emotion.Anger.Fury,temperature:4},
-            {emotion:Emotion.Disgust.Hatred,temperature:2}
-        ];
-        const quote:Quote=quoteFacade.getQuote(Sentiment.Negative,contextEmotionMetrics );
 
-        const comment:Comment=new Comment(quote,'test-case',contextEmotionMetrics)
+        //CASE: Fresh
+        let tags:Array<string>=['begin','start','create','open'];
+        let contextEmotionMetrics:Array<Emotion.EmotionMetric>=[
+            {emotion:Emotion.Joy.Happiness,temperature:2},
+            {emotion:Emotion.Joy.Relief,temperature:4},
+            {emotion:Emotion.Joy.Ecstasy,temperature:1}
+        ];
+        let caseSlug:string='pr-opened-fresh';
+        const sentiment=Sentiment.Neutral;
+
+        //CASE: Re-open, previous is cancelled
+
+
+
+
+
+
+        const quote:Quote=QuoteFacade.getInstance().getQuote(sentiment,contextEmotionMetrics,tags);
+        const comment:Comment=new Comment(quote,caseSlug,contextEmotionMetrics)
 
 
         const issueComment = ghContext.issue(comment.getObject());

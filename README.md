@@ -68,6 +68,7 @@ Probot basically runs this in the background (when you?) start the app in local
 
 - https://github.com/octokit/webhooks.js/#webhook-events
 - https://docs.github.com/en/webhooks/webhook-events-and-payloads#issues
+- https://octokit.github.io/rest.js/v20#pulls
 
 ### Blunder of imports
 
