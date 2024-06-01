@@ -1,20 +1,20 @@
 import {Emotion} from "./enums/Emotion.js";
 import {Sentiment} from "./enums/Sentiment.js";
 
-export default class Quote{
+export class Quote{
     #text:string;
     #slug:string;
     #tags:Array<string>;
-    #emotions:Array<Emotion.Types>
+    #emotionMetrics:Array<Emotion.EmotionMetric>
     #sentiment: Sentiment;
 
 
-    constructor(text: string, slug: string, sentiment:Sentiment, emotions:Array<Emotion.Types>, tags: Array<string>) {
+    constructor(text: string, slug: string, sentiment:Sentiment, emotionMetrics:Array<Emotion.EmotionMetric>, tags: Array<string>) {
         this.#text = text;
         this.#slug = slug;
         this.#tags = tags;
         this.#sentiment=sentiment;
-        this.#emotions=emotions;
+        this.#emotionMetrics=emotionMetrics;
     }
 
 
@@ -31,8 +31,8 @@ export default class Quote{
     }
 
 
-    get emotions(): Array<Emotion.Types> {
-        return this.#emotions;
+    get emotionMetrics(): Array<Emotion.EmotionMetric> {
+        return this.#emotionMetrics;
     }
 
     get tags(): Array<string> {
@@ -41,11 +41,73 @@ export default class Quote{
 
 
     public hasEmotions(emotions:Array<Emotion.Types>):boolean{
-        return emotions.every(e=>this.emotions.includes(e));
+        return emotions.every(e=>this.emotionMetrics.map(emotionMetric=>emotionMetric.emotion).includes(e));
     }
 
     public hasTags(tags:Array<string>):boolean{
         return tags.every(t=>this.tags.includes(t));
+    }
+
+    public getEmotionScore(emotionMetrics:Array<Emotion.EmotionMetric>):number{
+
+        let scoreSum=0;
+        const outerThis=this;
+        emotionMetrics.forEach(function(emotionMetric:Emotion.EmotionMetric){
+            const multiplier=emotionMetric.temperature;
+            let temperature=outerThis.emotionMetrics.find(x=>x.emotion===emotionMetric.emotion)?.temperature??0;
+            scoreSum+=(multiplier*temperature);
+        });
+        return scoreSum;
+
+    }
+
+    public getJSON():string{//TODO: rudimentary, remove or adjust
+        return JSON.stringify({
+            slug:this.slug,
+            emotionMetrics:this.emotionMetrics,
+
+        })
+    }
+
+
+}
+
+
+export class QuoteCollection{
+    #quotes:Array<Quote>;
+
+
+    constructor(quotes: Array<Quote>) {
+        this.#quotes = quotes;
+    }
+
+
+    get data(): Array<Quote> {
+        return this.#quotes;
+    }
+
+    public find(slug:string):Quote | undefined{
+        return this.data.find(q=>q.slug===slug);
+    }
+
+    public orderByEmotionScoreDesc(emotionMetrics:Array<Emotion.EmotionMetric>):QuoteCollection{
+
+        //return new QuoteCollection([...this.data].sort((x:Quote)=>x.getEmotionScore(emotionMetrics)).reverse());
+        return new QuoteCollection([...this.data].sort(function (q1:Quote,q2:Quote){
+            //descending order
+            return q2.getEmotionScore(emotionMetrics)-q1.getEmotionScore(emotionMetrics);
+        }));
+    }
+    public filterByEmotions(emotions:Array<Emotion.Types>):QuoteCollection{
+        return new QuoteCollection(this.data.filter(q=>q.hasEmotions(emotions)));
+    }
+
+    public filterByTags(tags:Array<string>):QuoteCollection{
+        return new QuoteCollection(this.data.filter(q=>q.hasTags(tags)));
+    }
+
+    public filterBySentiment(sentiment:Sentiment):QuoteCollection{
+        return new QuoteCollection(this.data.filter(q=>q.sentiment===sentiment));
     }
 
 

@@ -1,24 +1,21 @@
 import {Context, Probot} from "probot";
-import {QuoteFacade} from "./QuoteFacade.js";
 import PullRequestOpenedStrategy from "./ActionHandler/PullRequest/PullRequestOpenedStrategy.js";
 import PullRequestClosedStrategy from "./ActionHandler/PullRequest/PullRequestClosedStrategy.js";
-import {Sentiment} from "./enums/Sentiment";
-import {Emotion} from "./enums/Emotion";
+
 
 
 export default (app: Probot) => {
 
-  const quoteFacade=new QuoteFacade();
-  app.on("pull_request.opened", new PullRequestOpenedStrategy().handle);
+  app.on("pull_request.opened", async (ghContext:Context)=>{
+      const strat=new PullRequestOpenedStrategy();
+      return strat.handle(ghContext);
+  });
 
   app.on("pull_request.closed", new PullRequestClosedStrategy().handle);
 
-  app.on("issue_comment.created", async (context:Context<'issue_comment.created'>) => {
+  /*app.on("issue_comment.created", async (context:Context<'issue_comment.created'>) => {
 
 
-    quoteFacade.getQuote(Sentiment.Neutral,[Emotion.Joy.Happiness]);
-
-    context.log.info(context.payload.action);
 
     const issueComment = context.issue({
       body: "We are many, you're but one",
@@ -33,5 +30,5 @@ export default (app: Probot) => {
   // https://probot.github.io/docs/
 
   // To get your app running against GitHub, see:
-  // https://probot.github.io/docs/development/
+  // https://probot.github.io/docs/development/*/
 };

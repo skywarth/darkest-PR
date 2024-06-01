@@ -1,13 +1,17 @@
-import Quote from "./Quote";
-import Utils from "./Utils";
+import {Quote} from "./Quote.js";
+import Utils from "./Utils.js";
+import {Emotion} from "./enums/Emotion";
+import EmotionMetric = Emotion.EmotionMetric;
 
 export default class Comment{
     #quote:Quote;
     #caseSlug:string;
+    #contextEmotionMetrics:Array<EmotionMetric>;
 
-    constructor(quote: Quote,caseSlug:string) {
+    constructor(quote: Quote,caseSlug:string,contextEmotionMetrics:Array<EmotionMetric>) {
         this.#quote = quote;
         this.#caseSlug=caseSlug;
+        this.#contextEmotionMetrics=contextEmotionMetrics;
     }
 
 
@@ -20,6 +24,11 @@ export default class Comment{
         return this.#caseSlug;
     }
 
+
+    get contextEmotionMetrics(): Array<Emotion.EmotionMetric> {
+        return this.#contextEmotionMetrics;
+    }
+
     get body():string{
         let body=this.quote.text;
         if(Utils.isEnvDebug()){
@@ -30,7 +39,9 @@ export default class Comment{
             - Slug: ${this.caseSlug}
             ### Quote
             - Slug: ${this.quote.slug}
-            - Emotions: ${this.quote.emotions.toString()}
+            - Emotions: ${JSON.stringify(this.quote.emotionMetrics)}
+            ### Context EmotionMetrics
+            - Metrics: ${JSON.stringify(this.contextEmotionMetrics)}
             ---
             `
             body=body+`<br><br>`+debugText;
@@ -39,7 +50,7 @@ export default class Comment{
         return body;
     }
 
-    public getObject():object{
+    public getObject():{ body: string;}{
         return{
             body:this.body
         }
