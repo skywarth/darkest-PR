@@ -1,4 +1,4 @@
-import PullRequestStrategy from "./PullRequestStrategy.js";
+import PullRequestStrategy, {OctokitResponsePullRequest} from "./PullRequestStrategy.js";
 import { Context } from "probot";
 import { QuoteFacade } from "../../QuoteFacade.js";
 import { Sentiment } from "../../enums/Sentiment.js";
@@ -7,7 +7,7 @@ import Comment from "../../Comment.js";
 import { Quote } from "../../Quote.js";
 
 export default class PullRequestOpenedStrategy extends PullRequestStrategy<'pull_request.opened'> {
-    protected async executePrStrategy(ghContext: Context<'pull_request.opened'>): Promise<void> {
+    protected async executePrStrategy(ghContext: Context<'pull_request.opened'>,previousPRs:Array<OctokitResponsePullRequest>): Promise<void> {
 
         //CASE: Fresh
         let tags: Array<string> = ['begin', 'start', 'create', 'open'];
@@ -18,17 +18,6 @@ export default class PullRequestOpenedStrategy extends PullRequestStrategy<'pull
         ];
         let caseSlug: string = 'pr-opened.fresh';
         let sentiment = Sentiment.Positive;
-
-
-        //TODO: move previous pr to PullRequestStrategy class
-        const previousPRs = (await ghContext.octokit.pulls.list({
-            repo: ghContext.payload.repository.name,
-            sort:'updated',
-            direction:'desc',
-            owner: ghContext.payload.repository.owner.login,
-            state: 'all',
-            head: `${ghContext.payload.repository.owner.login}:${ghContext.payload.pull_request.head.ref}`
-        })).data.filter(x=>x.id!==ghContext.payload.pull_request.id);
 
         if(previousPRs.length>0){
             //CASE: Re-open
@@ -68,14 +57,11 @@ export default class PullRequestOpenedStrategy extends PullRequestStrategy<'pull
 
         }
 
-        /*console.log(ghContext.payload);
-        console.log('xcz');
-        console.log(ghContext.payload.pull_request);*/
-
         const quote: Quote = QuoteFacade.getInstance().getQuote(sentiment, contextEmotionMetrics, tags);
         const comment: Comment = new Comment(quote, caseSlug, contextEmotionMetrics)
 
         const issueComment = ghContext.issue(comment.getObject());
-        ghContext.octokit.issues.createComment(issueComment);
+        console.log(issueComment);
+        //ghContext.octokit.issues.createComment(issueComment);
     }
 }

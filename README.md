@@ -21,6 +21,18 @@ docker build -t darkest-PR .
 docker run -e APP_ID=<app-id> -e PRIVATE_KEY=<pem-value> darkest-PR
 ```
 
+## Design
+
+### Patterns
+
+Applied and active:
+- Repository pattern
+- Strategy pattern
+- Singleton pattern
+- Facade pattern
+
+Could be applied, would be decent in future expansion:
+- Factory or Abstract factory pattern, for strategies 
 
 ## Use-case analysis
 

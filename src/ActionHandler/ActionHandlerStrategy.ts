@@ -3,7 +3,7 @@ import {EmitterWebhookEventName} from "@octokit/webhooks/dist-types/types";
 
 export default abstract class ActionHandlerStrategy<T extends EmitterWebhookEventName> {
 
-    protected abstract execute(ghContext: Context<T>): void;
+    protected abstract execute(ghContext: Context<T>): Promise<void>;
 
     public async handle(ghContext: Context<T>): Promise<void> {
         //console.log(ghContext);
