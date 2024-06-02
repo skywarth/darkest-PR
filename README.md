@@ -47,7 +47,6 @@ Could be applied, would be decent in future expansion:
   - Short discussion/review
   - Long discussion/review, multiple review
   - Closed previously as well
-  - No Review
 - PR Review
   - Approved
   - Rejected (change request)

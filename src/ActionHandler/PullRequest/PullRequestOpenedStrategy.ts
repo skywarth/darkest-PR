@@ -21,7 +21,6 @@ export default class PullRequestOpenedStrategy extends PullRequestStrategy<'pull
 
         if(previousPRs.length>0){
             //CASE: Re-open
-            console.log('in*');
             const previousPR=previousPRs[0];
 
             tags=[...tags,'retry','attempt','try','again'];

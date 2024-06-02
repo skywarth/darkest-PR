@@ -11,7 +11,10 @@ export default (app: Probot) => {
         return strat.handle(ghContext);
     });
 
-  app.on("pull_request.closed", new PullRequestClosedStrategy().handle);
+  app.on("pull_request.closed", async (ghContext: Context<'pull_request.closed'>) => {
+      const strat = new PullRequestClosedStrategy();
+      return strat.handle(ghContext);
+  });
 
   /*app.on("issue_comment.created", async (context:Context<'issue_comment.created'>) => {
 
