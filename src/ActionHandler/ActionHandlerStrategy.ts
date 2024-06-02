@@ -5,7 +5,7 @@ export default abstract class ActionHandlerStrategy<T extends EmitterWebhookEven
 
     protected abstract execute(ghContext: Context<T>): void;
 
-    public handle(ghContext: Context<T>): void {
+    public async handle(ghContext: Context<T>): Promise<void> {
         //console.log(ghContext);
         if (ghContext.isBot) { // Replace with condition for this bot only
             return;

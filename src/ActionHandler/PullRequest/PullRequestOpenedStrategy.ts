@@ -7,23 +7,70 @@ import Comment from "../../Comment.js";
 import { Quote } from "../../Quote.js";
 
 export default class PullRequestOpenedStrategy extends PullRequestStrategy<'pull_request.opened'> {
-    protected executePrStrategy(ghContext: Context<'pull_request.opened'>): void {
+    protected async executePrStrategy(ghContext: Context<'pull_request.opened'>): Promise<void> {
 
         //CASE: Fresh
         let tags: Array<string> = ['begin', 'start', 'create', 'open'];
         let contextEmotionMetrics: Array<Emotion.EmotionMetric> = [
-            { emotion: Emotion.Joy.Happiness, temperature: 2 },
-            { emotion: Emotion.Joy.Relief, temperature: 4 },
-            { emotion: Emotion.Joy.Ecstasy, temperature: 1 }
+            {emotion: Emotion.Joy.Happiness, temperature: 2},
+            {emotion: Emotion.Joy.Relief, temperature: 4},
+            {emotion: Emotion.Joy.Ecstasy, temperature: 1}
         ];
-        let caseSlug: string = 'pr-opened-fresh';
-        const sentiment = Sentiment.Neutral;
+        let caseSlug: string = 'pr-opened.fresh';
+        let sentiment = Sentiment.Positive;
 
-        //CASE: Re-open, previous is cancelled
 
-        console.log(ghContext.payload);
+        //TODO: move previous pr to PullRequestStrategy class
+        const previousPRs = (await ghContext.octokit.pulls.list({
+            repo: ghContext.payload.repository.name,
+            sort:'updated',
+            direction:'desc',
+            owner: ghContext.payload.repository.owner.login,
+            state: 'all',
+            head: `${ghContext.payload.repository.owner.login}:${ghContext.payload.pull_request.head.ref}`
+        })).data.filter(x=>x.id!==ghContext.payload.pull_request.id);
+
+        if(previousPRs.length>0){
+            //CASE: Re-open
+            console.log('in*');
+            const previousPR=previousPRs[0];
+
+            tags=[...tags,'retry','attempt','try','again'];
+            if(previousPR.merged_at){
+                //CASE: Re-open, previously merged
+                caseSlug='pr-opened.previously-merged';
+                sentiment=Sentiment.Neutral;
+                contextEmotionMetrics=[
+                    {emotion: Emotion.Anger.Irritation, temperature: 2},
+                    {emotion: Emotion.Anger.Frustration, temperature: 3},
+                    {emotion: Emotion.Shame.Embarrassment, temperature: 5},
+                    {emotion: Emotion.Shame.Remorse, temperature: 2},
+                    {emotion: Emotion.Fear.Panic, temperature: 3},
+                    {emotion: Emotion.Joy.Relief, temperature: 2},
+                    {emotion: Emotion.Joy.Thrill, temperature: 1},
+                ];
+                tags=[...tags,'mistake','missing'];
+            }else{
+                //CASE: Re-open, previously closed
+                caseSlug='pr-opened.previously-closed';
+                sentiment=Sentiment.Negative;
+                contextEmotionMetrics=[
+                    {emotion: Emotion.Anger.Irritation, temperature: 4},
+                    {emotion: Emotion.Anger.Frustration, temperature: 5},
+                    {emotion: Emotion.Shame.Embarrassment, temperature: 2},
+                    {emotion: Emotion.Shame.Remorse, temperature: 1},
+                    {emotion: Emotion.Sadness.Grief, temperature:2},
+                    {emotion: Emotion.Anger.Rage, temperature:2},
+                    {emotion: Emotion.Anger.Fury, temperature:2},
+                ];
+                tags=[...tags,'rejection','struggle','denied','persistent','relentless','unwavering'];
+            }
+
+        }
+
+        /*console.log(ghContext.payload);
         console.log('xcz');
-        console.log(ghContext.payload.pull_request);
+        console.log(ghContext.payload.pull_request);*/
 
         const quote: Quote = QuoteFacade.getInstance().getQuote(sentiment, contextEmotionMetrics, tags);
         const comment: Comment = new Comment(quote, caseSlug, contextEmotionMetrics)
