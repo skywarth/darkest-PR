@@ -6,10 +6,10 @@ import PullRequestClosedStrategy from "./ActionHandler/PullRequest/PullRequestCl
 
 export default (app: Probot) => {
 
-  app.on("pull_request.opened", async (ghContext:Context)=>{
-      const strat=new PullRequestOpenedStrategy();
-      return strat.handle(ghContext);
-  });
+    app.on("pull_request.opened", async (ghContext: Context<'pull_request.opened'>) => {
+        const strat = new PullRequestOpenedStrategy();
+        return strat.handle(ghContext);
+    });
 
   app.on("pull_request.closed", new PullRequestClosedStrategy().handle);
 

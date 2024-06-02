@@ -20,9 +20,13 @@ export class QuoteFacade{
         return this.#instance;
     }
 
+    // @ts-ignore
+    //TODO: remove ignore
     getQuote(sentiment:Sentiment,emotionMetrics:Array<Emotion.EmotionMetric>,tags:Array<string>):Quote{
+
         const repo=QuoteRepository.getInstance();
-        let quotes=repo.index().filterBySentiment(sentiment).filterByTags(tags).orderByEmotionScoreDesc(emotionMetrics);
+        //TODO: reactivate .filterByTags(tags)*/
+        let quotes=repo.index().filterBySentiment(sentiment).filterByEmotionScoreAboveZero(emotionMetrics).orderByEmotionScoreDesc(emotionMetrics);
         //console.info(quotes.data.map(x=>x.getJSON()));
 
         return quotes.randomApplicable;

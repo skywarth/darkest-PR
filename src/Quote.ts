@@ -99,6 +99,11 @@ export class QuoteCollection{
             return q2.getEmotionScore(emotionMetrics)-q1.getEmotionScore(emotionMetrics);
         }));
     }
+
+    public filterByEmotionScoreAboveZero(emotions:Array<Emotion.EmotionMetric>):QuoteCollection{
+        return new QuoteCollection(this.data.filter(q=>(q.getEmotionScore(emotions)>0)));
+    }
+
     public filterByEmotions(emotions:Array<Emotion.Types>):QuoteCollection{
         return new QuoteCollection(this.data.filter(q=>q.hasEmotions(emotions)));
     }
@@ -108,7 +113,7 @@ export class QuoteCollection{
     }
 
     public filterBySentiment(sentiment:Sentiment):QuoteCollection{
-        return new QuoteCollection(this.data.filter(q=>q.sentiment===sentiment));
+        return new QuoteCollection(this.data.filter(q=>(q.sentiment===sentiment)));
     }
 
     public get randomApplicable():Quote{
