@@ -58,14 +58,16 @@ export class Quote{
             let temperature=outerThis.emotionMetrics.find(x=>x.emotion===emotionMetric.emotion)?.temperature??0;
             scoreSum+=(multiplier*temperature);
         });
+        //console.log(this.getJSON());
         return scoreSum;
 
     }
 
-    public getJSON():string{//TODO: rudimentary, remove or adjust
+    public getJSON(emotionMetrics:Array<Emotion.EmotionMetric>=[]):string{//TODO: rudimentary, remove or adjust
         return JSON.stringify({
             slug:this.slug,
             emotionMetrics:this.emotionMetrics,
+            emotionScore:this.getEmotionScore(emotionMetrics)
 
         })
     }
@@ -101,7 +103,11 @@ export class QuoteCollection{
     }
 
     public filterByEmotionScoreAboveZero(emotions:Array<Emotion.EmotionMetric>):QuoteCollection{
-        return new QuoteCollection(this.data.filter(q=>(q.getEmotionScore(emotions)>0)));
+        const scoreApplicable=this.data.filter(q=>(q.getEmotionScore(emotions)>0));//TODO: simplify later
+        /*console.log('***filter result start***');
+        scoreApplicable.forEach(x=>console.log(x.getJSON(emotions)));
+        console.log('***filter result end***');*/
+        return new QuoteCollection(scoreApplicable);
     }
 
     public filterByEmotions(emotions:Array<Emotion.Types>):QuoteCollection{
@@ -120,7 +126,9 @@ export class QuoteCollection{
         const divisionModifier:number=3;
         const originalAmount=this.data.length;
         const applicableCount:number=(Math.round(originalAmount/divisionModifier))>=2?(originalAmount/divisionModifier):originalAmount;
-        return Utils.shuffleArray([...this.data].splice(0,applicableCount))[0];
+        const applicables=Utils.shuffleArray([...this.data].splice(0,applicableCount));//TODO: simplify with below
+        //applicables.forEach(x=>console.log(x.getJSON()));
+        return applicables[0];
     }
 
 

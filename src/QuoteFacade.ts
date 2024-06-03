@@ -27,6 +27,8 @@ export class QuoteFacade{
         const repo=QuoteRepository.getInstance();
         //TODO: reactivate .filterByTags(tags)*/
         let quotes=repo.index().filterBySentiment(sentiment).filterByEmotionScoreAboveZero(emotionMetrics).orderByEmotionScoreDesc(emotionMetrics);
+        /*quotes.data.forEach(x=>console.log(x.getJSON(emotionMetrics)));
+        console.log('PPP');*/
         //console.info(quotes.data.map(x=>x.getJSON()));
 
         return quotes.randomApplicable;
