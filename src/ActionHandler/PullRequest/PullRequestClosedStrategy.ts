@@ -15,8 +15,6 @@ export default class PullRequestClosedStrategy extends PullRequestStrategy<'pull
     protected async executePrStrategy(ghContext: Context<'pull_request.closed'>,previousPRs:Array<OctokitResponsePullRequest>): Promise<void> {
 
 
-        console.log('pr closed begin');
-        console.log(previousPRs);
         let tags: Array<string>=['close','end','finish','fail','failure','reject','denied','cancel'];
         let contextEmotionMetrics: Array<Emotion.EmotionMetric>=[
             {emotion: Emotion.Anger.Rage, temperature: 3},
@@ -29,7 +27,6 @@ export default class PullRequestClosedStrategy extends PullRequestStrategy<'pull
         let caseSlug: string;
         let sentiment :Sentiment=Sentiment.Negative;
 
-        console.log('survey1');
         const reviews:Array<OctokitResponsePullRequestReview>=  (await ghContext.octokit.pulls.listReviews({
             owner: ghContext.payload.repository.owner.login,
             repo: ghContext.payload.repository.name,
@@ -37,8 +34,6 @@ export default class PullRequestClosedStrategy extends PullRequestStrategy<'pull
         })).data;
 
         const reviewCommentsAmount:number=ghContext.payload.pull_request.review_comments
-        console.log(reviews);
-        console.log(reviewCommentsAmount);
 
         if(reviews.length>3 || reviewCommentsAmount>25){
             //CASE: Long discussion/review
