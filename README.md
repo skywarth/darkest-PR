@@ -48,7 +48,7 @@ Could be applied, would be decent in future expansion:
     - Short discussion/review
     - Long discussion/review
     - Closed previously as well
-  - [X] Merge (TEST PENDING)
+  - [X] Merge
     - No discussion/review
     - Short discussion/review
     - Long discussion/review

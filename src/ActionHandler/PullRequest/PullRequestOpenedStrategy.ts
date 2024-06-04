@@ -14,7 +14,9 @@ export default class PullRequestOpenedStrategy extends PullRequestStrategy<'pull
         let contextEmotionMetrics: Array<Emotion.EmotionMetric> = [
             {emotion: Emotion.Joy.Happiness, temperature: 2},
             {emotion: Emotion.Joy.Relief, temperature: 4},
-            {emotion: Emotion.Joy.Ecstasy, temperature: 1}
+            {emotion: Emotion.Joy.Ecstasy, temperature: 1},
+            {emotion: Emotion.Fear.Anxiety, temperature: 3},
+            {emotion: Emotion.Fear.Fright, temperature: 2},
         ];
         let caseSlug: string = 'pr-opened.fresh';
         let sentiment = Sentiment.Positive;
