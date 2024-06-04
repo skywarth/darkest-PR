@@ -38,19 +38,26 @@ Could be applied, would be decent in future expansion:
 
 ### PR
 
-- PR opened
+- [X] PR opened
   - Fresh PR
   - Re-open of PR after previous one gets cancelled
   - Re-open of PR after previous one gets approved and merged
-- PR closed (no merge)
-  - No discussion/review
-  - Short discussion/review
-  - Long discussion/review, multiple review
-  - Closed previously as well
+- [X] PR closed
+  - [X] No merge
+    - No discussion/review
+    - Short discussion/review
+    - Long discussion/review
+    - Closed previously as well
+  - [X] Merge (TEST PENDING)
+    - No discussion/review
+    - Short discussion/review
+    - Long discussion/review
 - PR Review
   - Approved
   - Rejected (change request)
   - Just comment
+- Issue/PR comment
+  - Tagging the bot
 
 ###
 
