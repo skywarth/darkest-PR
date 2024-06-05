@@ -52,12 +52,25 @@ Could be applied, would be decent in future expansion:
     - No discussion/review
     - Short discussion/review
     - Long discussion/review
--  [X] PR Review
+- [X] PR Review
   - Approved
   - Rejected (change request)
   - Just comment
-- Issue/PR comment
+- [ ] Issue
+  - Reviewer/assignee
+    - Added
+    - Removed
+- [ ] PR
+  - Reviewer/assignee
+    - Added
+    - Removed
+- [ ] Issue/PR comment
   - Tagging the bot
+- [ ] [CRUCIBLE] Context aware dynamic quotes
+  - Replacing pronouns with respective usernames
+    - By parameter
+    - By context
+
 
 ###
 

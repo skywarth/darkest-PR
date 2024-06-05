@@ -1,7 +1,7 @@
 import {Quote} from "./Quote.js";
-import Utils from "./Utils.js";
 import {Emotion} from "./enums/Emotion";
 import EmotionMetric = Emotion.EmotionMetric;
+import {Config} from "./Config.js";
 
 export default class Comment{
     #quote:Quote;
@@ -31,7 +31,7 @@ export default class Comment{
 
     get body():string{
         let body=this.quote.text;
-        if(Utils.isEnvDebug()){
+        if(Config.debug_mode){
             const debugText= `
             ---
             Debug:

@@ -2,6 +2,7 @@ import {Context, Probot} from "probot";
 import PullRequestOpenedStrategy from "./ActionHandler/PullRequest/PullRequestOpenedStrategy.js";
 import PullRequestClosedStrategy from "./ActionHandler/PullRequest/PullRequestClosedStrategy.js";
 import PullRequestReviewSubmittedStrategy from "./ActionHandler/PullRequestReview/PullRequestReviewSubmittedStrategy.js";
+import IssueCommentCreatedStrategy from "./ActionHandler/IssueComment/IssueCommentCreatedStrategy.js";
 
 
 
@@ -12,13 +13,18 @@ export default (app: Probot) => {
         return strat.handle(ghContext);
     });
 
-  app.on("pull_request.closed", async (ghContext: Context<'pull_request.closed'>) => {
+    app.on("pull_request.closed", async (ghContext: Context<'pull_request.closed'>) => {
       const strat = new PullRequestClosedStrategy();
       return strat.handle(ghContext);
-  });
+    });
 
     app.on("pull_request_review.submitted", async (ghContext: Context<'pull_request_review.submitted'>) => {
         const strat = new PullRequestReviewSubmittedStrategy();
+        return strat.handle(ghContext);
+    });
+
+    app.on("issue_comment.created", async (ghContext: Context<'issue_comment.created'>) => {
+        const strat = new IssueCommentCreatedStrategy();
         return strat.handle(ghContext);
     });
 

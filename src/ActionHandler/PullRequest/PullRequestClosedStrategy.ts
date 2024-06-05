@@ -40,7 +40,7 @@ export default class PullRequestClosedStrategy extends PullRequestStrategy<'pull
             if(reviews.length>3 || reviewCommentsAmount>25){
                 //CASE: Long discussion/review
                 caseSlug='pr-closed.merged.many-reviews';
-                tags=[...tags,'finally','at last','executed','destroyed','glorious','victorious','victory','relief','unwavering','unyielding','champion'];
+                tags=[...tags,'finally','at last','executed','destroyed','glorious','victorious','victory','relief','unwavering','unyielding','champion','comeback','improvement','revival','resurgence'];
                 contextEmotionMetrics=[
                     ...contextEmotionMetrics,
                     {emotion: Emotion.Joy.Relief, temperature: 5},
