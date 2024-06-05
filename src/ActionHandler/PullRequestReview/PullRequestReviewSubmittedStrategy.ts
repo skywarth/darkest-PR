@@ -77,7 +77,7 @@ export default class PullRequestReviewSubmittedStrategy extends PullRequestRevie
 
         const issueComment = ghContext.issue(comment.getObject());
         console.log(issueComment);
-        //ghContext.octokit.issues.createComment(issueComment);
+        ghContext.octokit.issues.createComment(issueComment);
         return;
 
 

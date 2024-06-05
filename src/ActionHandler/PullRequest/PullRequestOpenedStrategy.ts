@@ -62,7 +62,6 @@ export default class PullRequestOpenedStrategy extends PullRequestStrategy<'pull
         const comment: Comment = new Comment(quote, caseSlug, contextEmotionMetrics)
 
         const issueComment = ghContext.issue(comment.getObject());
-        console.log(issueComment);
-        //ghContext.octokit.issues.createComment(issueComment);
+        ghContext.octokit.issues.createComment(issueComment);
     }
 }
