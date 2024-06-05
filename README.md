@@ -52,7 +52,7 @@ Could be applied, would be decent in future expansion:
     - No discussion/review
     - Short discussion/review
     - Long discussion/review
-- PR Review
+-  [X] PR Review
   - Approved
   - Rejected (change request)
   - Just comment
