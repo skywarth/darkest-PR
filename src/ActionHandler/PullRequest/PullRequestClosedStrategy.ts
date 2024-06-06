@@ -145,8 +145,9 @@ export default class PullRequestClosedStrategy extends PullRequestStrategy<'pull
         //const map = new Map(all_filter_ids.map(pos => [pos.id, pos]));
         // const uniques = [...map.values()];
 
-        const quote: Quote = QuoteFacade.getInstance().getQuote({emotionMetrics:contextEmotionMetrics,sentiment:sentiment,tags:tags});
-        const comment: Comment = new Comment(quote, caseSlug, contextEmotionMetrics)
+        const actionContext={emotionMetrics:contextEmotionMetrics,sentiment:sentiment,tags:tags};
+        const quote: Quote = QuoteFacade.getInstance().getQuote(actionContext);
+        const comment: Comment = new Comment(quote, caseSlug, actionContext)
 
         const issueComment = ghContext.issue(comment.getObject());
         ghContext.octokit.issues.createComment(issueComment);

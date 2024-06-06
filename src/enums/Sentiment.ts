@@ -1,5 +1,5 @@
 export enum Sentiment{
-    Negative,
-    Positive,
-    Neutral
+    Negative="Negative",
+    Positive="Positive",
+    Neutral="Neutral"
 }

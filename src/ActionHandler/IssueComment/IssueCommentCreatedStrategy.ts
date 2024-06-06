@@ -8,6 +8,7 @@ import IssueCommentStrategy from "./IssueCommentStrategy.js";
 import * as cheerio from 'cheerio';
 import {marked} from "marked";
 import sanitizeHtml from 'sanitize-html';
+import {ActionContextDTO} from "../../DTO/ActionContextDTO.js";
 
 
 
@@ -35,7 +36,7 @@ export default class IssueCommentCreatedStrategy extends IssueCommentStrategy<'i
 
         const bodyDOM=cheerio.load(bodyHTML);
         console.log(bodyDOM.text());
-        const dataRaw=bodyDOM('code').toArray().map(x=>cheerio.load(x).text()).find(function (codeText){
+        const jsonString=bodyDOM('code').toArray().map(x=>cheerio.load(x).text()).find(function (codeText){
             try {
                 const data = JSON.parse(codeText);
                 return data.identifier==="Darkest-PR-input-package";
@@ -44,13 +45,14 @@ export default class IssueCommentCreatedStrategy extends IssueCommentStrategy<'i
                 return false;
             }
         });
-        const data=dataRaw?JSON.parse(dataRaw):null;
-        //TODO: type for data. Wait, we can actually use that type as DTO as well can't we?
+        const data:ActionContextDTO=jsonString?JSON.parse(jsonString): {};
         console.log(data);
-        return;
 
-        const quote: Quote = QuoteFacade.getInstance().getQuote({emotionMetrics:contextEmotionMetrics,sentiment:sentiment,tags:tags});
-        const comment: Comment = new Comment(quote, caseSlug, contextEmotionMetrics)
+        const actionContext:ActionContextDTO=data?data:{emotionMetrics:contextEmotionMetrics,sentiment:sentiment,tags:tags};
+
+        console.log(actionContext);
+        const quote: Quote = QuoteFacade.getInstance().getQuote(actionContext);
+        const comment: Comment = new Comment(quote, caseSlug, actionContext)
 
         const issueComment = ghContext.issue(comment.getObject());
         console.log(issueComment);

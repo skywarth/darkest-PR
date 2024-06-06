@@ -1,17 +1,17 @@
 import {Quote} from "./Quote.js";
 import {Emotion} from "./enums/Emotion";
-import EmotionMetric = Emotion.EmotionMetric;
 import {Config} from "./Config.js";
+import {ActionContextDTO} from "./DTO/ActionContextDTO.js";
 
 export default class Comment{
     #quote:Quote;
     #caseSlug:string;
-    #contextEmotionMetrics:Array<EmotionMetric>;
+    #actionContext:ActionContextDTO;
 
-    constructor(quote: Quote,caseSlug:string,contextEmotionMetrics:Array<EmotionMetric>) {
+    constructor(quote: Quote,caseSlug:string,actionContext:ActionContextDTO) {
         this.#quote = quote;
         this.#caseSlug=caseSlug;
-        this.#contextEmotionMetrics=contextEmotionMetrics;
+        this.#actionContext=actionContext;
     }
 
 
@@ -25,8 +25,12 @@ export default class Comment{
     }
 
 
+    get actionContext(): ActionContextDTO {
+        return this.#actionContext;
+    }
+
     get contextEmotionMetrics(): Array<Emotion.EmotionMetric> {
-        return this.#contextEmotionMetrics;
+        return this.actionContext.emotionMetrics;
     }
 
     get body():string{
@@ -40,8 +44,8 @@ export default class Comment{
             ### Quote
             - Slug: ${this.quote.slug}
             - Emotions: ${JSON.stringify(this.quote.emotionMetrics)}
-            ### Context EmotionMetrics
-            - Metrics: ${JSON.stringify(this.contextEmotionMetrics)}
+            ### ActionContext
+            - Context: ${JSON.stringify(this.actionContext)}
             ---
             `
             body=body+`<br><br>`+debugText;
