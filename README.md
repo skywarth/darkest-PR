@@ -36,8 +36,6 @@ Could be applied, would be decent in future expansion:
 
 ## Use-case analysis
 
-### PR
-
 - [X] PR opened
   - Fresh PR
   - Re-open of PR after previous one gets cancelled
@@ -72,7 +70,44 @@ Could be applied, would be decent in future expansion:
     - By context
 
 
-###
+## Tagging Input 
+
+### Sample
+
+Sample comment below, between the separation lines
+
+---
+Hey ancestor @Darkest-PR, give me a cool line!
+
+```json
+{
+  "identifier":"Darkest-PR-input-package",
+  "sentiment": 1,
+  "emotionMetrics": [
+    {
+      "emotion": "Frustration",
+      "temperature": 4
+    },
+    {
+      "emotion": "Fury",
+      "temperature": 5
+    },
+    {
+      "emotion": "Wrath",
+      "temperature": 3
+    }
+  ],
+  "tags": [
+    "destroyed",
+    "obliterated",
+    "victory"
+  ]
+}
+
+```
+
+---
+
 
 
 ## Roadmap
