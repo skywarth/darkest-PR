@@ -11,7 +11,8 @@ export default abstract class IssueCommentStrategy<T extends EmitterWebhookEvent
 
         const payload = ghContext.payload as Context<'issue_comment'>['payload'];
 
-        if(payload.comment.body.includes(`@${Config.bot_name}`)){//Move to IssueCommentCreatedStrategy if the cases expand
+        //Move to IssueCommentCreatedStrategy if the cases expand
+        if(payload.comment.body.includes(`@${Config.bot_name}`)){//Checking whether the bot is tagged or not
             return this.executeIssueCommentStrategy(ghContext);
         }
 
