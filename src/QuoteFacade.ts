@@ -1,7 +1,6 @@
 import QuoteRepository from "./QuoteRepository.js";
 import {Quote} from "./Quote.js";
-import {Sentiment} from "./enums/Sentiment.js";
-import {Emotion} from "./enums/Emotion.js";
+import {ActionContextDTO} from "./DTO/ActionContextDTO.js";
 
 export class QuoteFacade{
 
@@ -22,16 +21,16 @@ export class QuoteFacade{
 
     // @ts-ignore
     //TODO: remove ignore
-    getQuote(emotionMetrics: Array<Emotion.EmotionMetric>, sentiment: Sentiment|null, tags: Array<string>):Quote{
+    getQuote(actionContext:ActionContextDTO):Quote{
 
         const repo=QuoteRepository.getInstance();
         //TODO: reactivate .filterByTags(tags)*/
         let quotes=repo.index();
-        if(sentiment!==null){
-            quotes=quotes.filterBySentiment(sentiment);
+        if(actionContext.sentiment!==null){
+            quotes=quotes.filterBySentiment(actionContext.sentiment);
         }
-        if(emotionMetrics.length>0){
-            quotes=quotes.filterByEmotionScoreAboveZero(emotionMetrics).orderByEmotionScoreDesc(emotionMetrics);
+        if(actionContext.emotionMetrics.length>0){
+            quotes=quotes.filterByEmotionScoreAboveZero(actionContext.emotionMetrics).orderByEmotionScoreDesc(actionContext.emotionMetrics);
         }
 
         /*quotes.data.forEach(x=>console.log(x.getJSON(emotionMetrics)));

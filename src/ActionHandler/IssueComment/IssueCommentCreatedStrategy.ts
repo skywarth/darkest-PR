@@ -49,7 +49,7 @@ export default class IssueCommentCreatedStrategy extends IssueCommentStrategy<'i
         console.log(data);
         return;
 
-        const quote: Quote = QuoteFacade.getInstance().getQuote(contextEmotionMetrics, sentiment, tags);
+        const quote: Quote = QuoteFacade.getInstance().getQuote({emotionMetrics:contextEmotionMetrics,sentiment:sentiment,tags:tags});
         const comment: Comment = new Comment(quote, caseSlug, contextEmotionMetrics)
 
         const issueComment = ghContext.issue(comment.getObject());
