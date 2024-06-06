@@ -72,7 +72,7 @@ export default class PullRequestReviewSubmittedStrategy extends PullRequestRevie
 
 
 
-        const quote: Quote = QuoteFacade.getInstance().getQuote(sentiment, contextEmotionMetrics, tags);
+        const quote: Quote = QuoteFacade.getInstance().getQuote(contextEmotionMetrics, sentiment, tags);
         const comment: Comment = new Comment(quote, caseSlug, contextEmotionMetrics)
 
         const issueComment = ghContext.issue(comment.getObject());

@@ -58,7 +58,7 @@ export default class PullRequestOpenedStrategy extends PullRequestStrategy<'pull
 
         }
 
-        const quote: Quote = QuoteFacade.getInstance().getQuote(sentiment, contextEmotionMetrics, tags);
+        const quote: Quote = QuoteFacade.getInstance().getQuote(contextEmotionMetrics, sentiment, tags);
         const comment: Comment = new Comment(quote, caseSlug, contextEmotionMetrics)
 
         const issueComment = ghContext.issue(comment.getObject());

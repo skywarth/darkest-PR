@@ -22,11 +22,18 @@ export class QuoteFacade{
 
     // @ts-ignore
     //TODO: remove ignore
-    getQuote(sentiment:Sentiment,emotionMetrics:Array<Emotion.EmotionMetric>,tags:Array<string>):Quote{
+    getQuote(emotionMetrics: Array<Emotion.EmotionMetric>, sentiment: Sentiment|null, tags: Array<string>):Quote{
 
         const repo=QuoteRepository.getInstance();
         //TODO: reactivate .filterByTags(tags)*/
-        let quotes=repo.index().filterBySentiment(sentiment).filterByEmotionScoreAboveZero(emotionMetrics).orderByEmotionScoreDesc(emotionMetrics);
+        let quotes=repo.index();
+        if(sentiment!==null){
+            quotes=quotes.filterBySentiment(sentiment);
+        }
+        if(emotionMetrics.length>0){
+            quotes=quotes.filterByEmotionScoreAboveZero(emotionMetrics).orderByEmotionScoreDesc(emotionMetrics);
+        }
+
         /*quotes.data.forEach(x=>console.log(x.getJSON(emotionMetrics)));
         console.log('PPP');*/
         //console.info(quotes.data.map(x=>x.getJSON()));
