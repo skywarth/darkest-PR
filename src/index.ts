@@ -3,6 +3,7 @@ import PullRequestOpenedStrategy from "./ActionHandler/PullRequest/PullRequestOp
 import PullRequestClosedStrategy from "./ActionHandler/PullRequest/PullRequestClosedStrategy.js";
 import PullRequestReviewSubmittedStrategy from "./ActionHandler/PullRequestReview/PullRequestReviewSubmittedStrategy.js";
 import IssueCommentCreatedStrategy from "./ActionHandler/IssueComment/IssueCommentCreatedStrategy.js";
+import PullRequestReviewRequested from "./ActionHandler/PullRequest/PullRequestReviewRequested.js";
 
 
 
@@ -27,6 +28,13 @@ export default (app: Probot) => {
         const strat = new IssueCommentCreatedStrategy();
         return strat.handle(ghContext);
     });
+
+    app.on("pull_request.review_requested", async (ghContext: Context<'pull_request.review_requested'>) => {
+        const strat = new PullRequestReviewRequested();
+        return strat.handle(ghContext);
+    });
+
+
 
   /*app.on("issue_comment.created", async (context:Context<'issue_comment.created'>) => {
 
