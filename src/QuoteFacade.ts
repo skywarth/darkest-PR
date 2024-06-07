@@ -6,10 +6,11 @@ export class QuoteFacade{
 
     //singleton pattern
     static #instance:QuoteFacade;
+    static #quoteRepository:QuoteRepository;
 
 
     private constructor() {
-
+        QuoteFacade.#quoteRepository=QuoteRepository.getInstance();
     }
 
     public static getInstance():QuoteFacade{
@@ -21,11 +22,15 @@ export class QuoteFacade{
 
     // @ts-ignore
     //TODO: remove ignore
-    getQuote(actionContext:ActionContextDTO):Quote{
+    getQuote(actionContext:ActionContextDTO):Quote|undefined{
 
-        const repo=QuoteRepository.getInstance();
         //TODO: reactivate .filterByTags(tags)*/
-        let quotes=repo.index();
+        let quotes=QuoteFacade.#quoteRepository.index();
+
+        if(actionContext.quoteSlug){
+            return QuoteFacade.#quoteRepository.find(actionContext.quoteSlug);//Should we use the Repo's find or collection's find?
+        }
+
         if(actionContext.sentiment!==null){
             quotes=quotes.filterBySentiment(actionContext.sentiment);
         }

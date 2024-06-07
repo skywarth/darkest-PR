@@ -9,6 +9,7 @@ import * as cheerio from 'cheerio';
 import {marked} from "marked";
 import sanitizeHtml from 'sanitize-html';
 import {ActionContextDTO, actionContextFromPartial} from "../../DTO/ActionContextDTO.js";
+import {Config} from "../../Config.js";
 
 
 
@@ -19,9 +20,9 @@ import {ActionContextDTO, actionContextFromPartial} from "../../DTO/ActionContex
 
 export default class IssueCommentCreatedStrategy extends IssueCommentStrategy<'issue_comment.created'>{
 
-    //@ts-ignore
     protected async executeIssueCommentStrategy(ghContext: Context<'issue_comment.created'>): Promise<void> {
 
+        console.log('in');
 
         let tags: Array<string>=['comment','create','new','narrative','narrate','criticism','collaborate','discussion','whisper','conspiracy','mention','note','opinion','remark','summon'];
         let contextEmotionMetrics: Array<Emotion.EmotionMetric>=[];
@@ -42,7 +43,7 @@ export default class IssueCommentCreatedStrategy extends IssueCommentStrategy<'i
             try {
                 inputPackageDetected=codeText.includes('Darkest-PR-input-package');
                 const data = JSON.parse(codeText);
-                return data.identifier==="Darkest-PR-input-package";
+                return data.identifier===`${Config.bot_name}-input-package`;
                 //return jsonData.identifier === "Darkest-PR-input-package";
             } catch (error) {
                 malformedInputPackageDetected=inputPackageDetected;
@@ -60,17 +61,21 @@ export default class IssueCommentCreatedStrategy extends IssueCommentStrategy<'i
         }
 
         console.log(actionContext);
-        const quote: Quote = QuoteFacade.getInstance().getQuote(actionContext);
-        let warnings:Array<string>=[]
-        if(malformedInputPackageDetected){
-            //TODO: move warning messages to appropriate place, maybe exception class?
-            warnings=[...warnings,'Malformed Input Package Detected! Please format your input package according to the README specification, and check your JSON format for syntax.']
-        }
-        const comment: Comment = new Comment(quote, caseSlug, actionContext,warnings)
+        const quote: Quote|undefined = QuoteFacade.getInstance().getQuote(actionContext);
 
-        const issueComment = ghContext.issue(comment.getObject());
-        console.log(issueComment);
-        ghContext.octokit.issues.createComment(issueComment);
+
+        if(quote){
+            let warnings:Array<string>=[]
+            if(malformedInputPackageDetected){
+                //TODO: move warning messages to appropriate place, maybe exception class?
+                warnings=[...warnings,'Malformed Input Package Detected! Please format your input package according to the README specification, and check your JSON format for syntax.']
+            }
+            const comment: Comment = new Comment(quote, caseSlug, actionContext,warnings)
+
+            const issueComment = ghContext.issue(comment.getObject());
+            ghContext.octokit.issues.createComment(issueComment);
+        }
+
         return;
 
 

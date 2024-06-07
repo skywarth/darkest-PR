@@ -122,7 +122,7 @@ export class QuoteCollection{
         return new QuoteCollection(this.data.filter(q=>(q.sentiment===sentiment)));
     }
 
-    public get randomApplicable():Quote{
+    public get randomApplicable():Quote|undefined{
         const divisionModifier:number=3;
         const originalAmount=this.data.length;
         const applicableCount:number=(Math.round(originalAmount/divisionModifier))>=2?(originalAmount/divisionModifier):originalAmount;

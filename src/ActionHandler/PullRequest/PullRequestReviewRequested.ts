@@ -28,11 +28,14 @@ export default class PullRequestReviewRequested extends PullRequestStrategy<'pul
 
 
         const actionContext={emotionMetrics:contextEmotionMetrics,sentiment:sentiment,tags:tags};
-        const quote: Quote = QuoteFacade.getInstance().getQuote(actionContext);
-        const comment: Comment = new Comment(quote, caseSlug, actionContext)
+        const quote: Quote|undefined = QuoteFacade.getInstance().getQuote(actionContext);
+        if(quote){
+            const comment: Comment = new Comment(quote, caseSlug, actionContext)
 
-        const issueComment = ghContext.issue(comment.getObject());
-        ghContext.octokit.issues.createComment(issueComment);
+            const issueComment = ghContext.issue(comment.getObject());
+            ghContext.octokit.issues.createComment(issueComment);
+        }
+
         return;
 
 
