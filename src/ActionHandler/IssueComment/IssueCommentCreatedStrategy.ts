@@ -31,6 +31,9 @@ export default class IssueCommentCreatedStrategy extends IssueCommentStrategy<'i
         const bodyHTML = sanitizeHtml((await marked(ghContext.payload.comment.body)));
 
 
+        //TODO: also tag the person who created the comment
+        //TODO: Include the original message that triggered this as 'reply'
+
         const bodyDOM=cheerio.load(bodyHTML);
         console.log(bodyDOM.text());
         let malformedInputPackageDetected:boolean=false;

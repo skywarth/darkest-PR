@@ -62,8 +62,11 @@ Could be applied, would be decent in future expansion:
   - Reviewer/assignee
     - Added
     - Removed
-- [ ] Issue/PR comment
+- [X] Issue/PR comment
   - Tagging the bot
+    - [X] No input package param provided
+    - [X] Input package param provided
+    - [X] Partial input package param provided
 - [ ] [CRUCIBLE] Context aware dynamic quotes
   - Replacing pronouns with respective usernames
     - By parameter
@@ -77,12 +80,13 @@ Could be applied, would be decent in future expansion:
 Sample comment below, between the separation lines
 
 ---
+
 Hey ancestor @Darkest-PR, give me a cool line!
 
 ```json
 {
   "identifier":"Darkest-PR-input-package",
-  "sentiment": 1,
+  "sentiment": "Negative",
   "emotionMetrics": [
     {
       "emotion": "Frustration",
