@@ -23,4 +23,23 @@ export default class Utils{
     public static stringToBoolean(str:string):boolean{
         return str.toLowerCase()==='true';
     }
+
+    public static toMarkdownList(arr: Array<string>, ordered: boolean = false): string {
+        let mapped:Array<string>;
+        if (ordered) {
+            mapped=arr.map((item, index) => `${index + 1}. ${item}`);
+        } else {
+            mapped=arr.map(item => `- ${item}`);
+        }
+        return mapped.join('\n');
+    }
+
+    public static removeLeadingWhitespaces(input: string): string {
+        return input
+            .split('\n')
+            .map(line => line.trimStart())
+            .join('\n');
+    }
 }
+
+

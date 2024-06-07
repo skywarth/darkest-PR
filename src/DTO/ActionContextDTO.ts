@@ -7,3 +7,12 @@ export interface ActionContextDTO{
     readonly tags:Array<string>
 
 }
+
+
+export function actionContextFromPartial(partialData:Partial<ActionContextDTO>):ActionContextDTO{
+    return {
+        emotionMetrics:partialData?.emotionMetrics??[],
+        sentiment:partialData?.sentiment??null,
+        tags:partialData?.tags??[],
+    }
+}

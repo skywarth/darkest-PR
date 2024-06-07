@@ -8,7 +8,7 @@ import IssueCommentStrategy from "./IssueCommentStrategy.js";
 import * as cheerio from 'cheerio';
 import {marked} from "marked";
 import sanitizeHtml from 'sanitize-html';
-import {ActionContextDTO} from "../../DTO/ActionContextDTO.js";
+import {ActionContextDTO, actionContextFromPartial} from "../../DTO/ActionContextDTO.js";
 
 
 
@@ -28,31 +28,42 @@ export default class IssueCommentCreatedStrategy extends IssueCommentStrategy<'i
         let caseSlug: string;
         let sentiment :Sentiment|null=null;
 
-
-
-        caseSlug='issue-comment.created.bot-tagged.no-param';
         const bodyHTML = sanitizeHtml((await marked(ghContext.payload.comment.body)));
 
 
         const bodyDOM=cheerio.load(bodyHTML);
         console.log(bodyDOM.text());
-        const jsonString=bodyDOM('code').toArray().map(x=>cheerio.load(x).text()).find(function (codeText){
+        let malformedInputPackageDetected:boolean=false;
+        let inputPackageDetected:boolean;
+        const matchingJsonString=bodyDOM('code').toArray().map(x=>cheerio.load(x).text()).find(function (codeText){
             try {
+                inputPackageDetected=codeText.includes('Darkest-PR-input-package');
                 const data = JSON.parse(codeText);
                 return data.identifier==="Darkest-PR-input-package";
                 //return jsonData.identifier === "Darkest-PR-input-package";
             } catch (error) {
+                malformedInputPackageDetected=inputPackageDetected;
                 return false;
             }
         });
-        const data:ActionContextDTO=jsonString?JSON.parse(jsonString): {};
-        console.log(data);
+        const dataRaw:Partial<ActionContextDTO>=JSON.parse(matchingJsonString??'{}');
 
-        const actionContext:ActionContextDTO=data?data:{emotionMetrics:contextEmotionMetrics,sentiment:sentiment,tags:tags};
+        const actionContext:ActionContextDTO=matchingJsonString? actionContextFromPartial(dataRaw): {emotionMetrics:contextEmotionMetrics,sentiment:sentiment,tags:tags};
+
+        if(matchingJsonString){
+            caseSlug='issue-comment.created.bot-tagged.param-provided';
+        }else{
+            caseSlug='issue-comment.created.bot-tagged.no-param';
+        }
 
         console.log(actionContext);
         const quote: Quote = QuoteFacade.getInstance().getQuote(actionContext);
-        const comment: Comment = new Comment(quote, caseSlug, actionContext)
+        let warnings:Array<string>=[]
+        if(malformedInputPackageDetected){
+            //TODO: move warning messages to appropriate place, maybe exception class?
+            warnings=[...warnings,'Malformed Input Package Detected! Please format your input package according to the README specification, and check your JSON format for syntax.']
+        }
+        const comment: Comment = new Comment(quote, caseSlug, actionContext,warnings)
 
         const issueComment = ghContext.issue(comment.getObject());
         console.log(issueComment);
