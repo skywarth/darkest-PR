@@ -2,12 +2,12 @@ import PullRequestStrategy, {OctokitResponsePullRequest} from "./PullRequestStra
 import {Context} from "probot";
 import {Emotion} from "../../enums/Emotion.js";
 import {Sentiment} from "../../enums/Sentiment.js";
-import {Quote} from "../../Quote.js";
-import {QuoteFacade} from "../../QuoteFacade.js";
+import {Quote} from "../../Quote/Quote.js";
+import {QuoteFacade} from "../../Quote/QuoteFacade.js";
 import Comment from "../../Comment.js";
 
 
-export default class PullRequestReviewRequested extends PullRequestStrategy<'pull_request.review_requested'>{
+export default class PullRequestReviewerAdded extends PullRequestStrategy<'pull_request.review_requested'>{
 
 
     protected async executePrStrategy(ghContext: Context<'pull_request.review_requested'>,_previousPRs:Array<OctokitResponsePullRequest>): Promise<void> {
@@ -22,6 +22,7 @@ export default class PullRequestReviewRequested extends PullRequestStrategy<'pul
             {emotion:Emotion.Sadness.Loneliness,temperature:1},
             {emotion:Emotion.Surprise.Wonder,temperature:1},
         ];
+        //TODO: use direct quoteSlugs
         let caseSlug: string='pull-request.review-requested';
         let sentiment :Sentiment=Sentiment.Neutral;
 

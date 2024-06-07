@@ -1,6 +1,6 @@
 import QuoteRepository from "./QuoteRepository.js";
 import {Quote} from "./Quote.js";
-import {ActionContextDTO} from "./DTO/ActionContextDTO.js";
+import {ActionContextDTO} from "../DTO/ActionContextDTO.js";
 
 export class QuoteFacade{
 
@@ -27,6 +27,7 @@ export class QuoteFacade{
         //TODO: reactivate .filterByTags(tags)*/
         let quotes=QuoteFacade.#quoteRepository.index();
 
+        //TODO separate this but also preserve here. This way we enable selecting by quoteSlug(s) as well, along with other params
         if(actionContext.quoteSlug){
             return QuoteFacade.#quoteRepository.find(actionContext.quoteSlug);//Should we use the Repo's find or collection's find?
         }

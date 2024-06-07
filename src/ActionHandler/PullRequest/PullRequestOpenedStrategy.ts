@@ -1,10 +1,10 @@
 import PullRequestStrategy, {OctokitResponsePullRequest} from "./PullRequestStrategy.js";
 import { Context } from "probot";
-import { QuoteFacade } from "../../QuoteFacade.js";
+import { QuoteFacade } from "../../Quote/QuoteFacade.js";
 import { Sentiment } from "../../enums/Sentiment.js";
 import { Emotion } from "../../enums/Emotion.js";
 import Comment from "../../Comment.js";
-import { Quote } from "../../Quote.js";
+import { Quote } from "../../Quote/Quote.js";
 
 export default class PullRequestOpenedStrategy extends PullRequestStrategy<'pull_request.opened'> {
     protected async executePrStrategy(ghContext: Context<'pull_request.opened'>,previousPRs:Array<OctokitResponsePullRequest>): Promise<void> {

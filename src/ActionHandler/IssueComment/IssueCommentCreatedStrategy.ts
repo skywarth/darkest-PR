@@ -1,8 +1,8 @@
 import {Context} from "probot";
 import {Emotion} from "../../enums/Emotion.js";
 import {Sentiment} from "../../enums/Sentiment.js";
-import {Quote} from "../../Quote.js";
-import {QuoteFacade} from "../../QuoteFacade.js";
+import {Quote} from "../../Quote/Quote.js";
+import {QuoteFacade} from "../../Quote/QuoteFacade.js";
 import Comment from "../../Comment.js";
 import IssueCommentStrategy from "./IssueCommentStrategy.js";
 import * as cheerio from 'cheerio';

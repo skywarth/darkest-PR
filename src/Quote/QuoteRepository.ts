@@ -1,7 +1,7 @@
 
 import {Quote,QuoteCollection} from "./Quote.js";
-import {Emotion} from "./enums/Emotion.js";
-import {Sentiment} from "./enums/Sentiment.js";
+import {Emotion} from "../enums/Emotion.js";
+import {Sentiment} from "../enums/Sentiment.js";
 export default class QuoteRepository{
     #quotes:QuoteCollection=new QuoteCollection([]);
     static #instance:QuoteRepository;

@@ -1,4 +1,4 @@
-import {Quote} from "./Quote.js";
+import {Quote} from "./Quote/Quote.js";
 import {Emotion} from "./enums/Emotion";
 import {Config} from "./Config.js";
 import {ActionContextDTO} from "./DTO/ActionContextDTO.js";

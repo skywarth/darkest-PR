@@ -3,7 +3,7 @@ import PullRequestOpenedStrategy from "./ActionHandler/PullRequest/PullRequestOp
 import PullRequestClosedStrategy from "./ActionHandler/PullRequest/PullRequestClosedStrategy.js";
 import PullRequestReviewSubmittedStrategy from "./ActionHandler/PullRequestReview/PullRequestReviewSubmittedStrategy.js";
 import IssueCommentCreatedStrategy from "./ActionHandler/IssueComment/IssueCommentCreatedStrategy.js";
-import PullRequestReviewRequested from "./ActionHandler/PullRequest/PullRequestReviewRequested.js";
+import PullRequestReviewerAdded from "./ActionHandler/PullRequest/PullRequestReviewerAdded.js";
 
 
 
@@ -30,7 +30,7 @@ export default (app: Probot) => {
     });
 
     app.on("pull_request.review_requested", async (ghContext: Context<'pull_request.review_requested'>) => {
-        const strat = new PullRequestReviewRequested();
+        const strat = new PullRequestReviewerAdded();
         return strat.handle(ghContext);
     });
 

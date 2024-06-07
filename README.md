@@ -60,8 +60,8 @@ Could be applied, would be decent in future expansion:
     - Removed
 - [ ] PR
   - Reviewer/assignee
-    - Added
-    - Removed
+    - [ ] Added
+    - [ ] Removed
 - [X] Issue/PR comment
   - Tagging the bot
     - [X] No input package param provided
@@ -71,7 +71,7 @@ Could be applied, would be decent in future expansion:
   - Replacing pronouns with respective usernames
     - By parameter
     - By context
-
+- [ ] Refactor comment create action
 
 ## Tagging Input 
 
