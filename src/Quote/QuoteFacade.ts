@@ -27,10 +27,6 @@ export class QuoteFacade{
         //TODO: reactivate .filterByTags(tags)*/
         let quotes=QuoteFacade.#quoteRepository.index();
 
-        //TODO separate this but also preserve here. This way we enable selecting by quoteSlug(s) as well, along with other params
-        if(actionContext.quoteSlug){
-            return QuoteFacade.#quoteRepository.find(actionContext.quoteSlug);//Should we use the Repo's find or collection's find?
-        }
 
         if(actionContext.sentiment!==null){
             quotes=quotes.filterBySentiment(actionContext.sentiment);
@@ -43,7 +39,18 @@ export class QuoteFacade{
         console.log('PPP');*/
         //console.info(quotes.data.map(x=>x.getJSON()));
 
+
+
+        if((actionContext?.quoteSlugs?.length??-1)>0){//Damn this is ugly as hell
+            let quotesBySlug=QuoteFacade.#quoteRepository.index().filterBySlugs(actionContext.quoteSlugs??[]);
+            quotes.merge(quotesBySlug);
+        }
+
         return quotes.randomApplicable;
+    }
+
+    getQuoteBySlug(slug:string):Quote|undefined{
+        return QuoteFacade.#quoteRepository.find(slug);//Should we use the Repo's find or collection's find?
     }
 
 }

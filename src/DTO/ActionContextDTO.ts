@@ -5,7 +5,7 @@ export interface ActionContextDTO{
     readonly emotionMetrics: Array<Emotion.EmotionMetric>,
     readonly sentiment:Sentiment|null,
     readonly tags:Array<string>
-    readonly quoteSlug?:string|null,
+    readonly quoteSlugs?:Array<string>,
 
 }
 
@@ -15,6 +15,6 @@ export function actionContextFromPartial(partialData:Partial<ActionContextDTO>):
         emotionMetrics:partialData?.emotionMetrics??[],
         sentiment:partialData?.sentiment??null,
         tags:partialData?.tags??[],
-        quoteSlug:partialData?.quoteSlug??null
+        quoteSlugs:partialData?.quoteSlugs??[]
     }
 }
