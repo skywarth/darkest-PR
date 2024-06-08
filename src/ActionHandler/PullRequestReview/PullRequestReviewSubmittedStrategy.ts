@@ -13,7 +13,7 @@ export default class PullRequestReviewSubmittedStrategy extends PullRequestRevie
 
 
         let tags: Array<string>=['review','revise','inspect','peek','watch','judge','judgement','judged','conscious','weighed','ponder','decision','verdict','ruling','decree','conclusion','sentence','analysis','determination','assessment','opinion','belief'];
-        let contextEmotionMetrics: Array<Emotion.EmotionMetric>;
+        let contextEmotionMetrics: Emotion.EmotionMatrix;
         let caseSlug: string;
         let sentiment :Sentiment;
 

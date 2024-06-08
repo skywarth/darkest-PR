@@ -72,4 +72,6 @@ export namespace Emotion {
         temperature:Temperature
     };
 
+    export type EmotionMatrix=Array<EmotionMetric>;
+
 }

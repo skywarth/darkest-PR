@@ -14,7 +14,7 @@ export default class PullRequestReviewerAdded extends PullRequestStrategy<'pull_
 
 
         let tags: Array<string>=['assignment','review','suggest','request','plea','call','duty','demand','appeal','summon','invoke','invitation','invite','prayer','seek','hero','champion','judge','jury','executioner','audit','inspection','assess','assessment','evaluation','judgement','new','arrive','arrival','fresh','the one','savior','visitor','task','mission','goal'];
-        let contextEmotionMetrics: Array<Emotion.EmotionMetric>=[
+        let contextEmotionMetrics: Emotion.EmotionMatrix=[
             {emotion:Emotion.Interest.Trust,temperature:3},
             {emotion:Emotion.Interest.Friendliness,temperature:4},
             {emotion:Emotion.Fear.Fright,temperature:2},

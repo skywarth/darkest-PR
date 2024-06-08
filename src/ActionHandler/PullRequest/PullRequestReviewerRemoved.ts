@@ -14,7 +14,7 @@ export default class PullRequestReviewerRemoved extends PullRequestStrategy<'pul
 
 
         let tags: Array<string>=['removed','sent','kicked','denied','deny','fire','fired','detach','separated','parted','death','die','kill','killed','destroyed','begone','scram','scoot','leave','left','away','depart','fall','fell','ban','banned','disowned','rejected','dismissed','shunned','assignment','review','request','duty','demand','audit','inspection','assess','assessment','evaluation','judgement',];
-        let contextEmotionMetrics: Array<Emotion.EmotionMetric>=[
+        let contextEmotionMetrics: Emotion.EmotionMatrix=[
             {emotion:Emotion.Shame.Embarrassment,temperature:2},
             {emotion:Emotion.Shame.Guilt,temperature:3},
             {emotion:Emotion.Shame.Regret,temperature:1},

@@ -25,7 +25,7 @@ export default class IssueCommentCreatedStrategy extends IssueCommentStrategy<'i
         console.log('in');
 
         let tags: Array<string>=['comment','create','new','narrative','narrate','criticism','collaborate','discussion','whisper','conspiracy','mention','note','opinion','remark','summon'];
-        let contextEmotionMetrics: Array<Emotion.EmotionMetric>=[];
+        let contextEmotionMetrics: Emotion.EmotionMatrix=[];
         let caseSlug: string;
         let sentiment :Sentiment|null=null;
 

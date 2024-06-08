@@ -11,7 +11,7 @@ export default class PullRequestOpenedStrategy extends PullRequestStrategy<'pull
 
         //CASE: Fresh
         let tags: Array<string> = ['begin', 'start', 'create', 'open'];
-        let contextEmotionMetrics: Array<Emotion.EmotionMetric> = [
+        let contextEmotionMetrics: Emotion.EmotionMatrix = [
             {emotion: Emotion.Joy.Happiness, temperature: 2},
             {emotion: Emotion.Joy.Relief, temperature: 4},
             {emotion: Emotion.Joy.Ecstasy, temperature: 1},

@@ -16,7 +16,7 @@ export default class PullRequestClosedStrategy extends PullRequestStrategy<'pull
 
 
         let tags: Array<string>=['close','end','finish',];
-        let contextEmotionMetrics: Array<Emotion.EmotionMetric>;
+        let contextEmotionMetrics: Emotion.EmotionMatrix;
         let caseSlug: string;
         let sentiment :Sentiment;
 

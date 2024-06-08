@@ -41,7 +41,7 @@ export default class Comment{
         return this.#warnings;
     }
 
-    get contextEmotionMetrics(): Array<Emotion.EmotionMetric> {
+    get contextEmotionMetrics(): Emotion.EmotionMatrix {
         return this.actionContext.emotionMetrics;
     }
 

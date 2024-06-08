@@ -6,11 +6,11 @@ export class Quote{
     #text:string;
     #slug:string;
     #tags:Array<string>;
-    #emotionMetrics:Array<Emotion.EmotionMetric>
+    #emotionMetrics:Emotion.EmotionMatrix
     #sentiment: Sentiment;
 
 
-    constructor(text: string, slug: string, sentiment:Sentiment, emotionMetrics:Array<Emotion.EmotionMetric>, tags: Array<string>) {
+    constructor(text: string, slug: string, sentiment:Sentiment, emotionMetrics:Emotion.EmotionMatrix, tags: Array<string>) {
         this.#text = text;
         this.#slug = slug;
         this.#tags = tags;
@@ -32,7 +32,7 @@ export class Quote{
     }
 
 
-    get emotionMetrics(): Array<Emotion.EmotionMetric> {
+    get emotionMetrics(): Emotion.EmotionMatrix {
         return this.#emotionMetrics;
     }
 
@@ -49,7 +49,7 @@ export class Quote{
         return tags.every(t=>this.tags.includes(t));
     }
 
-    public getEmotionScore(emotionMetrics:Array<Emotion.EmotionMetric>):number{
+    public getEmotionScore(emotionMetrics:Emotion.EmotionMatrix):number{
 
         let scoreSum=0;
         const outerThis=this;
@@ -63,7 +63,7 @@ export class Quote{
 
     }
 
-    public getJSON(emotionMetrics:Array<Emotion.EmotionMetric>=[]):string{//TODO: rudimentary, remove or adjust
+    public getJSON(emotionMetrics:Emotion.EmotionMatrix=[]):string{//TODO: rudimentary, remove or adjust
         return JSON.stringify({
             slug:this.slug,
             emotionMetrics:this.emotionMetrics,
@@ -95,7 +95,7 @@ export class QuoteCollection{
 
     //TODO: Consider adjusting the original array/instance rather than creating new
 
-    public orderByEmotionScoreDesc(emotionMetrics:Array<Emotion.EmotionMetric>):QuoteCollection{
+    public orderByEmotionScoreDesc(emotionMetrics:Emotion.EmotionMatrix):QuoteCollection{
 
         //return new QuoteCollection([...this.data].sort((x:Quote)=>x.getEmotionScore(emotionMetrics)).reverse());
         return new QuoteCollection([...this.data].sort(function (q1:Quote,q2:Quote){
@@ -104,7 +104,7 @@ export class QuoteCollection{
         }));
     }
 
-    public filterByEmotionScoreAboveZero(emotions:Array<Emotion.EmotionMetric>):QuoteCollection{
+    public filterByEmotionScoreAboveZero(emotions:Emotion.EmotionMatrix):QuoteCollection{
         const scoreApplicable=this.data.filter(q=>(q.getEmotionScore(emotions)>0));//TODO: simplify later
         /*console.log('***filter result start***');
         scoreApplicable.forEach(x=>console.log(x.getJSON(emotions)));
