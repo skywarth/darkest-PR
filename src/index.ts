@@ -4,6 +4,7 @@ import PullRequestClosedStrategy from "./ActionHandler/PullRequest/PullRequestCl
 import PullRequestReviewSubmittedStrategy from "./ActionHandler/PullRequestReview/PullRequestReviewSubmittedStrategy.js";
 import IssueCommentCreatedStrategy from "./ActionHandler/IssueComment/IssueCommentCreatedStrategy.js";
 import PullRequestReviewerAdded from "./ActionHandler/PullRequest/PullRequestReviewerAdded.js";
+import PullRequestReviewerRemoved from "./ActionHandler/PullRequest/PullRequestReviewerRemoved.js";
 
 
 
@@ -34,24 +35,9 @@ export default (app: Probot) => {
         return strat.handle(ghContext);
     });
 
-
-
-  /*app.on("issue_comment.created", async (context:Context<'issue_comment.created'>) => {
-
-
-
-    const issueComment = context.issue({
-      body: "We are many, you're but one",
+    app.on("pull_request.review_request_removed", async (ghContext: Context<'pull_request.review_request_removed'>) => {
+        const strat = new PullRequestReviewerRemoved();
+        return strat.handle(ghContext);
     });
-    //if(context.payload.comment.user.type!=='Bot'){
-    if(!context.isBot){
-      await context.octokit.issues.createComment(issueComment);
-    }
 
-  });
-  // For more information on building apps:
-  // https://probot.github.io/docs/
-
-  // To get your app running against GitHub, see:
-  // https://probot.github.io/docs/development/*/
 };

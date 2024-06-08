@@ -30,7 +30,7 @@ export default class PullRequestReviewerRemoved extends PullRequestStrategy<'pul
             {emotion:Emotion.Sadness.Grief,temperature:5},
         ];
         //TODO: use direct quoteSlugs
-        let caseSlug: string='pull-request.review-requested';
+        let caseSlug: string='pull-request.reviewer-removed';
         let sentiment :Sentiment=Sentiment.Negative;
 
 

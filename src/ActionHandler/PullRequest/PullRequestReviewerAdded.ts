@@ -23,7 +23,7 @@ export default class PullRequestReviewerAdded extends PullRequestStrategy<'pull_
             {emotion:Emotion.Surprise.Wonder,temperature:1},
         ];
         //TODO: use direct quoteSlugs
-        let caseSlug: string='pull-request.review-requested';
+        let caseSlug: string='pull-request.reviewer-added';
         let sentiment :Sentiment=Sentiment.Neutral;
 
 
