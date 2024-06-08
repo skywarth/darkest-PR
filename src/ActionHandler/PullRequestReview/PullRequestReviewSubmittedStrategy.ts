@@ -5,6 +5,7 @@ import {Quote} from "../../Quote/Quote.js";
 import {QuoteFacade} from "../../Quote/QuoteFacade.js";
 import Comment from "../../Comment.js";
 import PullRequestReviewStrategy from "./PullRequestReviewStrategy.js";
+import {ActionContextDTO} from "../../DTO/ActionContextDTO.js";
 
 
 export default class PullRequestReviewSubmittedStrategy extends PullRequestReviewStrategy<'pull_request_review.submitted'>{
@@ -13,7 +14,7 @@ export default class PullRequestReviewSubmittedStrategy extends PullRequestRevie
 
 
         let tags: Array<string>=['review','revise','inspect','peek','watch','judge','judgement','judged','conscious','weighed','ponder','decision','verdict','ruling','decree','conclusion','sentence','analysis','determination','assessment','opinion','belief'];
-        let contextEmotionMetrics: Emotion.EmotionMatrix;
+        let contextEmotionMatrix: Emotion.EmotionMatrix;
         let caseSlug: string;
         let sentiment :Sentiment;
 
@@ -23,7 +24,7 @@ export default class PullRequestReviewSubmittedStrategy extends PullRequestRevie
             caseSlug='pull-request-review.approved';
             sentiment=Sentiment.Positive;
             tags=[...tags,'success','victory','victorious','decimated','executed','approval','blessing','confirm','approve','endorsement','ratification','allow','permit','accepted','support','favor','praise','applaud','great','glory']
-            contextEmotionMetrics=[
+            contextEmotionMatrix=[
                 {emotion: Emotion.Joy.Relief, temperature: 3},
                 {emotion: Emotion.Joy.Happiness, temperature: 3},
                 {emotion: Emotion.Joy.Enjoyment, temperature: 2},
@@ -38,7 +39,7 @@ export default class PullRequestReviewSubmittedStrategy extends PullRequestRevie
             caseSlug='pull-request-review.rejected';
             sentiment=Sentiment.Negative;
             tags=[...tags,'fail','failure','defeat','denied','deny','removed','beat','beaten','decline','reject','request','change','alter','improve','disqualified','blocked','missed','dismissed','repelled','disowned','weak','insufficient','low','lowly','fool','feeble','sluggish','brutish','brute','wasted','soft','incapable','poor','dull','lacking','missing','raw','unsatisfactory','unqualified','unprepared','incomplete','fall'];
-            contextEmotionMetrics=[
+            contextEmotionMatrix=[
                 {emotion: Emotion.Anger.Frustration, temperature: 5},
                 {emotion: Emotion.Anger.Fury, temperature: 3},//Frustration, and fury...
                 {emotion: Emotion.Anger.Rage, temperature: 3},
@@ -59,7 +60,7 @@ export default class PullRequestReviewSubmittedStrategy extends PullRequestRevie
             caseSlug='pull-request-review.commented';
             sentiment=Sentiment.Neutral;
             tags=[...tags,'advised','suggested','advice','commend','command','order','encourage','instruct','recommend','warn','counsel','guide','lead','disclose','train','tutor','enlighten','support','steer','obey']
-            contextEmotionMetrics=[
+            contextEmotionMatrix=[
                 {emotion: Emotion.Interest.Trust, temperature: 1},
                 {emotion: Emotion.Interest.Acceptance, temperature: 2},
                 {emotion: Emotion.Interest.Kindness, temperature: 3},
@@ -72,7 +73,7 @@ export default class PullRequestReviewSubmittedStrategy extends PullRequestRevie
 
 
 
-        const actionContext={emotionMetrics:contextEmotionMetrics,sentiment:sentiment,tags:tags};
+        const actionContext=new ActionContextDTO(contextEmotionMatrix,sentiment,tags);
         const quote: Quote|undefined = QuoteFacade.getInstance().getQuote(actionContext);
         if(quote){
             const comment: Comment = new Comment(quote, caseSlug, actionContext)

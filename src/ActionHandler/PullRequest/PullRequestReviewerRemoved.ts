@@ -5,6 +5,7 @@ import {Sentiment} from "../../enums/Sentiment.js";
 import {Quote} from "../../Quote/Quote.js";
 import {QuoteFacade} from "../../Quote/QuoteFacade.js";
 import Comment from "../../Comment.js";
+import {ActionContextDTO} from "../../DTO/ActionContextDTO.js";
 
 
 export default class PullRequestReviewerRemoved extends PullRequestStrategy<'pull_request.review_request_removed'>{
@@ -14,7 +15,7 @@ export default class PullRequestReviewerRemoved extends PullRequestStrategy<'pul
 
 
         let tags: Array<string>=['removed','sent','kicked','denied','deny','fire','fired','detach','separated','parted','death','die','kill','killed','destroyed','begone','scram','scoot','leave','left','away','depart','fall','fell','ban','banned','disowned','rejected','dismissed','shunned','assignment','review','request','duty','demand','audit','inspection','assess','assessment','evaluation','judgement',];
-        let contextEmotionMetrics: Emotion.EmotionMatrix=[
+        let contextEmotionMatrix: Emotion.EmotionMatrix=[
             {emotion:Emotion.Shame.Embarrassment,temperature:2},
             {emotion:Emotion.Shame.Guilt,temperature:3},
             {emotion:Emotion.Shame.Regret,temperature:1},
@@ -35,7 +36,7 @@ export default class PullRequestReviewerRemoved extends PullRequestStrategy<'pul
 
 
 
-        const actionContext={emotionMetrics:contextEmotionMetrics,sentiment:sentiment,tags:tags};
+        const actionContext=new ActionContextDTO(contextEmotionMatrix,sentiment,tags);
         const quote: Quote|undefined = QuoteFacade.getInstance().getQuote(actionContext);
         if(quote){
             const comment: Comment = new Comment(quote, caseSlug, actionContext)

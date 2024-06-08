@@ -5,13 +5,14 @@ import { Sentiment } from "../../enums/Sentiment.js";
 import { Emotion } from "../../enums/Emotion.js";
 import Comment from "../../Comment.js";
 import { Quote } from "../../Quote/Quote.js";
+import {ActionContextDTO} from "../../DTO/ActionContextDTO.js";
 
 export default class PullRequestOpenedStrategy extends PullRequestStrategy<'pull_request.opened'> {
     protected async executePrStrategy(ghContext: Context<'pull_request.opened'>,previousPRs:Array<OctokitResponsePullRequest>): Promise<void> {
 
         //CASE: Fresh
         let tags: Array<string> = ['begin', 'start', 'create', 'open'];
-        let contextEmotionMetrics: Emotion.EmotionMatrix = [
+        let contextEmotionMatrix: Emotion.EmotionMatrix = [
             {emotion: Emotion.Joy.Happiness, temperature: 2},
             {emotion: Emotion.Joy.Relief, temperature: 4},
             {emotion: Emotion.Joy.Ecstasy, temperature: 1},
@@ -30,7 +31,7 @@ export default class PullRequestOpenedStrategy extends PullRequestStrategy<'pull
                 //CASE: Re-open, previously merged
                 caseSlug='pr-opened.previously-merged';
                 sentiment=Sentiment.Neutral;
-                contextEmotionMetrics=[
+                contextEmotionMatrix=[
                     {emotion: Emotion.Anger.Irritation, temperature: 2},
                     {emotion: Emotion.Anger.Frustration, temperature: 3},
                     {emotion: Emotion.Shame.Embarrassment, temperature: 5},
@@ -44,7 +45,7 @@ export default class PullRequestOpenedStrategy extends PullRequestStrategy<'pull
                 //CASE: Re-open, previously closed
                 caseSlug='pr-opened.previously-closed';
                 sentiment=Sentiment.Negative;
-                contextEmotionMetrics=[
+                contextEmotionMatrix=[
                     {emotion: Emotion.Anger.Irritation, temperature: 4},
                     {emotion: Emotion.Anger.Frustration, temperature: 5},
                     {emotion: Emotion.Shame.Embarrassment, temperature: 2},
@@ -59,7 +60,7 @@ export default class PullRequestOpenedStrategy extends PullRequestStrategy<'pull
         }
 
 
-        const actionContext={emotionMetrics:contextEmotionMetrics,sentiment:sentiment,tags:tags};
+        const actionContext=new ActionContextDTO(contextEmotionMatrix,sentiment,tags);
         const quote: Quote|undefined = QuoteFacade.getInstance().getQuote(actionContext);
         if(quote){
             const comment: Comment = new Comment(quote, caseSlug, actionContext)

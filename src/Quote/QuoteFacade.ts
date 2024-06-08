@@ -27,16 +27,10 @@ export class QuoteFacade{
         //Case 2: if only slug param is provided, only will filter only by slugs.
 
         //TODO: reactivate .filterByTags(tags)*/
-        //TODO: bug below. If only slugs are provided, it will get mixed with all others.
-
-
 
         let quotes:QuoteCollection;
 
-        if(//Lord forgive me for this dire sin
-            (actionContext?.quoteSlugs?.length??-1) && //has any quoteSlug
-            actionContext.sentiment===null &&
-            actionContext.emotionMetrics.length===0
+        if(actionContext.hasOnlyQuoteSlugs
         ){
             quotes=new QuoteCollection([]);
         }else{
@@ -44,11 +38,12 @@ export class QuoteFacade{
         }
 
 
-        if(actionContext.sentiment!==null){
+        if(actionContext.hasSentiment){
+            //@ts-ignore
             quotes=quotes.filterBySentiment(actionContext.sentiment);
         }
-        if(actionContext.emotionMetrics.length>0){
-            quotes=quotes.filterByEmotionScoreAboveZero(actionContext.emotionMetrics).orderByEmotionScoreDesc(actionContext.emotionMetrics);
+        if(actionContext.hasEmotionMatrix){
+            quotes=quotes.filterByEmotionScoreAboveZero(actionContext.emotionMatrix).orderByEmotionScoreDesc(actionContext.emotionMatrix);
         }
 
         quotes.selectCandidates();

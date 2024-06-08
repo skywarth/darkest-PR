@@ -5,6 +5,7 @@ import {Sentiment} from "../../enums/Sentiment.js";
 import {Quote} from "../../Quote/Quote.js";
 import {QuoteFacade} from "../../Quote/QuoteFacade.js";
 import Comment from "../../Comment.js";
+import {ActionContextDTO} from "../../DTO/ActionContextDTO.js";
 
 
 export default class PullRequestReviewerAdded extends PullRequestStrategy<'pull_request.review_requested'>{
@@ -14,7 +15,7 @@ export default class PullRequestReviewerAdded extends PullRequestStrategy<'pull_
 
 
         let tags: Array<string>=['assignment','review','suggest','request','plea','call','duty','demand','appeal','summon','invoke','invitation','invite','prayer','seek','hero','champion','judge','jury','executioner','audit','inspection','assess','assessment','evaluation','judgement','new','arrive','arrival','fresh','the one','savior','visitor','task','mission','goal'];
-        let contextEmotionMetrics: Emotion.EmotionMatrix=[
+        let contextEmotionMatrix: Emotion.EmotionMatrix=[
             {emotion:Emotion.Interest.Trust,temperature:3},
             {emotion:Emotion.Interest.Friendliness,temperature:4},
             {emotion:Emotion.Fear.Fright,temperature:2},
@@ -28,7 +29,7 @@ export default class PullRequestReviewerAdded extends PullRequestStrategy<'pull_
 
 
 
-        const actionContext={emotionMetrics:contextEmotionMetrics,sentiment:sentiment,tags:tags};
+        const actionContext=new ActionContextDTO(contextEmotionMatrix,sentiment,tags);
         const quote: Quote|undefined = QuoteFacade.getInstance().getQuote(actionContext);
         if(quote){
             const comment: Comment = new Comment(quote, caseSlug, actionContext)

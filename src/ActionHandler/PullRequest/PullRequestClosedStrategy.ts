@@ -6,6 +6,7 @@ import {Quote} from "../../Quote/Quote.js";
 import {QuoteFacade} from "../../Quote/QuoteFacade.js";
 import Comment from "../../Comment.js";
 import {components} from "@octokit/openapi-types";
+import {ActionContextDTO} from "../../DTO/ActionContextDTO.js";
 
 
 export type OctokitResponsePullRequestReview = components["schemas"]["pull-request-review"];//Alternative: RestEndpointMethodTypes["pulls"]["listReviews"]["response"]["data"] using import { RestEndpointMethodTypes } from "@octokit/plugin-rest-endpoint-methods";
@@ -16,7 +17,7 @@ export default class PullRequestClosedStrategy extends PullRequestStrategy<'pull
 
 
         let tags: Array<string>=['close','end','finish',];
-        let contextEmotionMetrics: Emotion.EmotionMatrix;
+        let contextEmotionMatrix: Emotion.EmotionMatrix;
         let caseSlug: string;
         let sentiment :Sentiment;
 
@@ -31,7 +32,7 @@ export default class PullRequestClosedStrategy extends PullRequestStrategy<'pull
         if(ghContext.payload.pull_request.merged){
             //CASE: Merged
             tags=[...tags,'win','won','victory','victorious'];
-            contextEmotionMetrics=[
+            contextEmotionMatrix=[
                 {emotion: Emotion.Joy.Relief, temperature: 2},
                 {emotion: Emotion.Joy.Happiness, temperature: 4},
                 {emotion: Emotion.Joy.Enjoyment, temperature: 3},
@@ -41,8 +42,8 @@ export default class PullRequestClosedStrategy extends PullRequestStrategy<'pull
                 //CASE: Long discussion/review
                 caseSlug='pr-closed.merged.many-reviews';
                 tags=[...tags,'finally','at last','executed','destroyed','glorious','victorious','victory','relief','unwavering','unyielding','champion','comeback','improvement','revival','resurgence'];
-                contextEmotionMetrics=[
-                    ...contextEmotionMetrics,
+                contextEmotionMatrix=[
+                    ...contextEmotionMatrix,
                     {emotion: Emotion.Joy.Relief, temperature: 5},
                     {emotion: Emotion.Joy.Thrill, temperature: 3},
                     {emotion: Emotion.Joy.Ecstasy, temperature: 4},
@@ -54,8 +55,8 @@ export default class PullRequestClosedStrategy extends PullRequestStrategy<'pull
                 //CASE: Short discussion/review
                 caseSlug='pr-closed.merged.few-reviews';
                 tags=[...tags,'confidence','easy','kicked','easily','defeated','professional','masterfully','talented','keen','learn','clever','quick','fast','haste'];
-                contextEmotionMetrics=[
-                    ...contextEmotionMetrics,
+                contextEmotionMatrix=[
+                    ...contextEmotionMatrix,
                     {emotion: Emotion.Joy.Relief, temperature: 1},
                     {emotion: Emotion.Joy.Ecstasy, temperature: 5},
                     {emotion: Emotion.Joy.Enjoyment, temperature: 4},
@@ -69,8 +70,8 @@ export default class PullRequestClosedStrategy extends PullRequestStrategy<'pull
                 //CASE: No discussion/review
                 caseSlug='pr-closed.merged.no-review';
                 tags=[...tags,'easy','easily','professional','masterfully','talented','keen','learn','clever','quick','fast','haste','destroyed','obliterated','god','godlike','overconfidence','trust','renown','honor','glory','confidence','greatness','owned','smart','incredible','unbelievable','extraordinary'];
-                contextEmotionMetrics=[
-                    ...contextEmotionMetrics,
+                contextEmotionMatrix=[
+                    ...contextEmotionMatrix,
                     {emotion: Emotion.Joy.Ecstasy, temperature: 2},
                     {emotion: Emotion.Joy.Enjoyment, temperature: 5},
                     {emotion: Emotion.Joy.Happiness, temperature: 3},
@@ -83,7 +84,7 @@ export default class PullRequestClosedStrategy extends PullRequestStrategy<'pull
         }else{
             //CASE: Not merged
             tags=[...tags,'fail','failure','reject','denied','cancel'];
-            contextEmotionMetrics=[
+            contextEmotionMatrix=[
                 {emotion: Emotion.Anger.Rage, temperature: 3},
                 {emotion: Emotion.Anger.Irritation, temperature: 4},
                 {emotion: Emotion.Sadness.Grief, temperature: 1},
@@ -96,8 +97,8 @@ export default class PullRequestClosedStrategy extends PullRequestStrategy<'pull
                 //CASE: Long discussion/review
                 caseSlug='pr-closed.not-merged.many-reviews';
                 tags=[...tags,'effort','investment','time','support','alter','change','help','attempt','battle','struggle','labor','stress','strain','too much','exhaustion','cannot','impossible','despair','fed up','enough']
-                contextEmotionMetrics=[
-                    ...contextEmotionMetrics,
+                contextEmotionMatrix=[
+                    ...contextEmotionMatrix,
                     {emotion: Emotion.Anger.Fury, temperature: 5},
                     {emotion: Emotion.Fear.Terror, temperature: 3},
                     {emotion: Emotion.Shame.Embarrassment, temperature:5},
@@ -107,8 +108,8 @@ export default class PullRequestClosedStrategy extends PullRequestStrategy<'pull
                 //CASE: Short discussion/review
                 caseSlug='pr-closed.not-merged.few-reviews';
                 tags=[...tags,'disbelief','cancel','ignore','unfaithful','neglect','overlook','scorn','avoid','evade','evasion'];
-                contextEmotionMetrics=[
-                    ...contextEmotionMetrics,
+                contextEmotionMatrix=[
+                    ...contextEmotionMatrix,
                     {emotion: Emotion.Disgust.Contempt, temperature: 4},
                     {emotion: Emotion.Fear.Anxiety, temperature: 3},
                     {emotion: Emotion.Sadness.Melancholy, temperature: 2},
@@ -118,8 +119,8 @@ export default class PullRequestClosedStrategy extends PullRequestStrategy<'pull
                 //CASE: No discussion/review
                 caseSlug='pr-closed.not-merged.no-review';
                 tags=[...tags,'ignore','overlook','scorn','avoid','evade','evasion','abandon','disregard','disrespect','contempt','neglect','negligence','oversight','disfavor','oblivion','silence','abyss','void','conspiracy','betrayal','distrust']
-                contextEmotionMetrics=[
-                    ...contextEmotionMetrics,
+                contextEmotionMatrix=[
+                    ...contextEmotionMatrix,
                     {emotion: Emotion.Disgust.Contempt, temperature: 3},
                     {emotion: Emotion.Anger.Wrath, temperature: 4},
                     {emotion: Emotion.Sadness.Melancholy, temperature:4},
@@ -132,8 +133,8 @@ export default class PullRequestClosedStrategy extends PullRequestStrategy<'pull
             if(previousPRs.length>0){
                 caseSlug='pr-closed.not-merged.previously-closed';
                 tags=[...tags,'retry','attempt','try','again','hopeless','endless','cycle','unending','despair','conspiracy','betrayal','distrust'];
-                contextEmotionMetrics=[
-                    ...contextEmotionMetrics,
+                contextEmotionMatrix=[
+                    ...contextEmotionMatrix,
                     {emotion: Emotion.Sadness.Despair, temperature: 5},
                 ]
             }
@@ -145,7 +146,7 @@ export default class PullRequestClosedStrategy extends PullRequestStrategy<'pull
         //const map = new Map(all_filter_ids.map(pos => [pos.id, pos]));
         // const uniques = [...map.values()];
 
-        const actionContext={emotionMetrics:contextEmotionMetrics,sentiment:sentiment,tags:tags};
+        const actionContext=new ActionContextDTO(contextEmotionMatrix,sentiment,tags);
         const quote: Quote|undefined = QuoteFacade.getInstance().getQuote(actionContext);
         if(quote){
             const comment: Comment = new Comment(quote, caseSlug, actionContext)

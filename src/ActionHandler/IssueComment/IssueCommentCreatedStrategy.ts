@@ -8,7 +8,7 @@ import IssueCommentStrategy from "./IssueCommentStrategy.js";
 import * as cheerio from 'cheerio';
 import {marked} from "marked";
 import sanitizeHtml from 'sanitize-html';
-import {ActionContextDTO, actionContextFromPartial} from "../../DTO/ActionContextDTO.js";
+import {ActionContextDTO} from "../../DTO/ActionContextDTO.js";
 import {Config} from "../../Config.js";
 
 
@@ -25,7 +25,7 @@ export default class IssueCommentCreatedStrategy extends IssueCommentStrategy<'i
         console.log('in');
 
         let tags: Array<string>=['comment','create','new','narrative','narrate','criticism','collaborate','discussion','whisper','conspiracy','mention','note','opinion','remark','summon'];
-        let contextEmotionMetrics: Emotion.EmotionMatrix=[];
+        let contextEmotionMatrix: Emotion.EmotionMatrix=[];
         let caseSlug: string;
         let sentiment :Sentiment|null=null;
 
@@ -52,7 +52,7 @@ export default class IssueCommentCreatedStrategy extends IssueCommentStrategy<'i
         });
         const dataRaw:Partial<ActionContextDTO>=JSON.parse(matchingJsonString??'{}');
 
-        const actionContext:ActionContextDTO=matchingJsonString? actionContextFromPartial(dataRaw): {emotionMetrics:contextEmotionMetrics,sentiment:sentiment,tags:tags};
+        const actionContext:ActionContextDTO=matchingJsonString? new ActionContextDTO(dataRaw.emotionMatrix,dataRaw.sentiment,dataRaw.tags,dataRaw.quoteSlugs): new ActionContextDTO(contextEmotionMatrix,sentiment,tags);
 
         if(matchingJsonString){
             caseSlug='issue-comment.created.bot-tagged.param-provided';
