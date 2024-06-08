@@ -1,5 +1,5 @@
 import QuoteRepository from "./QuoteRepository.js";
-import {Quote} from "./Quote.js";
+import {Quote, QuoteCollection} from "./Quote.js";
 import {ActionContextDTO} from "../DTO/ActionContextDTO.js";
 
 export class QuoteFacade{
@@ -20,12 +20,28 @@ export class QuoteFacade{
         return this.#instance;
     }
 
-    // @ts-ignore
-    //TODO: remove ignore
+
     getQuote(actionContext:ActionContextDTO):Quote|undefined{
 
+        //Case 1: if any other parameter along with slugs are provided: slugs and other filters will be applied separately and later be merged.
+        //Case 2: if only slug param is provided, only will filter only by slugs.
+
         //TODO: reactivate .filterByTags(tags)*/
-        let quotes=QuoteFacade.#quoteRepository.index();
+        //TODO: bug below. If only slugs are provided, it will get mixed with all others.
+
+
+
+        let quotes:QuoteCollection;
+
+        if(//Lord forgive me for this dire sin
+            (actionContext?.quoteSlugs?.length??-1) && //has any quoteSlug
+            actionContext.sentiment===null &&
+            actionContext.emotionMetrics.length===0
+        ){
+            quotes=new QuoteCollection([]);
+        }else{
+            quotes=QuoteFacade.#quoteRepository.index();
+        }
 
 
         if(actionContext.sentiment!==null){
@@ -35,10 +51,7 @@ export class QuoteFacade{
             quotes=quotes.filterByEmotionScoreAboveZero(actionContext.emotionMetrics).orderByEmotionScoreDesc(actionContext.emotionMetrics);
         }
 
-        /*quotes.data.forEach(x=>console.log(x.getJSON(emotionMetrics)));
-        console.log('PPP');*/
-        //console.info(quotes.data.map(x=>x.getJSON()));
-
+        quotes.selectCandidates();
 
 
         if((actionContext?.quoteSlugs?.length??-1)>0){//Damn this is ugly as hell
@@ -46,7 +59,8 @@ export class QuoteFacade{
             quotes.merge(quotesBySlug);
         }
 
-        return quotes.randomApplicable;
+
+        return quotes.shuffle().data[0];
     }
 
     getQuoteBySlug(slug:string):Quote|undefined{

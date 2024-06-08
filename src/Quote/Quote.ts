@@ -93,6 +93,8 @@ export class QuoteCollection{
         return this.data.find(q=>q.slug===slug);
     }
 
+    //TODO: Consider adjusting the original array/instance rather than creating new
+
     public orderByEmotionScoreDesc(emotionMetrics:Array<Emotion.EmotionMetric>):QuoteCollection{
 
         //return new QuoteCollection([...this.data].sort((x:Quote)=>x.getEmotionScore(emotionMetrics)).reverse());
@@ -132,6 +134,25 @@ export class QuoteCollection{
         this.#quotes =[...new Map(mergedArr.map(q=>[q.slug,q])).values()];
         return this;
     }
+
+    public shuffle():QuoteCollection{
+        this.#quotes=Utils.shuffleArray(this.#quotes);
+        return this;
+    }
+
+    public selectCandidates():QuoteCollection{
+        const divisionModifier:number=3;
+        const originalAmount=this.data.length;
+        const candidateCount:number=(Math.round(originalAmount/divisionModifier))>=2?(originalAmount/divisionModifier):originalAmount;
+        this.#quotes=this.data.splice(0,candidateCount);
+        return this;
+    }
+
+    public first():Quote|undefined{
+        return this.data[0];
+    }
+
+
 
     public get randomApplicable():Quote|undefined{
         const divisionModifier:number=3;
