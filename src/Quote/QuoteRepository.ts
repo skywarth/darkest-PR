@@ -78,7 +78,7 @@ export default class QuoteRepository{
 
 
     public index(): QuoteCollection {
-        return this.#quotes;
+        return this.#quotes.clone();
     }
 
     public find(slug:string):Quote | undefined{

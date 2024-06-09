@@ -40,10 +40,10 @@ export class QuoteFacade{
 
         if(actionContext.hasSentiment){
             //@ts-ignore
-            quotes=quotes.filterBySentiment(actionContext.sentiment);
+            quotes.filterBySentiment(actionContext.sentiment);
         }
         if(actionContext.hasEmotionMatrix){
-            quotes=quotes.filterByEmotionScoreAboveZero(actionContext.emotionMatrix).orderByEmotionScoreDesc(actionContext.emotionMatrix);
+            quotes.filterByEmotionScoreAboveZero(actionContext.emotionMatrix).orderByEmotionScoreDesc(actionContext.emotionMatrix);
         }
 
         quotes.selectCandidates();
@@ -55,7 +55,7 @@ export class QuoteFacade{
         }
 
 
-        return quotes.shuffle().data[0];
+        return quotes.shuffle().first();
     }
 
     getQuoteBySlug(slug:string):Quote|undefined{

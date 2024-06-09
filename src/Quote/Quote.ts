@@ -93,39 +93,44 @@ export class QuoteCollection{
         return this.data.find(q=>q.slug===slug);
     }
 
-    //TODO: Consider adjusting the original array/instance rather than creating new
+    public clone(){
+        return new QuoteCollection(this.data);//Consider deep cloning
+    }
+
 
     public orderByEmotionScoreDesc(emotionMetrics:Emotion.EmotionMatrix):QuoteCollection{
 
         //return new QuoteCollection([...this.data].sort((x:Quote)=>x.getEmotionScore(emotionMetrics)).reverse());
-        return new QuoteCollection([...this.data].sort(function (q1:Quote,q2:Quote){
+        this.#quotes.sort(function (q1:Quote,q2:Quote){
             //descending order
             return q2.getEmotionScore(emotionMetrics)-q1.getEmotionScore(emotionMetrics);
-        }));
+        });
+        return this;
     }
 
     public filterByEmotionScoreAboveZero(emotions:Emotion.EmotionMatrix):QuoteCollection{
-        const scoreApplicable=this.data.filter(q=>(q.getEmotionScore(emotions)>0));//TODO: simplify later
-        /*console.log('***filter result start***');
-        scoreApplicable.forEach(x=>console.log(x.getJSON(emotions)));
-        console.log('***filter result end***');*/
-        return new QuoteCollection(scoreApplicable);
+        this.#quotes=this.data.filter(q=>(q.getEmotionScore(emotions)>0));
+        return this;
     }
 
     public filterByEmotions(emotions:Array<Emotion.Types>):QuoteCollection{
-        return new QuoteCollection(this.data.filter(q=>q.hasEmotions(emotions)));
+        this.#quotes=this.data.filter(q=>q.hasEmotions(emotions));
+        return this;
     }
 
     public filterByTags(tags:Array<string>):QuoteCollection{
-        return new QuoteCollection(this.data.filter(q=>q.hasTags(tags)));
+        this.#quotes=this.data.filter(q=>q.hasTags(tags));
+        return this;
     }
 
     public filterBySentiment(sentiment:Sentiment):QuoteCollection{
-        return new QuoteCollection(this.data.filter(q=>(q.sentiment===sentiment)));
+        this.#quotes=this.data.filter(q=>(q.sentiment===sentiment));
+        return this;
     }
 
     public filterBySlugs(slugs:Array<string>):QuoteCollection{
-        return new QuoteCollection(this.data.filter(q=>slugs.includes(q.slug)));
+        this.#quotes=this.data.filter(q=>slugs.includes(q.slug));
+        return this;
     }
 
     public merge(quoteCollection:QuoteCollection):QuoteCollection{
