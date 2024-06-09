@@ -67,11 +67,8 @@ Could be applied, would be decent in future expansion:
     - [X] No input package param provided
     - [X] Input package param provided
     - [X] Partial input package param provided
-- [ ] [CRUCIBLE] Context aware dynamic quotes
-  - Replacing pronouns with respective usernames
-    - By parameter
-    - By context
-- [ ] Refactor comment create action
+
+
 
 ## Tagging Input 
 
@@ -116,7 +113,12 @@ Hey ancestor @Darkest-PR, give me a cool line!
 
 ## Roadmap
 
-- Including voice lines as sound file to comments
+- [ ] Including voice lines as sound file to comments
+- [ ] Refactor comment create action
+- [ ] [CRUCIBLE] Context aware dynamic quotes
+  - Replacing pronouns with respective usernames
+    - By parameter
+    - By context
 
 
 ## Notes to self
