@@ -40,6 +40,13 @@ export default class Utils{
             .map(line => line.trimStart())
             .join('\n');
     }
+
+    public static toBlockquote(content: string): string {
+        return content
+            .split('\n')
+            .map(line => `> ${line}`)
+            .join('\n');
+    }
 }
 
 

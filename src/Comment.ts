@@ -3,18 +3,27 @@ import {Emotion} from "./enums/Emotion";
 import {Config} from "./Config.js";
 import {ActionContextDTO} from "./DTO/ActionContextDTO.js";
 import Utils from "./Utils.js";
+import {getSentimentIcon} from "./enums/Sentiment.js";
+
+export type ReplyContext={
+    replyToUsername:string,
+    replyingToMessage:string
+}
+
 
 export default class Comment{
     #quote:Quote;
     #caseSlug:string;
     #actionContext:ActionContextDTO;
     #warnings:Array<string>;
+    #replyToContext:ReplyContext|null;
 
-    constructor(quote: Quote,caseSlug:string,actionContext:ActionContextDTO,warnings:Array<string>=[]) {
+    constructor(quote: Quote,caseSlug:string,actionContext:ActionContextDTO,replyToContext:ReplyContext|null=null,warnings:Array<string>=[]) {
         this.#quote = quote;
         this.#caseSlug=caseSlug;
         this.#actionContext=actionContext;
         this.#warnings=warnings;
+        this.#replyToContext=replyToContext;
     }
 
 
@@ -23,7 +32,7 @@ export default class Comment{
     }
 
     get quoteTextFormatted():string{
-        return `> *${this.quote.text}*`
+        return `### ${getSentimentIcon(this.quote.sentiment)} <mark>***${this.quote.text}***</mark>`
     }
 
 
@@ -37,6 +46,24 @@ export default class Comment{
     }
 
 
+    get replyToContext(): ReplyContext | null {
+        return this.#replyToContext;
+    }
+
+    get replyToContextFormatted():string{
+        let str=`
+        Replying to: @${this.replyToContext?.replyToUsername} \n \n
+        <details>
+            <summary>Original message</summary>
+            
+            ${Utils.toBlockquote(this.replyToContext?.replyingToMessage??'')}
+            
+        </details>
+        `
+        str=Utils.removeLeadingWhitespaces(str);
+        return str;
+    }
+
     get warnings(): Array<string> {
         return this.#warnings;
     }
@@ -46,7 +73,11 @@ export default class Comment{
     }
 
     get body():string{
-        let body=this.quoteTextFormatted+'\n';
+        let body='';
+        if(this.replyToContext){
+            body+=this.replyToContextFormatted+` \n<br> \n\n`;
+        }
+        body+=this.quoteTextFormatted+'\n';
 
         if(this.warnings.length>0){
             body+=Utils.removeLeadingWhitespaces(

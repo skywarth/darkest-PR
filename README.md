@@ -115,6 +115,9 @@ Hey ancestor @Darkest-PR, give me a cool line!
 
 - [ ] Including voice lines as sound file to comments
 - [ ] Refactor comment create action
+- [ ] Config
+  - [X] Env
+  - [ ] Repository
 - [ ] [CRUCIBLE] Context aware dynamic quotes
   - Replacing pronouns with respective usernames
     - By parameter
