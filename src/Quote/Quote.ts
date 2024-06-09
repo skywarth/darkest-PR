@@ -158,16 +158,4 @@ export class QuoteCollection{
     }
 
 
-
-    public get randomApplicable():Quote|undefined{
-        const divisionModifier:number=3;
-        const originalAmount=this.data.length;
-        const applicableCount:number=(Math.round(originalAmount/divisionModifier))>=2?(originalAmount/divisionModifier):originalAmount;
-        //TODO: bug below, there could not be ordering at all. Maybe we should separate choosing applicables and randoming stuff?
-        const applicables=Utils.shuffleArray([...this.data].splice(0,applicableCount));//TODO: simplify with below
-        //applicables.forEach(x=>console.log(x.getJSON()));
-        return applicables[0];
-    }
-
-
 }
