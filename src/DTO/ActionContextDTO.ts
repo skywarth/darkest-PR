@@ -3,7 +3,7 @@ import {Sentiment} from "../enums/Sentiment.js";
 
 /*
 export interface ActionContextDTO{
-    readonly emotionMetrics: Emotion.EmotionMatrix,
+    readonly emotionMatrix: Emotion.EmotionMatrix,
     readonly sentiment:Sentiment|null,
     readonly tags:Array<string>
     readonly quoteSlugs?:Array<string>,

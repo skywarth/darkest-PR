@@ -84,7 +84,7 @@ Hey ancestor @Darkest-PR, give me a cool line!
 {
   "identifier":"Darkest-PR-input-package",
   "sentiment": "Negative",
-  "emotionMetrics": [
+  "emotionMatrix": [
     {
       "emotion": "Frustration",
       "temperature": 4

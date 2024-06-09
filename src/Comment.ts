@@ -71,7 +71,7 @@ export default class Comment{
             - Slug: ${this.caseSlug}
             ### Quote
             - Slug: \`${this.quote.slug}\`
-            - Emotions: \`${JSON.stringify(this.quote.emotionMetrics)}\`
+            - Emotions: \`${JSON.stringify(this.quote.emotionMatrix)}\`
             ### ActionContext
             - Context: \`${JSON.stringify(this.actionContext)}\`
             ---

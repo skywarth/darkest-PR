@@ -6,16 +6,16 @@ export class Quote{
     #text:string;
     #slug:string;
     #tags:Array<string>;
-    #emotionMetrics:Emotion.EmotionMatrix
+    #emotionMatrix:Emotion.EmotionMatrix
     #sentiment: Sentiment;
 
 
-    constructor(text: string, slug: string, sentiment:Sentiment, emotionMetrics:Emotion.EmotionMatrix, tags: Array<string>) {
+    constructor(text: string, slug: string, sentiment:Sentiment, emotionMatrix:Emotion.EmotionMatrix, tags: Array<string>) {
         this.#text = text;
         this.#slug = slug;
         this.#tags = tags;
         this.#sentiment=sentiment;
-        this.#emotionMetrics=emotionMetrics;
+        this.#emotionMatrix=emotionMatrix;
     }
 
 
@@ -32,8 +32,8 @@ export class Quote{
     }
 
 
-    get emotionMetrics(): Emotion.EmotionMatrix {
-        return this.#emotionMetrics;
+    get emotionMatrix(): Emotion.EmotionMatrix {
+        return this.#emotionMatrix;
     }
 
     get tags(): Array<string> {
@@ -42,20 +42,20 @@ export class Quote{
 
 
     public hasEmotions(emotions:Array<Emotion.Types>):boolean{
-        return emotions.every(e=>this.emotionMetrics.map(emotionMetric=>emotionMetric.emotion).includes(e));
+        return emotions.every(e=>this.emotionMatrix.map(emotionMetric=>emotionMetric.emotion).includes(e));
     }
 
     public hasTags(tags:Array<string>):boolean{
         return tags.every(t=>this.tags.includes(t));
     }
 
-    public getEmotionScore(emotionMetrics:Emotion.EmotionMatrix):number{
+    public getEmotionScore(emotionMatrix:Emotion.EmotionMatrix):number{
 
         let scoreSum=0;
         const outerThis=this;
-        emotionMetrics.forEach(function(emotionMetric:Emotion.EmotionMetric){
+        emotionMatrix.forEach(function(emotionMetric:Emotion.EmotionMetric){
             const multiplier=emotionMetric.temperature;
-            let temperature=outerThis.emotionMetrics.find(x=>x.emotion===emotionMetric.emotion)?.temperature??0;
+            let temperature=outerThis.emotionMatrix.find(x=>x.emotion===emotionMetric.emotion)?.temperature??0;
             scoreSum+=(multiplier*temperature);
         });
         //console.log(this.getJSON());
@@ -63,11 +63,11 @@ export class Quote{
 
     }
 
-    public getJSON(emotionMetrics:Emotion.EmotionMatrix=[]):string{//TODO: rudimentary, remove or adjust
+    public getJSON(emotionMatrix:Emotion.EmotionMatrix=[]):string{//TODO: rudimentary, remove or adjust
         return JSON.stringify({
             slug:this.slug,
-            emotionMetrics:this.emotionMetrics,
-            emotionScore:this.getEmotionScore(emotionMetrics)
+            emotionMatrix:this.emotionMatrix,
+            emotionScore:this.getEmotionScore(emotionMatrix)
 
         })
     }
@@ -98,12 +98,12 @@ export class QuoteCollection{
     }
 
 
-    public orderByEmotionScoreDesc(emotionMetrics:Emotion.EmotionMatrix):QuoteCollection{
+    public orderByEmotionScoreDesc(emotionMatrix:Emotion.EmotionMatrix):QuoteCollection{
 
-        //return new QuoteCollection([...this.data].sort((x:Quote)=>x.getEmotionScore(emotionMetrics)).reverse());
+        //return new QuoteCollection([...this.data].sort((x:Quote)=>x.getEmotionScore(emotionMatrix)).reverse());
         this.#quotes.sort(function (q1:Quote,q2:Quote){
             //descending order
-            return q2.getEmotionScore(emotionMetrics)-q1.getEmotionScore(emotionMetrics);
+            return q2.getEmotionScore(emotionMatrix)-q1.getEmotionScore(emotionMatrix);
         });
         return this;
     }
