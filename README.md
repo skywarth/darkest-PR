@@ -145,6 +145,10 @@ Probot basically runs this in the background (when you?) start the app in local
 - https://docs.github.com/en/webhooks/webhook-events-and-payloads#issues
 - https://octokit.github.io/rest.js/v20#pulls
 
+### Building GitHub Bot resources
+
+- https://www.geeksforgeeks.org/making-a-github-bot/
+
 ### Blunder of imports
 
 Node.js refuses to allow extensionless imports, e.g: `import {QuoteFacade} from "./QuoteFacade";`
