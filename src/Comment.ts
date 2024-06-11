@@ -1,9 +1,9 @@
 import {Quote} from "./Quote/Quote.js";
 import {Emotion} from "./enums/Emotion";
-import {Config} from "./Config.js";
 import {ActionContextDTO} from "./DTO/ActionContextDTO.js";
 import Utils from "./Utils.js";
 import {getSentimentIcon} from "./enums/Sentiment.js";
+import {RepositoryConfig} from "./Config/RepositoryConfig.js";
 
 export type ReplyContext={
     replyToUsername:string,
@@ -45,6 +45,10 @@ export default class Comment{
         return this.#actionContext;
     }
 
+
+    get debugMode(): boolean {
+        return RepositoryConfig.getInstance().debug_mode;
+    }
 
     get replyToContext(): ReplyContext | null {
         return this.#replyToContext;
@@ -94,7 +98,7 @@ export default class Comment{
                 `);
         }
 
-        if(Config.debug_mode){
+        if(this.debugMode){
             const debugText= Utils.removeLeadingWhitespaces(`
             ---
             Debug:

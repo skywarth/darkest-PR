@@ -159,3 +159,8 @@ Therefor you have to add `.js` extension to each import. Which is looking very d
 - https://stackoverflow.com/questions/72491392/when-do-we-need-to-add-file-extension-when-importing-javascript-modules
 
 Ridiculous.
+
+
+### Reasons to hate Typescript
+
+- TS2590: Expression produces a union type that is too complex to represent.

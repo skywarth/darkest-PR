@@ -9,7 +9,7 @@ import * as cheerio from 'cheerio';
 import {marked} from "marked";
 import sanitizeHtml from 'sanitize-html';
 import {ActionContextDTO} from "../../DTO/ActionContextDTO.js";
-import {Config} from "../../Config.js";
+import {BotConfig} from "../../Config/BotConfig.js";
 
 
 
@@ -43,7 +43,7 @@ export default class IssueCommentCreatedStrategy extends IssueCommentStrategy<'i
             try {
                 //inputPackageDetected=codeText.includes('Darkest-PR-input-package');
                 const data = JSON.parse(codeText);
-                return data.identifier===`${Config.bot_name}-input-package`;
+                return data.identifier.toLowerCase()===`${BotConfig.getInstance().bot_name}-input-package`.toLowerCase();
                 //return jsonData.identifier === "Darkest-PR-input-package";
             } catch (error) {
                 //TODO: move warning messages to appropriate place, maybe exception class?

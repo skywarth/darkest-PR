@@ -1,7 +1,7 @@
 import ActionHandlerStrategy from "../ActionHandlerStrategy.js";
 import { Context } from "probot";
 import {EmitterWebhookEventName} from "@octokit/webhooks/dist-types/types";
-import {Config} from "../../Config.js";
+import {BotConfig} from "../../Config/BotConfig.js";
 
 
 
@@ -12,7 +12,7 @@ export default abstract class IssueCommentStrategy<T extends EmitterWebhookEvent
         const payload = ghContext.payload as Context<'issue_comment'>['payload'];
 
         //Move to IssueCommentCreatedStrategy if the cases expand
-        if(payload.comment.body.toLowerCase().includes(`@${Config.bot_name.toLowerCase()}`)){//Checking whether the bot is tagged or not
+        if(payload.comment.body.toLowerCase().includes(`@${BotConfig.getInstance().bot_name.toLowerCase()}`)){//Checking whether the bot is tagged or not
             return this.executeIssueCommentStrategy(ghContext);
         }
 
