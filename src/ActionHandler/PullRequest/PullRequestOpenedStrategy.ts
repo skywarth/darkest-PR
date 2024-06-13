@@ -6,8 +6,14 @@ import { Emotion } from "../../enums/Emotion.js";
 import Comment from "../../Comment.js";
 import { Quote } from "../../Quote/Quote.js";
 import {ActionContextDTO} from "../../DTO/ActionContextDTO.js";
+import {EmitterWebhookEventName} from "@octokit/webhooks/dist-types/types";
 
 export default class PullRequestOpenedStrategy extends PullRequestStrategy<'pull_request.opened'> {
+
+    protected getEventName(): EmitterWebhookEventName {
+        return "pull_request.opened";
+    }
+
     protected async executePrStrategy(ghContext: Context<'pull_request.opened'>,previousPRs:Array<OctokitResponsePullRequest>): Promise<void> {
 
         //CASE: Fresh

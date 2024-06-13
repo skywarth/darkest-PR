@@ -7,12 +7,18 @@ import {QuoteFacade} from "../../Quote/QuoteFacade.js";
 import Comment from "../../Comment.js";
 import {components} from "@octokit/openapi-types";
 import {ActionContextDTO} from "../../DTO/ActionContextDTO.js";
+import {EmitterWebhookEventName} from "@octokit/webhooks/dist-types/types";
 
 
 export type OctokitResponsePullRequestReview = components["schemas"]["pull-request-review"];//Alternative: RestEndpointMethodTypes["pulls"]["listReviews"]["response"]["data"] using import { RestEndpointMethodTypes } from "@octokit/plugin-rest-endpoint-methods";
 
 
 export default class PullRequestClosedStrategy extends PullRequestStrategy<'pull_request.closed'>{
+
+    protected getEventName(): EmitterWebhookEventName {
+        return "pull_request.closed";
+    }
+
     protected async executePrStrategy(ghContext: Context<'pull_request.closed'>,previousPRs:Array<OctokitResponsePullRequest>): Promise<void> {
 
 

@@ -1,22 +1,24 @@
 import {EmitterWebhookEventName} from "@octokit/webhooks/dist-types/types";
-import {BotConfig} from "../BotConfig";
+import {BotConfig} from "../BotConfig.js";
+import {RepositoryConfig} from "../RepositoryConfig.js";
 
 export interface EventSubscriptionHandler {
 
     handle(eventSlug:EmitterWebhookEventName):boolean;
     set nextHandler(next:EventSubscriptionHandler);
+    get nextHandler():EventSubscriptionHandler|undefined;
 }
 
-export abstract class BaseEventSubscriptionHandler implements EventSubscriptionHandler{
+abstract class BaseEventSubscriptionHandler implements EventSubscriptionHandler{
 
-    #nextHandler:EventSubscriptionHandler;
+    #nextHandler:EventSubscriptionHandler|undefined;
 
 
-    constructor(nextHandler: EventSubscriptionHandler) {
+    constructor(nextHandler: EventSubscriptionHandler|undefined=undefined) {
         this.#nextHandler = nextHandler;
     }
 
-    get nextHandler(): EventSubscriptionHandler {
+    get nextHandler(): EventSubscriptionHandler|undefined {
         return this.#nextHandler;
     }
 
@@ -25,27 +27,29 @@ export abstract class BaseEventSubscriptionHandler implements EventSubscriptionH
     }
 
     handle(eventSlug: EmitterWebhookEventName): boolean {
-        if(this.execute(eventSlug)){
+        const result=this.execute(eventSlug);
+        if(result && this.nextHandler){
             return this.nextHandler.handle(eventSlug);
+        }else{
+            return result;
         }
-        return false;
     }
 
-    abstract execute(eventSlug:EmitterWebhookEventName):boolean;
+    protected abstract execute(eventSlug:EmitterWebhookEventName):boolean;
 
 
 }
 
-class BotConfigEventSubsHandler extends BaseEventSubscriptionHandler{
+export class BotConfigEventSubsHandler extends BaseEventSubscriptionHandler{
 
-    execute(eventSlug: EmitterWebhookEventName): boolean {
+    protected execute(eventSlug: EmitterWebhookEventName): boolean {
         return BotConfig.getInstance().isEventSubscriptionEnabled(eventSlug);
     }
 }
 
-class RepositoryConfigEventSubsHandler extends BaseEventSubscriptionHandler{
+export class RepositoryConfigEventSubsHandler extends BaseEventSubscriptionHandler{
 
-    execute(eventSlug: EmitterWebhookEventName): boolean {
-        return BotConfig.getInstance().isEventSubscriptionEnabled(eventSlug);
+    protected execute(eventSlug: EmitterWebhookEventName): boolean {
+        return RepositoryConfig.getInstance().isEventSubscriptionEnabled(eventSlug);
     }
 }

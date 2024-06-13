@@ -6,9 +6,15 @@ import {QuoteFacade} from "../../Quote/QuoteFacade.js";
 import Comment from "../../Comment.js";
 import PullRequestReviewStrategy from "./PullRequestReviewStrategy.js";
 import {ActionContextDTO} from "../../DTO/ActionContextDTO.js";
+import {EmitterWebhookEventName} from "@octokit/webhooks/dist-types/types";
 
 
 export default class PullRequestReviewSubmittedStrategy extends PullRequestReviewStrategy<'pull_request_review.submitted'>{
+
+    protected getEventName(): EmitterWebhookEventName {
+        return "pull_request_review.submitted";
+    }
+
 
     protected async executePrReviewStrategy(ghContext: Context<'pull_request_review.submitted'>): Promise<void> {
 

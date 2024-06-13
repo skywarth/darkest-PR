@@ -10,6 +10,7 @@ import {marked} from "marked";
 import sanitizeHtml from 'sanitize-html';
 import {ActionContextDTO} from "../../DTO/ActionContextDTO.js";
 import {BotConfig} from "../../Config/BotConfig.js";
+import {EmitterWebhookEventName} from "@octokit/webhooks/dist-types/types";
 
 
 
@@ -19,6 +20,11 @@ import {BotConfig} from "../../Config/BotConfig.js";
 
 
 export default class IssueCommentCreatedStrategy extends IssueCommentStrategy<'issue_comment.created'>{
+
+
+    protected getEventName(): EmitterWebhookEventName {
+        return "issue_comment.created";
+    }
 
     protected async executeIssueCommentStrategy(ghContext: Context<'issue_comment.created'>): Promise<void> {
 

@@ -30,6 +30,8 @@ Applied and active:
 - Strategy pattern
 - Singleton pattern
 - Facade pattern
+- Chain of Responsibility pattern
+  - I'll admit it's a bit forced, just wanted to implement it for the purpose of practice
 
 Could be applied, would be decent in future expansion:
 - Factory or Abstract factory pattern, for strategies 
@@ -40,6 +42,7 @@ Could be applied, would be decent in future expansion:
   - Fresh PR
   - Re-open of PR after previous one gets cancelled
   - Re-open of PR after previous one gets approved and merged
+  - [ ] Includes: merge conflict
 - [X] PR closed
   - [X] No merge
     - No discussion/review
@@ -67,6 +70,7 @@ Could be applied, would be decent in future expansion:
     - [X] No input package param provided
     - [X] Input package param provided
     - [X] Partial input package param provided
+
 
 
 
