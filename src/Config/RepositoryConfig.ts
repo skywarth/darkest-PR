@@ -1,10 +1,18 @@
 import {Context} from "probot";
+import {EmitterWebhookEventName} from "@octokit/webhooks/dist-types/types";
+import {EventSubscriptionsDTO} from "../DTO/EventSubscriptionsDTO.js";
+import {HasEventSubscriptions} from "./HasEventSubscriptions.js";
 
-export class RepositoryConfig{
+
+
+
+
+export class RepositoryConfig implements HasEventSubscriptions{
     static #CONFIG_PATH='.darkest-pr.json';
 
     #debug_mode:boolean
     #emojis:boolean
+    #event_subscriptions: EventSubscriptionsDTO;
     //options for enable/disable actions
 
     static #instance:RepositoryConfig;
@@ -12,6 +20,7 @@ export class RepositoryConfig{
     private constructor(conf:Partial<RepositoryConfig>) {
         this.#debug_mode = conf.debug_mode??false;
         this.#emojis = conf.emojis??true;
+        this.#event_subscriptions=conf.event_subscriptions?? {};
     }
 
     public static getInstance():RepositoryConfig{
@@ -59,5 +68,20 @@ export class RepositoryConfig{
 
     get emojis(): boolean {
         return this.#emojis;
+    }
+
+
+    get defaultEventSubscription():boolean{
+        return true;
+    }
+
+
+    get event_subscriptions(): EventSubscriptionsDTO {
+        return this.#event_subscriptions;
+    }
+
+
+    isEventSubscriptionEnabled(event: EmitterWebhookEventName): boolean {
+        return this.event_subscriptions[event] ?? this.defaultEventSubscription;
     }
 }

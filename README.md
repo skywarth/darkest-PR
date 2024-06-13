@@ -122,6 +122,8 @@ Hey ancestor @Darkest-PR, give me a cool line!
   - Replacing pronouns with respective usernames
     - By parameter
     - By context
+- [ ] Barrelization (is that even a thing?) of the imports/exports
+  - Especially for external dependencies since they can be due to change
 
 
 ## Notes to self
