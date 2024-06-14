@@ -170,3 +170,22 @@ Ridiculous.
 ### Reasons to hate Typescript
 
 - TS2590: Expression produces a union type that is too complex to represent.
+
+### IoC Container & Dependency Inversion principle of SOLID
+
+We need to perform research on this, and conclude the topic.
+
+- IoC: Inversion of Control
+  - IoC includes the DI
+  - DI is a form of IoC
+- DIP: Dependency Inversion Principle, D of SOLID
+- DI: Dependency injection
+
+Resources:
+- https://medium.com/@magnusjt/ioc-container-in-nodejs-e7aea8a89600
+- https://martinfowler.com/articles/dipInTheWild.html#YouMeanDependencyInversionRight
+- https://stackoverflow.com/questions/6550700/inversion-of-control-vs-dependency-injection
+- https://medium.com/ssense-tech/dependency-injection-vs-dependency-inversion-vs-inversion-of-control-lets-set-the-record-straight-5dc818dc32d1
+
+
+- > If you start passing the container around (for other purposes than declaring things on it, like with the providers), it is not an IOC container anymore, it is a service locator.
