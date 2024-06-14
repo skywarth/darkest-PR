@@ -180,8 +180,11 @@ We need to perform research on this, and conclude the topic.
   - DI is a form of IoC
 - DIP: Dependency Inversion Principle, D of SOLID
 - DI: Dependency injection
+  - Taking params through constructor is the simplest form of Dependency Injection
 
-Resources:
+#### Resources:
+
+- https://www.freecodecamp.org/news/a-quick-intro-to-dependency-injection-what-it-is-and-when-to-use-it-7578c84fa88f
 - https://medium.com/@magnusjt/ioc-container-in-nodejs-e7aea8a89600
 - https://martinfowler.com/articles/dipInTheWild.html#YouMeanDependencyInversionRight
 - https://stackoverflow.com/questions/6550700/inversion-of-control-vs-dependency-injection
