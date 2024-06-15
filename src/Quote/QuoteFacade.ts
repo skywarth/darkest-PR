@@ -49,7 +49,7 @@ export class QuoteFacade{
         quotes.selectCandidates();
 
 
-        if((actionContext?.quoteSlugs?.length??-1)>0){//Damn this is ugly as hell
+        if(actionContext.hasQuoteSlugs){//Damn this is ugly as hell
             let quotesBySlug=QuoteFacade.#quoteRepository.index().filterBySlugs(actionContext.quoteSlugs??[]);
             quotes.merge(quotesBySlug);
         }
