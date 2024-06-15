@@ -2,12 +2,10 @@ import PullRequestStrategy, {OctokitResponsePullRequest} from "./PullRequestStra
 import {Context} from "probot";
 import {Emotion} from "../../enums/Emotion.js";
 import {Sentiment} from "../../enums/Sentiment.js";
-import {Quote} from "../../Quote/Quote.js";
-import {QuoteFacade} from "../../Quote/QuoteFacade.js";
-import Comment from "../../Comment.js";
 import {components} from "@octokit/openapi-types";
 import {ActionContextDTO} from "../../DTO/ActionContextDTO.js";
 import {EmitterWebhookEventName} from "@octokit/webhooks/dist-types/types";
+import {CommentFactory} from "../../Comment/CommentFactory.js";
 
 
 export type OctokitResponsePullRequestReview = components["schemas"]["pull-request-review"];//Alternative: RestEndpointMethodTypes["pulls"]["listReviews"]["response"]["data"] using import { RestEndpointMethodTypes } from "@octokit/plugin-rest-endpoint-methods";
@@ -19,7 +17,7 @@ export default class PullRequestClosedStrategy extends PullRequestStrategy<'pull
         return "pull_request.closed";
     }
 
-    protected async executePrStrategy(ghContext: Context<'pull_request.closed'>,previousPRs:Array<OctokitResponsePullRequest>): Promise<void> {
+    protected async executePrStrategy(ghContext: Context<'pull_request.closed'>,commentFactory:CommentFactory,previousPRs:Array<OctokitResponsePullRequest>): Promise<void> {
 
 
         let tags: Array<string>=['close','end','finish',];
@@ -153,9 +151,8 @@ export default class PullRequestClosedStrategy extends PullRequestStrategy<'pull
         // const uniques = [...map.values()];
 
         const actionContext=new ActionContextDTO(contextEmotionMatrix,sentiment,tags);
-        const quote: Quote|undefined = QuoteFacade.getInstance().getQuote(actionContext);
-        if(quote){
-            const comment: Comment = new Comment(quote, caseSlug, actionContext)
+        const comment = commentFactory.create(caseSlug,actionContext);
+        if(comment){
             const issueComment = ghContext.issue(comment.getObject());
             ghContext.octokit.issues.createComment(issueComment);
         }

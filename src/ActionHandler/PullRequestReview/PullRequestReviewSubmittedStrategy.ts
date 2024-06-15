@@ -1,12 +1,11 @@
 import {Context} from "probot";
 import {Emotion} from "../../enums/Emotion.js";
 import {Sentiment} from "../../enums/Sentiment.js";
-import {Quote} from "../../Quote/Quote.js";
-import {QuoteFacade} from "../../Quote/QuoteFacade.js";
-import Comment from "../../Comment.js";
+
 import PullRequestReviewStrategy from "./PullRequestReviewStrategy.js";
 import {ActionContextDTO} from "../../DTO/ActionContextDTO.js";
 import {EmitterWebhookEventName} from "@octokit/webhooks/dist-types/types";
+import {CommentFactory} from "../../Comment/CommentFactory.js";
 
 
 export default class PullRequestReviewSubmittedStrategy extends PullRequestReviewStrategy<'pull_request_review.submitted'>{
@@ -16,7 +15,7 @@ export default class PullRequestReviewSubmittedStrategy extends PullRequestRevie
     }
 
 
-    protected async executePrReviewStrategy(ghContext: Context<'pull_request_review.submitted'>): Promise<void> {
+    protected async executePrReviewStrategy(ghContext: Context<'pull_request_review.submitted'>,commentFactory:CommentFactory): Promise<void> {
 
 
         let tags: Array<string>=['review','revise','inspect','peek','watch','judge','judgement','judged','conscious','weighed','ponder','decision','verdict','ruling','decree','conclusion','sentence','analysis','determination','assessment','opinion','belief'];
@@ -80,9 +79,9 @@ export default class PullRequestReviewSubmittedStrategy extends PullRequestRevie
 
 
         const actionContext=new ActionContextDTO(contextEmotionMatrix,sentiment,tags);
-        const quote: Quote|undefined = QuoteFacade.getInstance().getQuote(actionContext);
-        if(quote){
-            const comment: Comment = new Comment(quote, caseSlug, actionContext)
+        const comment = commentFactory.create(caseSlug,actionContext);
+        if(comment){
+
             const issueComment = ghContext.issue(comment.getObject());
             console.log(issueComment);
             ghContext.octokit.issues.createComment(issueComment);

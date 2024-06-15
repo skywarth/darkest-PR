@@ -2,11 +2,9 @@ import PullRequestStrategy, {OctokitResponsePullRequest} from "./PullRequestStra
 import {Context} from "probot";
 import {Emotion} from "../../enums/Emotion.js";
 import {Sentiment} from "../../enums/Sentiment.js";
-import {Quote} from "../../Quote/Quote.js";
-import {QuoteFacade} from "../../Quote/QuoteFacade.js";
-import Comment from "../../Comment.js";
 import {ActionContextDTO} from "../../DTO/ActionContextDTO.js";
 import {EmitterWebhookEventName} from "@octokit/webhooks/dist-types/types";
+import {CommentFactory} from "../../Comment/CommentFactory.js";
 
 
 export default class PullRequestReviewerAdded extends PullRequestStrategy<'pull_request.review_requested'>{
@@ -17,7 +15,7 @@ export default class PullRequestReviewerAdded extends PullRequestStrategy<'pull_
     }
 
 
-    protected async executePrStrategy(ghContext: Context<'pull_request.review_requested'>,_previousPRs:Array<OctokitResponsePullRequest>): Promise<void> {
+    protected async executePrStrategy(ghContext: Context<'pull_request.review_requested'>,commentFactory:CommentFactory,_previousPRs:Array<OctokitResponsePullRequest>): Promise<void> {
 
 
         let tags: Array<string>=['assignment','review','suggest','request','plea','call','duty','demand','appeal','summon','invoke','invitation','invite','prayer','seek','hero','champion','judge','jury','executioner','audit','inspection','assess','assessment','evaluation','judgement','new','arrive','arrival','fresh','the one','savior','visitor','task','mission','goal'];
@@ -36,10 +34,8 @@ export default class PullRequestReviewerAdded extends PullRequestStrategy<'pull_
 
 
         const actionContext=new ActionContextDTO(contextEmotionMatrix,sentiment,tags);
-        const quote: Quote|undefined = QuoteFacade.getInstance().getQuote(actionContext);
-        if(quote){
-            const comment: Comment = new Comment(quote, caseSlug, actionContext)
-
+        const comment = commentFactory.create(caseSlug,actionContext);
+        if(comment){
             const issueComment = ghContext.issue(comment.getObject());
             ghContext.octokit.issues.createComment(issueComment);
         }

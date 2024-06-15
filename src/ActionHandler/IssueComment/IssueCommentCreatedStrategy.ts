@@ -1,9 +1,7 @@
 import {Context} from "probot";
 import {Emotion} from "../../enums/Emotion.js";
 import {Sentiment} from "../../enums/Sentiment.js";
-import {Quote} from "../../Quote/Quote.js";
-import {QuoteFacade} from "../../Quote/QuoteFacade.js";
-import Comment, {ReplyContext} from "../../Comment.js";
+import {ReplyContext} from "../../Comment/Comment.js";
 import IssueCommentStrategy from "./IssueCommentStrategy.js";
 import * as cheerio from 'cheerio';
 import {marked} from "marked";
@@ -11,6 +9,7 @@ import sanitizeHtml from 'sanitize-html';
 import {ActionContextDTO} from "../../DTO/ActionContextDTO.js";
 import {BotConfig} from "../../Config/BotConfig.js";
 import {EmitterWebhookEventName} from "@octokit/webhooks/dist-types/types";
+import {CommentFactory} from "../../Comment/CommentFactory.js";
 
 
 
@@ -26,7 +25,7 @@ export default class IssueCommentCreatedStrategy extends IssueCommentStrategy<'i
         return "issue_comment.created";
     }
 
-    protected async executeIssueCommentStrategy(ghContext: Context<'issue_comment.created'>): Promise<void> {
+    protected async executeIssueCommentStrategy(ghContext: Context<'issue_comment.created'>,commentFactory:CommentFactory): Promise<void> {
 
         let tags: Array<string>=['comment','create','new','narrative','narrate','criticism','collaborate','discussion','whisper','conspiracy','mention','note','opinion','remark','summon'];
         let contextEmotionMatrix: Emotion.EmotionMatrix=[];
@@ -85,15 +84,10 @@ export default class IssueCommentCreatedStrategy extends IssueCommentStrategy<'i
         }
 
         console.log(actionContext);
-        const quote: Quote|undefined = QuoteFacade.getInstance().getQuote(actionContext);
-
-
-        if(quote){
-
-            const comment: Comment = new Comment(quote, caseSlug, actionContext,replyContext,warnings)
-
+        const comment = commentFactory.create(caseSlug,actionContext,replyContext,warnings);
+        if(comment){
             const issueComment = ghContext.issue(comment.getObject());
-            await ghContext.octokit.issues.createComment(issueComment);
+            ghContext.octokit.issues.createComment(issueComment);
         }
 
         return;

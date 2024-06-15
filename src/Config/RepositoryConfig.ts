@@ -15,32 +15,18 @@ export class RepositoryConfig implements HasEventSubscriptions{
     #event_subscriptions: EventSubscriptionsDTO;
     //options for enable/disable actions
 
-    static #instance:RepositoryConfig;
 
-    private constructor(conf:Partial<RepositoryConfig>) {
+    constructor(conf:Partial<RepositoryConfig>) {
         this.#debug_mode = conf.debug_mode??false;
         this.#emojis = conf.emojis??true;
         this.#event_subscriptions=conf.event_subscriptions?? {};
     }
 
-    public static getInstance():RepositoryConfig{
-
-        if (!this.#instance) {
-            throw new Error('RepositoryConfig is not initialized yet! Initialize an instance by calling RepositoryConfig#initialize()');
-        }
-        return this.#instance;
-    }
-
-    public static async initialize(ghContext:Context):Promise<void>{
-        if(this.#instance){
-            throw new Error("RepositoryConfig is already initialized! It's a singleton, don't initialize again.");
-        }
-        this.#instance = new this(await this.readConfigFromRepository(ghContext));
-    }
-
-    private static async readConfigFromRepository(ghContext:Context):Promise<Partial<RepositoryConfig>>{
+    public static async readConfigFromRepository(ghContext:Context):Promise<Partial<RepositoryConfig>>{
 
         try {
+            //Alternative: await ghContext.octokit.config.get();
+            //Alt 2: await context.config('config.yml')  //https://probot.github.io/api/latest/classes/context.Context.html#config
             const configFileResponse = await ghContext.octokit.repos.getContent({
                 owner:ghContext.repo().owner,
                 repo:ghContext.repo().repo,

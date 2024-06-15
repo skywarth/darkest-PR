@@ -2,12 +2,13 @@ import ActionHandlerStrategy from "../ActionHandlerStrategy.js";
 import { Context } from "probot";
 import {EmitterWebhookEventName} from "@octokit/webhooks/dist-types/types";
 import { components } from "@octokit/openapi-types";
+import {CommentFactory} from "../../Comment/CommentFactory.js";
 
 
 export type OctokitResponsePullRequest = components["schemas"]["pull-request"];
 
 export default abstract class PullRequestStrategy<T extends EmitterWebhookEventName> extends ActionHandlerStrategy<T> {
-    protected async execute(ghContext: Context<T>): Promise<void> {
+    protected async execute(ghContext: Context<T>,commentFactory:CommentFactory): Promise<void> {
 
         const payload = ghContext.payload as Context<'pull_request'>['payload'];
         //@ts-ignore
@@ -19,8 +20,8 @@ export default abstract class PullRequestStrategy<T extends EmitterWebhookEventN
             state: 'all',
             head: `${payload.repository.owner.login}:${payload.pull_request.head.ref}`
         })).data.filter(x=>x.id!==payload.pull_request.id);
-        return this.executePrStrategy(ghContext,previousPRs);
+        return this.executePrStrategy(ghContext,commentFactory,previousPRs);
     }
 
-    protected abstract executePrStrategy(ghContext: Context<T>,previousPRs:Array<OctokitResponsePullRequest>): Promise<void>;
+    protected abstract executePrStrategy(ghContext: Context<T>,commentFactory:CommentFactory,previousPRs:Array<OctokitResponsePullRequest>): Promise<void>;
 }

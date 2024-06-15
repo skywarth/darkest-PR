@@ -1,21 +1,22 @@
 import {EmitterWebhookEventName} from "@octokit/webhooks/dist-types/types";
-import {BotConfig} from "../BotConfig.js";
-import {RepositoryConfig} from "../RepositoryConfig.js";
+import {HasEventSubscriptions} from "../HasEventSubscriptions.js";
 
-export interface EventSubscriptionHandler {
 
-    handle(eventSlug:EmitterWebhookEventName):boolean;
-    set nextHandler(next:EventSubscriptionHandler);
-    get nextHandler():EventSubscriptionHandler|undefined;
-}
 
-abstract class BaseEventSubscriptionHandler implements EventSubscriptionHandler{
+export class EventSubscriptionHandler{
 
+    #current:HasEventSubscriptions;
     #nextHandler:EventSubscriptionHandler|undefined;
 
 
-    constructor(nextHandler: EventSubscriptionHandler|undefined=undefined) {
+    constructor(curr:HasEventSubscriptions,nextHandler: EventSubscriptionHandler|undefined=undefined) {
+        this.#current=curr;
         this.#nextHandler = nextHandler;
+    }
+
+
+    get current(): HasEventSubscriptions {
+        return this.#current;
     }
 
     get nextHandler(): EventSubscriptionHandler|undefined {
@@ -27,7 +28,7 @@ abstract class BaseEventSubscriptionHandler implements EventSubscriptionHandler{
     }
 
     handle(eventSlug: EmitterWebhookEventName): boolean {
-        const result=this.execute(eventSlug);
+        const result=this.current.isEventSubscriptionEnabled(eventSlug);
         if(result && this.nextHandler){
             return this.nextHandler.handle(eventSlug);
         }else{
@@ -35,21 +36,4 @@ abstract class BaseEventSubscriptionHandler implements EventSubscriptionHandler{
         }
     }
 
-    protected abstract execute(eventSlug:EmitterWebhookEventName):boolean;
-
-
-}
-
-export class BotConfigEventSubsHandler extends BaseEventSubscriptionHandler{
-
-    protected execute(eventSlug: EmitterWebhookEventName): boolean {
-        return BotConfig.getInstance().isEventSubscriptionEnabled(eventSlug);
-    }
-}
-
-export class RepositoryConfigEventSubsHandler extends BaseEventSubscriptionHandler{
-
-    protected execute(eventSlug: EmitterWebhookEventName): boolean {
-        return RepositoryConfig.getInstance().isEventSubscriptionEnabled(eventSlug);
-    }
 }

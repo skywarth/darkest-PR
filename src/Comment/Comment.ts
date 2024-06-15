@@ -1,9 +1,8 @@
-import {Quote} from "./Quote/Quote.js";
-import {Emotion} from "./enums/Emotion";
-import {ActionContextDTO} from "./DTO/ActionContextDTO.js";
-import Utils from "./Utils.js";
-import {getSentimentIcon} from "./enums/Sentiment.js";
-import {RepositoryConfig} from "./Config/RepositoryConfig.js";
+import {Quote} from "../Quote/Quote";
+import {Emotion} from "../enums/Emotion";
+import {ActionContextDTO} from "../DTO/ActionContextDTO.js";
+import Utils from "../Utils.js";
+import {getSentimentIcon} from "../enums/Sentiment.js";
 
 export type ReplyContext={
     replyToUsername:string,
@@ -17,13 +16,19 @@ export default class Comment{
     #actionContext:ActionContextDTO;
     #warnings:Array<string>;
     #replyToContext:ReplyContext|null;
+    #debugMode:boolean;
+    #emojis:boolean;
 
-    constructor(quote: Quote,caseSlug:string,actionContext:ActionContextDTO,replyToContext:ReplyContext|null=null,warnings:Array<string>=[]) {
+    constructor(quote: Quote,caseSlug:string,actionContext:ActionContextDTO,debugMode:boolean,emojis:boolean,replyToContext:ReplyContext|null=null,warnings:Array<string>=[]) {
         this.#quote = quote;
         this.#caseSlug=caseSlug;
         this.#actionContext=actionContext;
         this.#warnings=warnings;
         this.#replyToContext=replyToContext;
+
+        this.#debugMode=debugMode;
+        this.#emojis=emojis;
+
     }
 
 
@@ -32,7 +37,7 @@ export default class Comment{
     }
 
     get quoteTextFormatted():string{
-        return `### ${getSentimentIcon(this.quote.sentiment)} <mark>***${this.quote.text}***</mark>`
+        return `### ${this.emojis?getSentimentIcon(this.quote.sentiment):''} <mark>***${this.quote.text}***</mark>`
     }
 
 
@@ -47,7 +52,12 @@ export default class Comment{
 
 
     get debugMode(): boolean {
-        return RepositoryConfig.getInstance().debug_mode;
+        return this.#debugMode;
+    }
+
+
+    get emojis(): boolean {
+        return this.#emojis;
     }
 
     get replyToContext(): ReplyContext | null {
