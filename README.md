@@ -32,39 +32,50 @@ Applied and active:
 - Facade pattern
 - Chain of Responsibility pattern
   - I'll admit it's a bit forced, just wanted to implement it for the purpose of practice
+- Factory pattern 
 
 Could be applied, would be decent in future expansion:
 - Factory or Abstract factory pattern, for strategies 
 
 ## Use-case analysis
 
-- [X] PR opened
-  - Fresh PR
-  - Re-open of PR after previous one gets cancelled
-  - Re-open of PR after previous one gets approved and merged
-  - [ ] Includes: merge conflict
-- [X] PR closed
-  - [X] No merge
-    - No discussion/review
-    - Short discussion/review
-    - Long discussion/review
-    - Closed previously as well
-  - [X] Merge
-    - No discussion/review
-    - Short discussion/review
-    - Long discussion/review
-- [X] PR Review
-  - Approved
-  - Rejected (change request)
-  - Just comment
+
+
+
 - [ ] Issue
-  - Reviewer/assignee
-    - Added
-    - Removed
-- [ ] PR
-  - Reviewer/assignee
+  - [ ] Reviewer
     - [ ] Added
     - [ ] Removed
+  - [ ] Assignee
+    - [ ] Added
+    - [ ] Removed
+- [ ] PR
+  - [X] Reviewer
+    - [X] Added
+    - [X] Removed
+  - [ ] Assignee
+    - [ ] Added
+    - [ ] Removed 
+  - [X] PR opened
+    - Fresh PR
+    - Re-open of PR after previous one gets cancelled
+    - Re-open of PR after previous one gets approved and merged
+    - [ ] Includes: merge conflict
+  - [X] PR closed
+    - [X] No merge
+      - No discussion/review
+      - Short discussion/review
+      - Long discussion/review
+      - Closed previously as well
+    - [X] Merge
+      - No discussion/review
+      - Short discussion/review
+      - Long discussion/review
+  - [X] PR Review
+    - Approved
+    - Rejected (change request)
+    - Just comment
+
 - [X] Issue/PR comment
   - Tagging the bot
     - [X] No input package param provided
@@ -119,9 +130,9 @@ Hey ancestor @Darkest-PR, give me a cool line!
 
 - [ ] Including voice lines as sound file to comments
 - [ ] Refactor comment create action
-- [ ] Config
+- [X] Config
   - [X] Env
-  - [ ] Repository
+  - [X] Repository
 - [ ] [CRUCIBLE] Context aware dynamic quotes
   - Replacing pronouns with respective usernames
     - By parameter
