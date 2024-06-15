@@ -5,11 +5,21 @@ import {EventSubscriptionHandler} from "../Config/EventSubscriptionHandler/Event
 import {BotConfig} from "../Config/BotConfig.js";
 import {CommentFactory} from "../Comment/CommentFactory.js";
 import {QuoteFacade} from "../Quote/QuoteFacade.js";
+import Comment from "../Comment/Comment.js";
 
 
 export default abstract class ActionHandlerStrategy<T extends EmitterWebhookEventName> {
 
-    protected abstract execute(ghContext: Context<T>,commentFactory:CommentFactory): Promise<void>;
+    protected abstract execute(ghContext: Context<T>,commentFactory:CommentFactory): Promise<Comment|null>;
+
+    protected abstract getEventName():EmitterWebhookEventName;
+
+    protected async respond(ghContext:Context<T>,comment:Comment|null):Promise<void>{
+        if(comment){
+            const issueComment = ghContext.issue(comment.getObject());
+            await ghContext.octokit.issues.createComment(issueComment);
+        }
+    }
 
     public async handle(ghContext: Context<T>): Promise<void> {
 
@@ -28,9 +38,10 @@ export default abstract class ActionHandlerStrategy<T extends EmitterWebhookEven
         if (!botConfigSubsHandler.handle(this.getEventName()) || ghContext.isBot) { // Replace with condition for this bot only
             return;
         }
-        await this.execute(ghContext,commentFactory);
+        const comment:Comment|null=await this.execute(ghContext,commentFactory);
+        await this.respond(ghContext,comment);
     }
 
-    protected abstract getEventName():EmitterWebhookEventName;
+
 
 }

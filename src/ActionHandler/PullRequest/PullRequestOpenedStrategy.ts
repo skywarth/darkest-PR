@@ -5,6 +5,7 @@ import { Emotion } from "../../enums/Emotion.js";
 import {ActionContextDTO} from "../../DTO/ActionContextDTO.js";
 import {EmitterWebhookEventName} from "@octokit/webhooks/dist-types/types";
 import {CommentFactory} from "../../Comment/CommentFactory.js";
+import Comment from "../../Comment/Comment";
 
 export default class PullRequestOpenedStrategy extends PullRequestStrategy<'pull_request.opened'> {
 
@@ -12,7 +13,7 @@ export default class PullRequestOpenedStrategy extends PullRequestStrategy<'pull
         return "pull_request.opened";
     }
 
-    protected async executePrStrategy(ghContext: Context<'pull_request.opened'>,commentFactory:CommentFactory,previousPRs:Array<OctokitResponsePullRequest>): Promise<void> {
+    protected async executePrStrategy(_ghContext: Context<'pull_request.opened'>,commentFactory:CommentFactory,previousPRs:Array<OctokitResponsePullRequest>): Promise<Comment|null> {
 
         //CASE: Fresh
         let tags: Array<string> = ['begin', 'start', 'create', 'open'];
@@ -66,10 +67,7 @@ export default class PullRequestOpenedStrategy extends PullRequestStrategy<'pull
 
         const actionContext=new ActionContextDTO(contextEmotionMatrix,sentiment,tags);
         const comment = commentFactory.create(caseSlug,actionContext);
-        if(comment){
-            const issueComment = ghContext.issue(comment.getObject());
-            ghContext.octokit.issues.createComment(issueComment);
-        }
+        return comment;
 
     }
 }

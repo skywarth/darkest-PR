@@ -6,6 +6,7 @@ import {components} from "@octokit/openapi-types";
 import {ActionContextDTO} from "../../DTO/ActionContextDTO.js";
 import {EmitterWebhookEventName} from "@octokit/webhooks/dist-types/types";
 import {CommentFactory} from "../../Comment/CommentFactory.js";
+import Comment from "../../Comment/Comment";
 
 
 export type OctokitResponsePullRequestReview = components["schemas"]["pull-request-review"];//Alternative: RestEndpointMethodTypes["pulls"]["listReviews"]["response"]["data"] using import { RestEndpointMethodTypes } from "@octokit/plugin-rest-endpoint-methods";
@@ -17,7 +18,7 @@ export default class PullRequestClosedStrategy extends PullRequestStrategy<'pull
         return "pull_request.closed";
     }
 
-    protected async executePrStrategy(ghContext: Context<'pull_request.closed'>,commentFactory:CommentFactory,previousPRs:Array<OctokitResponsePullRequest>): Promise<void> {
+    protected async executePrStrategy(ghContext: Context<'pull_request.closed'>,commentFactory:CommentFactory,previousPRs:Array<OctokitResponsePullRequest>): Promise<Comment|null> {
 
 
         let tags: Array<string>=['close','end','finish',];
@@ -152,20 +153,7 @@ export default class PullRequestClosedStrategy extends PullRequestStrategy<'pull
 
         const actionContext=new ActionContextDTO(contextEmotionMatrix,sentiment,tags);
         const comment = commentFactory.create(caseSlug,actionContext);
-        if(comment){
-            const issueComment = ghContext.issue(comment.getObject());
-            ghContext.octokit.issues.createComment(issueComment);
-        }
-
-        return;
-
-
-
-
-
-
-
-
+        return comment;
 
     }
 

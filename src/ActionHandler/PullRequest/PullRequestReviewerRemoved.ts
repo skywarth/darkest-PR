@@ -5,6 +5,7 @@ import {Sentiment} from "../../enums/Sentiment.js";
 import {ActionContextDTO} from "../../DTO/ActionContextDTO.js";
 import {EmitterWebhookEventName} from "@octokit/webhooks/dist-types/types";
 import {CommentFactory} from "../../Comment/CommentFactory.js";
+import Comment from "../../Comment/Comment";
 
 
 export default class PullRequestReviewerRemoved extends PullRequestStrategy<'pull_request.review_request_removed'>{
@@ -14,7 +15,7 @@ export default class PullRequestReviewerRemoved extends PullRequestStrategy<'pul
         return "pull_request.review_request_removed";
     }
 
-    protected async executePrStrategy(ghContext: Context<'pull_request.review_request_removed'>,commentFactory:CommentFactory,_previousPRs:Array<OctokitResponsePullRequest>): Promise<void> {
+    protected async executePrStrategy(_ghContext: Context<'pull_request.review_request_removed'>,commentFactory:CommentFactory,_previousPRs:Array<OctokitResponsePullRequest>): Promise<Comment|null> {
 
 
         let tags: Array<string>=['removed','sent','kicked','denied','deny','fire','fired','detach','separated','parted','death','die','kill','killed','destroyed','begone','scram','scoot','leave','left','away','depart','fall','fell','ban','banned','disowned','rejected','dismissed','shunned','assignment','review','request','duty','demand','audit','inspection','assess','assessment','evaluation','judgement',];
@@ -41,20 +42,7 @@ export default class PullRequestReviewerRemoved extends PullRequestStrategy<'pul
 
         const actionContext=new ActionContextDTO(contextEmotionMatrix,sentiment,tags);
         const comment = commentFactory.create(caseSlug,actionContext);
-        if(comment){
-            const issueComment = ghContext.issue(comment.getObject());
-            ghContext.octokit.issues.createComment(issueComment);
-        }
-
-        return;
-
-
-
-
-
-
-
-
+        return comment;
 
     }
 

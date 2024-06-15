@@ -1,7 +1,7 @@
 import {Context} from "probot";
 import {Emotion} from "../../enums/Emotion.js";
 import {Sentiment} from "../../enums/Sentiment.js";
-import {ReplyContext} from "../../Comment/Comment.js";
+import Comment, {ReplyContext} from "../../Comment/Comment.js";
 import IssueCommentStrategy from "./IssueCommentStrategy.js";
 import * as cheerio from 'cheerio';
 import {marked} from "marked";
@@ -25,7 +25,7 @@ export default class IssueCommentCreatedStrategy extends IssueCommentStrategy<'i
         return "issue_comment.created";
     }
 
-    protected async executeIssueCommentStrategy(ghContext: Context<'issue_comment.created'>,commentFactory:CommentFactory): Promise<void> {
+    protected async executeIssueCommentStrategy(ghContext: Context<'issue_comment.created'>,commentFactory:CommentFactory): Promise<Comment|null> {
 
         let tags: Array<string>=['comment','create','new','narrative','narrate','criticism','collaborate','discussion','whisper','conspiracy','mention','note','opinion','remark','summon'];
         let contextEmotionMatrix: Emotion.EmotionMatrix=[];
@@ -85,20 +85,7 @@ export default class IssueCommentCreatedStrategy extends IssueCommentStrategy<'i
 
         console.log(actionContext);
         const comment = commentFactory.create(caseSlug,actionContext,replyContext,warnings);
-        if(comment){
-            const issueComment = ghContext.issue(comment.getObject());
-            ghContext.octokit.issues.createComment(issueComment);
-        }
-
-        return;
-
-
-
-
-
-
-
-
+        return comment;
 
     }
 
