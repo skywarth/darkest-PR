@@ -1,5 +1,4 @@
 import PullRequestStrategy, {OctokitResponsePullRequest} from "./PullRequestStrategy.js";
-import {Context} from "probot";
 import {Emotion} from "../../enums/Emotion.js";
 import {Sentiment} from "../../enums/Sentiment.js";
 import {ActionContextDTO} from "../../DTO/ActionContextDTO.js";
@@ -16,7 +15,7 @@ export default class PullRequestReviewerAdded extends PullRequestStrategy<'pull_
     }
 
 
-    protected async executePrStrategy(_ghContext: Context<'pull_request.review_requested'>,commentFactory:CommentFactory,_previousPRs:Array<OctokitResponsePullRequest>): Promise<Comment|null> {
+    protected async executePrStrategy(commentFactory:CommentFactory,_previousPRs:Array<OctokitResponsePullRequest>): Promise<Comment|null> {
 
 
         let tags: Array<string>=['assignment','review','suggest','request','plea','call','duty','demand','appeal','summon','invoke','invitation','invite','prayer','seek','hero','champion','judge','jury','executioner','audit','inspection','assess','assessment','evaluation','judgement','new','arrive','arrival','fresh','the one','savior','visitor','task','mission','goal'];

@@ -10,21 +10,33 @@ import Comment from "../Comment/Comment.js";
 
 export default abstract class ActionHandlerStrategy<T extends EmitterWebhookEventName> {
 
-    protected abstract execute(ghContext: Context<T>,commentFactory:CommentFactory): Promise<Comment|null>;
+    #ghContext:Context<T>;
+
+
+    constructor(ghContext: Context<T>) {
+        this.#ghContext = ghContext;
+    }
+
+
+    get ghContext(): Context<T> {
+        return this.#ghContext;
+    }
+
+    protected abstract execute(commentFactory:CommentFactory): Promise<Comment|null>;
 
     protected abstract getEventName():EmitterWebhookEventName;
 
-    protected async respond(ghContext:Context<T>,comment:Comment|null):Promise<void>{
+    protected async respond(comment:Comment|null):Promise<void>{
         if(comment){
-            const issueComment = ghContext.issue(comment.getObject());
-            await ghContext.octokit.issues.createComment(issueComment);
+            const issueComment = this.ghContext.issue(comment.getObject());
+            await this.ghContext.octokit.issues.createComment(issueComment);
         }
     }
 
-    public async handle(ghContext: Context<T>): Promise<void> {
+    public async handle(): Promise<void> {
 
 
-        const repositoryConfigPartial=await RepositoryConfig.readConfigFromRepository(ghContext as any as Context);
+        const repositoryConfigPartial=await RepositoryConfig.readConfigFromRepository(this.ghContext as any as Context);
         const repoConfig=new RepositoryConfig(repositoryConfigPartial);
 
         const commentFactory=new CommentFactory(QuoteFacade.getInstance(),repoConfig.debug_mode,repoConfig.emojis);
@@ -35,11 +47,11 @@ export default abstract class ActionHandlerStrategy<T extends EmitterWebhookEven
 
 
         //console.log(ghContext);
-        if (!botConfigSubsHandler.handle(this.getEventName()) || ghContext.isBot) { // Replace with condition for this bot only
+        if (!botConfigSubsHandler.handle(this.getEventName()) || this.ghContext.isBot) { // Replace with condition for this bot only
             return;
         }
-        const comment:Comment|null=await this.execute(ghContext,commentFactory);
-        await this.respond(ghContext,comment);
+        const comment:Comment|null=await this.execute(commentFactory);
+        await this.respond(comment);
     }
 
 

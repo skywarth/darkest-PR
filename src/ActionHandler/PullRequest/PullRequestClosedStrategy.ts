@@ -1,5 +1,4 @@
 import PullRequestStrategy, {OctokitResponsePullRequest} from "./PullRequestStrategy.js";
-import {Context} from "probot";
 import {Emotion} from "../../enums/Emotion.js";
 import {Sentiment} from "../../enums/Sentiment.js";
 import {components} from "@octokit/openapi-types";
@@ -18,7 +17,7 @@ export default class PullRequestClosedStrategy extends PullRequestStrategy<'pull
         return "pull_request.closed";
     }
 
-    protected async executePrStrategy(ghContext: Context<'pull_request.closed'>,commentFactory:CommentFactory,previousPRs:Array<OctokitResponsePullRequest>): Promise<Comment|null> {
+    protected async executePrStrategy(commentFactory:CommentFactory,previousPRs:Array<OctokitResponsePullRequest>): Promise<Comment|null> {
 
 
         let tags: Array<string>=['close','end','finish',];
@@ -26,15 +25,15 @@ export default class PullRequestClosedStrategy extends PullRequestStrategy<'pull
         let caseSlug: string;
         let sentiment :Sentiment;
 
-        const reviews:Array<OctokitResponsePullRequestReview>=  (await ghContext.octokit.pulls.listReviews({
-            owner: ghContext.payload.repository.owner.login,
-            repo: ghContext.payload.repository.name,
-            pull_number: ghContext.payload.pull_request.number
+        const reviews:Array<OctokitResponsePullRequestReview>=  (await this.ghContext.octokit.pulls.listReviews({
+            owner: this.ghContext.payload.repository.owner.login,
+            repo: this.ghContext.payload.repository.name,
+            pull_number: this.ghContext.payload.pull_request.number
         })).data;
 
-        const reviewCommentsAmount:number=ghContext.payload.pull_request.review_comments
+        const reviewCommentsAmount:number=this.ghContext.payload.pull_request.review_comments
 
-        if(ghContext.payload.pull_request.merged){
+        if(this.ghContext.payload.pull_request.merged){
             //CASE: Merged
             tags=[...tags,'win','won','victory','victorious'];
             contextEmotionMatrix=[

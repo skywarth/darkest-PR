@@ -1,4 +1,3 @@
-import {Context} from "probot";
 import {Emotion} from "../../enums/Emotion.js";
 import {Sentiment} from "../../enums/Sentiment.js";
 
@@ -16,7 +15,7 @@ export default class PullRequestReviewSubmittedStrategy extends PullRequestRevie
     }
 
 
-    protected async executePrReviewStrategy(ghContext: Context<'pull_request_review.submitted'>,commentFactory:CommentFactory): Promise<Comment|null> {
+    protected async executePrReviewStrategy(commentFactory:CommentFactory): Promise<Comment|null> {
 
 
         let tags: Array<string>=['review','revise','inspect','peek','watch','judge','judgement','judged','conscious','weighed','ponder','decision','verdict','ruling','decree','conclusion','sentence','analysis','determination','assessment','opinion','belief'];
@@ -24,7 +23,7 @@ export default class PullRequestReviewSubmittedStrategy extends PullRequestRevie
         let caseSlug: string;
         let sentiment :Sentiment;
 
-        const reviewVerdict=ghContext.payload.review.state;
+        const reviewVerdict=this.ghContext.payload.review.state;
         if(reviewVerdict==='approved'){
             //CASE: Approved
             caseSlug='pull-request-review.approved';

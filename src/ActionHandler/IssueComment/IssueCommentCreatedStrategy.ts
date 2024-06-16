@@ -1,4 +1,3 @@
-import {Context} from "probot";
 import {Emotion} from "../../enums/Emotion.js";
 import {Sentiment} from "../../enums/Sentiment.js";
 import Comment, {ReplyContext} from "../../Comment/Comment.js";
@@ -25,7 +24,7 @@ export default class IssueCommentCreatedStrategy extends IssueCommentStrategy<'i
         return "issue_comment.created";
     }
 
-    protected async executeIssueCommentStrategy(ghContext: Context<'issue_comment.created'>,commentFactory:CommentFactory): Promise<Comment|null> {
+    protected async executeIssueCommentStrategy(commentFactory:CommentFactory): Promise<Comment|null> {
 
         let tags: Array<string>=['comment','create','new','narrative','narrate','criticism','collaborate','discussion','whisper','conspiracy','mention','note','opinion','remark','summon'];
         let contextEmotionMatrix: Emotion.EmotionMatrix=[];
@@ -35,10 +34,10 @@ export default class IssueCommentCreatedStrategy extends IssueCommentStrategy<'i
         let warnings:Array<string>=[]
 
         const replyContext:ReplyContext= {
-            replyToUsername:ghContext.payload.sender.login??'',
-            replyingToMessage:ghContext.payload.comment.body
+            replyToUsername:this.ghContext.payload.sender.login??'',
+            replyingToMessage:this.ghContext.payload.comment.body
         };
-        const bodyHTML = sanitizeHtml((await marked(ghContext.payload.comment.body)));
+        const bodyHTML = sanitizeHtml((await marked(this.ghContext.payload.comment.body)));
 
         const bodyDOM=cheerio.load(bodyHTML);
         console.log(bodyDOM.text());

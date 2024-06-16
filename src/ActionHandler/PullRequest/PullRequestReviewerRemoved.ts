@@ -1,5 +1,4 @@
 import PullRequestStrategy, {OctokitResponsePullRequest} from "./PullRequestStrategy.js";
-import {Context} from "probot";
 import {Emotion} from "../../enums/Emotion.js";
 import {Sentiment} from "../../enums/Sentiment.js";
 import {ActionContextDTO} from "../../DTO/ActionContextDTO.js";
@@ -15,7 +14,7 @@ export default class PullRequestReviewerRemoved extends PullRequestStrategy<'pul
         return "pull_request.review_request_removed";
     }
 
-    protected async executePrStrategy(_ghContext: Context<'pull_request.review_request_removed'>,commentFactory:CommentFactory,_previousPRs:Array<OctokitResponsePullRequest>): Promise<Comment|null> {
+    protected async executePrStrategy(commentFactory:CommentFactory,_previousPRs:Array<OctokitResponsePullRequest>): Promise<Comment|null> {
 
 
         let tags: Array<string>=['removed','sent','kicked','denied','deny','fire','fired','detach','separated','parted','death','die','kill','killed','destroyed','begone','scram','scoot','leave','left','away','depart','fall','fell','ban','banned','disowned','rejected','dismissed','shunned','assignment','review','request','duty','demand','audit','inspection','assess','assessment','evaluation','judgement',];

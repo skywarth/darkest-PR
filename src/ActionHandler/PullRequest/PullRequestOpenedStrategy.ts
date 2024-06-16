@@ -1,5 +1,4 @@
 import PullRequestStrategy, {OctokitResponsePullRequest} from "./PullRequestStrategy.js";
-import { Context } from "probot";
 import { Sentiment } from "../../enums/Sentiment.js";
 import { Emotion } from "../../enums/Emotion.js";
 import {ActionContextDTO} from "../../DTO/ActionContextDTO.js";
@@ -13,7 +12,7 @@ export default class PullRequestOpenedStrategy extends PullRequestStrategy<'pull
         return "pull_request.opened";
     }
 
-    protected async executePrStrategy(_ghContext: Context<'pull_request.opened'>,commentFactory:CommentFactory,previousPRs:Array<OctokitResponsePullRequest>): Promise<Comment|null> {
+    protected async executePrStrategy(commentFactory:CommentFactory,previousPRs:Array<OctokitResponsePullRequest>): Promise<Comment|null> {
 
         //CASE: Fresh
         let tags: Array<string> = ['begin', 'start', 'create', 'open'];
