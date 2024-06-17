@@ -81,7 +81,7 @@ export class QuoteCollection{
 
 
     constructor(quotes: Array<Quote>) {
-        this.#quotes = quotes;
+        this.#quotes = [...quotes];
     }
 
 
@@ -94,7 +94,7 @@ export class QuoteCollection{
     }
 
     public clone(){
-        return new QuoteCollection(this.data);//Consider deep cloning
+        return new QuoteCollection([...this.data]);//Consider deep cloning
     }
 
 
