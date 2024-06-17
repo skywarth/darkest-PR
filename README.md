@@ -204,3 +204,15 @@ We need to perform research on this, and conclude the topic.
 
 
 - > If you start passing the container around (for other purposes than declaring things on it, like with the providers), it is not an IOC container anymore, it is a service locator.
+
+### Node.js lifecycle
+
+Opposed to Laravel's request based lifecycle where lifecycle starts and ends with each request, Node.js persists the app state, which means lifecycle starts with the app start and ends when the app exits.
+
+This means, as long as the Node.js app keeps on running, any statics and singletons will be kept on memory.
+
+Reason for this is; Node.js is an event driven, non-blocking framework. It is designed to handle multiple simultaneous applications.
+
+> Node.js has persistent state!
+
+In conclusion, refrain from using static variables and singletons as they may lead to confusion and bugs down the line.
