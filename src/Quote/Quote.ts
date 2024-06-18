@@ -148,7 +148,7 @@ export class QuoteCollection{
     public selectCandidates():QuoteCollection{
         const divisionModifier:number=3;
         const originalAmount=this.data.length;
-        const candidateCount:number=(Math.round(originalAmount/divisionModifier))>=2?(originalAmount/divisionModifier):originalAmount;
+        const candidateCount:number=(Math.round(originalAmount/divisionModifier))>=2?Math.round(originalAmount/divisionModifier):originalAmount;
         this.#quotes=this.data.splice(0,candidateCount);
         return this;
     }

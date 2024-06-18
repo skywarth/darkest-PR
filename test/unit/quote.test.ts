@@ -303,5 +303,139 @@ describe.concurrent("Quote Tests", () => {
 
             });
         });
+
+        describe("merge()",() => {
+
+            test("Mutating state in-place", async() => {
+                const quoteCollection=getQuoteCollectionInstance();
+
+
+                const anotherQuoteCollection=new QuoteCollection([
+                    new Quote('lorem ipsum','some-unique-slug',Sentiment.Neutral,[{emotion:Emotion.Joy.Happiness,temperature:1}],[]),
+                    new Quote('lorem ipsum 2','some-unique-slug2',Sentiment.Negative,[{ emotion: Emotion.Sadness.Sorrow, temperature: 2 }, { emotion: Emotion.Disgust.Scorn, temperature: 2 }],[])
+                ]);
+
+                const originalQuoteCollectionSlugs=quoteCollection.clone().data.map(x=>x.slug);
+                quoteCollection.merge(anotherQuoteCollection);
+
+                expect(quoteCollection.data.map(x=>x.slug)).not.toEqual(originalQuoteCollectionSlugs);
+            });
+
+            test("Merge result contains quotes that are from either of the collections", async() => {
+                const quoteCollection=getQuoteCollectionInstance();
+
+                const anotherQuoteCollection=new QuoteCollection([
+                    new Quote('lorem ipsum','some-unique-slug',Sentiment.Neutral,[{emotion:Emotion.Joy.Happiness,temperature:1}],[]),
+                    new Quote('lorem ipsum 2','some-unique-slug2',Sentiment.Negative,[{ emotion: Emotion.Sadness.Sorrow, temperature: 2 }, { emotion: Emotion.Disgust.Scorn, temperature: 2 }],[])
+                ]);
+
+                const mergeResult=quoteCollection.clone().merge(anotherQuoteCollection);
+
+                const eachQuoteExistInEitherCollection=mergeResult.data.every(function (quote){
+                   return quoteCollection.find(quote.slug) || anotherQuoteCollection.find(quote.slug);
+                });
+
+                expect(eachQuoteExistInEitherCollection).toBe(true);
+
+            });
+
+            test("Merge result doesn't contain duplicate Quotes", async() => {
+                const quoteCollection=getQuoteCollectionInstance();
+
+                const anotherQuoteCollection=new QuoteCollection([
+                    new Quote('lorem ipsum','some-unique-slug',Sentiment.Neutral,[{emotion:Emotion.Joy.Happiness,temperature:1}],[]),
+                    new Quote('this is a duplicate, exist in the other collection','foo',Sentiment.Negative,[{ emotion: Emotion.Sadness.Sorrow, temperature: 2 }, { emotion: Emotion.Disgust.Scorn, temperature: 2 }],[]),
+                    new Quote('this is a duplicate, exist in the other collection','bar',Sentiment.Positive,[{ emotion: Emotion.Sadness.Sorrow, temperature: 2 }, { emotion: Emotion.Disgust.Scorn, temperature: 2 }],[]),
+                    new Quote('lorem ipsum 2','some-unique-slug2',Sentiment.Negative,[{ emotion: Emotion.Sadness.Sorrow, temperature: 2 }, { emotion: Emotion.Disgust.Scorn, temperature: 2 }],[]),
+                    new Quote('this is a duplicate, exist in THIS collection','bar',Sentiment.Positive,[{ emotion: Emotion.Sadness.Sorrow, temperature: 2 }, { emotion: Emotion.Disgust.Scorn, temperature: 2 }],[]),
+                ]);
+
+                quoteCollection.merge(anotherQuoteCollection);
+
+                const hasDuplicateSlugs=quoteCollection.data.map(x=>x.slug).some((q,index,arr)=> arr.indexOf(q)!==index);
+
+                expect(hasDuplicateSlugs).toBe(false);
+
+            });
+
+
+            describe("shuffle()",() => {
+                test("Order changes", async() => {
+                    const quoteCollection=getQuoteCollectionInstance();
+                    const originalQuoteCollection=quoteCollection.clone();
+
+                    quoteCollection.shuffle();
+
+                    expect(quoteCollection.data.map(x=>x.slug)).not.toEqual(originalQuoteCollection.data.map(x=>x.slug));
+                });
+
+
+            });
+
+            describe("selectCandidates()",() => {
+                test("Maintains the elements (doesn't reduce) when there are few elements", async() => {
+                    const quoteCollection=new QuoteCollection([
+                        new Quote('lorem ipsum','some-unique-slug',Sentiment.Neutral,[{emotion:Emotion.Joy.Happiness,temperature:1}],[]),
+                        new Quote('text','foo',Sentiment.Negative,[{ emotion: Emotion.Sadness.Sorrow, temperature: 2 }, { emotion: Emotion.Disgust.Scorn, temperature: 2 }],[]),
+                    ]);
+                    const originalLength=quoteCollection.data.length;
+
+                    quoteCollection.selectCandidates();
+
+                    expect(quoteCollection.data.length).toBe(originalLength);
+                });
+
+                test("Reduces size when there are sufficient elements", async() => {
+                    const quoteCollection=getQuoteCollectionInstance();
+                    const originalLength=quoteCollection.data.length;
+
+                    quoteCollection.selectCandidates();
+
+                    expect(quoteCollection.data.length).toBeLessThan(originalLength)
+                });
+
+                test("Doesn't throw exception when there is no quotes", async() => {
+                    const quoteCollection=new QuoteCollection([]);
+
+                    quoteCollection.selectCandidates();
+
+                    expect(quoteCollection.data.length).toBe(0)
+                });
+
+                test("Subset is in original order and the first N quotes", async() => {
+                    const quoteCollection=getQuoteCollectionInstance();
+                    const originalQuoteArray=quoteCollection.clone().data;
+
+
+                    quoteCollection.selectCandidates();
+
+                    const orderingMatches=quoteCollection.data.every(function (q,i){
+                        return originalQuoteArray[i].slug===q.slug;
+                    });
+
+
+
+                    expect(orderingMatches).toBe(true)
+                });
+
+
+            });
+
+            describe("first()",() => {
+                test("Returns the first element", async() => {
+                    const quoteCollection=getQuoteCollectionInstance();
+
+                    expect(quoteCollection.first()?.slug).toBe(quoteCollection.data[0].slug);
+
+                });
+
+                test("Returns undefined/null when there aren't any quotes", async() => {
+                    const quoteCollection=new QuoteCollection([]);
+
+                    expect(quoteCollection.first()).toBe(undefined);
+
+                });
+            });
+        });
     });
 });
