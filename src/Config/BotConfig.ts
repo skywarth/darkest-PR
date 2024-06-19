@@ -34,7 +34,7 @@ export class BotConfig implements HasEventSubscriptions{
         return this.#instance;
     }
 
-    envAccessor(
+    private envAccessor(
         env:string|undefined,
         defaultVal:any,
         caster:((env:string)=>typeof defaultVal)=function (env:string):string{
@@ -58,7 +58,7 @@ export class BotConfig implements HasEventSubscriptions{
     }
 
     isEventSubscriptionEnabled(event: EmitterWebhookEventName): boolean {
-        return this.event_subscriptions[event] ?? true;
+        return this.event_subscriptions[event] ?? this.defaultEventSubscription;
     }
 
 }
