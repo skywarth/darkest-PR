@@ -3,7 +3,7 @@ import {Quote, QuoteCollection} from "../../../src/Quote/Quote";
 import {Sentiment} from "../../../src/enums/Sentiment";
 import {Emotion} from "../../../src/enums/Emotion";
 
-describe.concurrent("Quote Tests", () => {
+describe.concurrent("QuoteCollection Tests", () => {
     describe("QuoteCollection",()=>{
 
         const quoteArray:Array<Quote>=[
