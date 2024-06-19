@@ -68,7 +68,6 @@ export class RepositoryConfig implements HasEventSubscriptions{
 
 
     isEventSubscriptionEnabled(event: EmitterWebhookEventName): boolean {
-        console.log(this.event_subscriptions[event]);
         return this.event_subscriptions[event] ?? this.defaultEventSubscription;
     }
 }
