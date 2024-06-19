@@ -1,0 +1,22 @@
+[
+  {
+    "id": 2,
+    "number": 2,
+    "state": "closed",
+    "title": "Previous Test Pull Request",
+    "user": {
+      "login": "test-user"
+    },
+    "head": {
+      "ref": "test-branch"
+    },
+    "base": {
+      "ref": "main"
+    },
+    "body": "This is a previous test pull request",
+    "created_at": "2024-01-01T00:00:00Z",
+    "updated_at": "2024-01-01T00:00:00Z",
+    "merged_at": null,
+    "closed_at": "2024-01-01T01:00:00Z"
+  }
+]

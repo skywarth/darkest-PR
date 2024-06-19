@@ -42,6 +42,8 @@ export class RepositoryConfig implements HasEventSubscriptions{
 
             return config;
         } catch (error) {
+
+            console.log('Error fetching configuration file');
             console.log(error);
             ghContext.log.error('Error fetching configuration file:', error);
             return {};
