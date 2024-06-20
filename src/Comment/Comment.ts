@@ -3,6 +3,7 @@ import {Emotion} from "../enums/Emotion";
 import {ActionContextDTO} from "../DTO/ActionContextDTO.js";
 import Utils from "../Utils.js";
 import {getSentimentIcon} from "../enums/Sentiment.js";
+import {CaseSlugs} from "../enums/CaseSlug.js";
 
 export type ReplyContext={
     replyToUsername:string,
@@ -12,14 +13,14 @@ export type ReplyContext={
 
 export default class Comment{
     #quote:Quote;
-    #caseSlug:string;
+    #caseSlug:CaseSlugs.Types;
     #actionContext:ActionContextDTO;
     #warnings:Array<string>;
     #replyToContext:ReplyContext|null;
     #debugMode:boolean;
     #emojis:boolean;
 
-    constructor(quote: Quote,caseSlug:string,actionContext:ActionContextDTO,debugMode:boolean,emojis:boolean,replyToContext:ReplyContext|null=null,warnings:Array<string>=[]) {
+    constructor(quote: Quote,caseSlug:CaseSlugs.Types,actionContext:ActionContextDTO,debugMode:boolean,emojis:boolean,replyToContext:ReplyContext|null=null,warnings:Array<string>=[]) {
         this.#quote = quote;
         this.#caseSlug=caseSlug;
         this.#actionContext=actionContext;
@@ -41,7 +42,7 @@ export default class Comment{
     }
 
 
-    get caseSlug(): string {
+    get caseSlug(): CaseSlugs.Types {
         return this.#caseSlug;
     }
 

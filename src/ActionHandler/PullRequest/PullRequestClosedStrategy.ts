@@ -6,6 +6,7 @@ import {ActionContextDTO} from "../../DTO/ActionContextDTO.js";
 import {EmitterWebhookEventName} from "@octokit/webhooks/dist-types/types";
 import {CommentFactory} from "../../Comment/CommentFactory.js";
 import Comment from "../../Comment/Comment";
+import {CaseSlugs} from "../../enums/CaseSlug.js";
 
 
 export type OctokitResponsePullRequestReview = components["schemas"]["pull-request-review"];//Alternative: RestEndpointMethodTypes["pulls"]["listReviews"]["response"]["data"] using import { RestEndpointMethodTypes } from "@octokit/plugin-rest-endpoint-methods";
@@ -22,7 +23,7 @@ export default class PullRequestClosedStrategy extends PullRequestStrategy<'pull
 
         let tags: Array<string>=['close','end','finish',];
         let contextEmotionMatrix: Emotion.EmotionMatrix;
-        let caseSlug: string;
+        let caseSlug: CaseSlugs.Types;
         let sentiment :Sentiment;
 
         const reviews:Array<OctokitResponsePullRequestReview>=  (await this.ghContext.octokit.pulls.listReviews({
@@ -44,7 +45,7 @@ export default class PullRequestClosedStrategy extends PullRequestStrategy<'pull
             sentiment=Sentiment.Positive;
             if(reviews.length>3 || reviewCommentsAmount>25){
                 //CASE: Long discussion/review
-                caseSlug='pr-closed.merged.many-reviews';
+                caseSlug=CaseSlugs.PullRequest.Closed.MergedManyReviews;
                 tags=[...tags,'finally','at last','executed','destroyed','glorious','victorious','victory','relief','unwavering','unyielding','champion','comeback','improvement','revival','resurgence'];
                 contextEmotionMatrix=[
                     ...contextEmotionMatrix,
@@ -57,7 +58,7 @@ export default class PullRequestClosedStrategy extends PullRequestStrategy<'pull
                 ];
             }else if(reviews.length>0 || reviewCommentsAmount>0){
                 //CASE: Short discussion/review
-                caseSlug='pr-closed.merged.few-reviews';
+                caseSlug=CaseSlugs.PullRequest.Closed.MergedFewReviews;
                 tags=[...tags,'confidence','easy','kicked','easily','defeated','professional','masterfully','talented','keen','learn','clever','quick','fast','haste'];
                 contextEmotionMatrix=[
                     ...contextEmotionMatrix,
@@ -72,7 +73,7 @@ export default class PullRequestClosedStrategy extends PullRequestStrategy<'pull
                 ];
             }else{
                 //CASE: No discussion/review
-                caseSlug='pr-closed.merged.no-review';
+                caseSlug=CaseSlugs.PullRequest.Closed.MergedNoReviews;
                 tags=[...tags,'easy','easily','professional','masterfully','talented','keen','learn','clever','quick','fast','haste','destroyed','obliterated','god','godlike','overconfidence','trust','renown','honor','glory','confidence','greatness','owned','smart','incredible','unbelievable','extraordinary'];
                 contextEmotionMatrix=[
                     ...contextEmotionMatrix,
@@ -99,7 +100,7 @@ export default class PullRequestClosedStrategy extends PullRequestStrategy<'pull
             sentiment=Sentiment.Negative;
             if(reviews.length>3 || reviewCommentsAmount>25){
                 //CASE: Long discussion/review
-                caseSlug='pr-closed.not-merged.many-reviews';
+                caseSlug=CaseSlugs.PullRequest.Closed.NotMergedManyReviews;
                 tags=[...tags,'effort','investment','time','support','alter','change','help','attempt','battle','struggle','labor','stress','strain','too much','exhaustion','cannot','impossible','despair','fed up','enough']
                 contextEmotionMatrix=[
                     ...contextEmotionMatrix,
@@ -110,7 +111,7 @@ export default class PullRequestClosedStrategy extends PullRequestStrategy<'pull
                 ]
             }else if(reviews.length>0 || reviewCommentsAmount>0){
                 //CASE: Short discussion/review
-                caseSlug='pr-closed.not-merged.few-reviews';
+                caseSlug=CaseSlugs.PullRequest.Closed.NotMergedFewReviews;
                 tags=[...tags,'disbelief','cancel','ignore','unfaithful','neglect','overlook','scorn','avoid','evade','evasion'];
                 contextEmotionMatrix=[
                     ...contextEmotionMatrix,
@@ -121,7 +122,7 @@ export default class PullRequestClosedStrategy extends PullRequestStrategy<'pull
                 ]
             }else{
                 //CASE: No discussion/review
-                caseSlug='pr-closed.not-merged.no-review';
+                caseSlug=CaseSlugs.PullRequest.Closed.NotMergedNoReviews;
                 tags=[...tags,'ignore','overlook','scorn','avoid','evade','evasion','abandon','disregard','disrespect','contempt','neglect','negligence','oversight','disfavor','oblivion','silence','abyss','void','conspiracy','betrayal','distrust']
                 contextEmotionMatrix=[
                     ...contextEmotionMatrix,
@@ -135,7 +136,8 @@ export default class PullRequestClosedStrategy extends PullRequestStrategy<'pull
             }
 
             if(previousPRs.length>0){
-                caseSlug='pr-closed.not-merged.previously-closed';
+                //TODO: consider array of caseSlugs because of this
+                caseSlug=CaseSlugs.PullRequest.Closed.NotMergedPreviouslyClosed;
                 tags=[...tags,'retry','attempt','try','again','hopeless','endless','cycle','unending','despair','conspiracy','betrayal','distrust'];
                 contextEmotionMatrix=[
                     ...contextEmotionMatrix,

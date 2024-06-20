@@ -5,6 +5,7 @@ import {ActionContextDTO} from "../../DTO/ActionContextDTO.js";
 import {EmitterWebhookEventName} from "@octokit/webhooks/dist-types/types";
 import {CommentFactory} from "../../Comment/CommentFactory.js";
 import Comment from "../../Comment/Comment";
+import {CaseSlugs} from "../../enums/CaseSlug.js";
 
 export default class PullRequestOpenedStrategy extends PullRequestStrategy<'pull_request.opened'> {
 
@@ -23,7 +24,7 @@ export default class PullRequestOpenedStrategy extends PullRequestStrategy<'pull
             {emotion: Emotion.Fear.Anxiety, temperature: 3},
             {emotion: Emotion.Fear.Fright, temperature: 2},
         ];
-        let caseSlug: string = 'pr-opened.fresh';
+        let caseSlug: CaseSlugs.Types = CaseSlugs.PullRequest.Opened.Fresh;
         let sentiment = Sentiment.Positive;
 
         if(previousPRs.length>0){
@@ -33,7 +34,7 @@ export default class PullRequestOpenedStrategy extends PullRequestStrategy<'pull
             tags=[...tags,'retry','attempt','try','again'];
             if(previousPR.merged_at){
                 //CASE: Re-open, previously merged
-                caseSlug='pr-opened.previously-merged';
+                caseSlug=CaseSlugs.PullRequest.Opened.PreviouslyMerged;
                 sentiment=Sentiment.Neutral;
                 contextEmotionMatrix=[
                     {emotion: Emotion.Anger.Irritation, temperature: 2},
@@ -47,7 +48,7 @@ export default class PullRequestOpenedStrategy extends PullRequestStrategy<'pull
                 tags=[...tags,'mistake','missing'];
             }else{
                 //CASE: Re-open, previously closed
-                caseSlug='pr-opened.previously-closed';
+                caseSlug=CaseSlugs.PullRequest.Opened.PreviouslyClosed;
                 sentiment=Sentiment.Negative;
                 contextEmotionMatrix=[
                     {emotion: Emotion.Anger.Irritation, temperature: 4},

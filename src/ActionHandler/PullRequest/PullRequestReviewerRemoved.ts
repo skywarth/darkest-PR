@@ -5,6 +5,7 @@ import {ActionContextDTO} from "../../DTO/ActionContextDTO.js";
 import {EmitterWebhookEventName} from "@octokit/webhooks/dist-types/types";
 import {CommentFactory} from "../../Comment/CommentFactory.js";
 import Comment from "../../Comment/Comment";
+import {CaseSlugs} from "../../enums/CaseSlug.js";
 
 
 export default class PullRequestReviewerRemoved extends PullRequestStrategy<'pull_request.review_request_removed'>{
@@ -34,7 +35,7 @@ export default class PullRequestReviewerRemoved extends PullRequestStrategy<'pul
             {emotion:Emotion.Sadness.Grief,temperature:5},
         ];
         //TODO: use direct quoteSlugs
-        let caseSlug: string='pull-request.reviewer-removed';
+        let caseSlug: CaseSlugs.Types=CaseSlugs.PullRequest.Reviewer.Removed;
         let sentiment :Sentiment=Sentiment.Negative;
 
 

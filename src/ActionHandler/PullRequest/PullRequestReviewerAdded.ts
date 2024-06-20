@@ -5,6 +5,7 @@ import {ActionContextDTO} from "../../DTO/ActionContextDTO.js";
 import {EmitterWebhookEventName} from "@octokit/webhooks/dist-types/types";
 import {CommentFactory} from "../../Comment/CommentFactory.js";
 import Comment from "../../Comment/Comment";
+import {CaseSlugs} from "../../enums/CaseSlug.js";
 
 
 export default class PullRequestReviewerAdded extends PullRequestStrategy<'pull_request.review_requested'>{
@@ -28,7 +29,7 @@ export default class PullRequestReviewerAdded extends PullRequestStrategy<'pull_
             {emotion:Emotion.Surprise.Wonder,temperature:1},
         ];
         //TODO: use direct quoteSlugs
-        let caseSlug: string='pull-request.reviewer-added';
+        let caseSlug: CaseSlugs.Types=CaseSlugs.PullRequest.Reviewer.Added;
         let sentiment :Sentiment=Sentiment.Neutral;
 
 

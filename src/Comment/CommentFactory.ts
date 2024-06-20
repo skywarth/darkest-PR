@@ -2,6 +2,7 @@ import {QuoteFacade} from "../Quote/QuoteFacade.js";
 import {Quote} from "../Quote/Quote.js";
 import {ActionContextDTO} from "../DTO/ActionContextDTO.js";
 import Comment, {ReplyContext} from "./Comment.js";
+import {CaseSlugs} from "../enums/CaseSlug.js";
 
 export class CommentFactory {
 
@@ -31,7 +32,7 @@ export class CommentFactory {
     }
 
     create(
-        caseSlug: string,
+        caseSlug: CaseSlugs.Types,
         actionContext: ActionContextDTO,
         replyToContext: ReplyContext | null = null,
         warnings: Array<string> = []

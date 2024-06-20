@@ -9,6 +9,7 @@ import {ActionContextDTO} from "../../DTO/ActionContextDTO.js";
 import {BotConfig} from "../../Config/BotConfig.js";
 import {EmitterWebhookEventName} from "@octokit/webhooks/dist-types/types";
 import {CommentFactory} from "../../Comment/CommentFactory.js";
+import {CaseSlugs} from "../../enums/CaseSlug.js";
 
 
 
@@ -28,7 +29,7 @@ export default class IssueCommentCreatedStrategy extends IssueCommentStrategy<'i
 
         let tags: Array<string>=['comment','create','new','narrative','narrate','criticism','collaborate','discussion','whisper','conspiracy','mention','note','opinion','remark','summon'];
         let contextEmotionMatrix: Emotion.EmotionMatrix=[];
-        let caseSlug: string;
+        let caseSlug: CaseSlugs.Types;
         let sentiment :Sentiment|null=null;
 
         let warnings:Array<string>=[]
@@ -77,9 +78,9 @@ export default class IssueCommentCreatedStrategy extends IssueCommentStrategy<'i
 
 
         if(matchingJsonString){
-            caseSlug='issue-comment.created.bot-tagged.param-provided';
+            caseSlug=CaseSlugs.Issue.Comment.Created.BotTagged.ParametersProvided;
         }else{
-            caseSlug='issue-comment.created.bot-tagged.no-param';
+            caseSlug=CaseSlugs.Issue.Comment.Created.BotTagged.ParametersNotProvided;
         }
 
         console.log(actionContext);

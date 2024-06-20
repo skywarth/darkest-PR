@@ -6,6 +6,7 @@ import {ActionContextDTO} from "../../DTO/ActionContextDTO.js";
 import {EmitterWebhookEventName} from "@octokit/webhooks/dist-types/types";
 import {CommentFactory} from "../../Comment/CommentFactory.js";
 import Comment from "../../Comment/Comment";
+import {CaseSlugs} from "../../enums/CaseSlug.js";
 
 
 export default class PullRequestReviewSubmittedStrategy extends PullRequestReviewStrategy<'pull_request_review.submitted'>{
@@ -20,13 +21,13 @@ export default class PullRequestReviewSubmittedStrategy extends PullRequestRevie
 
         let tags: Array<string>=['review','revise','inspect','peek','watch','judge','judgement','judged','conscious','weighed','ponder','decision','verdict','ruling','decree','conclusion','sentence','analysis','determination','assessment','opinion','belief'];
         let contextEmotionMatrix: Emotion.EmotionMatrix;
-        let caseSlug: string;
+        let caseSlug: CaseSlugs.Types;
         let sentiment :Sentiment;
 
         const reviewVerdict=this.ghContext.payload.review.state;
         if(reviewVerdict==='approved'){
             //CASE: Approved
-            caseSlug='pull-request-review.approved';
+            caseSlug=CaseSlugs.PullRequest.Review.Submitted.Approved;
             sentiment=Sentiment.Positive;
             tags=[...tags,'success','victory','victorious','decimated','executed','approval','blessing','confirm','approve','endorsement','ratification','allow','permit','accepted','support','favor','praise','applaud','great','glory']
             contextEmotionMatrix=[
@@ -41,7 +42,7 @@ export default class PullRequestReviewSubmittedStrategy extends PullRequestRevie
             ];
         }else if(reviewVerdict==='changes_requested'){
             //CASE: Change Requested, rejected
-            caseSlug='pull-request-review.rejected';
+            caseSlug=CaseSlugs.PullRequest.Review.Submitted.ChangesRequested;
             sentiment=Sentiment.Negative;
             tags=[...tags,'fail','failure','defeat','denied','deny','removed','beat','beaten','decline','reject','request','change','alter','improve','disqualified','blocked','missed','dismissed','repelled','disowned','weak','insufficient','low','lowly','fool','feeble','sluggish','brutish','brute','wasted','soft','incapable','poor','dull','lacking','missing','raw','unsatisfactory','unqualified','unprepared','incomplete','fall'];
             contextEmotionMatrix=[
@@ -62,7 +63,7 @@ export default class PullRequestReviewSubmittedStrategy extends PullRequestRevie
             ];
         }else{
             //CASE: Just Comment
-            caseSlug='pull-request-review.commented';
+            caseSlug=CaseSlugs.PullRequest.Review.Submitted.Commented;
             sentiment=Sentiment.Neutral;
             tags=[...tags,'advised','suggested','advice','commend','command','order','encourage','instruct','recommend','warn','counsel','guide','lead','disclose','train','tutor','enlighten','support','steer','obey']
             contextEmotionMatrix=[
