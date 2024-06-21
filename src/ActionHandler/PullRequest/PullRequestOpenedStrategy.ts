@@ -44,6 +44,9 @@ export default class PullRequestOpenedStrategy extends PullRequestStrategy<'pull
                     {emotion: Emotion.Fear.Panic, temperature: 3},
                     {emotion: Emotion.Joy.Relief, temperature: 2},
                     {emotion: Emotion.Joy.Thrill, temperature: 1},
+                    {emotion: Emotion.Fear.Anxiety, temperature: 4},
+                    {emotion: Emotion.Fear.Fright, temperature: 1},
+                    {emotion: Emotion.Interest.Acceptance, temperature: 1},
                 ];
                 tags=[...tags,'mistake','missing'];
             }else{

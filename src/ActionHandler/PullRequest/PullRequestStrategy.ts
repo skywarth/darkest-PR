@@ -19,7 +19,9 @@ export default abstract class PullRequestStrategy<T extends EmitterWebhookEventN
             direction:'desc',
             owner: payload.repository.owner.login,
             state: 'all',
-            head: `${payload.repository.owner.login}:${payload.pull_request.head.ref}`
+            head: `${payload.pull_request.head.ref}`,//source branch
+            //head: `${payload.repository.owner.login}:${payload.pull_request.head.ref}`,
+            //base:`${payload.repository.owner.login}:${payload.pull_request.base.ref}:` //target branch, to merge into
         })).data.filter(x=>x.id!==payload.pull_request.id);
         return this.executePrStrategy(commentFactory,previousPRs);
     }

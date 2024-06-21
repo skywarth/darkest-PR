@@ -9,10 +9,10 @@
       "login": "test-user"
     },
     "head": {
-      "ref": "test-branch"
+      "ref": "some-side-branch-123"
     },
     "base": {
-      "ref": "main"
+      "ref": "master"
     },
     "body": "This is a test pull request",
     "created_at": "2024-01-01T00:00:00Z",
