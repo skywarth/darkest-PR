@@ -30,12 +30,8 @@ describe('QuoteFacade Tests', () => {
 
         test("Returns undefined/null when no Quote is found with the given parameters", async () => {
             const quoteFacade=QuoteFacade.getInstance();
-            const contextEmotionMatrix:Emotion.EmotionMatrix=[
 
-                {emotion:Emotion.Sadness.Grief,temperature:5},
-            ];
-
-            const quote=quoteFacade.getQuote(new ActionContextDTO(contextEmotionMatrix,Sentiment.Positive));
+            const quote=quoteFacade.getQuote(new ActionContextDTO([],null,[],['some-tag-that-really-doesnt-exist']));
 
             expect(quote).toBeUndefined();
         });
