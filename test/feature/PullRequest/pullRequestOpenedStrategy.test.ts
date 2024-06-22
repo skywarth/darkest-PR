@@ -20,9 +20,12 @@ import pullRequestListMerged from '../../fixtures/data/pulls/pulls.list.merged.j
 describe("Pull Request Opened Tests", () => {
     let probot: Probot=new Probot({
         githubToken: "test",
-        Octokit: ProbotOctokit.defaults({
-            retry: { enabled: false },
-            throttle: { enabled: false },
+        Octokit: ProbotOctokit.defaults(function(instanceOptions:any) {//this POS costed me around 2.5 hours, damn!
+            return {
+                ...instanceOptions,//not really necessary
+                retry: { enabled: false },
+                throttle: { enabled: false },
+            }
         }),
     });
     DarkestPR(probot);
