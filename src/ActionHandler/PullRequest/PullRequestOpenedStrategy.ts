@@ -48,7 +48,7 @@ export default class PullRequestOpenedStrategy extends PullRequestStrategy<'pull
                     {emotion: Emotion.Fear.Fright, temperature: 1},
                     {emotion: Emotion.Interest.Acceptance, temperature: 1},
                 ];
-                tags=[...tags,'mistake','missing'];
+                tags=[...tags,'mistake','missing','incomplete','lacking','once more','again'];
             }else{
                 //CASE: Re-open, previously closed
                 caseSlug=CaseSlugs.PullRequest.Opened.PreviouslyClosed;
