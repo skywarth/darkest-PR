@@ -43,15 +43,17 @@ describe("Pull Request Opened Tests", () => {
     };
 
     const setupEndpointMocks = (previousPrs: any) => {
-        nock('https://api.github.com')
+        const endpointRoot:string='https://api.github.com';
+
+        nock(endpointRoot)
             .get('/repos/test-owner/test-repo/pulls')
             .query(true)
             .reply(200, previousPrs);
 
-        nock('https://api.github.com')
+        nock(endpointRoot)
             .post('/repos/test-owner/test-repo/issues/1/comments', mockCreateComment)
             .reply(200);
-        nock('https://api.github.com')
+        nock(endpointRoot)
             .get('/repos/test-owner/test-repo/contents/.darkest-pr.json')
             .reply(200, {
                 content: Buffer.from(JSON.stringify({/* config object*/ })).toString('base64')
