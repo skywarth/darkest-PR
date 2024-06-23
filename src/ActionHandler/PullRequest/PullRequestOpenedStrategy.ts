@@ -4,7 +4,7 @@ import { Emotion } from "../../enums/Emotion.js";
 import {ActionContextDTO} from "../../DTO/ActionContextDTO.js";
 import {EmitterWebhookEventName} from "@octokit/webhooks/dist-types/types";
 import {CommentFactory} from "../../Comment/CommentFactory.js";
-import Comment from "../../Comment/Comment";
+import Comment from "../../Comment/Comment.js";
 import {CaseSlugs} from "../../enums/CaseSlug.js";
 
 export default class PullRequestOpenedStrategy extends PullRequestStrategy<'pull_request.opened'> {
