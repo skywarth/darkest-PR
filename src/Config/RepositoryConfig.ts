@@ -35,11 +35,7 @@ export class RepositoryConfig implements HasEventSubscriptions{
 
             //if (!('content' in configFileResponse.data)) {
 
-            if(!(configFileResponse?.data)){//TODO: test the no config file case response manually
-                throw new Error('Configuration file not found');
-            }
-
-            if (!('content' in configFileResponse.data)) {
+            if (!(configFileResponse?.data) || !('content' in configFileResponse.data)) {
                 throw new Error('Invalid configuration file format.');
             }
 
@@ -47,11 +43,21 @@ export class RepositoryConfig implements HasEventSubscriptions{
             const config:Partial<RepositoryConfig> = JSON.parse(content);
 
             return config;
-        } catch (error) {
+        } catch (error:any) {
+            if(error.status){
+                //It is said Octokit request errors ALWAYS have status attribute/prop: https://www.npmjs.com/package/@octokit/request-error
+                //This section is for Octokit request errors
+                if(error.status===404){
+                    //Config file is not present in the target dir of the repository
+                    ghContext.log.error(error,'Config file is not present in the target dir of the repository');
+                }else{
+                    ghContext.log.error(error,'Unknown HTTP error while fetching configuration file', );
+                }
+            }else{
+                ghContext.log.error(error,'Error fetching configuration file');
+            }
 
-            console.log('Error fetching configuration file');
-            console.log(error);
-            ghContext.log.error(error,'Error fetching configuration file', );
+
             return {};
         }
     }

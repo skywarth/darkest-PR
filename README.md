@@ -180,6 +180,7 @@ Ridiculous.
 
 ### Reasons to hate Typescript
 
+- Made by Microsoft
 - TS2590: Expression produces a union type that is too complex to represent.
 
 ### IoC Container & Dependency Inversion principle of SOLID
