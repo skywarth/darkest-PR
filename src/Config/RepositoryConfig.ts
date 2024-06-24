@@ -33,6 +33,12 @@ export class RepositoryConfig implements HasEventSubscriptions{
                 path: this.#CONFIG_PATH,
             });
 
+            //if (!('content' in configFileResponse.data)) {
+
+            if(!(configFileResponse?.data)){//TODO: test the no config file case response manually
+                throw new Error('Configuration file not found');
+            }
+
             if (!('content' in configFileResponse.data)) {
                 throw new Error('Invalid configuration file format.');
             }
@@ -45,7 +51,7 @@ export class RepositoryConfig implements HasEventSubscriptions{
 
             console.log('Error fetching configuration file');
             console.log(error);
-            ghContext.log.error('Error fetching configuration file:', error);
+            ghContext.log.error(error,'Error fetching configuration file', );
             return {};
         }
     }
