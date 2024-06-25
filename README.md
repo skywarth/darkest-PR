@@ -1,5 +1,6 @@
 # darkest-PR
 
+[![codecov](https://codecov.io/gh/skywarth/darkest-PR/graph/badge.svg?token=Z86VA7I4HH)](https://codecov.io/gh/skywarth/darkest-PR)
 
 ## Setup
 

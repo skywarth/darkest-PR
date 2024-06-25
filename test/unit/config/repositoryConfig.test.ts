@@ -3,6 +3,7 @@ import {RepositoryConfig} from "../../../src/Config/RepositoryConfig";
 import nock from "nock";
 import {Context} from "probot";
 import {RequestError} from "@octokit/request-error";
+import {EventSubscriptionsDTO} from "../../../src/DTO/EventSubscriptionsDTO";
 
 
 
@@ -132,6 +133,83 @@ describe('RepositoryConfig', () => {
 
         });
     })
+
+    describe('isEventSubscriptionEnabled()', () => {
+        test("No declaration for event subscriptions, using defaults", async () => {
+            const mockConfig:Partial<RepositoryConfig> = {
+                debug_mode: true,
+                emojis: false,
+            };
+
+            const repositoryConfig=new RepositoryConfig(mockConfig);
+
+            expect(repositoryConfig.isEventSubscriptionEnabled('issue_comment.created')).toBe(repositoryConfig.defaultEventSubscription);
+            expect(logErrorSpy).not.toBeCalled();
+        });
+
+        test("Declaration for event subscriptions, but empty", async () => {
+            const mockConfig:Partial<RepositoryConfig> = {
+                debug_mode: false,
+                emojis: true,
+                event_subscriptions:{}
+            };
+
+            const repositoryConfig=new RepositoryConfig(mockConfig);
+
+            expect(repositoryConfig.isEventSubscriptionEnabled('issue_comment.created')).toBe(repositoryConfig.defaultEventSubscription);
+            expect(logErrorSpy).not.toBeCalled();
+        });
+
+        test("Declaration for event subscriptions, contains valid keys and values", async () => {
+            const eventSubscriptions:EventSubscriptionsDTO={
+                'pull_request.opened':true,
+                'issue_comment.created':false,
+                'pull_request_review.submitted':false,
+            };
+            const mockConfig:Partial<RepositoryConfig> = {
+                debug_mode: false,
+                emojis: true,
+                event_subscriptions:eventSubscriptions
+            };
+
+            const repositoryConfig=new RepositoryConfig(mockConfig);
+
+            expect(repositoryConfig.isEventSubscriptionEnabled('issue_comment.created')).toBe(eventSubscriptions['issue_comment.created']);
+            expect(repositoryConfig.isEventSubscriptionEnabled('pull_request.opened')).toBe(eventSubscriptions['pull_request.opened']);
+            expect(repositoryConfig.isEventSubscriptionEnabled('pull_request_review.submitted')).toBe(eventSubscriptions['pull_request_review.submitted']);
+            expect(logErrorSpy).not.toBeCalled();
+        });
+
+    });
+
+    describe('Initialization/Constructor', () => {
+        test("Standard procedure, valid config with event subscriptions", async () => {
+            const eventSubscriptions:EventSubscriptionsDTO={
+                'pull_request.opened':true,
+                'issue_comment.created':false,
+                'pull_request_review.submitted':false,
+            };
+            const mockConfig:Partial<RepositoryConfig> = {
+                debug_mode: false,
+                emojis: true,
+                event_subscriptions:eventSubscriptions
+            };
+
+
+            getContentsSpy.mockImplementationOnce(async ()=>mockConfigEndpointResponse(JSON.stringify(mockConfig)));
+
+            const config = await RepositoryConfig.readConfigFromRepository(mockGitHubContext);
+            const repositoryConfig=new RepositoryConfig(config);
+
+            expect(getContentsSpy).toHaveBeenCalledOnce();
+            expect(repositoryConfig.debug_mode).toStrictEqual(mockConfig.debug_mode);
+            expect(repositoryConfig.emojis).toStrictEqual(mockConfig.emojis);
+            expect(repositoryConfig.event_subscriptions).toStrictEqual(mockConfig.event_subscriptions);
+            expect(logErrorSpy).not.toBeCalled();
+
+
+        });
+    });
 
 
 });
