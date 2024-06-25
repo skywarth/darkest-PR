@@ -50,14 +50,17 @@ describe("Pull Request Opened Tests", () => {
         const endpointRoot:string='https://api.github.com';
 
         nock(endpointRoot)
+            .persist()
             .get('/repos/test-owner/test-repo/pulls')
             .query(true)
             .reply(200, pullRequestIndexResponseMock);
 
         nock(endpointRoot)
+            .persist()
             .post('/repos/test-owner/test-repo/issues/1/comments', createCommentEndpointMock)
             .reply(200);
         nock(endpointRoot)
+            .persist()
             .get('/repos/test-owner/test-repo/contents/.darkest-pr.json')
             .reply(200, {
                 content: Buffer.from(JSON.stringify({/* config object*/ })).toString('base64')
@@ -67,13 +70,14 @@ describe("Pull Request Opened Tests", () => {
     beforeAll(() => {
         nock.disableNetConnect();
         initializeMocks();
+        setupEndpointMocks();
+
     });
 
     beforeEach(() => {
     });
 
     afterEach(() => {
-        nock.cleanAll();
         vi.clearAllMocks();
     });
 
@@ -94,9 +98,7 @@ describe("Pull Request Opened Tests", () => {
             expectedCaseSlug: CaseSlugs.PullRequest.Opened.PreviouslyMerged,
         },
     ])('$description', ({ previousPrs, expectedCaseSlug }) => {
-        beforeEach(() => {
-            setupEndpointMocks();
-        });
+
 
         test('Creates a comment after receiving the event', async () => {
             pullRequestIndexResponseMock.mockImplementation(()=>previousPrs);
