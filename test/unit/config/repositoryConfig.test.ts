@@ -57,10 +57,10 @@ describe('RepositoryConfig', () => {
             });
         });
 
-        mockConfigEndpointResponse=vi.fn().mockImplementation((mockConfig:object)=>{
+        mockConfigEndpointResponse=vi.fn().mockImplementation((mockConfigString:string)=>{
             return {
                 data: {
-                    content: Buffer.from(JSON.stringify(mockConfig)).toString('base64')
+                    content: Buffer.from(mockConfigString).toString('base64')
                 }
             } as any
         })
@@ -88,7 +88,7 @@ describe('RepositoryConfig', () => {
                 }
             };
 
-            getContentsSpy.mockImplementationOnce(async ()=>mockConfigEndpointResponse(mockConfig));
+            getContentsSpy.mockImplementationOnce(async ()=>mockConfigEndpointResponse(JSON.stringify(mockConfig)));
 
             const config = await RepositoryConfig.readConfigFromRepository(mockGitHubContext);
 
@@ -112,6 +112,7 @@ describe('RepositoryConfig', () => {
             expect((logErrorSpy.mock.calls[0][0] as any).status).toBe(404);
 
         });
+
     })
 
 
