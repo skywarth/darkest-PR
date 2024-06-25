@@ -53,7 +53,10 @@ export class RepositoryConfig implements HasEventSubscriptions{
                 }else{
                     ghContext.log.error(error,'Unknown HTTP error while fetching configuration file', );
                 }
-            }else{
+            }else if(error instanceof SyntaxError){
+                ghContext.log.error(error,'Config file is malformed, cannot be parsed.');
+            }
+            else{
                 ghContext.log.error(error,'Error fetching configuration file');
             }
 

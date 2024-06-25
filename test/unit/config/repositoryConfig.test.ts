@@ -80,11 +80,12 @@ describe('RepositoryConfig', () => {
 
     describe('readConfigFromRepository()', () => {
         test("Reading repository configuration file", async () => {
-            const mockConfig = {
+            const mockConfig:Partial<RepositoryConfig> = {
                 debug_mode: true,
                 emojis: false,
                 event_subscriptions: {
-                    'pull_request.opened': true
+                    'pull_request.opened': true,
+                    'issue_comment.created':false,
                 }
             };
 
@@ -95,6 +96,7 @@ describe('RepositoryConfig', () => {
             expect(getContentsSpy).toHaveBeenCalledOnce();
             expect(config).toBeTypeOf('object');
             expect(config).toStrictEqual(mockConfig);
+            expect(config.event_subscriptions).toStrictEqual(mockConfig.event_subscriptions);
             expect(logErrorSpy).not.toBeCalled();
         });
 
@@ -108,11 +110,27 @@ describe('RepositoryConfig', () => {
             expect(config).toBeTypeOf('object');
             expect(config).toStrictEqual({});
             expect(logErrorSpy).toHaveBeenCalledOnce();
-            expect(logErrorSpy.mock.calls[0][0]).toBeInstanceOf(Error);
-            expect((logErrorSpy.mock.calls[0][0] as any).status).toBe(404);
+            expect(logErrorSpy.mock.calls[0][0]).toBeInstanceOf(RequestError);
+            expect(logErrorSpy.mock.calls[0][0].status).toBe(404);
 
         });
 
+
+        test("Incorrect config format", async () => {
+
+            getContentsSpy.mockImplementationOnce(async ()=>mockConfigEndpointResponse(
+                `{debug_mode:true}`//missing double-quotes from the key
+            ));
+
+            const config = await RepositoryConfig.readConfigFromRepository(mockGitHubContext);
+
+            expect(getContentsSpy).toHaveBeenCalledOnce();
+            expect(config).toBeTypeOf('object');
+            expect(config).toStrictEqual({});
+            expect(logErrorSpy).toHaveBeenCalledOnce();
+            expect(logErrorSpy.mock.calls[0][0]).toBeInstanceOf(SyntaxError);
+
+        });
     })
 
 
