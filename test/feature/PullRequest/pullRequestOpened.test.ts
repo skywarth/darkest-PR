@@ -1,4 +1,4 @@
-import {describe, expect, test, beforeEach, afterEach, vi, beforeAll} from "vitest";
+import {describe, expect, test, beforeEach, afterEach, vi, beforeAll, Mock, MockInstance} from "vitest";
 import {Probot, ProbotOctokit} from "probot";
 import nock from "nock";
 import DarkestPR from "../../../src/index";
@@ -18,40 +18,44 @@ import pullRequestListMerged from '../../fixtures/data/pulls/pulls.list.merged.j
 
 
 describe("Pull Request Opened Tests", () => {
-    let probot: Probot=new Probot({
-        githubToken: "test",
-        Octokit: ProbotOctokit.defaults(function(instanceOptions:any) {//this POS costed me around 2.5 hours, damn!
-            return {
-                ...instanceOptions,//not really necessary
-                retry: { enabled: false },
-                throttle: { enabled: false },
-            }
-        }),
-    });
-    DarkestPR(probot);
+    let probot: Probot;
 
-    let quoteFacadeGetQuoteSpy: any;
-    let commentFactoryCreateSpy: any;
-    let prOpenedStrategyExecutePrStrategySpy: any;
-    let mockCreateComment: any;
+    let quoteFacadeGetQuoteSpy:MockInstance;
+    let commentFactoryCreateSpy: MockInstance;
+    let prOpenedStrategyExecutePrStrategySpy: MockInstance;
+    let createCommentEndpointMock:Mock=vi.fn();
+    let pullRequestIndexResponseMock:Mock=vi.fn();
 
-    const initializeSpies = () => {
+    const initializeMocks = () => {
+        probot=new Probot({
+            githubToken: "test",
+            Octokit: ProbotOctokit.defaults(function(instanceOptions:any) {//this POS costed me around 2.5 hours, damn!
+                return {
+                    ...instanceOptions,//not really necessary
+                    retry: { enabled: false },
+                    throttle: { enabled: false },
+                }
+            }),
+        });
+        DarkestPR(probot);
+
+
         quoteFacadeGetQuoteSpy = vi.spyOn(QuoteFacade.prototype, 'getQuote');
         commentFactoryCreateSpy = vi.spyOn(CommentFactory.prototype, 'create');
         prOpenedStrategyExecutePrStrategySpy = vi.spyOn(PullRequestOpenedStrategy.prototype as any, 'executePrStrategy');
-        mockCreateComment = vi.fn((param: any) => param);
+        createCommentEndpointMock.mockImplementation((param: any) => param);
     };
 
-    const setupEndpointMocks = (previousPrs: any) => {
+    const setupEndpointMocks = () => {
         const endpointRoot:string='https://api.github.com';
 
         nock(endpointRoot)
             .get('/repos/test-owner/test-repo/pulls')
             .query(true)
-            .reply(200, previousPrs);
+            .reply(200, pullRequestIndexResponseMock);
 
         nock(endpointRoot)
-            .post('/repos/test-owner/test-repo/issues/1/comments', mockCreateComment)
+            .post('/repos/test-owner/test-repo/issues/1/comments', createCommentEndpointMock)
             .reply(200);
         nock(endpointRoot)
             .get('/repos/test-owner/test-repo/contents/.darkest-pr.json')
@@ -62,7 +66,7 @@ describe("Pull Request Opened Tests", () => {
 
     beforeAll(() => {
         nock.disableNetConnect();
-        initializeSpies();
+        initializeMocks();
     });
 
     beforeEach(() => {
@@ -91,15 +95,23 @@ describe("Pull Request Opened Tests", () => {
         },
     ])('$description', ({ previousPrs, expectedCaseSlug }) => {
         beforeEach(() => {
-            setupEndpointMocks(previousPrs);
+            setupEndpointMocks();
         });
 
         test('Creates a comment after receiving the event', async () => {
+            pullRequestIndexResponseMock.mockImplementation(()=>previousPrs);
+
             await probot.receive({
                 id: '123',
                 name: 'pull_request',
                 payload: pullRequestOpenedPayload as any,
             });
+
+
+
+
+
+            expect(pullRequestIndexResponseMock).toHaveBeenCalledOnce();
 
             expect(prOpenedStrategyExecutePrStrategySpy).toHaveBeenCalled();
             expect(quoteFacadeGetQuoteSpy).toHaveBeenCalled();
@@ -108,8 +120,8 @@ describe("Pull Request Opened Tests", () => {
             expect(commentInstance).toBeInstanceOf(Comment);
             expect(expectedCaseSlug).toBe(commentInstance.caseSlug);
 
-            const sentData = mockCreateComment.mock.results[0]?.value ?? {};
-            expect(mockCreateComment).toHaveBeenCalledOnce();
+            const sentData = createCommentEndpointMock.mock.results[0]?.value ?? {};
+            expect(createCommentEndpointMock).toHaveBeenCalledOnce();
             expect(sentData).toHaveProperty('body');
             expect(sentData.body).toBeTypeOf('string');
             expect(sentData.body.length).toBeGreaterThan(0);
