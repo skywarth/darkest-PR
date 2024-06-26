@@ -77,7 +77,7 @@ export class StrategyTestSetup {
         expect(this.commentFactoryCreateSpy).toHaveBeenCalled();
         const commentInstance = this.commentFactoryCreateSpy.mock.results[0].value;
         expect(commentInstance).toBeInstanceOf(Comment);
-        expect(expectedCaseSlug).toBe(commentInstance.caseSlug);
+        expect(commentInstance.caseSlug).toBe(expectedCaseSlug);
 
         const sentData = this.createCommentEndpointMock.mock.results[0]?.value ?? {};
         expect(this.createCommentEndpointMock).toHaveBeenCalledOnce();
