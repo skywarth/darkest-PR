@@ -1,9 +1,9 @@
 {
-  "action": "opened",
+  "action": "closed",
   "pull_request": {
     "id": 1,
     "number": 555444,
-    "state": "open",
+    "state": "closed",
     "title": "Test Pull Request",
     "user": {
       "login": "test-user"
@@ -18,7 +18,9 @@
     "created_at": "2024-01-01T00:00:00Z",
     "updated_at": "2024-01-01T00:00:00Z",
     "merged_at": null,
-    "closed_at": null
+    "closed_at": "2024-01-01T00:00:00Z",
+    "merged": false,
+    "review_comments": 5
   },
   "repository": {
     "name": "test-repo",

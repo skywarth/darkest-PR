@@ -1,0 +1,146 @@
+[
+  {
+    "id": 1,
+    "user": {
+      "login": "reviewer1",
+      "id": 101,
+      "avatar_url": "https://avatars.githubusercontent.com/u/101?v=4",
+      "url": "https://api.github.com/users/reviewer1"
+    },
+    "body": "Great work!",
+    "state": "APPROVED",
+    "html_url": "https://github.com/test-owner/test-repo/pull/1#pullrequestreview-1",
+    "pull_request_url": "https://api.github.com/repos/test-owner/test-repo/pulls/1",
+    "submitted_at": "2023-01-01T00:00:00Z",
+    "commit_id": "commit-sha-1",
+    "author_association": "COLLABORATOR",
+    "_links": {
+      "html": {
+        "href": "https://github.com/test-owner/test-repo/pull/1#pullrequestreview-1"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/test-owner/test-repo/pulls/1"
+      }
+    }
+  },
+  {
+    "id": 2,
+    "user": {
+      "login": "reviewer2",
+      "id": 102,
+      "avatar_url": "https://avatars.githubusercontent.com/u/102?v=4",
+      "url": "https://api.github.com/users/reviewer2"
+    },
+    "body": "Needs some changes.",
+    "state": "CHANGES_REQUESTED",
+    "html_url": "https://github.com/test-owner/test-repo/pull/1#pullrequestreview-2",
+    "pull_request_url": "https://api.github.com/repos/test-owner/test-repo/pulls/1",
+    "submitted_at": "2023-01-02T00:00:00Z",
+    "commit_id": "commit-sha-2",
+    "author_association": "COLLABORATOR",
+    "_links": {
+      "html": {
+        "href": "https://github.com/test-owner/test-repo/pull/1#pullrequestreview-2"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/test-owner/test-repo/pulls/1"
+      }
+    }
+  },
+  {
+    "id": 3,
+    "user": {
+      "login": "reviewer3",
+      "id": 103,
+      "avatar_url": "https://avatars.githubusercontent.com/u/103?v=4",
+      "url": "https://api.github.com/users/reviewer3"
+    },
+    "body": "Looks good to me.",
+    "state": "APPROVED",
+    "html_url": "https://github.com/test-owner/test-repo/pull/1#pullrequestreview-3",
+    "pull_request_url": "https://api.github.com/repos/test-owner/test-repo/pulls/1",
+    "submitted_at": "2023-01-03T00:00:00Z",
+    "commit_id": "commit-sha-3",
+    "author_association": "COLLABORATOR",
+    "_links": {
+      "html": {
+        "href": "https://github.com/test-owner/test-repo/pull/1#pullrequestreview-3"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/test-owner/test-repo/pulls/1"
+      }
+    }
+  },
+  {
+    "id": 4,
+    "user": {
+      "login": "reviewer4",
+      "id": 104,
+      "avatar_url": "https://avatars.githubusercontent.com/u/104?v=4",
+      "url": "https://api.github.com/users/reviewer4"
+    },
+    "body": "I have some suggestions.",
+    "state": "COMMENTED",
+    "html_url": "https://github.com/test-owner/test-repo/pull/1#pullrequestreview-4",
+    "pull_request_url": "https://api.github.com/repos/test-owner/test-repo/pulls/1",
+    "submitted_at": "2023-01-04T00:00:00Z",
+    "commit_id": "commit-sha-4",
+    "author_association": "COLLABORATOR",
+    "_links": {
+      "html": {
+        "href": "https://github.com/test-owner/test-repo/pull/1#pullrequestreview-4"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/test-owner/test-repo/pulls/1"
+      }
+    }
+  },
+  {
+    "id": 5,
+    "user": {
+      "login": "reviewer5",
+      "id": 105,
+      "avatar_url": "https://avatars.githubusercontent.com/u/105?v=4",
+      "url": "https://api.github.com/users/reviewer5"
+    },
+    "body": "Looks good to me!",
+    "state": "APPROVED",
+    "html_url": "https://github.com/test-owner/test-repo/pull/1#pullrequestreview-5",
+    "pull_request_url": "https://api.github.com/repos/test-owner/test-repo/pulls/1",
+    "submitted_at": "2023-01-05T00:00:00Z",
+    "commit_id": "commit-sha-5",
+    "author_association": "COLLABORATOR",
+    "_links": {
+      "html": {
+        "href": "https://github.com/test-owner/test-repo/pull/1#pullrequestreview-5"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/test-owner/test-repo/pulls/1"
+      }
+    }
+  },
+  {
+    "id": 6,
+    "user": {
+      "login": "reviewer6",
+      "id": 106,
+      "avatar_url": "https://avatars.githubusercontent.com/u/106?v=4",
+      "url": "https://api.github.com/users/reviewer6"
+    },
+    "body": "Needs minor tweaks.",
+    "state": "COMMENTED",
+    "html_url": "https://github.com/test-owner/test-repo/pull/1#pullrequestreview-6",
+    "pull_request_url": "https://api.github.com/repos/test-owner/test-repo/pulls/1",
+    "submitted_at": "2023-01-06T00:00:00Z",
+    "commit_id": "commit-sha-6",
+    "author_association": "COLLABORATOR",
+    "_links": {
+      "html": {
+        "href": "https://github.com/test-owner/test-repo/pull/1#pullrequestreview-6"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/test-owner/test-repo/pulls/1"
+      }
+    }
+  }
+]
