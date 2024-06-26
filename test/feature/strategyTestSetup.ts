@@ -36,6 +36,7 @@ export class StrategyTestSetup {
         this.quoteFacadeGetQuoteSpy = vi.spyOn(QuoteFacade.prototype, 'getQuote');
         this.commentFactoryCreateSpy = vi.spyOn(CommentFactory.prototype, 'create');
         this.createCommentEndpointMock.mockImplementation((param: any) => param);
+        this.pullRequestIndexResponseMock.mockImplementation(()=>[]);//default implementation
     }
 
     setupEndpointMocks() {
