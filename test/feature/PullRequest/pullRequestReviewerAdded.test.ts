@@ -24,7 +24,7 @@ describe("Pull Request Opened Tests", () => {
             expectedCaseSlug: CaseSlugs.PullRequest.Reviewer.Added,
         }
     ])('$description', ({ expectedCaseSlug }) => {
-        test.only('Creates a comment after receiving the event', async () => {
+        test('Creates a comment after receiving the event', async () => {
 
             strategyTestSetup.actionStrategyHandleSpy = vi.spyOn(PullRequestReviewerAdded.prototype as any, 'handle');
 
