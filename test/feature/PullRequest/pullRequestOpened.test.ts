@@ -1,10 +1,4 @@
-import {describe, expect, test, beforeEach, afterEach, vi, beforeAll, Mock, MockInstance} from "vitest";
-import {Probot, ProbotOctokit} from "probot";
-import nock from "nock";
-import DarkestPR from "../../../src/index";
-import {QuoteFacade} from "../../../src/Quote/QuoteFacade";
-import {CommentFactory} from "../../../src/Comment/CommentFactory";
-import Comment from "../../../src/Comment/Comment";
+import {describe, test, afterEach, vi, beforeAll} from "vitest";
 import {CaseSlugs} from "../../../src/enums/CaseSlug";
 import PullRequestOpenedStrategy from "../../../src/ActionHandler/PullRequest/PullRequestOpenedStrategy";
 
@@ -14,71 +8,18 @@ import PullRequestOpenedStrategy from "../../../src/ActionHandler/PullRequest/Pu
 import pullRequestOpenedPayload from '../../fixtures/events/pull_request/pull_request.opened.json';
 import pullRequestListNotMerged from '../../fixtures/data/pulls/pulls.list.not-merged.json';
 import pullRequestListMerged from '../../fixtures/data/pulls/pulls.list.merged.json';
-
+import {StrategyTestSetup} from "../strategyTestSetup";
 
 
 describe("Pull Request Opened Tests", () => {
-    let probot: Probot;
-
-    let quoteFacadeGetQuoteSpy:MockInstance;
-    let commentFactoryCreateSpy: MockInstance;
-    let prOpenedStrategyExecutePrStrategySpy: MockInstance;
-    let createCommentEndpointMock:Mock=vi.fn();
-    let pullRequestIndexResponseMock:Mock=vi.fn();
-
-    const initializeMocks = () => {
-        probot=new Probot({
-            githubToken: "test",
-            Octokit: ProbotOctokit.defaults(function(instanceOptions:any) {//this POS costed me around 2.5 hours, damn!
-                return {
-                    ...instanceOptions,//not really necessary
-                    retry: { enabled: false },
-                    throttle: { enabled: false },
-                }
-            }),
-        });
-        DarkestPR(probot);
-
-
-        quoteFacadeGetQuoteSpy = vi.spyOn(QuoteFacade.prototype, 'getQuote');
-        commentFactoryCreateSpy = vi.spyOn(CommentFactory.prototype, 'create');
-        prOpenedStrategyExecutePrStrategySpy = vi.spyOn(PullRequestOpenedStrategy.prototype as any, 'executePrStrategy');
-        createCommentEndpointMock.mockImplementation((param: any) => param);
-    };
-
-    const setupEndpointMocks = () => {
-        const endpointRoot:string='https://api.github.com';
-
-        nock(endpointRoot)
-            .persist()
-            .get('/repos/test-owner/test-repo/pulls')
-            .query(true)
-            .reply(200, pullRequestIndexResponseMock);
-
-        nock(endpointRoot)
-            .persist()
-            .post('/repos/test-owner/test-repo/issues/1/comments', createCommentEndpointMock)
-            .reply(200);
-        nock(endpointRoot)
-            .persist()
-            .get('/repos/test-owner/test-repo/contents/.darkest-pr.json')
-            .reply(200, {
-                content: Buffer.from(JSON.stringify({/* config object*/ })).toString('base64')
-            });
-    };
+    const strategyTestSetup = new StrategyTestSetup();
 
     beforeAll(() => {
-        nock.disableNetConnect();
-        initializeMocks();
-        setupEndpointMocks();
-
-    });
-
-    beforeEach(() => {
+        strategyTestSetup.beforeAll();
     });
 
     afterEach(() => {
-        vi.clearAllMocks();
+        strategyTestSetup.afterEach();
     });
 
     describe.each([
@@ -98,35 +39,19 @@ describe("Pull Request Opened Tests", () => {
             expectedCaseSlug: CaseSlugs.PullRequest.Opened.PreviouslyMerged,
         },
     ])('$description', ({ previousPrs, expectedCaseSlug }) => {
-
-
         test('Creates a comment after receiving the event', async () => {
-            pullRequestIndexResponseMock.mockImplementation(()=>previousPrs);
+            strategyTestSetup.actionStrategyHandleSpy = vi.spyOn(PullRequestOpenedStrategy.prototype as any, 'handle');
+            strategyTestSetup.pullRequestIndexResponseMock.mockImplementation(() => previousPrs);
 
-            await probot.receive({
+            await strategyTestSetup.probot.receive({
                 id: '123',
                 name: 'pull_request',
                 payload: pullRequestOpenedPayload as any,
             });
 
+            strategyTestSetup.performCommonAssertions(expectedCaseSlug);
 
 
-
-
-            expect(pullRequestIndexResponseMock).toHaveBeenCalledOnce();
-
-            expect(prOpenedStrategyExecutePrStrategySpy).toHaveBeenCalled();
-            expect(quoteFacadeGetQuoteSpy).toHaveBeenCalled();
-            expect(commentFactoryCreateSpy).toHaveBeenCalled();
-            const commentInstance: Comment = commentFactoryCreateSpy.mock.results[0].value;
-            expect(commentInstance).toBeInstanceOf(Comment);
-            expect(expectedCaseSlug).toBe(commentInstance.caseSlug);
-
-            const sentData = createCommentEndpointMock.mock.results[0]?.value ?? {};
-            expect(createCommentEndpointMock).toHaveBeenCalledOnce();
-            expect(sentData).toHaveProperty('body');
-            expect(sentData.body).toBeTypeOf('string');
-            expect(sentData.body.length).toBeGreaterThan(0);
         });
     });
 });
