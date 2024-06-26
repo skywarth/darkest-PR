@@ -1,10 +1,10 @@
 import {describe, test, afterEach, vi, beforeAll} from "vitest";
 import {CaseSlugs} from "../../../src/enums/CaseSlug";
 import {StrategyTestSetup} from "../strategyTestSetup";
-import PullRequestReviewerAdded from "../../../src/ActionHandler/PullRequest/PullRequestReviewerAdded";
+import PullRequestReviewerRemoved from "../../../src/ActionHandler/PullRequest/PullRequestReviewerRemoved";
 
+import pullRequestReviewerRemovedPayload from '../../fixtures/events/pull_request/reviewer/pull_request.reviewer.removed.json';
 
-import pullRequestReviewerAddedPayload from '../../fixtures/events/pull_request/reviewer/pull_request.reviewer.added.json';
 
 
 describe("Pull Request Opened Tests", () => {
@@ -20,19 +20,19 @@ describe("Pull Request Opened Tests", () => {
 
     describe.each([
         {
-            description: "Reviewer added",
-            expectedCaseSlug: CaseSlugs.PullRequest.Reviewer.Added,
+            description: "Reviewer removed",
+            expectedCaseSlug: CaseSlugs.PullRequest.Reviewer.Removed,
         }
     ])('$description', ({ expectedCaseSlug }) => {
         test.only('Creates a comment after receiving the event', async () => {
 
-            strategyTestSetup.actionStrategyHandleSpy = vi.spyOn(PullRequestReviewerAdded.prototype as any, 'handle');
+            strategyTestSetup.actionStrategyHandleSpy = vi.spyOn(PullRequestReviewerRemoved.prototype as any, 'handle');
 
 
             await strategyTestSetup.probot.receive({
                 id: '123',
                 name: 'pull_request',
-                payload: pullRequestReviewerAddedPayload as any,
+                payload: pullRequestReviewerRemovedPayload as any,
             });
 
 
