@@ -26,6 +26,17 @@ export default class PullRequestClosedStrategy extends PullRequestStrategy<'pull
         let caseSlug: CaseSlugs.Types;
         let sentiment :Sentiment;
 
+        const limitDefinitions={
+            many:{
+                reviews:3,
+                comments:25
+            },
+            few:{
+                reviews:0,
+                comments:0,
+            }
+        };
+
         const reviews:Array<OctokitResponsePullRequestReview>=  (await this.ghContext.octokit.pulls.listReviews({
             owner: this.ghContext.payload.repository.owner.login,
             repo: this.ghContext.payload.repository.name,
@@ -43,7 +54,7 @@ export default class PullRequestClosedStrategy extends PullRequestStrategy<'pull
                 {emotion: Emotion.Joy.Enjoyment, temperature: 3},
             ];
             sentiment=Sentiment.Positive;
-            if(reviews.length>3 || reviewCommentsAmount>25){
+            if(reviews.length>limitDefinitions.many.reviews || reviewCommentsAmount>limitDefinitions.many.comments){
                 //CASE: Long discussion/review
                 caseSlug=CaseSlugs.PullRequest.Closed.MergedManyReviews;
                 tags=[...tags,'finally','at last','executed','destroyed','glorious','victorious','victory','relief','unwavering','unyielding','champion','comeback','improvement','revival','resurgence'];
@@ -56,7 +67,7 @@ export default class PullRequestClosedStrategy extends PullRequestStrategy<'pull
                     {emotion: Emotion.Surprise.Amazement, temperature: 3},
                     {emotion: Emotion.Anger.Wrath, temperature: 5},
                 ];
-            }else if(reviews.length>0 || reviewCommentsAmount>0){
+            }else if(reviews.length>limitDefinitions.few.reviews || reviewCommentsAmount>limitDefinitions.few.comments){
                 //CASE: Short discussion/review
                 caseSlug=CaseSlugs.PullRequest.Closed.MergedFewReviews;
                 tags=[...tags,'confidence','easy','kicked','easily','defeated','professional','masterfully','talented','keen','learn','clever','quick','fast','haste'];
@@ -70,6 +81,8 @@ export default class PullRequestClosedStrategy extends PullRequestStrategy<'pull
                     {emotion: Emotion.Interest.Friendliness, temperature: 4},
                     {emotion: Emotion.Interest.Trust, temperature: 2},
                     {emotion: Emotion.Interest.Kindness, temperature: 3},
+                    {emotion: Emotion.Surprise.Wonder, temperature: 5},
+                    {emotion: Emotion.Surprise.Shock, temperature: 3},
                 ];
             }else{
                 //CASE: No discussion/review
@@ -98,7 +111,7 @@ export default class PullRequestClosedStrategy extends PullRequestStrategy<'pull
                 {emotion: Emotion.Disgust.Scorn, temperature: 3},
             ];
             sentiment=Sentiment.Negative;
-            if(reviews.length>3 || reviewCommentsAmount>25){
+            if(reviews.length>limitDefinitions.many.reviews || reviewCommentsAmount>limitDefinitions.many.comments){
                 //CASE: Long discussion/review
                 caseSlug=CaseSlugs.PullRequest.Closed.NotMergedManyReviews;
                 tags=[...tags,'effort','investment','time','support','alter','change','help','attempt','battle','struggle','labor','stress','strain','too much','exhaustion','cannot','impossible','despair','fed up','enough']
@@ -109,7 +122,7 @@ export default class PullRequestClosedStrategy extends PullRequestStrategy<'pull
                     {emotion: Emotion.Shame.Embarrassment, temperature:5},
                     {emotion: Emotion.Disgust.Hatred, temperature:4},
                 ]
-            }else if(reviews.length>0 || reviewCommentsAmount>0){
+            }else if(reviews.length>limitDefinitions.few.reviews || reviewCommentsAmount>limitDefinitions.few.comments){
                 //CASE: Short discussion/review
                 caseSlug=CaseSlugs.PullRequest.Closed.NotMergedFewReviews;
                 tags=[...tags,'disbelief','cancel','ignore','unfaithful','neglect','overlook','scorn','avoid','evade','evasion'];
