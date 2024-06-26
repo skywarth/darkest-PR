@@ -14,6 +14,7 @@ export class StrategyTestSetup {
     actionStrategyHandleSpy!: MockInstance;
     createCommentEndpointMock: Mock=vi.fn();
     pullRequestIndexResponseMock: Mock=vi.fn();
+    pullRequestReviewIndexResponseMock: Mock=vi.fn();
 
     constructor() {
         //this.initializeMocks();
@@ -39,24 +40,34 @@ export class StrategyTestSetup {
 
     setupEndpointMocks() {
         const endpointRoot: string = 'https://api.github.com';
+        const owner:string='test-owner';
+        const repo:string='test-repo';
+
+
+        const pullNumber:number=555444;
 
         nock(endpointRoot)
             .persist()
-            .get('/repos/test-owner/test-repo/pulls')
+            .get(`/repos/${owner}/${repo}/pulls`)
             .query(true)
             .reply(200, this.pullRequestIndexResponseMock);
 
         nock(endpointRoot)
             .persist()
-            .post('/repos/test-owner/test-repo/issues/1/comments', this.createCommentEndpointMock)
+            .post(`/repos/${owner}/${repo}/issues/${pullNumber}/comments`, this.createCommentEndpointMock)
             .reply(200);
 
         nock(endpointRoot)
             .persist()
-            .get('/repos/test-owner/test-repo/contents/.darkest-pr.json')
+            .get(`/repos/${owner}/${repo}/contents/.darkest-pr.json`)
             .reply(200, {
                 content: Buffer.from(JSON.stringify({/* config object */})).toString('base64')
             });
+
+        nock(endpointRoot)
+            .persist()
+            .get(`/repos/${owner}/${repo}/pulls/${pullNumber}/reviews`)
+            .reply(200, this.pullRequestReviewIndexResponseMock);
     }
 
     beforeAll() {
