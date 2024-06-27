@@ -82,7 +82,7 @@ export class StrategyTestSetup {
     }
 
 
-    performCommonAssertions(expectedCaseSlug:string){
+    performCommonAssertions(expectedCaseSlug:string):{comment:Comment}{
         expect(this.actionStrategyHandleSpy).toHaveBeenCalled();
         expect(this.quoteFacadeGetQuoteSpy).toHaveBeenCalled();
         expect(this.commentFactoryCreateSpy).toHaveBeenCalled();
@@ -95,5 +95,8 @@ export class StrategyTestSetup {
         expect(sentData).toHaveProperty('body');
         expect(sentData.body).toBeTypeOf('string');
         expect(sentData.body.length).toBeGreaterThan(0);
+        return {
+            comment:commentInstance
+        };
     }
 }
