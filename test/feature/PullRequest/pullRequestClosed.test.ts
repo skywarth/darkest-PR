@@ -17,7 +17,7 @@ import pullRequestListNotMerged from '../../fixtures/data/pulls/pulls.list.not-m
 
 
 
-describe("Pull Request Opened Tests", () => {
+describe("Pull Request closed tests", () => {
     const strategyTestSetup = new StrategyTestSetup();
 
     beforeAll(() => {

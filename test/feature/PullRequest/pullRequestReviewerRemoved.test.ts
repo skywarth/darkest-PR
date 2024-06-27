@@ -7,7 +7,7 @@ import pullRequestReviewerRemovedPayload from '../../fixtures/events/pull_reques
 
 
 
-describe("Pull Request Opened Tests", () => {
+describe("Pull Request reviewer removed tests", () => {
     const strategyTestSetup = new StrategyTestSetup();
 
     beforeAll(() => {

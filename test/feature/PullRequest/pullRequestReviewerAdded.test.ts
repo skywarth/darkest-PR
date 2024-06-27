@@ -7,7 +7,7 @@ import PullRequestReviewerAdded from "../../../src/ActionHandler/PullRequest/Pul
 import pullRequestReviewerAddedPayload from '../../fixtures/events/pull_request/reviewer/pull_request.reviewer.added.json';
 
 
-describe("Pull Request Opened Tests", () => {
+describe("Pull Request reviewer added tests", () => {
     const strategyTestSetup = new StrategyTestSetup();
 
     beforeAll(() => {

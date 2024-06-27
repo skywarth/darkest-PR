@@ -11,7 +11,7 @@ import pullRequestListMerged from '../../fixtures/data/pulls/pulls.list.merged.j
 import {StrategyTestSetup} from "../strategyTestSetup";
 
 
-describe("Pull Request Opened Tests", () => {
+describe("Pull Request opened tests", () => {
     const strategyTestSetup = new StrategyTestSetup();
 
     beforeAll(() => {
