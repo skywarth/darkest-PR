@@ -83,7 +83,6 @@ export class StrategyTestSetup {
 
 
     performCommonAssertions(expectedCaseSlug:string){
-        expect(this.pullRequestIndexResponseMock).toHaveBeenCalledOnce();
         expect(this.actionStrategyHandleSpy).toHaveBeenCalled();
         expect(this.quoteFacadeGetQuoteSpy).toHaveBeenCalled();
         expect(this.commentFactoryCreateSpy).toHaveBeenCalled();

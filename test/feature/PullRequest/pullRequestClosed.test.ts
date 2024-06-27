@@ -1,4 +1,4 @@
-import {describe, test, afterEach, vi, beforeAll} from "vitest";
+import {describe, test, afterEach, vi, beforeAll, expect} from "vitest";
 import {CaseSlugs} from "../../../src/enums/CaseSlug";
 import {StrategyTestSetup} from "../strategyTestSetup";
 import PullRequestClosedStrategy from "../../../src/ActionHandler/PullRequest/PullRequestClosedStrategy";
@@ -93,6 +93,8 @@ describe("Pull Request closed tests", () => {
 
 
             strategyTestSetup.performCommonAssertions(expectedCaseSlug);
+
+            expect(strategyTestSetup.pullRequestIndexResponseMock).toHaveBeenCalledOnce();
 
 
         });
