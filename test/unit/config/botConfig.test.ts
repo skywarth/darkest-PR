@@ -1,4 +1,4 @@
-import {describe, expect, vi, test} from 'vitest';
+import {describe, expect, vi, test, beforeAll, afterAll} from 'vitest';
 import {BotConfig} from "../../../src/Config/BotConfig";
 import {EventSubscriptionsDTO} from "../../../src/DTO/EventSubscriptionsDTO";
 
@@ -28,9 +28,17 @@ describe.concurrent('BotConfig', () => {
         },
     }
 
-    vi.stubEnv('DARKEST_PR_BOT_NAME', mockConfig.botName.env);
-    vi.stubEnv('DARKEST_PR_ACTIVE', mockConfig.active.env);
-    vi.stubEnv('DARKEST_PR_EVENT_SUBSCRIPTIONS', mockConfig.eventSubscriptions.env);
+    beforeAll(()=>{
+        vi.stubEnv('DARKEST_PR_BOT_NAME', mockConfig.botName.env);
+        vi.stubEnv('DARKEST_PR_ACTIVE', mockConfig.active.env);
+        vi.stubEnv('DARKEST_PR_EVENT_SUBSCRIPTIONS', mockConfig.eventSubscriptions.env);
+    });
+
+    afterAll(()=>{
+        vi.unstubAllEnvs();
+    })
+
+
 
     test('Should return the correct bot name', () => {
         const config = BotConfig.getInstance();
