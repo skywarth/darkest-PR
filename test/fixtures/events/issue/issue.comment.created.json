@@ -1,0 +1,37 @@
+{
+  "action": "created",
+  "comment": {
+    "id": 1,
+    "body": null,
+    "user": {
+      "login": "test-user"
+    },
+    "created_at": "2024-01-01T00:00:00Z",
+    "updated_at": "2024-01-01T00:00:00Z"
+  },
+  "issue": {
+    "id": 1,
+    "number": 555444,
+    "title": "Test Issue or PR",
+    "user": {
+      "login": "test-owner"
+    },
+    "state": "open",
+    "body": "This is a test issue or pull request.",
+    "created_at": "2024-01-01T00:00:00Z",
+    "updated_at": "2024-01-01T00:00:00Z"
+  },
+  "repository": {
+    "name": "test-repo",
+    "owner": {
+      "login": "test-owner"
+    }
+  },
+  "sender": {
+    "login": "test-user",
+    "type": "User"
+  },
+  "installation": {
+    "id": 1
+  }
+}

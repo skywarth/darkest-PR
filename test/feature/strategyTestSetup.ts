@@ -15,6 +15,7 @@ export class StrategyTestSetup {
     createCommentEndpointMock: Mock=vi.fn();
     pullRequestIndexResponseMock: Mock=vi.fn();
     pullRequestReviewIndexResponseMock: Mock=vi.fn();
+    getConfigResponseMock: Mock=vi.fn();
 
     constructor() {
         //this.initializeMocks();
@@ -37,6 +38,7 @@ export class StrategyTestSetup {
         this.commentFactoryCreateSpy = vi.spyOn(CommentFactory.prototype, 'create');
         this.createCommentEndpointMock.mockImplementation((param: any) => param);
         this.pullRequestIndexResponseMock.mockImplementation(()=>[]);//default implementation
+        this.getConfigResponseMock.mockImplementation(()=>({}));//default implementation
     }
 
     setupEndpointMocks() {
@@ -61,8 +63,10 @@ export class StrategyTestSetup {
         nock(endpointRoot)
             .persist()
             .get(`/repos/${owner}/${repo}/contents/.darkest-pr.json`)
-            .reply(200, {
-                content: Buffer.from(JSON.stringify({/* config object */})).toString('base64')
+            .reply(200, ()=>{
+                return {
+                    content: Buffer.from(JSON.stringify(this.getConfigResponseMock())).toString('base64')
+                }
             });
 
         nock(endpointRoot)

@@ -41,7 +41,6 @@ export default class IssueCommentCreatedStrategy extends IssueCommentStrategy<'i
         const bodyHTML = sanitizeHtml((await marked(this.ghContext.payload.comment.body)));
 
         const bodyDOM=cheerio.load(bodyHTML);
-        console.log(bodyDOM.text());
         //let malformedInputPackageDetected:boolean=false;
         //let inputPackageDetected:boolean;
         const matchingJsonString=bodyDOM('code').toArray().map(x=>cheerio.load(x).text()).find(function (codeText){
@@ -83,7 +82,6 @@ export default class IssueCommentCreatedStrategy extends IssueCommentStrategy<'i
             caseSlug=CaseSlugs.Issue.Comment.Created.BotTagged.ParametersNotProvided;
         }
 
-        console.log(actionContext);
         const comment = commentFactory.create(caseSlug,actionContext,replyContext,warnings);
         return comment;
 
