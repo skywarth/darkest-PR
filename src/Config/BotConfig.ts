@@ -13,7 +13,7 @@ export class BotConfig implements HasEventSubscriptions{
     static #instance:BotConfig;
     private constructor() {
         this.#bot_name=this.envAccessor(process.env.DARKEST_PR_BOT_NAME,'Darkest-PR')
-        this.#active=this.envAccessor(process.env.DARKEST_PR_ACTIVE,false,Utils.stringToBoolean);
+        this.#active=this.envAccessor(process.env.DARKEST_PR_ACTIVE,true,Utils.stringToBoolean);
         this.#event_subscriptions=this.envAccessor(process.env.DARKEST_PR_EVENT_SUBSCRIPTIONS,{},JSON.parse);
     }
 
@@ -32,6 +32,10 @@ export class BotConfig implements HasEventSubscriptions{
             this.#instance = new this();
         }
         return this.#instance;
+    }
+
+    public static refreshInstance(){//ONLY INTENDED FOR TESTING PURPOSES, DO NOT USE
+        this.#instance=new this();
     }
 
     private envAccessor(
