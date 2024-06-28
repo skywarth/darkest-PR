@@ -47,7 +47,7 @@ export default abstract class ActionHandlerStrategy<T extends EmitterWebhookEven
 
 
         //console.log(ghContext);
-        if (!botConfigSubsHandler.handle(this.getEventName()) || this.ghContext.isBot) { // Replace with condition for this bot only
+        if (!botConfigSubsHandler.handle(this.getEventName()) || !BotConfig.getInstance().active || this.ghContext.isBot) { // Replace with condition for this bot only
             return;
         }
         const comment:Comment|null=await this.execute(commentFactory);
