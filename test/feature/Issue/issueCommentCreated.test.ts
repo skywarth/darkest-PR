@@ -207,7 +207,6 @@ describe("Issue Comment Created", () => {
                 });
 
                 const data=strategyTestSetup.performCommonAssertions(CaseSlugs.Issue.Comment.Created.BotTagged.ParametersNotProvided);
-                console.log(data.comment.warnings);
                 expect(data.comment.warnings.some(x=>x.includes('Malformed'))).toBe(true);
 
                 strategyTestSetup.performCommonAssertions(CaseSlugs.Issue.Comment.Created.BotTagged.ParametersNotProvided);
