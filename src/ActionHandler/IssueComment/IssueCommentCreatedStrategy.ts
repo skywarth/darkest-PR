@@ -41,18 +41,17 @@ export default class IssueCommentCreatedStrategy extends IssueCommentStrategy<'i
         const bodyHTML = sanitizeHtml((await marked(this.ghContext.payload.comment.body)));
 
         const bodyDOM=cheerio.load(bodyHTML);
-        //let malformedInputPackageDetected:boolean=false;
-        //let inputPackageDetected:boolean;
+        const dataPackageIdentifier=`${BotConfig.getInstance().bot_name}-input-package`.toLowerCase();
         const matchingJsonString=bodyDOM('code').toArray().map(x=>cheerio.load(x).text()).find(function (codeText){
-            try {
-                //inputPackageDetected=codeText.includes('Darkest-PR-input-package');
-                const data = JSON.parse(codeText);
-                return data.identifier.toLowerCase()===`${BotConfig.getInstance().bot_name}-input-package`.toLowerCase();
-                //return jsonData.identifier === "Darkest-PR-input-package";
-            } catch (error) {
-                //TODO: move warning messages to appropriate place, maybe exception class?
-                //malformedInputPackageDetected=inputPackageDetected;//TODO: remove, unnecessary?
-                warnings.push('Malformed Input Package Detected! Please format your input package according to the README specification, and check your JSON format for syntax.');
+            if(codeText.toLowerCase().includes(dataPackageIdentifier)){
+                try{
+                    const data = JSON.parse(codeText);
+                    return data.identifier.toLowerCase()===dataPackageIdentifier;
+                }catch (error){
+                    warnings.push('Malformed Input Package Detected! Please format your input package according to the README specification, and check your JSON format for syntax.');
+                    return false;
+                }
+            }else{
                 return false;
             }
         });
@@ -66,7 +65,7 @@ export default class IssueCommentCreatedStrategy extends IssueCommentStrategy<'i
                 actionContext=new ActionContextDTO(dataRaw.emotionMatrix,dataRaw.sentiment,dataRaw.tags,dataRaw.quoteSlugs)
             }catch (exception:any){
                 actionContext=defaultActionContext;
-                warnings.push(exception.message)
+                warnings.push('Malformed Input Package Detected! Please format your input package according to the README specification, and check your JSON format for syntax.');
             }
         }else{
             actionContext=defaultActionContext;
