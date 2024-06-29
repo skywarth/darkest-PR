@@ -2,6 +2,17 @@
 
 [![codecov](https://codecov.io/gh/skywarth/darkest-PR/graph/badge.svg?token=Z86VA7I4HH)](https://codecov.io/gh/skywarth/darkest-PR)
 
+[![Known Vulnerabilities](https://snyk.io/test/github/skywarth/darkest-PR/badge.svg)](https://snyk.io/test/github/skywarth/darkest-PR) 
+
+[![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=skywarth_darkest-PR)](https://sonarcloud.io/summary/new_code?id=skywarth_darkest-PR)
+
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=skywarth_darkest-PR&metric=bugs)](https://sonarcloud.io/summary/new_code?id=skywarth_darkest-PR)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=skywarth_darkest-PR&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=skywarth_darkest-PR)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=skywarth_darkest-PR&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=skywarth_darkest-PR)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=skywarth_darkest-PR&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=skywarth_darkest-PR)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=skywarth_darkest-PR&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=skywarth_darkest-PR)
+
+
 ## Setup
 
 ```sh
