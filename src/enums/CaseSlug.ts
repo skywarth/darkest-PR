@@ -24,6 +24,12 @@ export namespace CaseSlugs {
 
         }
 
+        export const enum Assignee {
+            Added = "PullRequest.Assignee.Added",
+            Removed = "PullRequest.Assignee.Removed",
+
+        }
+
         export namespace Review {
             export const enum Submitted {
                 Approved = "PullRequest.Review.Submitted.Approved",
@@ -65,6 +71,9 @@ export namespace CaseSlugs {
 
         | CaseSlugs.PullRequest.Reviewer.Added
         | CaseSlugs.PullRequest.Reviewer.Removed
+
+        | CaseSlugs.PullRequest.Assignee.Added
+        | CaseSlugs.PullRequest.Assignee.Removed
 
         | CaseSlugs.PullRequest.Review.Submitted.Approved
         | CaseSlugs.PullRequest.Review.Submitted.ChangesRequested
