@@ -6,6 +6,7 @@ import IssueCommentCreatedStrategy from "./ActionHandler/IssueComment/IssueComme
 import PullRequestReviewerAdded from "./ActionHandler/PullRequest/PullRequestReviewerAdded.js";
 import PullRequestReviewerRemoved from "./ActionHandler/PullRequest/PullRequestReviewerRemoved.js";
 import PullRequestAssigneeAddedStrategy from "./ActionHandler/PullRequest/PullRequestAssigneeAddedStrategy.js";
+import PullRequestAssigneeRemovedStrategy from "./ActionHandler/PullRequest/PullRequestAssigneeRemovedStrategy.js";
 
 
 
@@ -43,6 +44,11 @@ export default (app: Probot) => {
 
     app.on("pull_request.assigned", async (ghContext: Context<'pull_request.assigned'>) => {
         const strat = new PullRequestAssigneeAddedStrategy(ghContext);
+        return strat.handle();
+    });
+
+    app.on("pull_request.unassigned", async (ghContext: Context<'pull_request.unassigned'>) => {
+        const strat = new PullRequestAssigneeRemovedStrategy(ghContext);
         return strat.handle();
     });
 
