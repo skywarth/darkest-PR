@@ -231,3 +231,11 @@ Reason for this is; Node.js is an event driven, non-blocking framework. It is de
 > Node.js has persistent state!
 
 In conclusion, refrain from using static variables and singletons as they may lead to confusion and bugs down the line.
+
+
+### Mocking
+
+- Mocking: you "mock" a function, alter/define its implementation to fit your agenda.
+- Spying: you "spy" a method, method of a class or an object. Alter/define its implementation.
+
+Mocking/spying allow you to register calls and responses. It also enables you to implement them numerous times as needed. It is actually such a strong capability.
