@@ -7,6 +7,7 @@ import PullRequestReviewerAdded from "./ActionHandler/PullRequest/PullRequestRev
 import PullRequestReviewerRemoved from "./ActionHandler/PullRequest/PullRequestReviewerRemoved.js";
 import PullRequestAssigneeAddedStrategy from "./ActionHandler/PullRequest/PullRequestAssigneeAddedStrategy.js";
 import PullRequestAssigneeRemovedStrategy from "./ActionHandler/PullRequest/PullRequestAssigneeRemovedStrategy.js";
+import IssueAssigneeAddedStrategy from "./ActionHandler/Issue/IssueAssigneeAddedStrategy.js";
 
 
 
@@ -27,11 +28,6 @@ export default (app: Probot) => {
         return strat.handle();
     });
 
-    app.on("issue_comment.created", async (ghContext: Context<'issue_comment.created'>) => {
-        const strat = new IssueCommentCreatedStrategy(ghContext);
-        return strat.handle();
-    });
-
     app.on("pull_request.review_requested", async (ghContext: Context<'pull_request.review_requested'>) => {
         const strat = new PullRequestReviewerAdded(ghContext);
         return strat.handle();
@@ -49,6 +45,17 @@ export default (app: Probot) => {
 
     app.on("pull_request.unassigned", async (ghContext: Context<'pull_request.unassigned'>) => {
         const strat = new PullRequestAssigneeRemovedStrategy(ghContext);
+        return strat.handle();
+    });
+
+
+    app.on("issue_comment.created", async (ghContext: Context<'issue_comment.created'>) => {
+        const strat = new IssueCommentCreatedStrategy(ghContext);
+        return strat.handle();
+    });
+
+    app.on("issues.assigned", async (ghContext: Context<'issues.assigned'>) => {
+        const strat = new IssueAssigneeAddedStrategy(ghContext);
         return strat.handle();
     });
 

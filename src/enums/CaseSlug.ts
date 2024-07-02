@@ -53,10 +53,17 @@ export namespace CaseSlugs {
             }
 
         }
+
+        export const enum Assignee {
+            Added = "Issue.Assignee.Added",
+            Removed = "Issue.Assignee.Removed",
+
+        }
     }
 
     export type Types =//Plural or singular?
 
+        //PULL REQUESTS
         | CaseSlugs.PullRequest.Opened.Fresh
         | CaseSlugs.PullRequest.Opened.PreviouslyMerged
         | CaseSlugs.PullRequest.Opened.PreviouslyClosed
@@ -79,9 +86,12 @@ export namespace CaseSlugs {
         | CaseSlugs.PullRequest.Review.Submitted.ChangesRequested
         | CaseSlugs.PullRequest.Review.Submitted.Commented
 
-
+        //ISSUES
         | CaseSlugs.Issue.Comment.Created.BotTagged.ParametersProvided
         | CaseSlugs.Issue.Comment.Created.BotTagged.ParametersNotProvided
+
+        | CaseSlugs.Issue.Assignee.Added
+        | CaseSlugs.Issue.Assignee.Removed
 
     ;
 }

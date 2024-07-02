@@ -55,11 +55,8 @@ Could be applied, would be decent in future expansion:
 
 
 - [ ] Issue
-  - [ ] Reviewer
-    - [ ] Added
-    - [ ] Removed
   - [ ] Assignee
-    - [ ] Added
+    - [X] Added
     - [ ] Removed
 - [ ] PR
   - [X] Reviewer
@@ -69,9 +66,9 @@ Could be applied, would be decent in future expansion:
     - [X] Added
     - [X] Removed 
   - [X] PR opened
-    - Fresh PR
-    - Re-open of PR after previous one gets cancelled
-    - Re-open of PR after previous one gets approved and merged
+    - [X] Fresh PR
+    - [X] Re-open of PR after previous one gets cancelled
+    - [X] Re-open of PR after previous one gets approved and merged
     - [ ] Includes: merge conflict
   - [X] PR closed
     - [X] No merge
