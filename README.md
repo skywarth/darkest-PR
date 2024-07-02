@@ -65,9 +65,9 @@ Could be applied, would be decent in future expansion:
   - [X] Reviewer
     - [X] Added
     - [X] Removed
-  - [ ] Assignee
-    - [ ] Added
-    - [ ] Removed 
+  - [X] Assignee
+    - [X] Added
+    - [X] Removed 
   - [X] PR opened
     - Fresh PR
     - Re-open of PR after previous one gets cancelled
