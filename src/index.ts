@@ -8,6 +8,7 @@ import PullRequestReviewerRemoved from "./ActionHandler/PullRequest/PullRequestR
 import PullRequestAssigneeAddedStrategy from "./ActionHandler/PullRequest/PullRequestAssigneeAddedStrategy.js";
 import PullRequestAssigneeRemovedStrategy from "./ActionHandler/PullRequest/PullRequestAssigneeRemovedStrategy.js";
 import IssueAssigneeAddedStrategy from "./ActionHandler/Issue/IssueAssigneeAddedStrategy.js";
+import IssueAssigneeRemovedStrategy from "./ActionHandler/Issue/IssueAssigneeRemovedStrategy.js";
 
 
 
@@ -56,6 +57,11 @@ export default (app: Probot) => {
 
     app.on("issues.assigned", async (ghContext: Context<'issues.assigned'>) => {
         const strat = new IssueAssigneeAddedStrategy(ghContext);
+        return strat.handle();
+    });
+
+    app.on("issues.unassigned", async (ghContext: Context<'issues.unassigned'>) => {
+        const strat = new IssueAssigneeRemovedStrategy(ghContext);
         return strat.handle();
     });
 

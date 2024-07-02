@@ -54,11 +54,11 @@ Could be applied, would be decent in future expansion:
 
 
 
-- [ ] Issue
-  - [ ] Assignee
+- [X] Issue
+  - [X] Assignee
     - [X] Added
-    - [ ] Removed
-- [ ] PR
+    - [X] Removed
+- [X] PR
   - [X] Reviewer
     - [X] Added
     - [X] Removed

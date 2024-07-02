@@ -1,0 +1,49 @@
+{
+  "action": "unassigned",
+  "issue": {
+    "id": 1,
+    "number": 555444,
+    "state": "open",
+    "title": "Test Issue",
+    "user": {
+      "login": "test-user",
+      "id": 101,
+      "avatar_url": "https://avatars.githubusercontent.com/u/101?v=4"
+    },
+    "assignees": [
+      {
+        "login": "remaining-user1",
+        "id": 102,
+        "avatar_url": "https://avatars.githubusercontent.com/u/102?v=4"
+      },
+      {
+        "login": "remaining-user2",
+        "id": 103,
+        "avatar_url": "https://avatars.githubusercontent.com/u/103?v=4"
+      }
+    ]
+  },
+  "repository": {
+    "id": 202,
+    "name": "test-repo",
+    "full_name": "test-owner/test-repo",
+    "owner": {
+      "login": "test-owner",
+      "id": 104,
+      "avatar_url": "https://avatars.githubusercontent.com/u/104?v=4"
+    }
+  },
+  "sender": {
+    "login": "test-sender",
+    "id": 105,
+    "avatar_url": "https://avatars.githubusercontent.com/u/105?v=4"
+  },
+  "assignee": {
+    "login": "removed-assignee",
+    "id": 106,
+    "avatar_url": "https://avatars.githubusercontent.com/u/106?v=4"
+  },
+  "installation": {
+    "id": 1
+  }
+}
