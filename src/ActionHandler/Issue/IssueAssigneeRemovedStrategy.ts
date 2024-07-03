@@ -19,10 +19,8 @@ export default class IssueAssigneeRemovedStrategy extends IssueStrategy<'issues.
     protected async executeIssueStrategy(commentFactory:CommentFactory): Promise<Comment|null> {
 
 
-        let tags: Array<string>=['removed','abandoned','fall','fell','destroyed','oblivion','abandon','alone','solemn','thrown','sent','kicked','denied','deny','fire','fired','detach','dispatched','separated','parted','death','die','kill','killed','destroyed','begone','scram','scoot','leave','left','away','depart','fall','fell','ban','banned','disowned','rejected','dismissed','shunned','assignment','request','duty','demand','audit','inspection','assess','assessment','evaluation','judgement'];
+        let tags: Array<string>=['detach','dispatched','separated','alone','solemn','thrown','sent','kicked','denied','deny','fire','fired','parted','death','die','kill','killed','destroyed','begone','scram','scoot','leave','left','away','depart','fall','fell','ban','banned','disowned','rejected','dismissed','shunned','assignment','request','duty','demand','audit','inspection','assess','assessment','evaluation','judgement','removed','abandoned','fall','fell','destroyed','oblivion','abandon'];
         let contextEmotionMatrix: Emotion.EmotionMatrix=[
-            {emotion:Emotion.Shame.Embarrassment,temperature:2},
-            {emotion:Emotion.Shame.Guilt,temperature:3},
             {emotion:Emotion.Shame.Regret,temperature:1},
             {emotion:Emotion.Shame.Remorse,temperature:3},
             {emotion:Emotion.Anger.Fury,temperature:3},
@@ -38,6 +36,8 @@ export default class IssueAssigneeRemovedStrategy extends IssueStrategy<'issues.
             {emotion:Emotion.Fear.Terror,temperature:5},
             {emotion:Emotion.Fear.Anxiety,temperature:2},
             {emotion:Emotion.Fear.Fright,temperature:1},
+            {emotion:Emotion.Shame.Embarrassment,temperature:2},
+            {emotion:Emotion.Shame.Guilt,temperature:3},
         ];
 
         let caseSlug: CaseSlugs.Types=CaseSlugs.Issue.Assignee.Removed;
