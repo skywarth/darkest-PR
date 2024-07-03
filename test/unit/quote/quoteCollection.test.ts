@@ -65,7 +65,7 @@ describe.concurrent("QuoteCollection Tests", () => {
         });
     });
 
-    describe("orderByEmotionScoreDesc()",() => {
+    describe("orderByCumulativeScoreDesc()",() => {
 
         test("Ordering direction is descending", async() => {
             const quoteCollection=getQuoteCollectionInstance();
@@ -76,14 +76,15 @@ describe.concurrent("QuoteCollection Tests", () => {
                 {emotion:Emotion.Joy.Happiness,temperature:1},
 
             ];
+            const tags:Array<string>=[];
 
-            quoteCollection.orderByEmotionScoreDesc(contextEmotionMatrix);
+            quoteCollection.orderByCumulativeScoreDesc(contextEmotionMatrix,tags);
 
             const incorrectSequenceDetected=quoteCollection.data.some(function(quote,index, arr){
-                return arr[index+1]?.getEmotionScore(contextEmotionMatrix)>quote.getEmotionScore(contextEmotionMatrix);
+                return arr[index+1]?.getCumulativeScore(contextEmotionMatrix,tags)>quote.getCumulativeScore(contextEmotionMatrix,tags);
             });
 
-            const scoreArray=quoteCollection.data.map((quote) => {quote.getEmotionScore(contextEmotionMatrix)});
+            const scoreArray=quoteCollection.data.map((quote) => {quote.getCumulativeScore(contextEmotionMatrix,tags)});
             const scoreArrayOrderedDesc=[...scoreArray].sort().reverse();
 
             expect(incorrectSequenceDetected).not.toBe(true);
@@ -103,9 +104,10 @@ describe.concurrent("QuoteCollection Tests", () => {
                 {emotion:Emotion.Joy.Happiness,temperature:1},
 
             ];
+            const tags:Array<string>=[];
 
 
-            quoteCollection.orderByEmotionScoreDesc(contextEmotionMatrix);
+            quoteCollection.orderByCumulativeScoreDesc(contextEmotionMatrix,tags);
 
             expect(quoteCollection.data.map(x=>x.slug)).not.toStrictEqual(originalQuoteCollection.data.map(x=>x.slug));
 

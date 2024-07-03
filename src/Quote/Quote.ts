@@ -5,6 +5,7 @@ import Utils from "../Utils.js";
 export class Quote{
     #text:string;
     #slug:string;
+    // @ts-ignore
     #tags:Array<string>;
     #emotionMatrix:Emotion.EmotionMatrix
     #sentiment: Sentiment;
@@ -13,7 +14,7 @@ export class Quote{
     constructor(text: string, slug: string, sentiment:Sentiment, emotionMatrix:Emotion.EmotionMatrix, tags: Array<string>) {
         this.#text = text;
         this.#slug = slug;
-        this.#tags = tags;
+        this.tags = tags;
         this.#sentiment=sentiment;
         this.#emotionMatrix=emotionMatrix;
     }
@@ -41,6 +42,11 @@ export class Quote{
     }
 
 
+    private set tags(newVal: Array<string>) {
+        const newValSet=new Set([...newVal].map(x=>x.toLowerCase()));
+        this.#tags = Array.from(newValSet);
+    }
+
     public hasEmotions(emotions:Array<Emotion.Types>):boolean{
         return emotions.every(e=>this.emotionMatrix.map(emotionMetric=>emotionMetric.emotion).includes(e));
     }
@@ -61,6 +67,22 @@ export class Quote{
         //console.log(this.getJSON());
         return scoreSum;
 
+    }
+
+    public getTagScore(contextTags:Array<string>):number{
+        contextTags=Array.from(new Set([...contextTags].map(x=>x.toLowerCase())));
+        const scoreMultiplier=1;
+        let scoreSum:number=0;
+        contextTags.forEach((tag:string)=>{
+            if(this.tags.includes(tag)){
+                scoreSum+=scoreMultiplier;
+            }
+        })
+        return scoreSum;
+    }
+
+    public getCumulativeScore(emotionMatrix:Emotion.EmotionMatrix,tags:Array<string>):number{
+        return this.getEmotionScore(emotionMatrix) + this.getTagScore(tags);
     }
 
     public getJSON(emotionMatrix:Emotion.EmotionMatrix=[]):string{//TODO: rudimentary, remove or adjust
@@ -98,12 +120,12 @@ export class QuoteCollection{
     }
 
 
-    public orderByEmotionScoreDesc(emotionMatrix:Emotion.EmotionMatrix):QuoteCollection{
+    public orderByCumulativeScoreDesc(emotionMatrix:Emotion.EmotionMatrix,tags:Array<string>):QuoteCollection{
 
         //return new QuoteCollection([...this.data].sort((x:Quote)=>x.getEmotionScore(emotionMatrix)).reverse());
         this.#quotes.sort(function (q1:Quote,q2:Quote){
             //descending order
-            return q2.getEmotionScore(emotionMatrix)-q1.getEmotionScore(emotionMatrix);
+            return q2.getCumulativeScore(emotionMatrix,tags)-q1.getCumulativeScore(emotionMatrix,tags);
         });
         return this;
     }

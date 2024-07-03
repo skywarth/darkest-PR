@@ -42,9 +42,10 @@ export class QuoteFacade{
             //@ts-ignore
             quotes.filterBySentiment(actionContext.sentiment);
         }
-        if(actionContext.hasEmotionMatrix){
+        /*if(actionContext.hasEmotionMatrix){
             quotes.filterByEmotionScoreAboveZero(actionContext.emotionMatrix).orderByEmotionScoreDesc(actionContext.emotionMatrix);
-        }
+        }*/
+        quotes.orderByCumulativeScoreDesc(actionContext.emotionMatrix,actionContext.tags);
 
         quotes.selectCandidates();
 
