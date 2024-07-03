@@ -25,9 +25,6 @@ export class QuoteFacade{
 
         //Case 1: if any other parameter along with slugs are provided: slugs and other filters will be applied separately and later be merged.
         //Case 2: if only slug param is provided, only will filter only by slugs.
-
-        //TODO: reactivate .filterByTags(tags)*/
-
         let quotes:QuoteCollection;
 
         if(actionContext.hasOnlyQuoteSlugs

@@ -129,4 +129,7 @@ describe.concurrent("Quote Tests", () => {
 
     });
 
+    //TODO: getCumulativeScore();
+    //TODO: getTagScore();
+
 });

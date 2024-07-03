@@ -148,13 +148,6 @@ describe.concurrent("QuoteCollection Tests", () => {
         });
     });
 
-    describe("filterByTags()",() => {
-        test("[REVISIT HERE]", async() => {
-            //TODO: test
-
-        });
-    });
-
     describe("filterBySentiment()",() => {
         test("Resulting Quotes has the sentiment", async() => {
             const quoteCollection=getQuoteCollectionInstance();
