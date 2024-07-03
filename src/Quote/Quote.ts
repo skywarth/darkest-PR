@@ -85,14 +85,6 @@ export class Quote{
         return this.getEmotionScore(emotionMatrix) + this.getTagScore(tags);
     }
 
-    public getJSON(emotionMatrix:Emotion.EmotionMatrix=[]):string{//TODO: rudimentary, remove or adjust
-        return JSON.stringify({
-            slug:this.slug,
-            emotionMatrix:this.emotionMatrix,
-            emotionScore:this.getEmotionScore(emotionMatrix)
-
-        })
-    }
 
 
 }
