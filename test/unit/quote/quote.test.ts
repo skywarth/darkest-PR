@@ -129,7 +129,68 @@ describe.concurrent("Quote Tests", () => {
 
     });
 
-    //TODO: getCumulativeScore();
-    //TODO: getTagScore();
+
+    describe("getTagScore()",() => {
+        let quote:Quote;
+        const scoreMultiplier:number=1;
+
+        beforeEach(() => {
+            quote = new Quote('foo','bar',Sentiment.Neutral,
+                [],
+                ['failure','dark','brooding']);
+        });
+
+        test("Expected score matches the calculation, partial intersection", async () => {
+            const expected:number=2*scoreMultiplier;
+            const score=quote.getTagScore(['failure','dark']);
+            expect(score).toBe(expected);
+        });
+
+        test("Expected score matches the calculation, full match", async () => {
+            const expected:number=3*scoreMultiplier;
+            const score=quote.getTagScore(['failure','dark','brooding']);
+            expect(score).toBe(expected);
+        });
+
+        test("Non-existing tags doesn't affect score", async () => {
+            const expected:number=2*scoreMultiplier;
+            const score=quote.getTagScore(['failure','dark','joy','hope']);
+            expect(score).toBe(expected);
+        });
+
+        test("Default score is 0 when none match", async () => {
+            const expected:number=0;
+            const score=quote.getTagScore(['joy','happiness']);
+            expect(score).toBe(expected);
+        });
+    });
+
+    describe("getCumulativeScore()",() => {
+        let quote:Quote;
+        const tagScoreMultiplier:number=1;
+
+        beforeEach(() => {
+            quote = new Quote('foo','bar',Sentiment.Neutral,
+                [
+                    {emotion:Emotion.Fear.Terror,temperature:4},
+                    {emotion:Emotion.Anger.Wrath,temperature:3},
+                    {emotion:Emotion.Surprise.Wonder,temperature:5}
+                ],
+                ['failure','dark','brooding']);
+        });
+
+        test("Expected score matches the calculation", async () => {
+            const expectedEmotionScore=20;
+            const expected:number=expectedEmotionScore+(2*tagScoreMultiplier);
+            const score=quote.getCumulativeScore([
+                {emotion:Emotion.Anger.Wrath,temperature:5},
+                {emotion:Emotion.Surprise.Wonder,temperature:1}
+                ],['failure','dark']);
+            expect(score).toBe(expected);
+        });
+
+
+    });
+
 
 });
