@@ -21,19 +21,20 @@ export default class IssueAssigneeRemovedStrategy extends IssueStrategy<'issues.
 
         let tags: Array<string>=['detach','dispatched','separated','alone','solemn','thrown','sent','kicked','denied','deny','fire','fired','parted','death','die','kill','killed','destroyed','begone','scram','scoot','leave','left','away','depart','fall','fell','ban','banned','disowned','rejected','dismissed','shunned','assignment','request','duty','demand','audit','inspection','assess','assessment','evaluation','judgement','removed','abandoned','fall','fell','destroyed','oblivion','abandon'];
         let contextEmotionMatrix: Emotion.EmotionMatrix=[
+
+            {emotion:Emotion.Disgust.Contempt,temperature:2},
+            {emotion:Emotion.Disgust.Hatred,temperature:2},
+            {emotion:Emotion.Fear.Terror,temperature:5},
             {emotion:Emotion.Shame.Regret,temperature:1},
             {emotion:Emotion.Shame.Remorse,temperature:3},
             {emotion:Emotion.Anger.Fury,temperature:3},
             {emotion:Emotion.Anger.Wrath,temperature:4},
             {emotion:Emotion.Anger.Rage,temperature:2},
             {emotion:Emotion.Disgust.Scorn,temperature:4},
-            {emotion:Emotion.Disgust.Contempt,temperature:2},
-            {emotion:Emotion.Disgust.Hatred,temperature:2},
             {emotion:Emotion.Surprise.Shock,temperature:2},
             {emotion:Emotion.Sadness.Sorrow,temperature:4},
             {emotion:Emotion.Sadness.Grief,temperature:5},
             {emotion:Emotion.Fear.Panic,temperature:3},
-            {emotion:Emotion.Fear.Terror,temperature:5},
             {emotion:Emotion.Fear.Anxiety,temperature:2},
             {emotion:Emotion.Fear.Fright,temperature:1},
             {emotion:Emotion.Shame.Embarrassment,temperature:2},
