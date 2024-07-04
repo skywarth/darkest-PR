@@ -148,6 +148,7 @@ Hey ancestor @Darkest-PR, give me a cool line!
     - By context
 - [ ] Barrelization (is that even a thing?) of the imports/exports
   - Especially for external dependencies since they can be due to change
+  - consider `@octokit/webhooks` instead of `@octokit/webhooks/dist-types/types`
 - [ ] Public REST API for quotes
 - [ ] Introduce main subject/person for each strategy, which will be used for reply-to
 
