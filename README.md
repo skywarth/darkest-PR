@@ -237,3 +237,8 @@ In conclusion, refrain from using static variables and singletons as they may le
 
 Mocking/spying allow you to register calls and responses. It also enables you to implement them numerous times as needed. It is actually such a strong capability.
  
+
+### Deployment
+
+- https://probot.github.io/docs/deployment/
+- https://github.com/probot/example-vercel
