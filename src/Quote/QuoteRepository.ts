@@ -1,7 +1,8 @@
 
 import {Quote,QuoteCollection} from "./Quote.js";
-import {Emotion} from "../enums/Emotion.js";
-import {Sentiment} from "../enums/Sentiment.js";
+//import rawQuoteData from "./quote-data.json"
+import {Sentiment} from "../enums/Sentiment";
+import {Emotion} from "../enums/Emotion";
 export default class QuoteRepository{
     #quotes:QuoteCollection=new QuoteCollection([]);
     static #instance:QuoteRepository;
@@ -22,6 +23,12 @@ export default class QuoteRepository{
 
 
     private loadQuotes(){
+        /*let quoteArray:Array<Quote>=[];
+        rawQuoteData.forEach(function (rawQuote:any){
+            quoteArray.push(new Quote(rawQuote.text,rawQuote.slug,rawQuote.sentiment,rawQuote.emotion_matrix,rawQuote.tags))
+        })
+        this.#quotes=new QuoteCollection(quoteArray);*/
+
         this.#quotes=new QuoteCollection([
             new Quote('Lorem ipsum dolor sit amet, consectetur adipiscing elit.','foo',Sentiment.Neutral,[{emotion:Emotion.Joy.Happiness,temperature:4}],[]),
             new Quote('Maecenas nunc mauris, interdum ut dapibus vitae, sollicitudin in arcu.','bar',Sentiment.Negative,[{emotion:Emotion.Sadness.Grief,temperature:2},{emotion:Emotion.Disgust.Contempt,temperature:2}],['brooding','dark']),

@@ -1,0 +1,86 @@
+[
+  {
+    "text": "Brigands have run of these lanes. Keep to the side path; the Hamlet is just ahead.",
+    "slug": "brigands-hamlet-is-just-ahead",
+    "sentiment": "Neutral",
+    "emotion_matrix": [
+      {"emotion": "Grief", "temperature": 1},
+      {"emotion": "Anxiety", "temperature": 3},
+      {"emotion": "Fright", "temperature": 2},
+      {"emotion": "Thrill", "temperature": 2},
+      {"emotion": "Contempt", "temperature": 2},
+      {"emotion": "Scorn", "temperature": 3},
+      {"emotion": "Irritation", "temperature": 4},
+      {"emotion": "Frustration", "temperature": 1}
+    ],
+    "tags": [
+      "brigand","side","path","ahead","away","stray"
+    ]
+  },
+  {
+    "text": "Dispatch this thug in brutal fashion, that all may hear of your arrival!",
+    "slug": "dispatch-thug-brutal-fashion",
+    "sentiment": "Neutral",
+    "emotion_matrix": [
+      {"emotion": "Wrath", "temperature": 5},
+      {"emotion": "Thrill", "temperature": 2},
+      {"emotion": "Contempt", "temperature": 3},
+      {"emotion": "Scorn", "temperature": 2},
+      {"emotion": "Hatred", "temperature": 1}
+    ],
+    "tags": [
+      "dispatch", "thug", "brutal", "arrival","champion","destroy","obliterate"
+    ]
+  },
+  {
+    "text": "Leave nothing unchecked, there is much to be found in forgotten places.",
+    "slug": "leave-unchecked-forgotten-places",
+    "sentiment": "Neutral",
+    "emotion_matrix": [
+      {"emotion": "Interest", "temperature": 5},
+      {"emotion": "Wonder", "temperature": 2},
+      {"emotion": "Amazement", "temperature": 2},
+      {"emotion": "Thrill", "temperature": 3},
+      {"emotion": "Enjoyment", "temperature": 3},
+      {"emotion": "Ecstasy", "temperature": 1}
+    ],
+    "tags": [
+      "leave", "unchecked", "much", "found", "forgotten", "places", "discovery", "exploration", "adventure", "quest", "curiosity", "wonder", "amazement", "surprise", "fear","loot","reward","gain"
+    ]
+  },
+  {
+    "text": "An ambush! Send these vermin a message: the rightful owner has returned, and their kind is no longer welcome.",
+    "slug": "send-these-vermin-a-message",
+    "sentiment": "Negative",
+    "emotion_matrix": [
+      {"emotion": "Irritation", "temperature": 3},
+      {"emotion": "Wrath", "temperature": 3},
+      {"emotion": "Grief", "temperature": 2},
+      {"emotion": "Panic", "temperature": 5},
+      {"emotion": "Fright", "temperature": 2},
+      {"emotion": "Shock", "temperature": 4},
+      {"emotion": "Contempt", "temperature": 4},
+      {"emotion": "Scorn", "temperature": 5},
+      {"emotion": "Hatred", "temperature": 3}
+    ],
+    "tags": [
+      "ambush","trap","vermin","opponent","enemy","owner","return","back","away","scheme"
+    ]
+  },
+  {
+    "text": "Executed with impunity!",
+    "slug": "executed-with-impunity",
+    "sentiment": "Positive",
+    "emotion_matrix": [
+      {"emotion": "enjoyment", "temperature": 2},
+      {"emotion":"Thrill","temperature":5},
+      {"emotion":"Ecstasy","temperature":4},
+      {"emotion":"Relief","temperature":2},
+      {"emotion":"Wonder","temperature":2},
+      {"emotion":"Amazement","temperature":4}
+    ],
+    "tags": [
+      "execute","execution","executed","impunity"
+    ]
+  }
+]
