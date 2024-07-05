@@ -1,11 +1,8 @@
 {
   "version": 2,
-  "builds": [
-    { "src": "api/github/webhooks/serverless.ts", "use": "@vercel/node" }
-  ],
   "routes": [
     { "src": "/api/github/webhooks", "dest": "api/github/webhooks/serverless.ts" },
-    { "src": "/", "dest": "public/index.html" },
+    { "src": "/", "dest": "/public/index.html" },
     { "src": "/yet-another-route", "dest": "/public/index.html" }
   ]
 }
