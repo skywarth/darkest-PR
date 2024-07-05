@@ -151,7 +151,7 @@ Hey ancestor @Darkest-PR, give me a cool line!
   - consider `@octokit/webhooks` instead of `@octokit/webhooks/dist-types/types`
 - [ ] Public REST API for quotes
 - [ ] Introduce main subject/person for each strategy, which will be used for reply-to
-
+- [X] Deployment
 
 ## Notes to self
 
