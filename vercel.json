@@ -5,6 +5,6 @@
   ],
   "routes": [
     { "src": "/api/github/webhooks", "dest": "api/github/webhooks/serverless.ts" },
-    { "src": "/", "dest": "/public/index.html" }
+    { "src": "/", "dest": "public/index.html" }
   ]
 }
