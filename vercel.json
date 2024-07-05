@@ -1,6 +1,8 @@
 {
   "version": 2,
   "routes": [
-    { "src": "/", "dest": "/public/index.html" }
+    { "src": "/api/github/webhooks", "dest": "api/github/webhooks/serverless.ts" },
+    { "src": "/", "dest": "public/index.html" },
+    { "src": "/yet-another-route", "dest": "/public/index.html" }
   ]
 }
