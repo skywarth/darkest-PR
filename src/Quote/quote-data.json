@@ -68,6 +68,260 @@
     ]
   },
   {
+    "text": "Welcome home, such as it is. This squalid hamlet, these corrupted lands, they are yours now, and you are bound to them.",
+    "slug": "welcome-home-such-as-it-is",
+    "sentiment": "Neutral",
+    "emotion_matrix": [
+      {"emotion": "Frustration", "temperature": 2},
+      {"emotion": "Irritation", "temperature": 2},
+      {"emotion": "Grief", "temperature": 1},
+      {"emotion": "Sorrow", "temperature": 3},
+      {"emotion": "Melancholy", "temperature": 4},
+      {"emotion": "Loneliness", "temperature": 3},
+      {"emotion": "Anxiety", "temperature": 1},
+      {"emotion": "Kindness", "temperature": 3},
+      {"emotion": "Friendliness", "temperature": 2},
+      {"emotion": "Wonder", "temperature": 2},
+      {"emotion": "Scorn", "temperature": 2},
+      {"emotion": "Contempt", "temperature": 1}
+    ],
+    "tags": [
+      "welcome","home","corrupted","corruption","own","possession", "ownership","duty","belong","change"
+    ]
+  },
+  {
+    "text": "This sprawling estate, a Mecca of madness and morbidity. Your work begins...",
+    "slug": "mecca-of-madness",
+    "sentiment": "Negative",
+    "emotion_matrix": [
+      {"emotion": "Frustration", "temperature": 2},
+      {"emotion": "Irritation", "temperature": 3},
+      {"emotion": "Melancholy", "temperature": 4},
+      {"emotion": "Despair", "temperature": 3},
+      {"emotion": "Anxiety", "temperature": 1},
+      {"emotion": "Fright", "temperature": 2},
+      {"emotion": "Terror", "temperature": 2}
+    ],
+    "tags": [
+      "estate", "madness", "morbidity", "work", "begin", "sprawling", "darkness", "challenge", "despair", "horror", "decay", "dread", "gloom", "ominous", "uncertainty", "trial", "duty", "burden", "task", "mission", "nightmare", "bleak"
+    ]
+  },
+  {
+    "text": "The cost of preparedness - measured now in gold, later in blood.",
+    "slug": "the-cost-of-preparedness",
+    "sentiment": "Negative",
+    "emotion_matrix": [
+      {"emotion": "Grief", "temperature": 4},
+      {"emotion": "Sorrow", "temperature": 3},
+      {"emotion": "Melancholy", "temperature": 2},
+      {"emotion": "Fright", "temperature": 2},
+      {"emotion": "Guilt", "temperature": 3},
+      {"emotion": "Remorse", "temperature": 1},
+      {"emotion": "Regret", "temperature": 5}
+    ],
+    "tags": [
+      "cost", "preparedness", "gold", "blood", "measured", "sacrifice", "consequence", "warning", "danger", "risk", "investment", "foresight", "caution", "strategy", "crisis", "price", "struggle", "war", "battle", "conflict", "future", "inevitable","warning","heed","preparation","prepare"
+    ]
+  },
+  {
+    "text": "Women and men; soldiers and outlaws; fools and corpses. All will find their way to us now that the road is clear.",
+    "slug": "soldiers-and-outlaws-fool-and-corpses",
+    "sentiment": "Neutral",
+    "emotion_matrix": [
+      {"emotion": "Melancholy", "temperature": 5},
+      {"emotion": "Grief", "temperature": 3},
+      {"emotion": "Anxiety", "temperature": 2},
+      {"emotion": "Terror", "temperature": 1},
+      {"emotion": "Relief", "temperature": 4},
+      {"emotion": "Acceptance", "temperature": 2},
+      {"emotion": "Happiness", "temperature": 2},
+      {"emotion": "Friendliness", "temperature": 4}
+    ],
+    "tags": [
+      "assignment", "clear","pave","team", "support", "backup", "reinforce", "reinforcement", "aid", "band", "league", "join", "accompany", "assemble", "associate", "enlist", "guide", "lead", "pair", "together", "company", "team up", "stand together", "unite", "ally", "arrive", "arrival", "fresh", "new"
+    ]
+  },
+  {
+    "text": "Fresh kegs, cards, and curtained rooms promise solace to the weary and the broken alike.",
+    "slug": "fresh-kegs-and-cards",
+    "sentiment": "Positive",
+    "emotion_matrix": [
+      {"emotion": "Happiness", "temperature": 3},
+      {"emotion": "Enjoyment", "temperature": 4},
+      {"emotion": "Relief", "temperature": 5},
+      {"emotion": "Acceptance", "temperature": 2},
+      {"emotion": "Friendliness", "temperature": 2},
+      {"emotion": "Kindness", "temperature": 3}
+    ],
+    "tags": [
+      "comfort", "solace", "weary", "broken", "fresh", "new", "promise", "relief", "respite", "restoration", "rejuvenation", "hope", "kindness", "trust", "companionship", "together", "support", "backup", "reinforce", "reinforcement", "aid", "rest"
+    ]
+  },
+  {
+    "text": "The cobwebs have been dusted, the pews set straight. The Abbey calls to the faithful...",
+    "slug": "abbey-calls-to-the-faithful",
+    "sentiment": "Positive",
+    "emotion_matrix": [
+      {"emotion": "Happiness", "temperature": 2},
+      {"emotion": "Relief", "temperature": 3},
+      {"emotion": "Ecstasy", "temperature": 2},
+      {"emotion": "Enjoyment", "temperature": 2},
+      {"emotion": "Acceptance", "temperature": 4},
+      {"emotion": "Trust", "temperature": 1},
+      {"emotion": "Friendliness", "temperature": 2}
+    ],
+    "tags": [
+      "renewal", "clean", "faithful", "abbey", "call", "dust", "straighten", "preparation", "sanctuary", "spiritual", "hope", "comfort", "restoration", "peace", "kindness", "companionship", "support", "trust", "relief", "new", "mission", "goal", "task", "community"
+    ]
+  },
+  {
+    "text": "The bellows blast once again! The forge stands ready to make weapons of war.",
+    "slug": "the-bellows-blast-once-again",
+    "sentiment": "Positive",
+    "emotion_matrix": [
+      {"emotion": "Trust", "temperature": 5},
+      {"emotion": "Kindness", "temperature": 2},
+      {"emotion": "Friendliness", "temperature": 1},
+      {"emotion": "Acceptance", "temperature": 3},
+      {"emotion": "Wrath", "temperature": 3},
+      {"emotion": "Ecstasy", "temperature": 4},
+      {"emotion": "Relief", "temperature": 2},
+      {"emotion": "Amazement", "temperature": 4},
+      {"emotion": "Wonder", "temperature": 1}
+    ],
+    "tags": [
+      "forge", "weapons", "war", "bellows", "blast", "ready", "preparation", "manufacture", "craft", "workshop", "smithing", "challenge", "excitement", "anticipation", "interest", "defense", "military", "arsenal", "equipment", "new", "goal", "task","once","again"
+    ]
+  },
+  {
+    "text": "Make no mistake, we will face ever greater threats. Our soldiers must be ready.",
+    "slug": "our-soldiers-must-be-ready",
+    "sentiment": "Neutral",
+    "emotion_matrix": [
+      {"emotion": "Anxiety", "temperature": 4},
+      {"emotion": "Despair", "temperature":2},
+      {"emotion": "Fright", "temperature": 2},
+      {"emotion": "Relief", "temperature": 2},
+      {"emotion": "Enjoyment", "temperature": 3},
+      {"emotion": "Thrill", "temperature": 1},
+      {"emotion": "Wonder", "temperature": 4}
+    ],
+    "tags": [
+      "threat", "soldiers", "ready", "preparedness", "challenge", "anticipation", "fear", "trust", "defense", "security", "duty", "mission", "goal", "task", "team", "support", "backup", "reinforce", "reinforcement", "aid", "warfare"
+    ]
+  },
+  {
+    "text": "At home in wild places, she is a stalwart survivor, and a strict instructor.",
+    "slug": "at-home-in-wild-places",
+    "sentiment": "Positive",
+    "emotion_matrix": [
+      {"emotion": "Happiness", "temperature": 1},
+      {"emotion": "Acceptance", "temperature": 5},
+      {"emotion": "Trust", "temperature": 5},
+      {"emotion": "Kindness", "temperature": 3},
+      {"emotion": "Wonder", "temperature": 2},
+      {"emotion": "Amazement", "temperature": 4}
+    ],
+    "tags": [
+      "wild", "stalwart", "survivor", "strict", "instructor", "home", "places", "nature", "outdoors", "wilderness", "survival", "teacher", "mentor", "guide", "leader", "strength", "resilience", "toughness", "adventure", "exploration", "knowledge", "training"
+    ]
+  },
+  {
+    "text": "Trinkets and charms, gathered from all the forgotten corners of the earth...",
+    "slug": "trinkets-and-charms-gathered",
+    "sentiment": "Positive",
+    "emotion_matrix": [
+      {"emotion": "Amazement", "temperature": 3},
+      {"emotion": "Wonder", "temperature": 4},
+      {"emotion": "Happiness", "temperature": 5},
+      {"emotion": "Enjoyment", "temperature": 3},
+      {"emotion": "Relief", "temperature": 2},
+      {"emotion": "Trust", "temperature": 2}
+    ],
+    "tags": [
+      "trinkets", "charms", "reward", "loot", "gathered", "prize", "forgotten", "corners", "earth", "collect", "discover", "treasure", "adventure", "exploration", "curiosity", "mystery", "discovery", "journey", "hidden", "history", "ancient", "artifacts", "souvenirs", "remnants", "memories", "keepsakes"
+    ]
+  },
+  {
+    "text": "Most will end up here, covered in the poisoned earth, awaiting merciful oblivion.",
+    "slug": "awaiting-merciful-oblivion",
+    "sentiment": "Negative",
+    "emotion_matrix": [
+      {"emotion": "Despair", "temperature": 5},
+      {"emotion": "Grief", "temperature": 3},
+      {"emotion": "Fury", "temperature": 1},
+      {"emotion": "Terror", "temperature": 3},
+      {"emotion": "Kindness", "temperature": 2},
+      {"emotion": "Melancholy", "temperature": 4},
+      {"emotion": "Loneliness", "temperature": 3},
+      {"emotion": "Shock", "temperature": 2},
+      {"emotion": "Regret", "temperature": 1},
+      {"emotion": "Embarrassment", "temperature": 2},
+      {"emotion": "Guilt", "temperature": 4}
+    ],
+    "tags": [
+      "end", "covered", "poisoned", "earth", "awaiting", "oblivion", "death", "fate", "hopeless", "finality", "desolation", "decay", "ruin", "decay", "ruin", "suffering", "loss", "grief", "mourning", "desperation", "fear", "anxiety", "dread", "resignation","await","end","finish","poison","mercy","abyss"
+    ]
+  },
+  {
+    "text": "In time, you will know the tragic extent of my failings...",
+    "slug": "tragic-extent-of-my-failings",
+    "sentiment": "Negative",
+    "emotion_matrix": [
+      {"emotion": "Sorrow", "temperature": 3},
+      {"emotion": "Grief", "temperature": 3},
+      {"emotion": "Fright", "temperature": 3},
+      {"emotion": "Regret", "temperature": 4},
+      {"emotion": "Guilt", "temperature": 5},
+      {"emotion": "Remorse", "temperature": 5},
+      {"emotion": "Embarrassment", "temperature": 2},
+      {"emotion": "Sadness", "temperature": 3},
+      {"emotion": "Despair", "temperature": 1},
+      {"emotion": "Frustration", "temperature": 1},
+      {"emotion": "Melancholy", "temperature": 3}
+    ],
+    "tags": [
+      "time", "tragic", "failings", "regret", "guilt", "remorse", "sadness", "shame", "despair", "confession", "admission", "mistake", "error", "failure", "disappointment", "self-blame", "apology", "regretful", "acknowledge", "truth", "revelation","tragedy"
+    ]
+  },
+  {
+    "text": "I remember days when the sun shone, and laughter could be heard from the tavern.",
+    "slug": "remember-days-sun-shone",
+    "sentiment": "Positive",
+    "emotion_matrix": [
+      {"emotion": "Happiness", "temperature": 3},
+      {"emotion": "Enjoyment", "temperature": 2},
+      {"emotion": "Melancholy", "temperature": 5},
+      {"emotion": "Sorrow", "temperature": 3},
+      {"emotion": "Friendliness", "temperature": 2},
+      {"emotion": "Wonder", "temperature": 2},
+      {"emotion": "Guilt", "temperature": 1}
+    ],
+    "tags": [
+      "remember", "days", "sun", "shone", "laughter", "tavern", "memories", "nostalgia", "joy", "happiness", "community", "gathering", "cheerful", "atmosphere", "warmth", "friends", "social", "celebration", "reminisce", "recollect"
+    ]
+  },
+  {
+    "text": "I was lord of this place, before the crows and rats made it their domain.",
+    "slug": "lord-of-this-place",
+    "sentiment": "Negative",
+    "emotion_matrix": [
+      {"emotion": "Anger", "temperature": 3},
+      {"emotion": "Frustration", "temperature": 2},
+      {"emotion": "Irritation", "temperature": 1},
+      {"emotion": "Grief", "temperature": 5},
+      {"emotion": "Sorrow", "temperature": 3},
+      {"emotion": "Melancholy", "temperature": 3},
+      {"emotion": "Acceptance", "temperature": 5},
+      {"emotion": "Contempt", "temperature": 3},
+      {"emotion": "Scorn", "temperature": 2},
+      {"emotion": "Embarrassment", "temperature": 4}
+    ],
+    "tags": [
+      "lord", "place", "crows", "rats", "domain", "ownership", "pride", "loss", "betrayal", "disappointment", "change", "decay", "overrun", "dispossession", "anger", "resentment", "disgust", "contempt", "regret", "nostalgia", "owner", "ownership", "manage", "oversee", "overseer", "review", "lost", "kicked", "fired"
+    ]
+  },
+  {
     "text": "Executed with impunity!",
     "slug": "executed-with-impunity",
     "sentiment": "Positive",
@@ -80,7 +334,7 @@
       {"emotion":"Amazement","temperature":4}
     ],
     "tags": [
-      "execute","execution","executed","impunity"
+      "execute","execution","executed","impunity","destroyed","done","finished","completed","great","greatness","complete"
     ]
   }
 ]

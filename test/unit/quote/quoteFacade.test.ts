@@ -57,7 +57,7 @@ describe('QuoteFacade Tests', () => {
         test("Returned Quote's slug is present in quoteSlug parameter", async () => {
             const quoteFacade=QuoteFacade.getInstance();
 
-            const quoteSlugs=['foo','bar'];
+            const quoteSlugs=['lord-of-this-place','awaiting-merciful-oblivion'];
 
             const quote=quoteFacade.getQuote(new ActionContextDTO([],null,[],quoteSlugs));
 
