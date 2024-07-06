@@ -322,6 +322,417 @@
     ]
   },
   {
+    "text": "In truth I cannot tell how much time has passed since I sent that letter.",
+    "slug": "time-since-letter-sent",
+    "sentiment": "Neutral",
+    "emotion_matrix": [
+      {"emotion": "Melancholy", "temperature": 5},
+      {"emotion": "Despair", "temperature": 2},
+      {"emotion": "Sorrow", "temperature": 3},
+      {"emotion": "Kindness", "temperature": 1},
+      {"emotion": "Acceptance", "temperature": 5},
+      {"emotion": "Embarrassment", "temperature": 2}
+    ],
+    "tags": [
+      "truth", "time", "passed", "sent", "letter", "uncertainty", "confusion", "reflection", "memory", "communication", "waiting", "anxiety", "clarity", "unclear", "doubt", "wonder", "ponder", "consideration", "recall", "pondering","since","wait","eternity","memory"
+    ]
+  },
+  {
+    "text": "Once, our estate was the envy of this land...",
+    "slug": "estate-envy-of-land",
+    "sentiment": "Positive",
+    "emotion_matrix": [
+      {"emotion": "Amazement", "temperature": 5},
+      {"emotion": "Enjoyment", "temperature": 2},
+      {"emotion": "Relief", "temperature": 2},
+      {"emotion": "Wonder", "temperature": 4},
+      {"emotion": "Acceptance", "temperature": 5},
+      {"emotion": "Grief", "temperature": 2},
+      {"emotion": "Sorrow", "temperature": 3},
+      {"emotion": "Kindness", "temperature": 1},
+      {"emotion": "Embarrassment", "temperature": 4},
+      {"emotion": "Remorse", "temperature": 3}
+    ],
+    "tags": [
+      "estate", "envy", "land", "amazement", "enjoyment", "relief", "wonder", "acceptance", "glory", "prosperity", "success", "admiration", "enviable", "wealth", "community", "legacy", "nostalgia", "past", "history", "reminisce","remember","recall","story","history","pervious","fall","graceless"
+    ]
+  },
+  {
+    "text": "Our family name, once so well regarded, is now barely whispered aloud by decent folk.",
+    "slug": "family-name-well-regarded",
+    "sentiment": "Negative",
+    "emotion_matrix": [
+      {"emotion": "Embarrassment", "temperature": 5},
+      {"emotion": "Regret", "temperature": 2},
+      {"emotion": "Remorse", "temperature": 4},
+      {"emotion": "Sorrow", "temperature": 3},
+      {"emotion": "Grief", "temperature": 2},
+      {"emotion": "Loneliness", "temperature": 2},
+      {"emotion": "Melancholy", "temperature": 3},
+      {"emotion": "Wonder", "temperature": 1},
+      {"emotion": "Hatred", "temperature": 2},
+      {"emotion": "Contempt", "temperature": 2}
+    ],
+    "tags": [
+      "family", "name", "regarded", "whispered", "decent", "folk", "shame", "regret", "sadness", "disgust", "loneliness", "reputation", "legacy", "fallen", "decline", "loss", "recognition", "respect", "nostalgia", "past"
+    ]
+  },
+  {
+    "text": "I see something long-absent in the sunken faces of passersby - a glimmer of hope.",
+    "slug": "glimmer-of-hope",
+    "sentiment": "Positive",
+    "emotion_matrix": [
+      {"emotion": "Melancholy", "temperature": 2},
+      {"emotion": "Despair", "temperature": 2},
+      {"emotion": "Relief", "temperature": 5},
+      {"emotion": "Thrill", "temperature":1},
+      {"emotion": "Trust", "temperature":5},
+      {"emotion": "Friendliness", "temperature":3},
+      {"emotion": "Kindness", "temperature":2},
+      {"emotion": "Wonder", "temperature":4}
+    ],
+    "tags": [
+      "hope", "optimism", "joy", "amazement", "relief", "sunken", "faces", "passersby", "glimmer", "positive", "emotion", "inspiration", "encouragement", "bright", "future", "promise", "encounter", "perceive", "long-absent", "people", "community", "observation", "witness", "change", "perception","light"
+    ]
+  },
+  {
+    "text": "The poor Caretaker, I fear his long-standing duties here have ...affected him.",
+    "slug": "the-poor-caretaker",
+    "sentiment": "Negative",
+    "emotion_matrix": [
+      {"emotion": "Grief", "temperature": 4},
+      {"emotion": "Sorrow", "temperature": 3},
+      {"emotion": "Melancholy", "temperature": 2},
+      {"emotion": "Fright", "temperature": 2},
+      {"emotion": "Terror", "temperature": 1},
+      {"emotion": "Friendliness", "temperature": 2},
+      {"emotion": "Trust", "temperature": 4},
+      {"emotion": "Acceptance", "temperature": 2},
+      {"emotion": "Remorse", "temperature": 3}
+    ],
+    "tags": [
+      "caretaker", "affected", "duties", "long-standing", "sadness", "grief", "concern", "sympathy", "worry", "responsibility", "impact", "stress", "mental health", "support", "care", "burden", "role", "empathy", "hardship", "strain", "effect", "compassion","duty","hard","difficult","madness"
+    ]
+  },
+  {
+    "text": "The degeneracy of the Hamlet is nothing, I fear, when compared to the condition of surrounding acres.",
+    "slug": "degeneracy-of-hamlet",
+    "sentiment": "Negative",
+    "emotion_matrix": [
+      {"emotion": "Irritation", "temperature": 3},
+      {"emotion": "Anxiety", "temperature": 2},
+      {"emotion": "Melancholy", "temperature": 4},
+      {"emotion": "Grief", "temperature": 3},
+      {"emotion": "Contempt", "temperature": 4},
+      {"emotion": "Scorn", "temperature": 3}
+    ],
+    "tags": [
+      "degeneracy", "hamlet", "condition", "surrounding acres", "anxiety", "despair", "grief", "melancholy", "worry", "comparison", "deterioration", "decline", "fear", "concern", "environment", "land", "community", "degradation", "state", "ruin", "situation", "trouble", "distress", "hopelessness", "loss","terrible","bad","condition","state","mad","crazy"
+    ]
+  },
+  {
+    "text": "My obsession caused this great foulness, and it is shameful that I must rely upon you to set it right.",
+    "slug": "obsession-caused-foulness",
+    "sentiment": "Negative",
+    "emotion_matrix": [
+      {"emotion": "Frustration", "temperature": 1},
+      {"emotion": "Grief", "temperature": 2},
+      {"emotion": "Sorrow", "temperature": 3},
+      {"emotion": "Melancholy", "temperature": 2},
+      {"emotion": "Loneliness", "temperature": 1},
+      {"emotion": "Fright", "temperature": 2},
+      {"emotion": "Anxiety", "temperature": 3},
+      {"emotion": "Trust", "temperature": 4},
+      {"emotion": "Friendliness", "temperature": 3},
+      {"emotion": "Acceptance", "temperature": 3},
+      {"emotion": "Contempt", "temperature": 2},
+      {"emotion": "Guilt", "temperature": 5},
+      {"emotion": "Embarrassment", "temperature": 4},
+      {"emotion": "Regret", "temperature": 3}
+    ],
+    "tags": [
+      "obsession", "foulness", "shameful", "rely", "set right", "guilt", "shame", "regret", "despair", "frustration", "responsibility", "consequence", "dependence", "reliance", "rectify", "error", "mistake", "burden", "accountability", "failure", "help", "assistance", "remedy", "correction", "duty", "task","incorrect","mission","goal","fix","savior","champion","salvation","rescue"
+    ]
+  },
+  {
+    "text": "I can still see their angry faces as they stormed the manor, but I was dead before they found me, and the letter was on its way.",
+    "slug": "angry-faces-stormed-manor",
+    "sentiment": "Negative",
+    "emotion_matrix": [
+      {"emotion": "Fury", "temperature": 4},
+      {"emotion": "Wrath", "temperature": 3},
+      {"emotion": "Rage", "temperature": 3},
+      {"emotion": "Despair", "temperature": 5},
+      {"emotion": "Loneliness", "temperature": 4},
+      {"emotion": "Melancholy", "temperature": 4},
+      {"emotion": "Grief", "temperature": 3},
+      {"emotion": "Sorrow", "temperature": 2},
+      {"emotion": "Terror", "temperature": 3},
+      {"emotion": "Hatred", "temperature": 5},
+      {"emotion": "Remorse", "temperature": 2}
+    ],
+    "tags": [
+      "angry", "faces", "stormed", "manor", "dead", "found", "letter", "fury", "rage", "despair", "grief", "shock", "confrontation", "attack", "death", "message", "violence", "conflict", "tragedy", "anger", "emotion", "unrest", "upheaval", "hostility", "memory", "incident", "letter", "escape", "evade", "recollection","death","failure","revolt","riot","fail","suicide"
+    ]
+  },
+  {
+    "text": "There is a great horror beneath the manor: a Crawling Chaos that must be destroyed!",
+    "slug": "great-horror-crawling-chaos",
+    "sentiment": "Negative",
+    "emotion_matrix": [
+      {"emotion": "Terror", "temperature": 5},
+      {"emotion": "Fright", "temperature": 4},
+      {"emotion": "Panic", "temperature": 2},
+      {"emotion": "Anxiety", "temperature": 3},
+      {"emotion": "Wrath", "temperature": 3},
+      {"emotion": "Despair", "temperature": 1}
+    ],
+    "tags": [
+      "horror", "manor", "crawling chaos", "destroyed", "terror", "fright", "panic", "anxiety", "rage", "danger", "threat", "fear", "chaos", "battle", "confrontation", "conflict", "evil", "darkness", "dread", "struggle", "emergency", "urgency", "destruction", "peril", "menace", "distress","great","opponent","enemy","fear"
+    ]
+  },
+  {
+    "text": "Curiosity, interest, and obsession — mile markers on my road to damnation.",
+    "slug": "curiosity-interest-obsession",
+    "sentiment": "Negative",
+    "emotion_matrix": [
+      {"emotion": "Regret", "temperature": 5},
+      {"emotion": "Guilt", "temperature": 4},
+      {"emotion": "Despair", "temperature": 3},
+      {"emotion": "Frustration", "temperature": 2},
+      {"emotion": "Melancholy", "temperature": 1},
+      {"emotion": "Sorrow", "temperature": 3},
+      {"emotion": "Embarrassment", "temperature": 2},
+      {"emotion": "Acceptance", "temperature": 4}
+    ],
+    "tags": [
+      "curiosity", "interest", "obsession", "mile markers", "road", "damnation", "regret", "guilt", "despair", "frustration", "melancholy", "path", "consequence", "journey", "downfall", "error", "reflection", "sin", "mistake", "self-awareness", "fate", "misjudgment", "doom", "remorse", "failure", "tragic", "loss", "warning","fail","milestone","cursed","damned"
+    ]
+  },
+  {
+    "text": "Trouble yourself not with the cost of this crusade - its noble end affords you broad tolerance in your choice of means.",
+    "slug": "crusade-noble-end-tolerance",
+    "sentiment": "Neutral",
+    "emotion_matrix": [
+      {"emotion": "Acceptance", "temperature": 5},
+      {"emotion": "Trust", "temperature": 4},
+      {"emotion": "Relief", "temperature": 2},
+      {"emotion": "Friendliness", "temperature": 3},
+      {"emotion": "Kindness", "temperature": 4}
+    ],
+    "tags": [
+      "trouble", "cost", "crusade", "noble end", "tolerance", "choice", "means", "acceptance", "trust", "relief", "friendliness", "kindness", "mission", "purpose", "justification", "resolve", "determination", "sacrifice", "goal", "altruism", "dedication", "tolerance", "strategy", "understanding", "compassion","keep","continue","costly","time","more","keep up"
+    ]
+  },
+  {
+    "text": "Let me share with you the terrible wonders I have come to know...",
+    "slug": "share-terrible-wonders",
+    "sentiment": "Neutral",
+    "emotion_matrix": [
+      {"emotion": "Amazement", "temperature": 3},
+      {"emotion": "Wonder", "temperature": 5},
+      {"emotion": "Anxiety", "temperature": 3},
+      {"emotion": "Fright", "temperature": 2},
+      {"emotion": "Despair", "temperature": 3},
+      {"emotion": "Terror", "temperature": 4},
+      {"emotion": "Friendliness", "temperature": 4},
+      {"emotion": "Trust", "temperature": 1},
+      {"emotion": "Kindness", "temperature": 2}
+    ],
+    "tags": [
+      "terrible", "wonders", "share", "knowledge", "shock", "amazement", "wonder", "anxiety", "fright", "discovery", "revelation", "experience", "unknown", "mystery", "fear", "curiosity", "exploration", "enlightenment", "story", "narrative", "tale", "exposure", "truth", "realization", "insight"
+    ]
+  },
+  {
+    "text": "You answered the letter — now like me, you are part of this place.",
+    "slug": "answered-the-letter",
+    "sentiment": "Neutral",
+    "emotion_matrix": [
+      {"emotion": "Acceptance", "temperature": 4},
+      {"emotion": "Trust", "temperature": 3},
+      {"emotion": "Friendliness", "temperature": 3},
+      {"emotion": "Kindness", "temperature": 2},
+      {"emotion": "Melancholy", "temperature": 3},
+      {"emotion": "Frustration", "temperature": 1},
+      {"emotion": "Despair", "temperature": 4},
+      {"emotion": "Anxiety", "temperature": 3},
+      {"emotion": "Fright", "temperature": 2}
+    ],
+    "tags": [
+      "answered", "letter", "part", "place", "acceptance", "trust", "friendliness", "kindness", "melancholy", "belonging", "connection", "community", "response", "integration", "commitment", "involvement", "identity", "participation", "role", "association", "solidarity", "bond", "relationship", "welcome", "embrace","assign","review","oversee","team","together","belong","ownership","owner"
+    ]
+  },
+  {
+    "text": "We dug for months, years — an eternity. And we were rewarded with madness.",
+    "slug": "rewarded-with-madness",
+    "sentiment": "Negative",
+    "emotion_matrix": [
+      {"emotion": "Frustration", "temperature": 5},
+      {"emotion": "Irritation", "temperature": 2},
+      {"emotion": "Rage", "temperature": 1},
+      {"emotion": "Despair", "temperature": 5},
+      {"emotion": "Grief", "temperature": 3},
+      {"emotion": "Anxiety", "temperature": 3},
+      {"emotion": "Hatred", "temperature": 2},
+      {"emotion": "Remorse", "temperature": 2},
+      {"emotion": "Guilt", "temperature": 1}
+    ],
+    "tags": [
+      "dug", "months", "years", "eternity", "rewarded", "reward", "madness", "frustration", "despair", "grief", "loneliness", "anxiety", "effort", "time", "struggle", "insanity", "futility", "exhaustion", "sacrifice", "hardship", "disappointment", "suffering", "mental strain", "endurance", "obsession", "hopelessness", "burden","dead end","failure","fail","useless","nothing"
+    ]
+  },
+  {
+    "text": "The plume and the pistol — a fitting end to my folly, and a curse upon us all.",
+    "slug": "plume-and-pistol-folly-curse",
+    "sentiment": "Negative",
+    "emotion_matrix": [
+      {"emotion": "Regret", "temperature": 4},
+      {"emotion": "Remorse", "temperature": 3},
+      {"emotion": "Despair", "temperature": 5},
+      {"emotion": "Melancholy", "temperature": 4},
+      {"emotion": "Remorse", "temperature": 3},
+      {"emotion": "Grief", "temperature": 2},
+      {"emotion": "Frustration", "temperature": 1}
+    ],
+    "tags": [
+      "plume", "pistol", "folly", "curse", "regret", "remorse", "despair", "grief", "frustration", "end", "mistake", "consequence", "tragedy", "recklessness", "regrettable", "foolishness", "misfortune", "bitterness", "repentance", "lament", "ruin", "downfall", "blunder", "error", "failure", "death","dead","fail","kill","killed"
+    ]
+  },
+  {
+    "text": "Can you feel it? The walls between the sane world and that unplumbed dimension of delirium are tenuously thin here...",
+    "slug": "walls-between-sane-world-delirium",
+    "sentiment": "Negative",
+    "emotion_matrix": [
+      {"emotion": "Amazement", "temperature": 2},
+      {"emotion": "Wonder", "temperature": 5},
+      {"emotion": "Anxiety", "temperature": 2},
+      {"emotion": "Fright", "temperature": 3},
+      {"emotion": "Shock", "temperature": 3},
+      {"emotion": "Terror", "temperature": 4}
+    ],
+    "tags": [
+      "feel", "walls", "sane", "world", "delirium", "thin", "amazement", "wonder", "anxiety", "fear", "shock", "perception", "reality", "boundary", "dimension", "insanity", "strangeness", "mystery", "peril", "awareness", "uncertainty", "threshold", "understanding", "expanse", "illusion","insanity","crazy","endless","losing","mind"
+    ]
+  },
+  {
+    "text": "All my life, I could feel an insistent gnawing in the back of my mind. It was a yearning, a thirst for discovery that could be neither numbed, nor sated.",
+    "slug": "insistent-gnawing-yearning-discovery",
+    "sentiment": "Neutral",
+    "emotion_matrix": [
+      {"emotion": "Wonder", "temperature": 4},
+      {"emotion": "Acceptance", "temperature": 2},
+      {"emotion": "Anxiety", "temperature":3},
+      {"emotion": "Irritation", "temperature": 4},
+      {"emotion": "Terror", "temperature": 1}
+    ],
+    "tags": [
+      "life", "insistent", "gnawing", "mind", "yearning", "thirst", "discovery", "numbed", "sated", "curiosity", "interest", "anxiety", "frustration", "desire", "drive", "pursuit", "passion", "quest", "ambition", "restlessness", "obsession", "longing", "craving", "compulsion","sanity","insanity"
+    ]
+  },
+  {
+    "text": "An eternity of futile struggle — a penance for my unspeakable transgressions.",
+    "slug": "futile-struggle-penance-transgressions",
+    "sentiment": "Negative",
+    "emotion_matrix": [
+      {"emotion": "Despair", "temperature": 5},
+      {"emotion": "Guilt", "temperature": 5},
+      {"emotion": "Remorse", "temperature": 4},
+      {"emotion": "Regret", "temperature": 2},
+      {"emotion": "Frustration", "temperature": 1},
+      {"emotion": "Grief", "temperature": 4}
+    ],
+    "tags": [
+      "eternity", "futile", "struggle", "penance", "unspeakable", "transgressions", "despair", "guilt", "remorse", "regret", "frustration", "punishment", "atonement", "regrettable", "sorrow", "anguish", "repentance", "suffering", "redemption", "shame", "burden", "consequence", "sin", "forgiveness","forgive","time","endless","long","unending"
+    ]
+  },
+  {
+    "text": "All the decadent horrors I have seen pale in comparison with that final, crowning thing. I could not look, nor could I look away!",
+    "slug": "decadent-horrors-final-crowning",
+    "sentiment": "Negative",
+    "emotion_matrix": [
+      {"emotion": "Despair", "temperature": 3},
+      {"emotion": "Loneliness", "temperature": 1},
+      {"emotion": "Terror", "temperature": 5},
+      {"emotion": "Anxiety", "temperature": 3},
+      {"emotion": "Fright", "temperature": 2},
+      {"emotion": "Amazement", "temperature": 4},
+      {"emotion": "Wonder", "temperature":2}
+    ],
+    "tags": [
+      "decadent", "horrors", "final", "crowning", "thing", "comparison", "look", "away", "shock", "fear", "amazement", "horror", "fascination", "terrifying", "awe", "dread", "horrifying", "unsettling", "horrific", "curiosity", "overwhelming", "dismay", "apprehension", "astonishment","horrible"
+    ]
+  },
+  {
+    "text": "Great heroes can be found even here, in the mud and rain.",
+    "slug": "great-heroes-mud-rain",
+    "sentiment": "Positive",
+    "emotion_matrix": [
+      {"emotion": "Happiness", "temperature": 3},
+      {"emotion": "Enjoyment", "temperature": 2},
+      {"emotion": "Relief", "temperature": 5},
+      {"emotion": "Ecstasy", "temperature": 3},
+      {"emotion": "Acceptance", "temperature": 5},
+      {"emotion": "Trust", "temperature": 4},
+      {"emotion": "Kindness", "temperature": 2},
+      {"emotion": "Amazement", "temperature": 5}
+    ],
+    "tags": [
+      "great", "heroes", "mud", "rain", "positivity", "inspiration", "courage", "strength", "perseverance", "hope", "trust", "admiration", "achievement", "bravery", "heroism", "resilience", "optimism", "determination", "valor","hero","champion","savior","team","band","together"
+    ]
+  },
+  {
+    "text": "More arrive, foolishly seeking fortune and glory in this domain of the damned.",
+    "slug": "seeking-fortune-glory",
+    "sentiment": "Neutral",
+    "emotion_matrix": [
+      {"emotion": "Frustration", "temperature": 3},
+      {"emotion": "Sorrow", "temperature": 2},
+      {"emotion": "Melancholy", "temperature": 1},
+      {"emotion": "Despair", "temperature": 4},
+      {"emotion": "Relief", "temperature": 3},
+      {"emotion": "Happiness", "temperature": 1},
+      {"emotion": "Friendliness", "temperature": 5},
+      {"emotion": "Acceptance", "temperature": 3},
+      {"emotion": "Trust", "temperature": 2},
+      {"emotion": "Contempt", "temperature": 3}
+    ],
+    "tags": [
+      "arrive", "seeking", "fortune", "glory", "domain", "damned", "foolish", "risk", "ambition", "greed", "frustration", "disappointment", "despair", "struggle", "challenge", "adversity", "peril", "foolhardy", "hubris", "recklessness","team","together","fend","against","band","new","assign","join"
+    ]
+  },
+  {
+    "text": "Word is travelling. Ambition is stirring in distant cities. We can use this.",
+    "slug": "ambition-stirring-distant-cities",
+    "sentiment": "Positive",
+    "emotion_matrix": [
+      {"emotion": "Enjoyment", "temperature": 2},
+      {"emotion": "Thrill", "temperature": 4},
+      {"emotion": "Ecstasy", "temperature": 3},
+      {"emotion": "Acceptance", "temperature": 4},
+      {"emotion": "Friendliness", "temperature": 5},
+      {"emotion": "Amazement", "temperature": 1}
+    ],
+    "tags": [
+      "word", "travelling", "ambition", "stirring", "distant cities", "opportunity", "strategy", "planning", "anticipation", "curiosity", "optimism", "interest", "growth", "development", "expansion", "progress","distant","more","arrive","hear","fame","glory"
+    ]
+  },
+  {
+    "text": "With enough ale, maybe they can be inured against the horrors below.",
+    "slug": "enough-ale-inured-horrors-below",
+    "sentiment": "Neutral",
+    "emotion_matrix": [
+      {"emotion": "Melancholy", "temperature": 2},
+      {"emotion": "Anxiety", "temperature": 3},
+      {"emotion": "Fright", "temperature": 3},
+      {"emotion": "Kindness", "temperature": 4},
+      {"emotion": "Friendliness", "temperature": 3}
+    ],
+    "tags": [
+      "ale", "inured", "horrors", "below", "hope", "amusement", "relief", "coping", "defense mechanism", "numbing", "escape", "alcohol", "understanding", "acceptance", "distraction", "protection"
+    ]
+  },
+
+  {
     "text": "Executed with impunity!",
     "slug": "executed-with-impunity",
     "sentiment": "Positive",
