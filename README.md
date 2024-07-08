@@ -152,6 +152,8 @@ Hey ancestor @Darkest-PR, give me a cool line!
 - [ ] Public REST API for quotes
 - [ ] Introduce main subject/person for each strategy, which will be used for reply-to
 - [X] Deployment
+- [ ] Quotes
+  - Story-like quotes are excluded intentionally 
 
 ## Notes to self
 
