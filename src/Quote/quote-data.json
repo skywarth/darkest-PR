@@ -731,6 +731,469 @@
       "ale", "inured", "horrors", "below", "hope", "amusement", "relief", "coping", "defense mechanism", "numbing", "escape", "alcohol", "understanding", "acceptance", "distraction", "protection"
     ]
   },
+  {
+    "text": "All manner of diversion and dalliance await those who cross the threshold with coin in hand.",
+    "slug": "diversion-dalliance-coin-hand",
+    "sentiment": "Neutral",
+    "emotion_matrix": [
+      {"emotion": "Enjoyment", "temperature": 3},
+      {"emotion": "Melancholy", "temperature": 1},
+      {"emotion": "Anxiety", "temperature": 2},
+      {"emotion": "Thrill", "temperature": 4},
+      {"emotion": "Ecstasy", "temperature": 1}
+    ],
+    "tags": [
+      "diversion", "dalliance", "coin", "threshold", "enjoyment", "anticipation", "curiosity", "hope", "pleasure", "expectation", "wealth", "entertainment", "luxury", "opportunity","rich","riches","loss","gain","fail"
+    ]
+  },
+  {
+    "text": "Strong drink, a game of chance, and companionship. The rush of life.",
+    "slug": "strong-drink-game-of-chance",
+    "sentiment": "Positive",
+    "emotion_matrix": [
+      {"emotion": "Happiness", "temperature": 4},
+      {"emotion": "Enjoyment", "temperature": 5},
+      {"emotion": "Relief", "temperature": 3},
+      {"emotion": "Thrill", "temperature": 5},
+      {"emotion": "Ecstasy", "temperature": 4},
+      {"emotion": "Anxiety", "temperature": 2},
+      {"emotion": "Friendliness", "temperature": 5},
+      {"emotion": "Kindness", "temperature": 3},
+      {"emotion": "Trust", "temperature": 3},
+      {"emotion": "Acceptance", "temperature": 3},
+      {"emotion": "Wonder", "temperature": 2},
+      {"emotion": "Amazement", "temperature": 1}
+    ],
+    "tags": [
+      "drink", "strong", "game", "chance", "companionship", "rush", "life", "joy", "pleasure", "celebration", "happiness", "enjoyment", "relief", "thrill", "ecstasy", "friendliness", "kindness", "entertainment", "fun", "bonding", "connection", "excitement", "satisfaction", "leisure", "recreation", "conviviality", "camaraderie", "merriment", "cheer", "contentment", "delight", "bliss","team","band","together","achievement","success"
+    ]
+  },
+  {
+    "text": "A little hope, however desperate, is never without worth.",
+    "slug": "a-little-hope-however-desperate",
+    "sentiment": "Positive",
+    "emotion_matrix": [
+      {"emotion": "Despair", "temperature": 3},
+      {"emotion": "Trust", "temperature": 5},
+      {"emotion": "Relief", "temperature": 3},
+      {"emotion": "Happiness", "temperature": 2},
+      {"emotion": "Friendliness", "temperature": 2},
+      {"emotion": "Acceptance", "temperature": 4},
+      {"emotion": "Kindness", "temperature": 4}
+    ],
+    "tags": [
+      "hope", "desperate", "worth", "value", "resilience", "optimism", "faith", "positivity", "courage", "strength", "perseverance", "endurance", "belief", "trust", "determination", "resolve", "fortitude", "confidence", "aspiration", "expectation", "anticipation", "encouragement", "motivation", "upliftment", "support", "comfort", "assurance", "steadfastness", "bravery", "optimistic", "persistent", "heartening", "inspiring", "positive","brave","insist"
+    ]
+  },
+  {
+    "text": "Gilded icons and dogmatic rituals... for some, a tonic against the bloodshed.",
+    "slug": "gilded-icons-dogmatic-rituals",
+    "sentiment": "Neutral",
+    "emotion_matrix": [
+      {"emotion": "Relief", "temperature": 5},
+      {"emotion": "Trust", "temperature": 3},
+      {"emotion": "Anxiety", "temperature": 3},
+      {"emotion": "Fright", "temperature": 1},
+      {"emotion": "Despair", "temperature": 2},
+      {"emotion": "Acceptance", "temperature": 3}
+    ],
+    "tags": [
+      "gilded icons", "dogmatic rituals", "tonic", "bloodshed", "faith", "tradition", "rituals", "icons", "comfort", "relief", "solace", "religion", "belief", "spirituality", "customs", "practices", "ceremonies", "symbols", "devotion", "protection", "sanctuary", "consolation", "coping mechanism", "respite", "anxiety", "hope", "steadfastness", "reassurance", "security", "peace", "calm", "alleviation", "refuge", "emotional support"
+    ]
+  },
+  {
+    "text": "A man in a robe, claiming communion with the divine. Madness.",
+    "slug": "man-in-a-robe",
+    "sentiment": "Negative",
+    "emotion_matrix": [
+      {"emotion": "Contempt", "temperature": 3},
+      {"emotion": "Scorn", "temperature": 3},
+      {"emotion": "Irritation", "temperature": 2},
+      {"emotion": "Shock", "temperature": 3},
+      {"emotion": "Amazement", "temperature": 1},
+      {"emotion": "Wonder", "temperature": 2}
+    ],
+    "tags": [
+      "man in robe", "communion", "divine", "madness", "religion", "faith", "spirituality", "delusion", "fanaticism", "eccentricity", "insanity", "priest", "belief", "rituals", "ceremony", "claims", "divine connection", "mental state", "skepticism", "unbelief", "confusion", "bewilderment", "disbelief", "contempt", "scorn", "shock", "mistrust", "fury", "irritation", "incredulity", "blasphemy", "heresy", "doctrines", "dogma", "controversy", "superstition","sanity","losing","lost","insanity"
+    ]
+  },
+  {
+    "text": "In the end, every plan relies upon a strong arm, and tempered steel.",
+    "slug": "plan-relies-on-strong-arm",
+    "sentiment": "Positive",
+    "emotion_matrix": [
+      {"emotion": "Acceptance", "temperature": 4},
+      {"emotion": "Trust", "temperature": 5},
+      {"emotion": "Friendliness", "temperature": 3},
+      {"emotion": "Kindness", "temperature": 1},
+      {"emotion": "Amazement", "temperature": 2}
+    ],
+    "tags": [
+      "plan", "strategy", "strong arm", "tempered steel", "strength", "determination", "reliance", "preparedness", "resilience", "combat", "warfare", "defense", "fortitude", "trust", "acceptance", "resolve", "bravery", "endurance", "hardness", "support", "confidence", "action", "execution", "implementation", "tactics", "force", "power", "stability", "friendliness", "cooperation", "unity", "teamwork", "foundation", "solidarity", "precision","assign","team","together","join","arrive","unite"
+    ]
+  },
+  {
+    "text": "A sharper sword, a stronger shield. Anything to prolong a soldier's life.",
+    "slug": "a-sharper-sword-a-stronger-shield-anything-to-prolong-a-soldiers-life",
+    "sentiment": "Neutral",
+    "emotion_matrix": [
+      {"emotion": "Despair", "temperature": 2},
+      {"emotion": "Anxiety", "temperature": 3},
+      {"emotion": "Fright", "temperature": 3},
+      {"emotion": "Friendliness", "temperature": 4},
+      {"emotion": "Trust", "temperature": 3},
+      {"emotion": "Acceptance", "temperature": 3}
+    ],
+    "tags": ["sharper sword", "stronger shield", "prolong", "soldier", "life", "survival", "preparedness", "protection", "strategy", "battle-readiness", "defense", "enhancement", "longevity", "security", "warfare", "reinforcement", "shield", "sword", "desperation", "necessity", "fortification", "armament", "resilience","keep up","backup","support","strong","fortify"]
+  },
+  {
+    "text": "Fan the flames! Mold the metal! We are raising an army!",
+    "slug": "fan-the-flames-mold-the-metal",
+    "sentiment": "Positive",
+    "emotion_matrix": [
+      {"emotion": "Wrath", "temperature": 2},
+      {"emotion": "Rage", "temperature": 3},
+      {"emotion": "Ecstasy", "temperature": 2},
+      {"emotion": "Enjoyment", "temperature": 3},
+      {"emotion": "Acceptance", "temperature": 5},
+      {"emotion": "Friendliness", "temperature": 4},
+      {"emotion": "Trust", "temperature": 3},
+      {"emotion": "Amazement", "temperature": 5}
+    ],
+    "tags": ["fan the flames", "mold the metal", "raising an army", "excitement", "determination", "ambition", "leadership", "unity", "action", "motivation", "warfare", "preparation", "strength", "organization", "inspiration", "military", "leadership", "teamwork", "achievement", "goal-setting", "strategy", "command", "resolve", "energizing", "empowerment","team up","team","band","common","join","together","assemble"]
+  },
+  {
+    "text": "Some may fall, but their knowledge lives on.",
+    "slug": "some-may-fall",
+    "sentiment": "Neutral",
+    "emotion_matrix": [
+      {"emotion": "Frustration", "temperature": 2},
+      {"emotion": "Wrath", "temperature": 3},
+      {"emotion": "Fury", "temperature": 2},
+      {"emotion": "Grief", "temperature": 5},
+      {"emotion": "Sorrow", "temperature": 4},
+      {"emotion": "Acceptance", "temperature": 4},
+      {"emotion": "Trust", "temperature": 3},
+      {"emotion": "Remorse", "temperature": 1}
+    ],
+    "tags": ["fall", "knowledge", "lives on", "resilience", "legacy", "perseverance", "loss", "wisdom", "education", "memory", "inheritance", "continuation", "immortality", "teaching", "experience", "tradition", "passing", "heritage", "lessons", "endurance", "inspiration", "remembrance", "understanding", "transcendence","kick","forsaken","death","died","fall","fallen","removed","dispatched","sent","leave","begone","kill","killed","separated","parted"]
+  },
+  {
+    "text": "Every creature has a weakness. The wise hero trains for what she will face.",
+    "slug": "every-creature-has-a-weakness",
+    "sentiment": "Neutral",
+    "emotion_matrix": [
+      {"emotion": "Rage", "temperature": 3},
+      {"emotion": "Anxiety", "temperature": 2},
+      {"emotion": "Thrill", "temperature": 4},
+      {"emotion": "Acceptance", "temperature": 5},
+      {"emotion": "Trust", "temperature": 4}
+    ],
+    "tags": ["creature", "weakness", "wise hero", "training", "preparation", "anticipation", "awareness", "strategy", "challenge", "adversity", "combat", "strength", "vulnerability", "foresight", "knowledge", "precaution", "defense", "skill", "tactics", "planning", "learning", "battle", "experience", "education","improve","improvement","develop","stronger"]
+  },
+  {
+    "text": "A strict regimen is paramount, if one is to master the brutal arithmetic of combat.",
+    "slug": "a-strict-regimen-is-paramount",
+    "sentiment": "Neutral",
+    "emotion_matrix": [
+      {"emotion": "Despair", "temperature": 2},
+      {"emotion": "Anxiety", "temperature": 3},
+      {"emotion": "Fright", "temperature": 4},
+      {"emotion": "Terror", "temperature": 1},
+      {"emotion": "Acceptance", "temperature": 3},
+      {"emotion": "Friendliness", "temperature": 4},
+      {"emotion": "Trust", "temperature": 4},
+      {"emotion": "Kindness", "temperature": 2}
+    ],
+    "tags": ["strict regimen", "paramount", "master", "brutal arithmetic", "combat", "determination", "discipline", "preparation", "strength", "training", "rigor", "focus", "intensity", "warfare", "tactics", "battle", "skill", "strategy", "precision", "effort", "dedication", "mastery", "military", "exercise", "fortitude","train","support"]
+  },
+  {
+    "text": "Alone in the woods or tunnels, survival is the same. Prepare, persist, and overcome.",
+    "slug": "prepare-persist-and-overcome",
+    "sentiment": "Neutral",
+    "emotion_matrix": [
+      {"emotion": "Loneliness", "temperature": 5},
+      {"emotion": "Despair", "temperature": 2},
+      {"emotion": "Anxiety", "temperature": 2},
+      {"emotion": "Fright", "temperature": 4},
+      {"emotion": "Acceptance", "temperature": 5},
+      {"emotion": "Trust", "temperature": 3}
+    ],
+    "tags": ["alone", "woods", "tunnels", "survival", "prepare", "persist", "overcome", "determination", "loneliness", "strength", "resilience", "endurance", "adaptation", "self-reliance", "tenacity", "wilderness", "underground", "hardship", "struggle", "fortitude", "courage", "bravery", "isolation", "perseverance", "resolve","sole","single","separated","singular","solemn"]
+  },
+  {
+    "text": "Success depends on survival.",
+    "slug": "success-depends-on-survival",
+    "sentiment": "Neutral",
+    "emotion_matrix": [
+      {"emotion": "Rage", "temperature": 2},
+      {"emotion": "Despair", "temperature": 3},
+      {"emotion": "Loneliness", "temperature": 3},
+      {"emotion": "Anxiety", "temperature": 4},
+      {"emotion": "Fright", "temperature": 2},
+      {"emotion": "Thrill", "temperature": 3},
+      {"emotion": "Acceptance", "temperature": 3},
+      {"emotion": "Trust", "temperature": 4}
+    ],
+    "tags": ["success", "depends", "survival", "determination", "anxiety", "hope", "persistence", "strength", "achievement", "endurance", "resilience", "tenacity", "overcoming", "fortitude", "self-reliance", "struggle", "adaptation", "effort", "goal", "necessity", "perseverance", "resolve", "victory", "challenge", "survivability","win","endure","endurance"]
+  },
+  {
+    "text": "They must learn more than brutal bloodletting — they must learn to survive!",
+    "slug": "they-must-learn-to-survive",
+    "sentiment": "Neutral",
+    "emotion_matrix": [
+      {"emotion": "Rage", "temperature": 2},
+      {"emotion": "Despair", "temperature": 3},
+      {"emotion": "Loneliness", "temperature": 3},
+      {"emotion": "Anxiety", "temperature": 4},
+      {"emotion": "Fright", "temperature": 2},
+      {"emotion": "Thrill", "temperature": 3},
+      {"emotion": "Acceptance", "temperature": 3},
+      {"emotion": "Trust", "temperature": 4}
+    ],
+    "tags": ["learn", "brutal", "bloodletting", "survive", "determination", "anxiety", "hope", "persistence", "strength", "survival", "resilience", "endurance", "adaptation", "fortitude", "training", "preparation", "self-reliance", "overcoming", "struggle", "tenacity", "combat", "life", "challenge", "perseverance", "resolve", "victory","endure","endurance","survivor"]
+  },
+  {
+    "text": "Rarities and curios, sold at a profit, of course.",
+    "slug": "rarities-and-curios",
+    "sentiment": "Neutral",
+    "emotion_matrix": [
+      {"emotion": "Happiness", "temperature": 2},
+      {"emotion": "Enjoyment", "temperature": 4},
+      {"emotion": "Ecstasy", "temperature": 3},
+      {"emotion": "Trust", "temperature": 1},
+      {"emotion": "Kindness", "temperature": 1},
+      {"emotion": "Acceptance", "temperature": 2},
+      {"emotion": "Amazement", "temperature": 3},
+      {"emotion": "Embarrassment", "temperature": 2}
+    ],
+    "tags": ["rarities", "curios", "profit", "commerce", "trade", "sales", "business", "value", "worth", "market", "merchandise", "goods", "deal", "transaction", "bargain", "exchange", "selling", "collector", "item", "antique", "revenue", "income", "earnings", "investment", "profitability", "gains"]
+  },
+  {
+    "text": "Idol, amulet, or lucky charm — the simplest object can be a talisman against evil.",
+    "slug": "talisman-against-evil",
+    "sentiment": "Positive",
+    "emotion_matrix": [
+      {"emotion": "Trust", "temperature": 3},
+      {"emotion": "Happiness", "temperature": 2},
+      {"emotion": "Relief", "temperature": 5},
+      {"emotion": "Acceptance", "temperature": 3},
+      {"emotion": "Kindness", "temperature": 2}
+    ],
+    "tags": ["idol", "amulet", "lucky charm", "talisman", "protection", "evil", "simplest object", "ward", "defense", "guardian", "safety", "security", "artifact", "safeguard", "charm", "symbol", "magic", "belief", "faith", "hope", "luck", "superstition", "ritual", "blessing", "guardian"]
+  },
+  {
+    "text": "An increasing stockpile of curious trinkets, gathered from forbidden places.",
+    "slug": "trinkets-gathered-from-forbidden-places",
+    "sentiment": "Neutral",
+    "emotion_matrix": [
+      {"emotion": "Wonder", "temperature": 3},
+      {"emotion": "Amazement", "temperature": 2},
+      {"emotion": "Grief", "temperature": 1},
+      {"emotion": "Enjoyment", "temperature": 3},
+      {"emotion": "Ecstasy", "temperature": 2},
+      {"emotion": "Shock", "temperature": 1},
+      {"emotion": "Wonder", "temperature": 1},
+      {"emotion": "Contempt", "temperature": 2},
+      {"emotion": "Embarrassment", "temperature": 4},
+      {"emotion": "Guilt", "temperature": 5}
+
+    ],
+    "tags": ["stockpile", "curious trinkets", "forbidden places", "collection", "gathering", "mystery", "exploration", "discovery", "adventure", "unknown", "rarities", "artifacts", "exotic items", "hidden treasures", "hoard", "accumulation", "curiosity", "intrigue", "wonders", "secrets", "unexplored", "peculiarities", "marvels", "rare finds", "treasures","forbidden","theft","steal","cursed"]
+  },
+  {
+    "text": "The front line of this war is not in the dungeon, but rather, inside the mind.",
+    "slug": "the-front-line-of-this-war",
+    "sentiment": "Neutral",
+    "emotion_matrix": [
+      {"emotion": "Anxiety", "temperature": 4},
+      {"emotion": "Rage", "temperature": 2},
+      {"emotion": "Fury", "temperature": 1},
+      {"emotion": "Despair", "temperature": 2},
+      {"emotion": "Loneliness", "temperature": 1},
+      {"emotion": "Melancholy", "temperature": 1},
+      {"emotion": "Terror", "temperature": 3},
+      {"emotion": "Panic", "temperature": 2},
+      {"emotion": "Fright", "temperature": 2}
+    ],
+    "tags": ["front line", "war", "dungeon", "mind", "mental battle", "inner struggle", "psychological warfare", "conflict", "mental health", "resilience", "strength", "perseverance", "fear", "determination", "endurance", "fortitude", "internal conflict", "mental endurance", "psychological strength", "inner demons", "mind over matter", "brain", "thoughts", "self-control", "mental toughness","failure","endurance","loss","fail","test"]
+  },
+  {
+    "text": "Experimental techniques and tonics can overcome things a sharpened sword cannot.",
+    "slug": "experimental-techniques-and-tonics",
+    "sentiment": "Neutral",
+    "emotion_matrix": [
+      {"emotion": "Despair", "temperature": 2},
+      {"emotion": "Acceptance", "temperature": 3},
+      {"emotion": "Trust", "temperature": 2},
+      {"emotion": "Amazement", "temperature": 1},
+      {"emotion": "Wonder", "temperature": 2}
+    ],
+    "tags": ["experimental techniques", "tonics", "overcome", "sharpened sword", "innovation", "remedies", "healing", "alternative methods", "science", "medical advancements", "curiosity", "hope", "non-violence", "strategy", "health", "treatment", "solutions", "progress", "alchemy", "resilience", "strength", "ingenuity", "adaptability", "survival", "determination","experiment","new","test","trial","try","improvement","improvise"]
+  },
+  {
+    "text": "Curious methodologies and apparatus can calm even the most tormented soul.",
+    "slug": "curious-methodologies-and-apparatus",
+    "sentiment": "Neutral",
+    "emotion_matrix": [
+      {"emotion": "Relief", "temperature": 5},
+      {"emotion": "Trust", "temperature": 3},
+      {"emotion": "Anxiety", "temperature": 4},
+      {"emotion": "Melancholy", "temperature": 2},
+      {"emotion": "Despair", "temperature": 3},
+      {"emotion": "Loneliness", "temperature": 1},
+      {"emotion": "Kindness", "temperature": 4},
+      {"emotion": "Friendliness", "temperature": 2},
+      {"emotion": "Trust", "temperature": 2}
+    ],
+    "tags": ["curious methodologies", "apparatus", "calm", "tormented soul", "innovation", "remedies", "healing", "alternative methods", "science", "mental health", "curiosity", "hope", "peace", "strategy", "well-being", "treatment", "solutions", "progress", "resilience", "strength", "ingenuity", "adaptability", "relief", "determination","pain","suffering","relief","salvation","help"]
+  },
+  {
+    "text": "Tortured and reclusive... this man is more dangerous than he seems...",
+    "slug": "tortured-and-reclusive",
+    "sentiment": "Negative",
+    "emotion_matrix": [
+      {"emotion": "Anxiety", "temperature": 3},
+      {"emotion": "Fury", "temperature": 1},
+      {"emotion": "Rage", "temperature": 2},
+      {"emotion": "Wrath", "temperature": 3},
+      {"emotion": "Fright", "temperature": 4},
+      {"emotion": "Acceptance", "temperature": 3},
+      {"emotion": "Scorn", "temperature": 2}
+    ],
+    "tags": ["character","introduction","meet","intro","join","assemble","team","new","tortured", "reclusive", "dangerous", "man", "anxiety", "fear", "suspicion", "danger", "isolation", "threat", "mystery", "secrecy", "hidden danger", "unease", "caution", "worry", "concern", "vigilance", "alertness", "risk", "trepidation", "alarm", "apprehension", "menace", "solitude","danger","warning","wild","savage","destroyer"]
+  },
+  {
+    "text": "She searches where others will not go... and sees what others will not see.",
+    "slug": "she-searches-where-others-will-not-go",
+    "sentiment": "Positive",
+    "emotion_matrix": [
+      {"emotion": "Thrill", "temperature": 4},
+      {"emotion": "Ecstasy", "temperature": 2},
+      {"emotion": "Acceptance", "temperature": 3},
+      {"emotion": "Friendliness", "temperature": 2},
+      {"emotion": "Trust", "temperature": 4},
+      {"emotion": "Amazement", "temperature": 5},
+      {"emotion": "Wonder", "temperature": 2},
+      {"emotion": "Anxiety", "temperature": 1}
+
+    ],
+    "tags": ["character","introduction","meet","intro","join","team","new","search", "others", "not go", "sees","different", "will not see", "exploration", "curiosity", "determination", "isolation", "hope", "bravery", "fearlessness", "insight", "perception", "adventure", "discovery", "unseen", "unexplored", "mystery", "unknown", "courage", "quest", "resolve", "solitude", "vision","see","rifle","keen","smart","sharp","wits","wit","detail","unseen","unknown"]
+  },
+  {
+    "text": "Shoot, bandage and pillage: the dancing steps of war.",
+    "slug": "dancing-steps-of-war",
+    "sentiment": "Positive",
+    "emotion_matrix": [
+      {"emotion": "Thrill", "temperature": 4},
+      {"emotion": "Ecstasy", "temperature": 2},
+      {"emotion": "Acceptance", "temperature": 3},
+      {"emotion": "Trust", "temperature": 2},
+      {"emotion": "Amazement", "temperature": 5}
+    ],
+    "tags": ["character","introduction","meet","intro","join","assemble","team","new","shoot", "bandage", "pillage", "war", "dancing steps", "battle", "conflict", "combat", "violence", "survival", "struggle", "determination", "chaos", "desperation", "strategy", "sacrifice", "bloodshed", "destruction", "fighting", "warfare", "harm", "injury", "raid", "conflict", "tactics","talent","talented","skill","skillful","ability","great","tactful","know-how"]
+  },
+  {
+    "text": "The thrill of the hunt... The promise of payment...",
+    "slug": "the-thrill-of-the-hunt-the-promise-of-payment",
+    "sentiment": "Neutral",
+    "emotion_matrix": [
+      {"emotion": "Thrill", "temperature": 5},
+      {"emotion": "Melancholy", "temperature": 2},
+      {"emotion": "Anxiety", "temperature": 4},
+      {"emotion": "Enjoyment", "temperature": 2},
+      {"emotion": "Trust", "temperature": 2},
+      {"emotion": "Acceptance", "temperature": 3},
+      {"emotion": "Wonder", "temperature": 2}
+    ],
+    "tags": ["character","introduction","meet","intro","join","assemble","team","new","thrill", "hunt", "promise", "payment", "anticipation", "reward", "excitement", "pursuit", "adventure", "risk", "danger", "gain", "determination", "motivation", "challenge", "goal", "objective", "focus", "achievement", "endeavor", "desire", "aspiration", "intent", "drive", "ambition", "action","keep","continue","more","attempt","time","keep up","go on","going on"]
+  },
+  {
+    "text": "A mighty sword-arm anchored by a holy purpose. A zealous warrior.",
+    "slug": "a-zealous-warrior",
+    "sentiment": "Positive",
+    "emotion_matrix": [
+      {"emotion": "Wrath", "temperature": 3},
+      {"emotion": "Rage", "temperature": 2},
+      {"emotion": "Relief", "temperature": 3},
+      {"emotion": "Ecstasy", "temperature": 1},
+      {"emotion": "Trust", "temperature": 5},
+      {"emotion": "Kindness", "temperature": 4},
+      {"emotion": "Friendliness", "temperature": 3},
+      {"emotion": "Acceptance", "temperature": 4},
+      {"emotion": "Amazement", "temperature": 5}
+    ],
+    "tags": ["character","introduction","meet","intro","join","assemble","team","new","mighty", "sword-arm", "holy purpose", "zealous warrior", "strength", "faith", "determination", "zeal", "warrior", "purpose", "devotion", "righteousness", "battle", "combat", "power", "resolve", "valor", "bravery", "commitment", "mission", "fortitude", "piety", "heroism", "dedication", "spirituality","unyielding","champion","savior","hero"]
+  },
+  {
+    "text": "To those with a keen eye, gold gleams like a dagger's point.",
+    "slug": "to-those-with-a-keen-eye",
+    "sentiment": "Neutral",
+    "emotion_matrix": [
+      {"emotion": "Ecstasy", "temperature": 5},
+      {"emotion": "Thrill", "temperature": 3},
+      {"emotion": "Enjoyment", "temperature": 2},
+      {"emotion": "Acceptance", "temperature": 3},
+      {"emotion": "Wonder", "temperature": 3},
+      {"emotion": "Scorn", "temperature": 2},
+      {"emotion": "Contempt", "temperature": 2},
+      {"emotion": "Embarrassment", "temperature": 2},
+      {"emotion": "Guilt", "temperature": 1}
+    ],
+    "tags": ["character","introduction","meet","intro","join","assemble","team","new","keen eye", "gold", "gleams", "dagger's point", "intrigue", "caution", "curiosity", "desire", "wariness", "observation", "sharpness", "perception", "treasure", "danger", "wealth", "risk", "attention", "detail", "alertness", "value", "luster", "sharpness", "focus", "awareness", "shiny", "metal","keen","alert","wit","smart","woke"]
+  },
+  {
+    "text": "Barbaric rage and unrelenting savagery make for a powerful ally.",
+    "slug": "barbaric-rage-and-unrelenting-savagery",
+    "sentiment": "Positive",
+    "emotion_matrix": [
+      {"emotion": "Rage", "temperature": 5},
+      {"emotion": "Fury", "temperature": 4},
+      {"emotion": "Wrath", "temperature": 4},
+      {"emotion": "Fright", "temperature": 2},
+      {"emotion": "Relief", "temperature": 2},
+      {"emotion": "Thrill", "temperature": 3},
+      {"emotion": "Friendliness", "temperature": 5},
+      {"emotion": "Trust", "temperature": 4},
+      {"emotion": "Kindness", "temperature": 3},
+      {"emotion": "Amazement", "temperature": 2},
+      {"emotion": "Contempt", "temperature": 3},
+      {"emotion": "Scorn", "temperature": 2}
+    ],
+    "tags": ["character","introduction","meet","intro","join","assemble","team","new","barbaric","savage", "unrelenting", "savage" ,"savagery", "powerful ally", "rage", "fury", "wrath", "determination", "ferocity", "savagery", "strength", "brutality", "force", "violence", "intensity", "ally", "battle", "power", "raw power", "aggression", "combat", "hostility", "relentlessness", "wildness", "might", "destructive force", "unyielding", "merciless","destroyer","destruction","overpower","hero","champion"]
+  },
+  {
+    "text": "Elusive, evasive, persistent. Righteous traits for a rogue.",
+    "slug": "elusive-evasive-persistent-righteous-traits-for-a-rogue",
+    "sentiment": "Positive",
+    "emotion_matrix": [
+      {"emotion": "Thrill", "temperature": 3},
+      {"emotion": "Ecstasy", "temperature": 2},
+      {"emotion": "Trust", "temperature": 2},
+      {"emotion": "Acceptance", "temperature": 3},
+      {"emotion": "Amazement", "temperature": 4},
+      {"emotion": "Wonder", "temperature": 3}
+
+    ],
+    "tags": ["character","introduction","meet","intro","join","assemble","team","new","elusive", "evasive", "persistent", "righteous traits", "rogue", "determination", "trust", "friendliness", "relief", "fright", "stealth", "agility", "tenacity", "virtue", "character", "attributes", "traits", "skills", "qualities", "quickness", "deception", "resilience", "fortitude", "endurance", "shrewdness", "cunning", "ingenuity", "strategy","keen","smart","dangerous"]
+  },
+  {
+    "text": "A lawman and his faithful beast. A bond forged by battle and bloodshed.",
+    "slug": "a-lawman-and-his-faithful-beast",
+    "sentiment": "Neutral",
+    "emotion_matrix": [
+      {"emotion": "Trust", "temperature": 5},
+      {"emotion": "Relief", "temperature": 3},
+      {"emotion": "Enjoyment", "temperature": 2},
+      {"emotion": "Friendliness", "temperature": 5},
+      {"emotion": "Acceptance", "temperature": 4},
+      {"emotion": "Amazement", "temperature": 1},
+      {"emotion": "Wonder", "temperature": 2}
+    ],
+    "tags": ["character","introduction","meet","intro","join","assemble","team","new","lawman", "faith","faithful beast", "bond", "battle", "bloodshed", "trust", "friendliness", "strength", "determination", "hope", "loyalty", "camaraderie", "companionship", "alliance", "valor", "courage", "dedication", "bravery", "unity", "combat", "struggle", "warrior", "protector", "guardian", "partnership", "heroism", "sacrifice", "fortitude", "fidelity","support","group","ally","partner"]
+  },
+
+
 
   {
     "text": "Executed with impunity!",
