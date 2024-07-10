@@ -1804,22 +1804,391 @@
     ],
     "tags": ["recover", "lost shipments", "rarities", "prevention", "scrupulous hands", "security", "vigilance", "concern", "determination", "protection", "caution", "safety", "alertness", "risk management", "retrieval", "guardianship", "watchfulness", "defense", "safeguarding", "defense measures", "preventive action", "secure handling", "reclaiming", "rescue", "conservation", "awareness", "challenges"]
   },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  {
+    "text": "I always wondered what became of the unfortunate little waif...",
+    "slug": "unfortunate-little-waif",
+    "sentiment": "Neutral",
+    "emotion_matrix": [
+      {"emotion": "Sorrow", "temperature": 2},
+      {"emotion": "Grief", "temperature": 2},
+      {"emotion": "Melancholy", "temperature": 3},
+      {"emotion": "Loneliness", "temperature": 1},
+      {"emotion": "Anxiety", "temperature": 1},
+      {"emotion": "Friendliness", "temperature": 4},
+      {"emotion": "Kindness", "temperature": 2},
+      {"emotion": "Wonder", "temperature": 5}
+    ],
+    "tags": ["wonder", "unfortunate", "waif", "curiosity", "concern", "sorrow", "nostalgia", "mystery", "reflection", "thoughtfulness", "inquiry", "pondering", "child", "lost", "missing", "past", "search", "hope", "fate", "speculation", "unknown", "memories", "questions", "interest", "inquiring", "unanswered", "thought", "sentimentality", "ponderous", "unknown fate"]
+  },
+  {
+    "text": "The poor devils, chained and drowning for eternity...",
+    "slug": "chained-and-drowning-for-eternity",
+    "sentiment": "Negative",
+    "emotion_matrix": [
+      {"emotion": "Grief", "temperature": 3},
+      {"emotion": "Despair", "temperature": 5},
+      {"emotion": "Terror", "temperature": 2},
+      {"emotion": "Wonder", "temperature": 1},
+      {"emotion": "Contempt", "temperature": 2},
+      {"emotion": "Remorse", "temperature": 3},
+      {"emotion": "Embarrassment", "temperature": 2}
+    ],
+    "tags": ["poor devils", "chained", "drowning", "eternity", "despair", "sorrow", "horror", "pity", "suffering", "torment", "imprisonment", "endlessness", "hopelessness", "tragedy", "anguish", "helplessness", "distress", "captivity", "misery", "woe", "doom", "pain", "lamentation", "grief", "melancholy", "agony", "desperation", "affliction", "torture", "bondage", "doom", "cruelty", "excruciation"]
+  },
+  {
+    "text": "The shifted corridors and sloped vaults of our ancestry are beginning to feel familiar.",
+    "slug": "shifted-corridors-and-sloped-vaults",
+    "sentiment": "Neutral",
+    "emotion_matrix": [
+      {"emotion": "Melancholy", "temperature": 4},
+      {"emotion": "Relief", "temperature": 1},
+      {"emotion": "Happiness", "temperature": 1},
+      {"emotion": "Friendliness", "temperature": 2},
+      {"emotion": "Kindness", "temperature": 2},
+      {"emotion": "Acceptance", "temperature": 3},
+      {"emotion": "Amazement", "temperature": 2}
+    ],
+    "tags": ["shifted corridors", "sloped vaults", "ancestry", "familiarity", "nostalgia", "history", "heritage", "lineage", "architecture", "memory", "tradition", "roots", "exploration", "connection", "past", "reliving", "recognition", "continuity", "adaptation", "environment", "discovery", "journey", "inheritance", "background", "identity", "remembrance", "historical", "roots", "belonging", "antiquity", "adaptation", "transition", "recollection"]
+  },
+  {
+    "text": "The great Ruins belong to us, and we will find whatever secrets they hold.",
+    "slug": "the-great-ruins-belong-to-us",
+    "sentiment": "Positive",
+    "emotion_matrix": [
+      {"emotion": "Wrath", "temperature": 3},
+      {"emotion": "Rage", "temperature": 1},
+      {"emotion": "Ecstasy", "temperature": 2},
+      {"emotion": "Happiness", "temperature": 3},
+      {"emotion": "Acceptance", "temperature": 3},
+      {"emotion": "Friendliness", "temperature": 2},
+      {"emotion": "Trust", "temperature": 4},
+      {"emotion": "Wonder", "temperature": 4}
+    ],
+    "tags": ["great Ruins", "belong", "secrets", "discovery", "determination", "ownership", "exploration", "mystery", "heritage", "legacy", "pride", "unveiling", "ancient", "history", "treasure", "investigation", "knowledge", "adventure", "quest", "search", "mission", "curiosity", "ambition", "confidence", "exploration", "confidence", "claim", "anticipation", "resolve", "heritage", "legacy", "inheritance", "investigation", "journey", "exploration"]
+  },
+  {
+    "text": "More bones returned to rest. Devils remanded to their abyss.",
+    "slug": "devils-remanded-to-their-abyss",
+    "sentiment": "Neutral",
+    "emotion_matrix": [
+      {"emotion": "Wrath", "temperature": 3},
+      {"emotion": "Fury", "temperature": 2},
+      {"emotion": "Happiness", "temperature": 3},
+      {"emotion": "Enjoyment", "temperature": 1},
+      {"emotion": "Relief", "temperature": 4},
+      {"emotion": "Wonder", "temperature": 2}
+    ],
+    "tags": ["bones", "rest", "devils", "abyss", "finality", "relief", "restoration", "peace", "closure", "exorcism", "resolution", "end", "conclusion", "satisfaction", "repose", "release", "calm", "tranquility", "return", "submission", "abyss", "balance", "vanquish", "banishment", "tranquility", "serenity", "resolution", "peaceful end", "final rest", "eternal peace", "closure", "defeat of evil", "restful sleep"]
+  },
+  {
+    "text": "Room by room, hall by hall, we reclaim what is ours.",
+    "slug": "we-reclaim-what-is-ours",
+    "sentiment": "Positive",
+    "emotion_matrix": [
+      {"emotion": "Wrath", "temperature": 2},
+      {"emotion": "Happiness", "temperature": 3},
+      {"emotion": "Enjoyment", "temperature": 1},
+      {"emotion": "Relief", "temperature": 3},
+      {"emotion": "Ecstasy", "temperature": 3},
+      {"emotion": "Wonder", "temperature": 2},
+      {"emotion": "Trust", "temperature": 3},
+      {"emotion": "Friendliness", "temperature": 2},
+      {"emotion": "Kindness", "temperature": 3}
+    ],
+    "tags": ["reclaim", "room", "hall", "ours", "determination", "persistence", "hope", "empowerment", "restoration", "victory", "perseverance", "resilience", "ownership", "strength", "resolve", "fortitude", "recovery", "take back", "retrieval", "assertion", "defense", "protection", "regain", "hold", "tenacity", "struggle", "fight", "restoration", "winning", "triumph", "conquest", "progress", "success", "renewal", "achievement", "claim", "territory"]
+  },
+  {
+    "text": "This day belongs to the Light!",
+    "slug": "day-belongs-to-the-light",
+    "sentiment": "Positive",
+    "emotion_matrix": [
+      {"emotion": "Fury", "temperature": 1},
+      {"emotion": "Wrath", "temperature": 2},
+      {"emotion": "Happiness", "temperature": 2},
+      {"emotion": "Enjoyment", "temperature": 4},
+      {"emotion": "Relief", "temperature": 5},
+      {"emotion": "Ecstasy", "temperature": 3},
+      {"emotion": "Trust", "temperature": 4},
+      {"emotion": "Acceptance", "temperature": 2},
+      {"emotion": "Kindness", "temperature": 2},
+      {"emotion": "Amazement", "temperature": 3}
+    ],
+    "tags": ["light", "day", "belongs", "victory", "hope", "joy", "pride", "achievement", "triumph", "celebration", "brightness", "success", "radiance", "illumination", "winning", "glory", "exultation", "happiness", "elation", "optimism", "uplifted", "positive", "glee", "jubilation", "conquest", "dominance", "brightness", "glory", "exultation", "delight", "splendor", "brightness", "cheerfulness", "happiness", "euphoria"]
+  },
+  {
+    "text": "Beacons in the darkness, stars in the emptiness of the void.",
+    "slug": "beacons-in-the-darkness",
+    "sentiment": "Neutral",
+    "emotion_matrix": [
+      {"emotion": "Loneliness", "temperature": 3},
+      {"emotion": "Melancholy", "temperature": 2},
+      {"emotion": "Despair", "temperature": 2},
+      {"emotion": "Fright", "temperature": 2},
+      {"emotion": "Relief", "temperature": 3},
+      {"emotion": "Kindness", "temperature": 4},
+      {"emotion": "Acceptance", "temperature": 2},
+      {"emotion": "Wonder", "temperature": 3}
+    ],
+    "tags": ["beacons", "darkness", "stars", "emptiness", "void", "light", "hope", "guidance", "direction", "loneliness", "solitude", "mystery", "wonder", "amazement", "melancholy", "isolation", "stars", "beacons", "navigation", "celestial", "cosmic", "space", "universe", "night", "bright", "twinkle", "shine", "solace", "comfort", "inspiration", "vastness", "infinity", "unknown", "exploration", "starlight", "galaxy"]
+  },
+  {
+    "text": "Tokens of hope, recovered from the encroaching dark.",
+    "slug": "tokens-of-hope",
+    "sentiment": "Positive",
+    "emotion_matrix": [
+      {"emotion": "Melancholy", "temperature": 1},
+      {"emotion": "Despair", "temperature": 3},
+      {"emotion": "Anxiety", "temperature": 2},
+      {"emotion": "Relief", "temperature": 5},
+      {"emotion": "Happiness", "temperature": 3},
+      {"emotion": "Trust", "temperature": 3},
+      {"emotion": "Acceptance", "temperature": 3},
+      {"emotion": "Amazement", "temperature": 1},
+      {"emotion": "Wonder", "temperature": 2}
+    ],
+    "tags": ["tokens", "hope", "recovered", "encroaching", "dark", "light", "faith", "renewal", "optimism", "rescue", "salvation", "uplift", "revival", "restoration", "assurance", "belief", "confidence", "conviction", "encouragement", "expectation", "security", "solace", "support", "bright", "guidance", "promise", "resilience", "strength", "protection", "aid", "positive", "heartening", "encouraging", "inspiring", "lifting"]
+  },
+  {
+    "text": "The Abbot will be grateful - the trappings of his faith have been restored.",
+    "slug": "the-abbot-will-be-grateful",
+    "sentiment": "Positive",
+    "emotion_matrix": [
+      {"emotion": "Frustration", "temperature": 2},
+      {"emotion": "Grief", "temperature": 1},
+      {"emotion": "Happiness", "temperature": 5},
+      {"emotion": "Enjoyment", "temperature": 3},
+      {"emotion": "Relief", "temperature": 4},
+      {"emotion": "Ecstasy", "temperature": 1},
+      {"emotion": "Acceptance", "temperature": 4},
+      {"emotion": "Kindness", "temperature": 5},
+      {"emotion": "Trust", "temperature": 3},
+      {"emotion": "Friendliness", "temperature": 3},
+      {"emotion": "Wonder", "temperature": 2}
+    ],
+    "tags": ["Abbot", "grateful", "trappings", "faith", "restored", "appreciation", "thankfulness", "renewal", "recovery", "belief", "conviction", "devotion", "faith", "reaffirmation", "gratification", "positive", "satisfaction", "solace", "trust", "happiness", "peace", "calm", "comfort", "support", "joy", "blessing", "reconciliation", "gratification", "assurance", "confidence", "affirmation", "encouragement", "strengthening", "uplifting"]
+  },
+  {
+    "text": "Did he foresee his own demise? I care not, so long as he remains dead.",
+    "slug": "did-he-foresee-his-own-demise",
+    "sentiment": "Neutral",
+    "emotion_matrix": [
+      {"emotion": "Irritation", "temperature": 3},
+      {"emotion": "Wrath", "temperature": 2},
+      {"emotion": "Grief", "temperature": 3},
+      {"emotion": "Sorrow", "temperature": 2},
+      {"emotion": "Melancholy", "temperature": 1},
+      {"emotion": "Loneliness", "temperature": 1},
+      {"emotion": "Relief", "temperature": 2},
+      {"emotion": "Shock", "temperature": 2},
+      {"emotion": "Wonder", "temperature": 4},
+      {"emotion": "Contempt", "temperature": 4},
+      {"emotion": "Scorn", "temperature": 2},
+      {"emotion": "Remorse", "temperature": 1}
+    ],
+    "tags": ["foresee", "demise", "care", "dead", "indifference", "contempt", "relief", "acceptance", "satisfaction", "detachment", "death", "end", "inevitability", "neutrality", "finality", "closure", "nonchalance", "apathy", "disregard", "resolution", "conclusion", "termination", "destiny", "fate", "dispassion", "emotional detachment", "impartiality", "insouciance", "stoicism", "composure", "equanimity", "indifference", "resignation", "detachment"]
+  },
+  {
+    "text": "In life, his claims to precognition were dubious at best, in death, they are ridiculous.",
+    "slug": "claims-to-precognition-were-dubious",
+    "sentiment": "Neutral",
+    "emotion_matrix": [
+      {"emotion": "Irritation", "temperature": 5},
+      {"emotion": "Wrath", "temperature": 1},
+      {"emotion": "Grief", "temperature": 3},
+      {"emotion": "Sorrow", "temperature": 2},
+      {"emotion": "Melancholy", "temperature": 1},
+      {"emotion": "Loneliness", "temperature": 1},
+      {"emotion": "Acceptance", "temperature": 3},
+      {"emotion": "Wonder", "temperature": 1},
+      {"emotion": "Hatred", "temperature": 1},
+      {"emotion": "Contempt", "temperature": 4},
+      {"emotion": "Scorn", "temperature": 2},
+      {"emotion": "Embarrassment", "temperature": 4},
+      {"emotion": "Remorse", "temperature":2}
+    ],
+    "tags": ["precognition", "dubious", "ridiculous", "skepticism", "contempt", "amusement", "disdain", "derision", "life", "death", "claims", "falsehood", "doubt", "humor", "irony", "absurdity", "mockery", "sneer", "dismissal", "negativity", "distrust", "questioning", "nonbelief", "suspicion", "criticism", "laughable", "unbelief", "neglect", "unreliable", "nonsense", "ridicule", "sarcasm", "satire", "misjudgment", "unconvincing"]
+  },
+  {
+    "text": "Even reanimated bones can fall; even the dead can die again.",
+    "slug": "even-the-dead-can-die-again",
+    "sentiment": "Neutral",
+    "emotion_matrix": [
+      {"emotion": "Frustration", "temperature": 4},
+      {"emotion": "Wrath", "temperature": 3},
+      {"emotion": "Melancholy", "temperature":2},
+      {"emotion": "Despair", "temperature": 3},
+      {"emotion": "Terror", "temperature": 1},
+      {"emotion": "Thrill", "temperature": 1},
+      {"emotion": "Relief", "temperature": 1},
+      {"emotion": "Acceptance", "temperature": 4},
+      {"emotion": "Trust", "temperature": 2},
+      {"emotion": "Wonder", "temperature": 3},
+      {"emotion": "Shock", "temperature": 2},
+      {"emotion": "Remorse", "temperature": 1}
+    ],
+    "tags": ["reanimated", "bones", "fall", "dead", "die", "resignation", "irony", "acceptance", "melancholy", "pessimism", "mortality", "inevitability", "death", "fate", "cycle", "rebirth", "downfall", "fragility", "ephemeral", "impermanence", "life", "loss", "dark", "grave", "sorrow", "end", "conclusion", "destiny", "gloom", "somber", "transience", "hopelessness", "decay", "defeat", "finality"]
+  },
+  {
+    "text": "With no living sinew to actuate them, will these walking bones finally fail?",
+    "slug": "will-these-walking-bones-finally-fail",
+    "sentiment": "Neutral",
+    "emotion_matrix": [
+      {"emotion": "Irritation", "temperature": 1},
+      {"emotion": "Frustration", "temperature": 2},
+      {"emotion": "Despair", "temperature": 2},
+      {"emotion": "Relief", "temperature": 2},
+      {"emotion": "Wonder", "temperature": 4}
+    ],
+    "tags": ["living", "sinew", "actuate", "walking", "bones", "fail", "curiosity", "skepticism", "wonder", "concern", "anticipation", "animation", "skeletal", "movement", "death", "decay", "fall", "downfall", "mortality", "inevitability", "collapse", "doubt", "interest", "uncertainty", "speculation", "fate", "destiny", "peril", "risk", "question", "unknown", "fragility", "existence", "life", "death", "mystery", "resilience"]
+  },
+  {
+    "text": "Every cleared path and charted route reduces the isolation of our troubled estate.",
+    "slug": "isolation-of-our-troubled-estate",
+    "sentiment": "Positive",
+    "emotion_matrix": [
+      {"emotion": "Melancholy", "temperature": 2},
+      {"emotion": "Anxiety", "temperature": 4},
+      {"emotion": "Relief", "temperature": 4},
+      {"emotion": "Loneliness", "temperature": 4},
+      {"emotion": "Acceptance", "temperature": 3},
+      {"emotion": "Friendliness", "temperature": 4},
+      {"emotion": "Kindness", "temperature": 5}
+    ],
+    "tags": ["cleared", "path", "charted", "route", "reduces", "isolation", "troubled", "estate", "hope", "optimism", "relief", "determination", "resolve", "progress", "clearing", "expansion", "connection", "improvement", "growth", "effort", "struggle", "overcoming", "challenge", "support", "development", "direction", "goal", "achievement", "positive", "benefit", "advance", "solution", "unity", "teamwork", "community", "inclusion", "communication", "empowerment"]
+  },
+  {
+    "text": "Paths and roads bring soldiers and supplies, let them arrive unharried!",
+    "slug": "paths-and-roads-bring-soldiers-and-supplies",
+    "sentiment": "Positive",
+    "emotion_matrix": [
+      {"emotion": "Happiness", "temperature": 3},
+      {"emotion": "Relief", "temperature": 5},
+      {"emotion": "Ecstasy", "temperature": 4},
+      {"emotion": "Acceptance", "temperature": 4},
+      {"emotion": "Friendliness", "temperature": 3},
+      {"emotion": "Trust", "temperature": 2},
+      {"emotion": "Kindness", "temperature": 4}
+    ],
+    "tags": ["join","team","band","together","arrival","support","new","paths", "roads", "soldiers", "supplies", "arrive", "unharried", "support", "hope", "security", "safety", "relief", "logistics", "transportation", "provision", "delivery", "military", "efficiency", "smooth", "arrival", "comfort", "assistance", "aid", "movement", "progress", "optimism", "preparedness", "success", "completion", "outcome", "solution", "ease", "achievement", "task", "cooperation", "prepared", "operation"]
+  },
+  {
+    "text": "Driving out corruption is an endless battle, but one that must be fought.",
+    "slug": "endless-battle-but-one-that-must-be-fought",
+    "sentiment": "Neutral",
+    "emotion_matrix": [
+      {"emotion": "Frustration", "temperature": 4},
+      {"emotion": "Wrath", "temperature": 2},
+      {"emotion": "Fury", "temperature": 2},
+      {"emotion": "Melancholy", "temperature": 1},
+      {"emotion": "Despair", "temperature": 3},
+      {"emotion": "Anxiety", "temperature": 3},
+      {"emotion": "Terror", "temperature": 1},
+      {"emotion": "Thrill", "temperature": 4},
+      {"emotion": "Trust", "temperature": 3},
+      {"emotion": "Acceptance", "temperature": 2}
+    ],
+    "tags": ["driving", "corruption", "endless", "battle", "must", "fought", "resolve", "determination", "seriousness", "challenge", "struggle", "fight", "effort", "war", "combat", "campaign", "persistence", "perseverance", "pursuit", "dedication", "mission", "task", "confrontation", "adversity", "obstacle", "resistance", "opposition", "conflict", "fighting", "justice", "integrity", "responsibility", "accountability", "efficiency", "cleanse", "reform"]
+  },
+  {
+    "text": "The agents of pestilence will yet be driven from our woods!",
+    "slug": "the-agents-of-pestilence",
+    "sentiment": "Positive",
+    "emotion_matrix": [
+      {"emotion": "Wrath", "temperature": 4},
+      {"emotion": "Irritation", "temperature": 4},
+      {"emotion": "Enjoyment", "temperature": 3},
+      {"emotion": "Thrill", "temperature": 3},
+      {"emotion": "Ecstasy", "temperature": 2},
+      {"emotion": "Trust", "temperature": 4},
+      {"emotion": "Kindness", "temperature": 2},
+      {"emotion": "Contempt", "temperature": 2},
+      {"emotion": "Scorn", "temperature": 4}
+    ],
+    "tags": ["agents", "pestilence", "driven", "woods", "hope", "determination", "victory", "resolve", "courage", "battle", "fight", "eliminate", "remove", "exterminate", "clear", "forest", "campaign", "struggle", "resistance", "overcome", "challenge", "confrontation", "persistence", "progress", "effort", "task", "achievement", "success", "victory", "protection", "safety", "security", "freedom", "liberation", "restoration", "recovery", "health"]
+  },
+  {
+    "text": "Good fortune and hard work may yet arrest this plague.",
+    "slug": "good-fortune-and-hard-work",
+    "sentiment": "Positive",
+    "emotion_matrix": [
+      {"emotion": "Rage", "temperature": 1},
+      {"emotion": "Despair", "temperature": 1},
+      {"emotion": "Anxiety", "temperature": 2},
+      {"emotion": "Relief", "temperature": 3},
+      {"emotion": "Happiness", "temperature": 1},
+      {"emotion": "Acceptance", "temperature": 4},
+      {"emotion": "Trust", "temperature": 4},
+      {"emotion": "Wonder", "temperature": 1},
+      {"emotion": "Contempt", "temperature": 2}
+    ],
+    "tags": ["good", "fortune", "hard", "work", "may", "arrest", "plague", "hope", "optimism", "determination", "resolve", "achievement", "effort", "luck", "success", "progress", "task", "efficacy", "solution", "victory", "overcome", "challenge", "endurance", "perseverance", "achievement", "goal", "persistence", "strategy", "efficiency", "impact", "positive", "benefit", "outcome", "improvement", "betterment", "optimization", "result"]
+  },
+  {
+    "text": "Disinfection, at last.",
+    "slug": "disinfection-at-last",
+    "sentiment": "Positive",
+    "emotion_matrix": [
+      {"emotion": "Frustration", "temperature": 4},
+      {"emotion": "Wrath", "temperature": 2},
+      {"emotion": "Irritation", "temperature": 2},
+      {"emotion": "Relief", "temperature": 5},
+      {"emotion": "Happiness", "temperature": 3},
+      {"emotion": "Kindness", "temperature": 4},
+      {"emotion": "Acceptance", "temperature": 3},
+      {"emotion": "Friendliness", "temperature": 2},
+      {"emotion": "Amazement", "temperature": 2}
+    ],
+    "tags": ["removal","remove","dispatch","clean","cleanse","disinfection", "last", "relief", "satisfaction", "completion", "cleansing", "purity", "end", "conclusion", "final", "finish", "elimination", "sanitation", "cleanup", "purification", "removal", "solution", "success", "achievement", "accomplishment", "task", "effort", "efficacy", "impact", "benefit", "health", "protection", "safety", "security", "comfort", "resolution", "finalization", "fulfillment", "satisfaction", "ease", "success", "victory"]
+  },
+  {
+    "text": "These medicines will prevent the outbreak of epidemic at our struggling Hamlet.",
+    "slug": "medicines-will-prevent-the-outbreak",
+    "sentiment": "Positive",
+    "emotion_matrix": [
+      {"emotion": "Irritation", "temperature": 1},
+      {"emotion": "Grief", "temperature": 4},
+      {"emotion": "Sorrow", "temperature": 2},
+      {"emotion": "Anxiety", "temperature": 1},
+      {"emotion": "Relief", "temperature": 3},
+      {"emotion": "Happiness", "temperature": 2},
+      {"emotion": "Ecstasy", "temperature": 2},
+      {"emotion": "Acceptance", "temperature": 3},
+      {"emotion": "Kindness", "temperature": 5},
+      {"emotion": "Trust", "temperature": 3},
+      {"emotion": "Friendliness", "temperature": 3}
+    ],
+    "tags": ["medicines", "prevent", "outbreak", "epidemic", "struggling", "hamlet", "prevention", "relief", "hope", "protection", "safety", "health", "sickness", "disease", "medicine", "treatment", "care", "support", "defense", "safeguard", "security", "prophylaxis", "containment", "solution", "management", "contain", "avert", "stop", "block", "crisis", "emergency", "response", "healthcare", "community", "rescue", "relief", "aid", "recovery", "preparation"]
+  },
+  {
+    "text": "These tonics and herbs will stave off infection and neutralize contagion.",
+    "slug": "stave-off-infection",
+    "sentiment": "Positive",
+    "emotion_matrix": [
+      {"emotion": "Anxiety", "temperature": 1},
+      {"emotion": "Relief", "temperature": 5},
+      {"emotion": "Acceptance", "temperature": 3},
+      {"emotion": "Kindness", "temperature": 4},
+      {"emotion": "Trust", "temperature": 3},
+      {"emotion": "Friendliness", "temperature": 2}
+    ],
+    "tags": ["tonics", "herbs", "stave", "infection", "neutralize", "contagion", "protection", "safety", "relief", "prevention", "health", "defense", "resistance", "antiseptic", "antiviral", "antibacterial", "immune", "boost", "treatment", "remedy", "cure", "recovery", "support", "wellness", "healing", "medicine", "care", "preventive", "therapy", "prophylaxis", "containment", "management", "healthcare", "solution", "community", "emergency", "response", "aid", "relief"]
+  },
+  {
+    "text": "The wood is still poisoned. The way is still blocked. But less people will be eaten.",
+    "slug": "the-way-is-still-blocked",
+    "sentiment": "Neutral",
+    "emotion_matrix": [
+      {"emotion": "Frustration", "temperature": 5},
+      {"emotion": "Melancholy", "temperature": 4},
+      {"emotion": "Despair", "temperature": 4},
+      {"emotion": "Relief", "temperature": 3},
+      {"emotion": "Acceptance", "temperature": 4},
+      {"emotion": "Wonder", "temperature": 2},
+      {"emotion": "Embarrassment", "temperature": 1},
+      {"emotion": "Remorse", "temperature": 3}
+    ],
+    "tags": ["wood", "poisoned", "way", "blocked", "less", "people", "eaten", "caution", "awareness", "concern", "cautious", "realism", "danger", "hazard", "risk", "threat", "safety", "protection", "health", "security", "precaution", "prepare", "prepare", "hazardous", "unsafe", "unprotected", "compromise", "complication", "challenge", "obstacle", "barrier", "difficulty", "problem", "issue", "blockade", "restriction", "limitation", "restriction"]
+  },
 
   {
     "text": "Executed with impunity!",
