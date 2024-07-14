@@ -3834,7 +3834,7 @@
   {
     "text": "Watch your step.",
     "slug": "watch-your-step",
-    "sentiment": "Neutral",
+    "sentiment": "Negative",
     "emotion_matrix": [
       {"emotion": "Frustration", "temperature": 1},
       {"emotion": "Irritation", "temperature": 3},
@@ -3849,33 +3849,378 @@
     ],
     "tags": ["watch", "step", "caution", "alertness", "anxiety", "concern", "foreboding", "danger", "threat", "risk", "hazard", "trap", "alertness", "vigilance", "awareness", "responsibility", "attention", "focus", "precision", "care", "careful", "cautious", "carefree", "reckless", "dangerous", "peril", "challenge", "struggle", "conflict", "defense", "protection", "safety", "precaution", "alert", "vigilant"]
   },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  {
+    "text": "Mind that such missteps are the exception, and not the rule.",
+    "slug": "missteps-are-exception",
+    "sentiment": "Negative",
+    "emotion_matrix": [
+      {"emotion": "Frustration", "temperature": 3},
+      {"emotion": "Irritation", "temperature": 2},
+      {"emotion": "Anxiety", "temperature": 4},
+      {"emotion": "Fright", "temperature": 1},
+      {"emotion": "Panic", "temperature": 2},
+      {"emotion": "Shock", "temperature": 3},
+      {"emotion": "Shock", "temperature": 3},
+      {"emotion": "Embarrassment", "temperature": 5},
+      {"emotion": "Remorse", "temperature": 1},
+      {"emotion": "Regret", "temperature": 3}
+    ],
+    "tags": ["mind", "missteps", "exception", "rule", "caution", "alertness", "anxiety", "concern", "foreboding", "danger", "threat", "risk", "hazard", "trap", "alertness", "vigilance", "awareness", "responsibility", "attention", "focus", "precision", "care", "careful", "cautious", "carefree", "reckless", "dangerous", "peril", "challenge", "struggle", "conflict", "defense", "protection", "safety", "precaution", "alert", "vigilant"]
+  },
+  {
+    "text": "Even the cold stone seems bent on preventing passage.",
+    "slug": "even-the-cold-stone",
+    "sentiment": "Negative",
+    "emotion_matrix": [
+      {"emotion": "Frustration", "temperature": 3},
+      {"emotion": "Irritation", "temperature": 1},
+      {"emotion": "Melancholy", "temperature": 1},
+      {"emotion": "Despair", "temperature": 2},
+      {"emotion": "Wonder", "temperature": 3}
+    ],
+    "tags": ["cold", "stone", "preventing", "passage", "frustration", "irritation", "anxiety", "foreboding", "despair", "danger", "threat", "risk", "hazard", "trap", "blockage", "obstacle", "barrier", "challenge", "struggle", "conflict", "defense", "protection", "safety", "precaution", "alertness", "vigilance", "awareness", "responsibility", "attention", "focus", "difficulty", "problem", "issue", "restriction", "limitation"]
+  },
+  {
+    "text": "Such blockages are unsurprising – these tunnels predate even the earliest settlers.",
+    "slug": "such-blockages-are-unsurprising",
+    "sentiment": "Neutral",
+    "emotion_matrix": [
+      {"emotion": "Frustration", "temperature": 3},
+      {"emotion": "Melancholy", "temperature": 2},
+      {"emotion": "Anxiety", "temperature": 2},
+      {"emotion": "Acceptance", "temperature": 5},
+      {"emotion": "Wonder", "temperature": 4},
+      {"emotion": "Remorse", "temperature": 1}
+    ],
+    "tags": ["blockages", "unsurprising", "tunnels", "earliest", "settlers", "frustration", "irritation", "acceptance", "wonder", "curiosity", "danger", "threat", "risk", "hazard", "trap", "blockage", "obstacle", "barrier", "challenge", "struggle", "conflict", "defense", "protection", "safety", "precaution", "alertness", "vigilance", "awareness", "responsibility", "attention", "focus", "difficulty", "problem", "issue", "restriction", "limitation"]
+  },
+  {
+    "text": "Nature herself - a victim to this spreading corruption: malformed with misintent.",
+    "slug": "victim-to-spreading-corruption",
+    "sentiment": "Negative",
+    "emotion_matrix": [
+      {"emotion": "Despair", "temperature": 3},
+      {"emotion": "Wrath", "temperature": 1},
+      {"emotion": "Grief", "temperature": 2},
+      {"emotion": "Sorrow", "temperature": 4},
+      {"emotion": "Melancholy", "temperature": 4},
+      {"emotion": "Terror", "temperature": 2},
+      {"emotion": "Amazement", "temperature": 2},
+      {"emotion": "Shock", "temperature": 1},
+      {"emotion": "Wonder", "temperature": 2},
+      {"emotion": "Contempt", "temperature": 4},
+      {"emotion": "Remorse", "temperature": 2}
+    ],
+    "tags": ["nature", "victim", "corruption", "malformed", "misintent", "despair", "grief", "frustration", "irritation", "foreboding", "danger", "threat", "risk", "hazard", "degradation", "destruction", "pollution", "environment", "ecology", "ruin", "devastation", "decay", "erosion", "decline", "disaster", "harm", "damage", "chaos", "turmoil", "trouble", "calamity", "misfortune", "misery", "woe", "sorrow", "tragedy"]
+  },
+  {
+    "text": "Another mariner... Another misfortune.",
+    "slug": "another-mariner-another-misfortune",
+    "sentiment": "Negative",
+    "emotion_matrix": [
+      {"emotion": "Frustration", "temperature": 2},
+      {"emotion": "Sorrow", "temperature": 4},
+      {"emotion": "Grief", "temperature": 4},
+      {"emotion": "Loneliness", "temperature": 1},
+      {"emotion": "Despair", "temperature": 3},
+      {"emotion": "Melancholy", "temperature": 2},
+      {"emotion": "Friendliness", "temperature": 2}
+    ],
+    "tags": ["another", "mariner", "misfortune", "sorrow", "melancholy", "grief", "despair", "foreboding", "danger", "threat", "risk", "hazard", "tragedy", "loss", "mourning", "sadness", "woe", "regret", "lament", "trouble", "struggle", "conflict", "adversity", "hardship", "difficulty", "problem", "challenge", "obstacle", "trials", "tribulations", "calamity", "misery", "suffering", "distress", "anguish", "pain"]
+  },
+  {
+    "text": "Without tools of iron, you must rely on flesh and indefatigable purpose.",
+    "slug": "tools-of-iron",
+    "sentiment": "Neutral",
+    "emotion_matrix": [
+      {"emotion": "Rage", "temperature": 1},
+      {"emotion": "Fury", "temperature": 2},
+      {"emotion": "Thrill", "temperature": 4},
+      {"emotion": "Acceptance", "temperature": 3},
+      {"emotion": "Friendliness", "temperature": 4},
+      {"emotion": "Kindness", "temperature": 3},
+      {"emotion": "Trust", "temperature": 5},
+      {"emotion": "Amazement", "temperature": 2},
+      {"emotion": "Guilt", "temperature": 3}
+    ],
+    "tags": ["tools", "iron", "rely", "flesh", "indefatigable", "purpose", "determination", "resilience", "strength", "endurance", "purpose", "courage", "resolve", "perseverance", "fortitude", "tenacity", "grit", "stamina", "durability", "toughness", "willpower", "dedication", "commitment", "hardiness", "effort", "work", "struggle", "challenge", "obstacle", "problem", "difficulty", "persistence", "drive", "focus", "goal"]
+  },
+  {
+    "text": "Gnawing hunger sets in, turning the body against itself, weakening the mind…",
+    "slug": "gnawing-hunger-sets-in",
+    "sentiment": "Negative",
+    "emotion_matrix": [
+      {"emotion": "Frustration", "temperature": 4},
+      {"emotion": "Irritation", "temperature": 3},
+      {"emotion": "Rage", "temperature": 3},
+      {"emotion": "Anxiety", "temperature": 3},
+      {"emotion": "Despair", "temperature": 5},
+      {"emotion": "Melancholy", "temperature": 3},
+      {"emotion": "Remorse", "temperature": 1},
+      {"emotion": "Guilt", "temperature": 3},
+      {"emotion": "Regret", "temperature": 2}
+    ],
+    "tags": ["gnawing", "hunger", "body", "weakening", "mind", "despair", "sorrow", "grief", "fear", "anxiety", "danger", "threat", "risk", "hazard", "starvation", "deprivation", "malnutrition", "suffering", "pain", "misery", "distress", "anguish", "torment", "agony", "hardship", "struggle", "challenge", "obstacle", "problem", "difficulty", "trouble", "woe", "calamity", "tragedy", "loss", "mourning", "sadness"]
+  },
+  {
+    "text": "To fall for such a little thing... a bite of bread...",
+    "slug": "bite-of-bread",
+    "sentiment": "Negative",
+    "emotion_matrix": [
+      {"emotion": "Frustration", "temperature": 4},
+      {"emotion": "Wrath", "temperature": 2},
+      {"emotion": "Rage", "temperature": 4},
+      {"emotion": "Despair", "temperature": 5},
+      {"emotion": "Panic", "temperature": 2},
+      {"emotion": "Thrill", "temperature": 3},
+      {"emotion": "Shock", "temperature": 2},
+      {"emotion": "Scorn", "temperature": 3},
+      {"emotion": "Hatred", "temperature": 2},
+      {"emotion": "Embarrassment", "temperature": 5}
+    ],
+    "tags": ["fall", "little", "thing", "bite", "bread", "regret", "remorse", "melancholy", "sorrow", "despair", "danger", "threat", "risk", "hazard", "temptation", "weakness", "error", "mistake", "misstep", "failure", "downfall", "struggle", "challenge", "obstacle", "problem", "difficulty", "trouble", "woe", "calamity", "tragedy", "loss", "mourning", "sadness", "lament", "guilt", "shame"]
+  },
+  {
+    "text": "Packs full of steel and war, but nary a thought given to the plow.",
+    "slug": "packs-full-of-steel",
+    "sentiment": "Neutral",
+    "emotion_matrix": [
+      {"emotion": "Wrath", "temperature": 3},
+      {"emotion": "Frustration", "temperature": 2},
+      {"emotion": "Melancholy", "temperature": 2},
+      {"emotion": "Grief", "temperature": 4},
+      {"emotion": "Anxiety", "temperature": 3},
+      {"emotion": "Wonder", "temperature": 3},
+      {"emotion": "Embarrassment", "temperature": 3},
+      {"emotion": "Guilt", "temperature": 3},
+      {"emotion": "Regret", "temperature": 1}
+    ],
+    "tags": ["packs", "steel", "war", "plow", "irritation", "frustration", "melancholy", "regret", "despair", "danger", "threat", "risk", "hazard", "neglect", "oversight", "imbalance", "warfare", "conflict", "struggle", "agriculture", "farming", "subsistence", "sustainability", "resources", "scarcity", "preparation", "priorities", "inattention", "disregard", "overlook", "shortsightedness", "problem", "challenge", "difficulty", "obstacle", "issue", "burden"]
+  },
+  {
+    "text": "No force of will can overcome a failing body.",
+    "slug": "force-of-will",
+    "sentiment": "Negative",
+    "emotion_matrix": [
+      {"emotion": "Frustration", "temperature": 2},
+      {"emotion": "Despair", "temperature": 5},
+      {"emotion": "Melancholy", "temperature": 3},
+      {"emotion": "Grief", "temperature": 2},
+      {"emotion": "Anxiety", "temperature": 4},
+      {"emotion": "Remorse", "temperature": 1}
+    ],
+    "tags": ["force", "will", "overcome", "failing", "body", "despair", "sorrow", "frustration", "melancholy", "grief", "danger", "threat", "risk", "hazard", "limitation", "weakness", "struggle", "challenge", "obstacle", "problem", "difficulty", "barrier", "issue", "impediment", "restriction", "constraint", "health", "mortality", "endurance", "strength", "determination", "fortitude", "resilience", "persistence", "tenacity"]
+  },
+  {
+    "text": "The requirements of survival cannot be met on an empty stomach.",
+    "slug": "requirements-of-survival",
+    "sentiment": "Negative",
+    "emotion_matrix": [
+      {"emotion": "Frustration", "temperature": 3},
+      {"emotion": "Despair", "temperature": 3},
+      {"emotion": "Melancholy", "temperature": 2},
+      {"emotion": "Panic", "temperature": 1},
+      {"emotion": "Anxiety", "temperature": 4},
+      {"emotion": "Contempt", "temperature": 2},
+      {"emotion": "Guilt", "temperature": 4},
+      {"emotion": "Embarrassment", "temperature": 2}
+    ],
+    "tags": ["requirements", "survival", "empty", "stomach", "despair", "sorrow", "frustration", "melancholy", "grief", "danger", "threat", "risk", "hazard", "starvation", "deprivation", "malnutrition", "suffering", "pain", "misery", "distress", "anguish", "torment", "agony", "hardship", "struggle", "challenge", "obstacle", "problem", "difficulty", "trouble", "woe", "calamity", "tragedy", "loss", "mourning", "sadness"]
+  },
+  {
+    "text": "Soothed, sedated.",
+    "slug": "soothed-sedated",
+    "sentiment": "Positive",
+    "emotion_matrix": [
+      {"emotion": "Relief", "temperature": 5},
+      {"emotion": "Enjoyment", "temperature": 3},
+      {"emotion": "Happiness", "temperature": 3},
+      {"emotion": "Ecstasy", "temperature": 4},
+      {"emotion": "Kindness", "temperature": 5},
+      {"emotion": "Friendliness", "temperature": 3}
+    ],
+    "tags": ["soothed", "sedated", "relief", "calm", "contentment", "peace", "tranquility", "comfort", "ease", "rest", "serenity", "quiet", "quietude", "stillness", "repose", "placid", "relaxation", "composure", "equanimity", "composure", "pacified", "mollified", "gentle", "serene", "untroubled", "undisturbed", "quiet", "soothing", "calming", "peaceful", "placid", "tranquil", "mellow", "composed", "settled", "harmonious"]
+  },
+  {
+    "text": "A momentary abatement...",
+    "slug": "momentary-abatement",
+    "sentiment": "Neutral",
+    "emotion_matrix": [
+      {"emotion": "Frustration", "temperature": 1},
+      {"emotion": "Melancholy", "temperature": 3},
+      {"emotion": "Despair", "temperature": 3},
+      {"emotion": "Anxiety", "temperature": 2},
+      {"emotion": "Relief", "temperature": 4},
+      {"emotion": "Acceptance", "temperature": 3},
+      {"emotion": "Kindness", "temperature": 2}
+    ],
+    "tags": ["momentary", "abatement", "relief", "calm", "contentment", "peace", "tranquility", "comfort", "ease", "rest", "serenity", "quiet", "quietude", "stillness", "repose", "placid", "relaxation", "composure", "equanimity", "composure", "pacified", "mollified", "gentle", "serene", "untroubled", "undisturbed", "quiet", "soothing", "calming", "peaceful", "placid", "tranquil", "mellow", "composed", "settled", "harmonious"]
+  },
+  {
+    "text": "The wounds of war can be healed, but never hidden.",
+    "slug": "wounds-of-war",
+    "sentiment": "Neutral",
+    "emotion_matrix": [
+      {"emotion": "Melancholy", "temperature": 3},
+      {"emotion": "Grief", "temperature": 4},
+      {"emotion": "Relief", "temperature": 3},
+      {"emotion": "Sorrow", "temperature": 2},
+      {"emotion": "Acceptance", "temperature": 3},
+      {"emotion": "Trust", "temperature": 1},
+      {"emotion": "Regret", "temperature": 5},
+      {"emotion": "Remorse", "temperature": 2},
+      {"emotion": "Guilt", "temperature": 1}
+    ],
+    "tags": ["wounds", "war", "healed", "hidden", "melancholy", "regret", "acceptance", "sorrow", "contemplation", "conflict", "battle", "injury", "trauma", "recovery", "healing", "scars", "pain", "suffering", "survival", "warfare", "combat", "struggle", "endurance", "resilience", "truth", "reality", "visibility", "remembrance", "memory", "experience", "life", "history", "legacy", "mark", "imprint", "sign", "trace"]
+  },
+  {
+    "text": "Compassion is a rarity in the fevered pitch of battle.",
+    "slug": "compassion-is-a-rarity",
+    "sentiment": "Negative",
+    "emotion_matrix": [
+      {"emotion": "Wrath", "temperature": 5},
+      {"emotion": "Frustration", "temperature": 2},
+      {"emotion": "Rage", "temperature": 3},
+      {"emotion": "Melancholy", "temperature": 3},
+      {"emotion": "Loneliness", "temperature": 5},
+      {"emotion": "Despair", "temperature": 2},
+      {"emotion": "Acceptance", "temperature": 4},
+      {"emotion": "Kindness", "temperature": 2},
+      {"emotion": "Friendliness", "temperature": 3}
+    ],
+    "tags": ["compassion", "rarity", "fevered", "pitch", "battle", "melancholy", "regret", "sorrow", "frustration", "contemplation", "conflict", "warfare", "combat", "struggle", "fight", "violence", "chaos", "brutality", "cruelty", "kindness", "empathy", "humanity", "caring", "concern", "mercy", "sympathy", "heart", "soul", "goodness", "warmth", "selflessness", "understanding", "gentleness", "love", "compassionate", "kind"]
+  },
+  {
+    "text": "Surgical precision!",
+    "slug": "surgical-precision",
+    "sentiment": "Positive",
+    "emotion_matrix": [
+      {"emotion": "Happiness", "temperature": 3},
+      {"emotion": "Enjoyment", "temperature": 4},
+      {"emotion": "Thrill", "temperature": 5},
+      {"emotion": "Relief", "temperature": 1},
+      {"emotion": "Acceptance", "temperature": 4},
+      {"emotion": "Amazement", "temperature": 5},
+      {"emotion": "Shock", "temperature": 2},
+      {"emotion": "Wonder", "temperature": 2}
+    ],
+    "tags": ["surgical", "precision", "amazement", "wonder", "relief", "trust", "thrill", "accuracy", "exactness", "skill", "expertise", "dexterity", "proficiency", "finesse", "delicacy", "meticulousness", "control", "care", "perfection", "mastery", "performance", "operation", "procedure", "technique", "medical", "health", "surgery", "treatment", "intervention", "correction", "fix", "repair", "remedy", "solution", "precision"]
+  },
+  {
+    "text": "Vigor is restored!",
+    "slug": "vigor-is-restored",
+    "sentiment": "Positive",
+    "emotion_matrix": [
+      {"emotion": "Wrath", "temperature": 1},
+      {"emotion": "Rage", "temperature": 3},
+      {"emotion": "Relief", "temperature": 4},
+      {"emotion": "Ecstasy", "temperature": 3},
+      {"emotion": "Thrill", "temperature": 3},
+      {"emotion": "Trust", "temperature": 5},
+      {"emotion": "Acceptance", "temperature": 3},
+      {"emotion": "Amazement", "temperature": 3}
+    ],
+    "tags": ["vigor", "restored", "relief", "happiness", "enjoyment", "trust", "acceptance", "energy", "strength", "revitalization", "recovery", "renewal", "rejuvenation", "health", "wellness", "fitness", "restoration", "healing", "repair", "fix", "mend", "refresh", "revive", "vitality", "power", "force", "spirit", "life", "vibrancy", "stamina", "endurance", "resilience", "renew", "regain", "replenish", "recharge"]
+  },
+  {
+    "text": "The blood pumps, the limbs obey!",
+    "slug": "blood-pumps-limbs-obey",
+    "sentiment": "Positive",
+    "emotion_matrix": [
+      {"emotion": "Wrath", "temperature": 1},
+      {"emotion": "Frustration", "temperature": 3},
+      {"emotion": "Rage", "temperature": 5},
+      {"emotion": "Fury", "temperature": 3},
+      {"emotion": "Thrill", "temperature": 4},
+      {"emotion": "Trust", "temperature": 5},
+      {"emotion": "Acceptance", "temperature": 2},
+      {"emotion": "Amazement", "temperature": 4},
+      {"emotion": "Shock", "temperature": 1},
+      {"emotion": "Hatred", "temperature": 2}
+    ],
+    "tags": ["blood", "pumps", "limbs", "obey", "relief", "happiness", "enjoyment", "trust", "acceptance", "life", "health", "vitality", "energy", "strength", "power", "force", "movement", "action", "control", "coordination", "function", "ability", "operation", "capability", "performance", "fitness", "wellness", "recovery", "renewal", "rejuvenation", "healing", "restoration", "repair", "revive", "refresh", "recharge"]
+  },
+  {
+    "text": "The flesh is knit!",
+    "slug": "flesh-is-knit",
+    "sentiment": "Positive",
+    "emotion_matrix": [
+      {"emotion": "Relief", "temperature": 4},
+      {"emotion": "Thrill", "temperature": 2},
+      {"emotion": "Happiness", "temperature": 3},
+      {"emotion": "Friendliness", "temperature": 2},
+      {"emotion": "Kindness", "temperature": 5},
+      {"emotion": "Amazement", "temperature": 4}
+    ],
+    "tags": ["flesh", "knit", "relief", "happiness", "trust", "acceptance", "satisfaction", "healing", "recovery", "restoration", "repair", "fix", "mend", "revitalization", "rejuvenation", "health", "wellness", "strength", "vitality", "renewal", "revive", "refresh", "recharge", "repair", "repairing", "fixing", "mending", "renewing", "rejuvenating", "healing", "restoring", "restorative", "curing", "reviving", "refreshing"]
+  },
+  {
+    "text": "Patched up, if only to bleed again.",
+    "slug": "patched-up-to-bleed",
+    "sentiment": "Neutral",
+    "emotion_matrix": [
+      {"emotion": "Frustration", "temperature": 4},
+      {"emotion": "Irritation", "temperature": 2},
+      {"emotion": "Grief", "temperature": 4},
+      {"emotion": "Melancholy", "temperature": 3},
+      {"emotion": "Despair", "temperature": 1},
+      {"emotion": "Anxiety", "temperature": 4},
+      {"emotion": "Relief", "temperature": 3},
+      {"emotion": "Kindness", "temperature": 3},
+      {"emotion": "Acceptance", "temperature": 3},
+      {"emotion": "Wonder", "temperature": 4},
+      {"emotion": "Embarrassment", "temperature": 3},
+      {"emotion": "Remorse", "temperature": 1}
+    ],
+    "tags": ["patched", "bleed", "frustration", "melancholy", "acceptance", "resignation", "sorrow", "healing", "recovery", "injury", "pain", "suffering", "endurance", "resilience", "struggle", "battle", "conflict", "repair", "mend", "fix", "restoration", "health", "wellness", "renewal", "revitalization", "rejuvenation", "revive", "refresh", "recharge", "temporary", "impermanence", "transience", "ephemeral", "short-lived", "fleeting"]
+  },
+  {
+    "text": "Death cannot be escaped! But it can be postponed.",
+    "slug": "death-postponed",
+    "sentiment": "Neutral",
+    "emotion_matrix": [
+      {"emotion": "Frustration", "temperature": 3},
+      {"emotion": "Despair", "temperature": 4},
+      {"emotion": "Melancholy", "temperature": 2},
+      {"emotion": "Anxiety", "temperature": 3},
+      {"emotion": "Relief", "temperature": 3},
+      {"emotion": "Thrill", "temperature": 3},
+      {"emotion": "Acceptance", "temperature": 5},
+      {"emotion": "Trust", "temperature": 4},
+      {"emotion": "Wonder", "temperature": 3}
+    ],
+    "tags": ["death", "escaped", "postponed", "anxiety", "relief", "acceptance", "resignation", "contemplation", "mortality", "life", "fate", "destiny", "inevitability", "endurance", "resilience", "survival", "struggle", "battle", "fight", "delay", "reprieve", "temporary", "impermanence", "transience", "ephemeral", "short-lived", "fleeting", "postponement", "deferral", "procrastination", "delay", "hesitation", "pause", "intermission", "respite"]
+  },
+  {
+    "text": "A death denied for now.",
+    "slug": "death-denied",
+    "sentiment": "Neutral",
+    "emotion_matrix": [
+      {"emotion": "Relief", "temperature": 4},
+      {"emotion": "Melancholy", "temperature": 3},
+      {"emotion": "Despair", "temperature": 2},
+      {"emotion": "Anxiety", "temperature": 3},
+      {"emotion": "Acceptance", "temperature": 2},
+      {"emotion": "Amazement", "temperature": 1},
+      {"emotion": "Wonder", "temperature": 2}
+    ],
+    "tags": ["death", "denied", "relief", "anxiety", "acceptance", "resignation", "contemplation", "mortality", "life", "fate", "destiny", "inevitability", "endurance", "resilience", "survival", "struggle", "battle", "fight", "delay", "reprieve", "temporary", "impermanence", "transience", "ephemeral", "short-lived", "fleeting", "postponement", "deferral", "procrastination", "delay", "hesitation", "pause", "intermission", "respite"]
+  },
+  {
+    "text": "Death is patient, it will wait.",
+    "slug": "death-is-patient",
+    "sentiment": "Neutral",
+    "emotion_matrix": [
+      {"emotion": "Melancholy", "temperature": 3},
+      {"emotion": "Despair", "temperature": 1},
+      {"emotion": "Anxiety", "temperature": 4},
+      {"emotion": "Fright", "temperature": 3},
+      {"emotion": "Thrill", "temperature": 3},
+      {"emotion": "Acceptance", "temperature": 3},
+      {"emotion": "Wonder", "temperature": 2}
+    ],
+    "tags": ["death", "patient", "wait", "anxiety", "acceptance", "resignation", "contemplation", "relief", "mortality", "life", "fate", "destiny", "inevitability", "endurance", "resilience", "survival", "struggle", "battle", "fight", "delay", "reprieve", "temporary", "impermanence", "transience", "ephemeral", "short-lived", "fleeting", "postponement", "deferral", "procrastination", "delay", "hesitation", "pause", "intermission", "respite"]
+  },
 
 
 
