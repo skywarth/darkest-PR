@@ -4221,6 +4221,452 @@
     ],
     "tags": ["death", "patient", "wait", "anxiety", "acceptance", "resignation", "contemplation", "relief", "mortality", "life", "fate", "destiny", "inevitability", "endurance", "resilience", "survival", "struggle", "battle", "fight", "delay", "reprieve", "temporary", "impermanence", "transience", "ephemeral", "short-lived", "fleeting", "postponement", "deferral", "procrastination", "delay", "hesitation", "pause", "intermission", "respite"]
   },
+  {
+    "text": "As the fiend falls, a faint hope blossoms.",
+    "slug": "faint-hope-blossoms",
+    "sentiment": "Positive",
+    "emotion_matrix": [
+      {"emotion": "Wrath", "temperature": 4},
+      {"emotion": "Anxiety", "temperature": 1},
+      {"emotion": "Relief", "temperature": 4},
+      {"emotion": "Thrill", "temperature": 3},
+      {"emotion": "Trust", "temperature": 4},
+      {"emotion": "Wonder", "temperature": 2},
+      {"emotion": "Amazement", "temperature": 1}
+    ],
+    "tags": ["fiend", "falls", "faint", "hope", "blossoms", "relief", "happiness", "trust", "satisfaction", "victory", "defeat", "enemy", "battle", "struggle", "overcome", "triumph", "success", "win", "achievement", "conquer", "vanquish", "prevail", "overcome", "defeat", "subdue", "conquest", "mastery", "dominate", "beat", "best", "crush", "overpower", "subjugate", "overwhelm", "annihilate", "obliterate"]
+  },
+  {
+    "text": "Confidence surges as the enemy crumbles!",
+    "slug": "confidence-surges",
+    "sentiment": "Positive",
+    "emotion_matrix": [
+      {"emotion": "Happiness", "temperature": 4},
+      {"emotion": "Wrath", "temperature": 3},
+      {"emotion": "Relief", "temperature": 3},
+      {"emotion": "Thrill", "temperature": 4},
+      {"emotion": "Ecstasy", "temperature": 2},
+      {"emotion": "Trust", "temperature": 5},
+      {"emotion": "Acceptance", "temperature": 3},
+      {"emotion": "Amazement", "temperature": 3}
+    ],
+    "tags": ["confidence", "surges", "enemy", "crumbles", "happiness", "relief", "trust", "satisfaction", "excitement", "victory", "defeat", "battle", "struggle", "overcome", "triumph", "success", "win", "achievement", "conquer", "vanquish", "prevail", "overcome", "defeat", "subdue", "conquest", "mastery", "dominate", "beat", "best", "crush", "overpower", "subjugate", "overwhelm", "annihilate", "obliterate", "surge"]
+  },
+  {
+    "text": "Press this advantage, give them no quarter!",
+    "slug": "press-this-advantage",
+    "sentiment": "Positive",
+    "emotion_matrix": [
+      {"emotion": "Wrath", "temperature": 3},
+      {"emotion": "Fury", "temperature": 1},
+      {"emotion": "Rage", "temperature": 1},
+      {"emotion": "Thrill", "temperature": 4},
+      {"emotion": "Ecstasy", "temperature": 2},
+      {"emotion": "Amazement", "temperature": 2},
+      {"emotion": "Acceptance", "temperature": 2},
+      {"emotion": "Contempt", "temperature": 1},
+      {"emotion": "Scorn", "temperature": 2}
+    ],
+    "tags": ["press", "advantage", "no", "quarter", "determination", "excitement", "focus", "confidence", "aggression", "battle", "struggle", "victory", "defeat", "enemy", "fight", "combat", "war", "confrontation", "conflict", "clash", "skirmish", "contest", "match", "duel", "engagement", "hostilities", "warfare", "campaign", "assault", "attack", "charge", "offensive", "strike", "thrust", "blitz", "push"]
+  },
+  {
+    "text": "Their formation is broken - maintain the offensive.",
+    "slug": "maintain-the-offensive",
+    "sentiment": "Positive",
+    "emotion_matrix": [
+      {"emotion": "Rage", "temperature": 2},
+      {"emotion": "Fury", "temperature": 2},
+      {"emotion": "Wrath", "temperature": 3},
+      {"emotion": "Thrill", "temperature": 5},
+      {"emotion": "Trust", "temperature": 2},
+      {"emotion": "Acceptance", "temperature": 3}
+    ],
+    "tags": ["formation", "broken", "maintain", "offensive", "determination", "excitement", "focus", "confidence", "aggression", "battle", "struggle", "victory", "defeat", "enemy", "fight", "combat", "war", "confrontation", "conflict", "clash", "skirmish", "contest", "match", "duel", "engagement", "hostilities", "warfare", "campaign", "assault", "attack", "charge", "offensive", "strike", "thrust", "blitz", "push"]
+  },
+  {
+    "text": "Continue the onslaught! Destroy. Them. All.",
+    "slug": "destroy-them-all",
+    "sentiment": "Positive",
+    "emotion_matrix": [
+      {"emotion": "Fury", "temperature": 5},
+      {"emotion": "Rage", "temperature": 4},
+      {"emotion": "Wrath", "temperature": 5},
+      {"emotion": "Thrill", "temperature": 5},
+      {"emotion": "Ecstasy", "temperature": 4},
+      {"emotion": "Enjoyment", "temperature": 2},
+      {"emotion": "Acceptance", "temperature": 1},
+      {"emotion": "Amazement", "temperature": 3},
+      {"emotion": "Hatred", "temperature": 2},
+      {"emotion": "Scorn", "temperature": 4}
+    ],
+    "tags": ["continue", "onslaught", "destroy", "them", "all", "aggression", "wrath", "determination", "excitement", "confidence", "battle", "struggle", "victory", "defeat", "enemy", "fight", "combat", "war", "confrontation", "conflict", "clash", "skirmish", "contest", "match", "duel", "engagement", "hostilities", "warfare", "campaign", "assault", "attack", "charge", "offensive", "strike", "thrust", "blitz", "push"]
+  },
+  {
+    "text": "Executed with impunity!",
+    "slug": "executed-with-impunity",
+    "sentiment": "Positive",
+    "emotion_matrix": [
+      {"emotion": "Wrath", "temperature": 4},
+      {"emotion": "Enjoyment", "temperature": 2},
+      {"emotion": "Relief", "temperature": 3},
+      {"emotion": "Thrill", "temperature": 4},
+      {"emotion": "Ecstasy", "temperature": 1},
+      {"emotion": "Kindness", "temperature": 3},
+      {"emotion": "Acceptance", "temperature": 4},
+      {"emotion": "Amazement", "temperature": 5},
+      {"emotion": "Shock", "temperature": 2}
+    ],
+    "tags": ["executed", "impunity", "satisfaction", "confidence", "relief", "aggression", "determination", "victory", "defeat", "justice", "battle", "enemy", "triumph", "success", "conquest", "overcome", "win", "achievement", "vanquish", "prevail", "subdue", "crush", "dominate", "mastery", "overpower", "subjugate", "overwhelm", "annihilate", "obliterate", "resolution", "resolute"]
+  },
+  {
+    "text": "Another abomination cleansed from our lands.",
+    "slug": "abomination-cleansed",
+    "sentiment": "Positive",
+    "emotion_matrix": [
+      {"emotion": "Wrath", "temperature": 5},
+      {"emotion": "Irritation", "temperature": 4},
+      {"emotion": "Relief", "temperature": 3},
+      {"emotion": "Kindness", "temperature": 4},
+      {"emotion": "Acceptance", "temperature": 3},
+      {"emotion": "Contempt", "temperature": 5},
+      {"emotion": "Scorn", "temperature": 2}
+    ],
+    "tags": ["another", "abomination", "cleansed", "lands", "relief", "satisfaction", "happiness", "hope", "confidence", "victory", "defeat", "enemy", "triumph", "success", "win", "achievement", "overcome", "vanquish", "prevail", "subdue", "conquest", "mastery", "dominate", "overpower", "subjugate", "overwhelm", "annihilate", "obliterate", "purification", "cleansing", "eradicate"]
+  },
+  {
+    "text": "Begone, fiend!",
+    "slug": "begone-fiend",
+    "sentiment": "Neutral",
+    "emotion_matrix": [
+      {"emotion": "Wrath", "temperature": 4},
+      {"emotion": "Irritation", "temperature": 3},
+      {"emotion": "Rage", "temperature": 2},
+      {"emotion": "Fury", "temperature": 2},
+      {"emotion": "Relief", "temperature": 3},
+      {"emotion": "Thrill", "temperature": 3},
+      {"emotion": "Scorn", "temperature": 3},
+      {"emotion": "Contempt", "temperature": 4},
+      {"emotion": "Hatred", "temperature": 3}
+    ],
+    "tags": ["begone", "fiend", "aggression", "confidence", "determination", "relief", "satisfaction", "victory", "defeat", "enemy", "battle", "triumph", "success", "overcome", "win", "achievement", "vanquish", "prevail", "subdue", "conquest", "mastery", "dominate", "overpower", "subjugate", "overwhelm", "annihilate", "obliterate", "expel", "exile", "banish"]
+  },
+  {
+    "text": "Back to the pit!",
+    "slug": "back-to-the-pit",
+    "sentiment": "Neutral",
+    "emotion_matrix": [
+      {"emotion": "Wrath", "temperature": 3},
+      {"emotion": "Frustration", "temperature": 3},
+      {"emotion": "Irritation", "temperature": 1},
+      {"emotion": "Despair", "temperature": 3},
+      {"emotion": "Relief", "temperature": 3},
+      {"emotion": "Thrill", "temperature": 3},
+      {"emotion": "Wonder", "temperature": 4},
+      {"emotion": "Amazement", "temperature": 2},
+      {"emotion": "Shock", "temperature": 1},
+      {"emotion": "Contempt", "temperature": 3}
+    ],
+    "tags": ["back", "pit", "aggression", "wrath", "determination", "confidence", "satisfaction", "victory", "defeat", "enemy", "battle", "triumph", "success", "overcome", "win", "achievement", "vanquish", "prevail", "subdue", "conquest", "mastery", "dominate", "overpower", "subjugate", "overwhelm", "annihilate", "obliterate", "banish", "expel", "condemn"]
+  },
+  {
+    "text": "Another one falls!",
+    "slug": "another-one-falls",
+    "sentiment": "Neutral",
+    "emotion_matrix": [
+      {"emotion": "Wrath", "temperature":4},
+      {"emotion": "Enjoyment", "temperature":3},
+      {"emotion": "Happiness", "temperature":4},
+      {"emotion": "Relief", "temperature":2},
+      {"emotion": "Thrill", "temperature":5},
+      {"emotion": "Ecstasy", "temperature":1},
+      {"emotion": "Trust", "temperature":2},
+      {"emotion": "Acceptance", "temperature":3},
+      {"emotion": "Amazement", "temperature":5},
+      {"emotion": "Wonder", "temperature":1},
+      {"emotion": "Remorse", "temperature":4},
+      {"emotion": "Sorrow", "temperature":3},
+      {"emotion": "Grief", "temperature":2}
+    ],
+    "tags": ["another", "falls", "satisfaction", "confidence", "relief", "determination", "aggression", "victory", "defeat", "enemy", "battle", "triumph", "success", "overcome", "win", "achievement", "vanquish", "prevail", "subdue", "conquest", "mastery", "dominate", "overpower", "subjugate", "overwhelm", "annihilate", "obliterate", "resolve", "conquer"]
+  },
+  {
+    "text": "Decimated!",
+    "slug": "decimated",
+    "sentiment": "Neutral",
+    "emotion_matrix": [
+      {"emotion": "Wrath", "temperature": 5},
+      {"emotion": "Sorrow", "temperature": 3},
+      {"emotion": "Grief", "temperature": 2},
+      {"emotion": "Thrill", "temperature": 4},
+      {"emotion": "Ecstasy", "temperature": 2},
+      {"emotion": "Amazement", "temperature": 4},
+      {"emotion": "Remorse", "temperature": 1}
+    ],
+    "tags": ["decimated", "aggression", "satisfaction", "relief", "confidence", "determination", "victory", "defeat", "enemy", "battle", "triumph", "success", "overcome", "win", "achievement", "vanquish", "prevail", "subdue", "conquest", "mastery", "dominate", "overpower", "subjugate", "overwhelm", "annihilate", "obliterate", "eradicate"]
+  },
+  {
+    "text": "Obliterated!",
+    "slug": "obliterated",
+    "sentiment": "Neutral",
+    "emotion_matrix": [
+      {"emotion": "Wrath", "temperature": 5},
+      {"emotion": "Sorrow", "temperature": 3},
+      {"emotion": "Grief", "temperature": 2},
+      {"emotion": "Thrill", "temperature": 4},
+      {"emotion": "Ecstasy", "temperature": 2},
+      {"emotion": "Amazement", "temperature": 4},
+      {"emotion": "Remorse", "temperature": 1}
+    ],
+    "tags": ["obliterated", "aggression", "satisfaction", "relief", "confidence", "determination", "victory", "defeat", "enemy", "battle", "triumph", "success", "overcome", "win", "achievement", "vanquish", "prevail", "subdue", "conquest", "mastery", "dominate", "overpower", "subjugate", "overwhelm", "annihilate", "eradicate"]
+  },
+  {
+    "text": "Destroyed!",
+    "slug": "destroyed",
+    "sentiment": "Neutral",
+    "emotion_matrix": [
+      {"emotion": "Wrath", "temperature": 5},
+      {"emotion": "Sorrow", "temperature": 3},
+      {"emotion": "Grief", "temperature": 2},
+      {"emotion": "Thrill", "temperature": 4},
+      {"emotion": "Ecstasy", "temperature": 2},
+      {"emotion": "Amazement", "temperature": 4},
+      {"emotion": "Remorse", "temperature": 1}
+    ],
+    "tags": ["destroyed", "aggression", "satisfaction", "relief", "confidence", "determination", "victory", "defeat", "enemy", "battle", "triumph", "success", "overcome", "win", "achievement", "vanquish", "prevail", "subdue", "conquest", "mastery", "dominate", "overpower", "subjugate", "overwhelm", "annihilate", "obliterate", "eradicate"]
+  },
+  {
+    "text": "Eradicated!",
+    "slug": "eradicated",
+    "sentiment": "Neutral",
+    "emotion_matrix": [
+      {"emotion": "Wrath", "temperature": 5},
+      {"emotion": "Sorrow", "temperature": 3},
+      {"emotion": "Grief", "temperature": 2},
+      {"emotion": "Thrill", "temperature": 4},
+      {"emotion": "Ecstasy", "temperature": 2},
+      {"emotion": "Amazement", "temperature": 4},
+      {"emotion": "Remorse", "temperature": 1}
+    ],
+    "tags": ["eradicated", "aggression", "satisfaction", "relief", "confidence", "determination", "victory", "defeat", "enemy", "battle", "triumph", "success", "overcome", "win", "achievement", "vanquish", "prevail", "subdue", "conquest", "mastery", "dominate", "overpower", "subjugate", "overwhelm", "annihilate", "obliterate"]
+  },
+  {
+    "text": "Annihilated!",
+    "slug": "annihilated",
+    "sentiment": "Neutral",
+    "emotion_matrix": [
+      {"emotion": "Wrath", "temperature": 5},
+      {"emotion": "Sorrow", "temperature": 3},
+      {"emotion": "Grief", "temperature": 2},
+      {"emotion": "Thrill", "temperature": 4},
+      {"emotion": "Ecstasy", "temperature": 2},
+      {"emotion": "Amazement", "temperature": 4},
+      {"emotion": "Remorse", "temperature": 1}
+    ],
+    "tags": ["annihilated", "aggression", "satisfaction", "relief", "confidence", "determination", "victory", "defeat", "enemy", "battle", "triumph", "success", "overcome", "win", "achievement", "vanquish", "prevail", "subdue", "conquest", "mastery", "dominate", "overpower", "subjugate", "overwhelm", "obliterate", "eradicate"]
+  },
+  {
+    "text": "Prodigious size alone does not dissuade the sharpened blade.",
+    "slug": "prodigious-size-alone",
+    "sentiment": "Neutral",
+    "emotion_matrix": [
+      {"emotion": "Irritation", "temperature": 3},
+      {"emotion": "Despair", "temperature": 1},
+      {"emotion": "Anxiety", "temperature": 1},
+      {"emotion": "Fright", "temperature": 2},
+      {"emotion": "Thrill", "temperature": 3},
+      {"emotion": "Relief", "temperature": 1},
+      {"emotion": "Ecstasy", "temperature": 2},
+      {"emotion": "Acceptance", "temperature": 5},
+      {"emotion": "Trust", "temperature": 5},
+      {"emotion": "Amazement", "temperature": 2},
+      {"emotion": "Wonder", "temperature": 3}
+    ],
+    "tags": ["prodigious", "size", "sharpened", "blade", "confidence", "determination", "courage", "defiance", "satisfaction", "strength", "victory", "triumph", "battle", "combat", "resilience", "overcome", "obstacle", "challenge", "resistance", "fortitude", "resolve", "endurance", "tenacity", "bravery"]
+  },
+  {
+    "text": "Their cursed champion falls!",
+    "slug": "cursed-champion-falls",
+    "sentiment": "Neutral",
+    "emotion_matrix": [
+      {"emotion": "Irritation", "temperature": 3},
+      {"emotion": "Wrath", "temperature": 5},
+      {"emotion": "Grief", "temperature": 2},
+      {"emotion": "Sorrow", "temperature": 3},
+      {"emotion": "Thrill", "temperature": 3},
+      {"emotion": "Ecstasy", "temperature": 4},
+      {"emotion": "Relief", "temperature": 4},
+      {"emotion": "Wonder", "temperature": 3},
+      {"emotion": "Shock", "temperature": 4},
+      {"emotion": "Enjoyment", "temperature": 2},
+      {"emotion": "Acceptance", "temperature": 3},
+      {"emotion": "Contempt", "temperature": 1},
+      {"emotion": "Scorn", "temperature": 3},
+      {"emotion": "Hatred", "temperature": 2},
+      {"emotion": "Remorse", "temperature": 3}
+    ],
+    "tags": ["cursed", "champion", "falls", "satisfaction", "relief", "vindication", "triumph", "confidence", "victory", "battle", "defeat", "enemy", "triumph", "success", "overcome", "win", "achievement", "vanquish", "prevail", "subdue", "conquest", "mastery", "dominate", "overpower", "subjugate"]
+  },
+  {
+    "text": "Monstrous size has no intrinsic merit, unless inordinate exsanguination be considered a virtue.",
+    "slug": "monstrous-size",
+    "sentiment": "Neutral",
+    "emotion_matrix": [
+      {"emotion": "Irritation", "temperature": 4},
+      {"emotion": "Terror", "temperature": 2},
+      {"emotion": "Anxiety", "temperature": 3},
+      {"emotion": "Trust", "temperature": 4},
+      {"emotion": "Acceptance", "temperature": 2},
+      {"emotion": "Wonder", "temperature": 3},
+      {"emotion": "Contempt", "temperature": 4}
+    ],
+    "tags": ["monstrous", "size", "intrinsic", "merit", "inordinate", "exsanguination", "virtue", "defiance", "irony", "confidence", "satisfaction", "determination", "strength", "victory", "triumph", "battle", "combat", "resilience", "overcome", "obstacle", "challenge", "resistance", "fortitude", "resolve", "endurance", "tenacity", "bravery"]
+  },
+  {
+    "text": "The bigger the beast, the greater the glory.",
+    "slug": "the-bigger-the-beast",
+    "sentiment": "Positive",
+    "emotion_matrix": [
+      {"emotion": "Frustration", "temperature": 1},
+      {"emotion": "Wrath", "temperature": 3},
+      {"emotion": "Ecstasy", "temperature": 5},
+      {"emotion": "Thrill", "temperature": 3},
+      {"emotion": "Enjoyment", "temperature": 4},
+      {"emotion": "Trust", "temperature": 5},
+      {"emotion": "Acceptance", "temperature": 3},
+      {"emotion": "Amazement", "temperature": 4},
+      {"emotion": "Wonder", "temperature": 2}
+    ],
+    "tags": ["bigger", "beast", "greater", "glory", "confidence", "ambition", "satisfaction", "triumph", "determination", "victory", "battle", "defeat", "enemy", "triumph", "success", "overcome", "win", "achievement", "vanquish", "prevail", "subdue", "conquest", "mastery", "dominate", "overpower", "subjugate"]
+  },
+  {
+    "text": "A victory - perhaps a turning point.",
+    "slug": "perhaps-a-turning-point",
+    "sentiment": "Positive",
+    "emotion_matrix": [
+      {"emotion": "Frustration", "temperature": 3},
+      {"emotion": "Melancholy", "temperature": 3},
+      {"emotion": "Despair", "temperature": 1},
+      {"emotion": "Anxiety", "temperature": 3},
+      {"emotion": "Relief", "temperature": 4},
+      {"emotion": "Thrill", "temperature": 4},
+      {"emotion": "Enjoyment", "temperature": 2},
+      {"emotion": "Trust", "temperature": 4},
+      {"emotion": "Acceptance", "temperature": 5},
+      {"emotion": "Wonder", "temperature": 4},
+      {"emotion": "Amazement", "temperature": 1}
+    ],
+    "tags": ["victory", "turning", "point", "hope", "relief", "satisfaction", "optimism", "confidence", "success", "achievement", "milestone", "progress", "improvement", "win", "triumph", "advancement", "breakthrough", "transformation", "change", "progression", "development", "evolution", "enhancement", "uplift", "momentum"]
+  },
+  {
+    "text": "A death by inches...",
+    "slug": "death-by-inches",
+    "sentiment": "Negative",
+    "emotion_matrix": [
+      {"emotion": "Frustration", "temperature": 5},
+      {"emotion": "Rage", "temperature": 2},
+      {"emotion": "Grief", "temperature": 4},
+      {"emotion": "Sorrow", "temperature": 5},
+      {"emotion": "Despair", "temperature": 3},
+      {"emotion": "Anxiety", "temperature": 2},
+      {"emotion": "Wonder", "temperature": 2},
+      {"emotion": "Shock", "temperature": 4},
+      {"emotion": "Guilt", "temperature": 3},
+      {"emotion": "Regret", "temperature": 4},
+      {"emotion": "Remorse", "temperature": 5}
+    ],
+    "tags": ["death", "close","almost","barely","unfortunate","mistake","inches", "despair", "sorrow", "melancholy", "hopelessness", "grief", "tragedy", "pain", "suffering", "anguish", "torment", "agony", "misery", "woe", "mourning", "lament", "gloom", "bleakness", "desolation", "heartache", "distress", "sadness", "affliction", "loss"]
+  },
+  {
+    "text": "Great is the weapon that cuts on its own!",
+    "slug": "great-is-the-weapon",
+    "sentiment": "Neutral",
+    "emotion_matrix": [
+      {"emotion": "Ecstasy", "temperature": 1},
+      {"emotion": "Amazement", "temperature": 5},
+      {"emotion": "Trust", "temperature": 5},
+      {"emotion": "Acceptance", "temperature": 2},
+      {"emotion": "Wonder", "temperature": 3}
+    ],
+    "tags": ["great", "weapon", "cuts", "own", "amazing", "wonder", "admiration", "shock", "satisfaction", "battle", "combat", "strength", "efficacy", "effectiveness", "power", "skill", "dexterity", "precision", "mastery", "dominance", "innovation", "technology", "efficiency"]
+  },
+  {
+    "text": "Slowly, gently, this is how a life is taken...",
+    "slug": "slowly-gently",
+    "sentiment": "Negative",
+    "emotion_matrix": [
+      {"emotion": "Frustration", "temperature": 3},
+      {"emotion": "Wrath", "temperature": 2},
+      {"emotion": "Despair", "temperature": 4},
+      {"emotion": "Melancholy", "temperature": 5},
+      {"emotion": "Sorrow", "temperature": 4},
+      {"emotion": "Grief", "temperature": 3},
+      {"emotion": "Terror", "temperature": 3},
+      {"emotion": "Anxiety", "temperature": 1},
+      {"emotion": "Remorse", "temperature": 4}
+    ],
+    "tags": ["slow","prolong","taxing","time","long","slowly", "gently", "life", "taken", "sadness", "melancholy", "sorrow", "grief", "despair", "death", "tragedy", "loss", "pain", "suffering", "anguish", "misery", "mourning", "lament", "gloom", "bleakness", "desolation", "heartache", "distress", "hopelessness", "affliction"]
+  },
+  {
+    "text": "The slow death - unforeseen, unforgiving.",
+    "slug": "slow-death-unforeseen",
+    "sentiment": "Negative",
+    "emotion_matrix": [
+      {"emotion": "Frustration", "temperature": 3},
+      {"emotion": "Wrath", "temperature": 2},
+      {"emotion": "Despair", "temperature": 4},
+      {"emotion": "Melancholy", "temperature": 5},
+      {"emotion": "Sorrow", "temperature": 4},
+      {"emotion": "Grief", "temperature": 3},
+      {"emotion": "Terror", "temperature": 3},
+      {"emotion": "Anxiety", "temperature": 1},
+      {"emotion": "Remorse", "temperature": 4},
+      {"emotion": "Regret", "temperature": 2}
+    ],
+    "tags": ["slow", "death", "unforeseen", "unforgiving", "despair", "grief", "sorrow", "hopelessness", "melancholy", "tragedy", "loss", "pain", "suffering", "anguish", "misery", "mourning", "lament", "gloom", "bleakness", "desolation", "heartache", "distress", "tragedy", "affliction"]
+  },
+  {
+    "text": "A decisive pummelling!",
+    "slug": "decisive-pummelling",
+    "sentiment": "Positive",
+    "emotion_matrix": [
+      {"emotion": "Wrath", "temperature": 4},
+      {"emotion": "Rage", "temperature": 1},
+      {"emotion": "Fury", "temperature": 1},
+      {"emotion": "Enjoyment", "temperature": 2},
+      {"emotion": "Thrill", "temperature": 4},
+      {"emotion": "Ecstasy", "temperature": 3},
+      {"emotion": "Acceptance", "temperature": 4},
+      {"emotion": "Trust", "temperature": 3},
+      {"emotion": "Amazement", "temperature": 5},
+      {"emotion": "Shock", "temperature": 2}
+    ],
+    "tags": ["decisive", "pummelling", "confidence", "triumph", "satisfaction", "determination", "relief", "victory", "success", "achievement", "battle", "combat", "strength", "efficacy", "effectiveness", "power", "skill", "dexterity", "precision", "mastery", "dominance", "win", "triumph", "prevail", "overcome"]
+  },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
