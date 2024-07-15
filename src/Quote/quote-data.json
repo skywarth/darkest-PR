@@ -4310,7 +4310,7 @@
       {"emotion": "Enjoyment", "temperature": 2},
       {"emotion": "Relief", "temperature": 3},
       {"emotion": "Thrill", "temperature": 4},
-      {"emotion": "Ecstasy", "temperature": 1},
+      {"emotion": "Ecstasy", "temperature": 2},
       {"emotion": "Kindness", "temperature": 3},
       {"emotion": "Acceptance", "temperature": 4},
       {"emotion": "Amazement", "temperature": 5},
@@ -4642,58 +4642,183 @@
     ],
     "tags": ["decisive", "pummelling", "confidence", "triumph", "satisfaction", "determination", "relief", "victory", "success", "achievement", "battle", "combat", "strength", "efficacy", "effectiveness", "power", "skill", "dexterity", "precision", "mastery", "dominance", "win", "triumph", "prevail", "overcome"]
   },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   {
-    "text": "Executed with impunity!",
-    "slug": "executed-with-impunity",
+    "text": "A powerful blow!",
+    "slug": "powerful-blow",
     "sentiment": "Positive",
     "emotion_matrix": [
-      {"emotion": "enjoyment", "temperature": 2},
-      {"emotion":"Thrill","temperature":5},
-      {"emotion":"Ecstasy","temperature":4},
-      {"emotion":"Relief","temperature":2},
-      {"emotion":"Wonder","temperature":2},
-      {"emotion":"Amazement","temperature":4}
+      {"emotion": "Wrath", "temperature": 3},
+      {"emotion": "Enjoyment", "temperature": 1},
+      {"emotion": "Thrill", "temperature": 3},
+      {"emotion": "Ecstasy", "temperature": 1},
+      {"emotion": "Trust", "temperature": 1},
+      {"emotion": "Amazement", "temperature": 4},
+      {"emotion": "Shock", "temperature": 2}
     ],
-    "tags": [
-      "execute","execution","executed","impunity","destroyed","done","finished","completed","great","greatness","complete"
-    ]
+    "tags": ["powerful", "blow", "amazing", "wonder", "admiration", "satisfaction", "confidence", "strength", "force", "impact", "mighty", "potent", "formidable", "forceful", "dynamic", "vigorous", "sturdy", "robust", "intense", "energetic", "dominance", "effectiveness", "efficacy", "power", "strength"]
+  },
+  {
+    "text": "A devastating blow!",
+    "slug": "devastating-blow",
+    "sentiment": "Neutral",
+    "emotion_matrix": [
+      {"emotion": "Wrath", "temperature": 4},
+      {"emotion": "Enjoyment", "temperature": 1},
+      {"emotion": "Thrill", "temperature": 3},
+      {"emotion": "Ecstasy", "temperature": 1},
+      {"emotion": "Trust", "temperature": 1},
+      {"emotion": "Amazement", "temperature": 4},
+      {"emotion": "Shock", "temperature": 2}
+    ],
+    "tags": ["devastating", "blow", "amazing", "wonder", "admiration", "satisfaction", "confidence", "strength", "force", "impact", "mighty", "potent", "formidable", "forceful", "dynamic", "vigorous", "sturdy", "robust", "intense", "energetic", "dominance", "effectiveness", "efficacy", "power", "strength"]
+  },
+  {
+    "text": "Impressive!",
+    "slug": "impressive",
+    "sentiment": "Positive",
+    "emotion_matrix": [
+      {"emotion": "Happiness", "temperature": 4},
+      {"emotion": "Enjoyment", "temperature": 3},
+      {"emotion": "Thrill", "temperature": 1},
+      {"emotion": "Ecstasy", "temperature": 3},
+      {"emotion": "Acceptance", "temperature": 4},
+      {"emotion": "Kindness", "temperature": 4},
+      {"emotion": "Amazement", "temperature": 4}
+    ],
+    "tags": ["impressive", "admiration", "amazement", "wonder", "satisfaction", "pride", "achievement", "accomplishment", "feat", "triumph", "success", "remarkable", "noteworthy", "outstanding", "excellent", "exceptional", "extraordinary", "magnificent", "superb", "astonishing", "brilliant", "commendable", "laudable", "praiseworthy"]
+  },
+  {
+    "text": "The ground quakes!",
+    "slug": "ground-quakes",
+    "sentiment": "Neutral",
+    "emotion_matrix": [
+      {"emotion": "Wrath", "temperature": 2},
+      {"emotion": "Anxiety", "temperature": 3},
+      {"emotion": "Terror", "temperature": 2},
+      {"emotion": "Panic", "temperature": 4},
+      {"emotion": "Thrill", "temperature": 3},
+      {"emotion": "Shock", "temperature": 5},
+      {"emotion": "Amazement", "temperature": 2},
+      {"emotion": "Wonder", "temperature": 3}
+    ],
+    "tags": ["ground", "quakes", "amazing", "shock", "wonder", "awe", "apprehension", "earthquake", "tremor", "shake", "impact", "tremble", "vibration", "disturbance", "movement", "seismic", "power", "force", "intensity", "powerful", "forceful", "mighty", "potent", "dynamic", "energetic", "sturdy", "robust"]
+  },
+  {
+    "text": "A singular strike!",
+    "slug": "singular-strike",
+    "sentiment": "Neutral",
+    "emotion_matrix": [
+      {"emotion": "Wrath", "temperature": 3},
+      {"emotion": "Despair", "temperature": 3},
+      {"emotion": "Terror", "temperature": 3},
+      {"emotion": "Panic", "temperature": 2},
+      {"emotion": "Thrill", "temperature": 4},
+      {"emotion": "Ecstasy", "temperature": 2},
+      {"emotion": "Shock", "temperature": 1},
+      {"emotion": "Amazement", "temperature": 4}
+    ],
+    "tags": ["singular", "strike", "amazing", "admiration", "wonder", "satisfaction", "confidence", "strength", "force", "impact", "mighty", "potent", "formidable", "forceful", "dynamic", "vigorous", "sturdy", "robust", "intense", "energetic", "dominance", "effectiveness", "efficacy", "power", "strength"]
+  },
+  {
+    "text": "Well struck!",
+    "slug": "well-struck",
+    "sentiment": "Positive",
+    "emotion_matrix": [
+      {"emotion": "Wrath", "temperature": 2},
+      {"emotion": "Happiness", "temperature": 2},
+      {"emotion": "Enjoyment", "temperature": 3},
+      {"emotion": "Ecstasy", "temperature":2},
+      {"emotion": "Thrill", "temperature": 1},
+      {"emotion": "Acceptance", "temperature": 5},
+      {"emotion": "Friendliness", "temperature": 2},
+      {"emotion": "Kindness", "temperature": 5},
+      {"emotion": "Amazement", "temperature": 3}
+    ],
+    "tags": ["well", "struck", "admiration", "satisfaction", "approval", "confidence", "pride", "achievement", "accomplishment", "success", "commendable", "laudable", "praiseworthy", "excellence", "skill", "expertise", "proficiency", "mastery", "superiority", "excellence", "victory"]
+  },
+  {
+    "text": "Precision and power!",
+    "slug": "precision-and-power",
+    "sentiment": "Positive",
+    "emotion_matrix": [
+      {"emotion": "Wrath", "temperature": 1},
+      {"emotion": "Relief", "temperature": 2},
+      {"emotion": "Thrill", "temperature": 3},
+      {"emotion": "Ecstasy", "temperature": 1},
+      {"emotion": "Acceptance", "temperature": 4},
+      {"emotion": "Kindness", "temperature": 3},
+      {"emotion": "Trust", "temperature": 3},
+      {"emotion": "Amazement", "temperature": 4},
+      {"emotion": "Wonder", "temperature": 2}
+    ],
+    "tags": ["precision", "power", "admiration", "amazement", "wonder", "satisfaction", "confidence", "accuracy", "strength", "skill", "expertise", "proficiency", "mastery", "superiority", "perfection", "flawlessness", "effectiveness", "efficacy", "dominance", "control", "excellence", "superb"]
+  },
+  {
+    "text": "Masterfully executed!",
+    "slug": "masterfully-executed",
+    "sentiment": "Positive",
+    "emotion_matrix": [
+      {"emotion": "Happiness", "temperature": 2},
+      {"emotion": "Enjoyment", "temperature": 2},
+      {"emotion": "Relief", "temperature": 3},
+      {"emotion": "Thrill", "temperature": 3},
+      {"emotion": "Ecstasy", "temperature": 5},
+      {"emotion": "Acceptance", "temperature": 5},
+      {"emotion": "Kindness", "temperature": 5},
+      {"emotion": "Trust", "temperature": 4},
+      {"emotion": "Friendliness", "temperature": 1},
+      {"emotion": "Amazement", "temperature": 4}
+    ],
+    "tags": ["masterfully", "executed", "admiration", "amazement", "satisfaction", "pride", "confidence", "achievement", "accomplishment", "success", "skill", "expertise", "proficiency", "mastery", "excellence", "perfection", "effectiveness", "efficacy", "dominance", "superiority", "commendable", "laudable", "praiseworthy"]
+  },
+  {
+    "text": "How quickly the tide turns!",
+    "slug": "the-tide-turns",
+    "sentiment": "Neutral",
+    "emotion_matrix": [
+      {"emotion": "Frustration", "temperature": 2},
+      {"emotion": "Irritation", "temperature": 1},
+      {"emotion": "Rage", "temperature": 2},
+      {"emotion": "Anxiety", "temperature": 4},
+      {"emotion": "Panic", "temperature": 5},
+      {"emotion": "Thrill", "temperature": 3},
+      {"emotion": "Acceptance", "temperature": 3},
+      {"emotion": "Shock", "temperature": 5},
+      {"emotion": "Wonder", "temperature": 2},
+      {"emotion": "Guilt", "temperature": 3},
+      {"emotion": "Regret", "temperature": 3}
+    ],
+    "tags": ["quickly", "tide", "turns", "surprise", "amazement", "shock", "wonder", "apprehension", "change", "shift", "reversal", "unpredictability", "uncertainty", "suddenness", "transformation", "unexpected", "astonishment", "bewilderment", "upheaval", "fluctuation", "dynamic"]
+  },
+  {
+    "text": "Mortality clarified in a single strike!",
+    "slug": "mortality-clarified",
+    "sentiment": "Negative",
+    "emotion_matrix": [
+      {"emotion": "Wrath", "temperature": 5},
+      {"emotion": "Frustration", "temperature": 3},
+      {"emotion": "Melancholy", "temperature": 2},
+      {"emotion": "Despair", "temperature": 4},
+      {"emotion": "Grief", "temperature": 3},
+      {"emotion": "Sorrow", "temperature": 4},
+      {"emotion": "Terror", "temperature": 3},
+      {"emotion": "Acceptance", "temperature": 2},
+      {"emotion": "Shock", "temperature": 5},
+      {"emotion": "Wonder", "temperature": 2},
+      {"emotion": "Amazement", "temperature": 3},
+      {"emotion": "Remorse", "temperature": 4},
+      {"emotion": "Embarrassment", "temperature": 3}
+    ],
+    "tags": ["mortality", "clarified", "single", "strike", "awe", "shock", "wonder", "contemplation", "apprehension", "life", "death", "finality", "inevitability", "ephemeral", "transience", "reality", "truth", "certainty", "momentous", "decisive", "profound", "significant", "existential"]
   }
+
+
+
+
+
+
+
+
+
+
 ]
