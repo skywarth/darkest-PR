@@ -81,9 +81,11 @@ Could be applied, would be decent in future expansion:
       - Short discussion/review
       - Long discussion/review
   - [X] PR Review
-    - Approved
-    - Rejected (change request)
-    - Just comment
+    - [X] Approved
+    - [X] Rejected (change request)
+      - [ ] Distinguish/variate by requested change amount
+    - [X] Just comment
+
 
 - [X] Issue/PR comment
   - Tagging the bot
@@ -154,6 +156,7 @@ Hey ancestor @Darkest-PR, give me a cool line!
 - [X] Deployment
 - [ ] Quotes
   - Story-like quotes are excluded intentionally 
+- [ ] Non-app usage via a GitHub bot user, like `CodiumAI-Agent`
 
 ## Notes to self
 
