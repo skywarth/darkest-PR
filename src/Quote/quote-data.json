@@ -4810,7 +4810,562 @@
       {"emotion": "Embarrassment", "temperature": 3}
     ],
     "tags": ["mortality", "clarified", "single", "strike", "awe", "shock", "wonder", "contemplation", "apprehension", "life", "death", "finality", "inevitability", "ephemeral", "transience", "reality", "truth", "certainty", "momentous", "decisive", "profound", "significant", "existential"]
+  },
+  {
+    "text": "Grievous injury, palpable fear...",
+    "slug": "palpable-fear",
+    "sentiment": "Negative",
+    "emotion_matrix": [
+      {"emotion": "Grief", "temperature": 4},
+      {"emotion": "Despair", "temperature": 3},
+      {"emotion": "Loneliness", "temperature": 1},
+      {"emotion": "Terror", "temperature": 1},
+      {"emotion": "Fright", "temperature": 5},
+      {"emotion": "Panic", "temperature": 3},
+      {"emotion": "Shock", "temperature": 2},
+      {"emotion": "Remorse", "temperature": 1}
+    ],
+    "tags": ["grievous", "injury", "palpable", "fear", "fear", "anxiety", "despair", "sorrow", "pain", "danger", "threat", "distress", "trauma", "anguish", "dread", "apprehension", "unease", "terror", "horror", "intensity", "severity", "harm", "suffering", "alarm", "dismay"]
+  },
+  {
+    "text": "Such a terrible assault cannot be left unanswered!",
+    "slug": "terrible-assault",
+    "sentiment": "Negative",
+    "emotion_matrix": [
+      {"emotion": "Anger", "temperature": 3},
+      {"emotion": "Fury", "temperature": 4},
+      {"emotion": "Wrath", "temperature": 5},
+      {"emotion": "Thrill", "temperature": 3},
+      {"emotion": "Shock", "temperature": 4},
+      {"emotion": "Wonder", "temperature": 2},
+      {"emotion": "Hatred", "temperature": 4},
+      {"emotion": "Scorn", "temperature": 2}
+    ],
+    "tags": ["terrible", "assault", "unanswered", "anger", "rage", "determination", "wrath", "vengeance", "retaliation", "retribution", "justice", "defense", "response", "combat", "conflict", "fight", "revenge", "resistance", "reaction", "resolve", "boldness", "courage", "assertion"]
+  },
+  {
+    "text": "Death waits for the slightest lapse in concentration.",
+    "slug": "lapse-in-concentration",
+    "sentiment": "Negative",
+    "emotion_matrix": [
+      {"emotion": "Irritation", "temperature": 4},
+      {"emotion": "Frustration", "temperature": 2},
+      {"emotion": "Grief", "temperature": 3},
+      {"emotion": "Panic", "temperature": 3},
+      {"emotion": "Anxiety", "temperature": 5},
+      {"emotion": "Shock", "temperature": 2},
+      {"emotion": "Embarrassment", "temperature": 4},
+      {"emotion": "Guilt", "temperature": 3}
+    ],
+    "tags": ["death", "waits", "slightest", "lapse", "concentration", "fear", "anxiety", "terror", "apprehension", "dread", "danger", "threat", "peril", "risk", "vigilance", "awareness", "focus", "caution", "attention", "hazard", "critical", "seriousness", "intensity"]
+  },
+  {
+    "text": "Exposed to a killing blow!",
+    "slug": "exposed-to-killing-blow",
+    "sentiment": "Negative",
+    "emotion_matrix": [
+      {"emotion": "Wrath", "temperature": 3},
+      {"emotion": "Despair", "temperature": 4},
+      {"emotion": "Grief", "temperature": 2},
+      {"emotion": "Terror", "temperature": 2},
+      {"emotion": "Fright", "temperature": 4},
+      {"emotion": "Panic", "temperature": 5},
+      {"emotion": "Shock", "temperature": 4},
+      {"emotion": "Remorse", "temperature": 3}
+    ],
+    "tags": ["exposed", "killing", "blow", "fear", "terror", "apprehension", "dread", "shock", "danger", "threat", "peril", "risk", "vulnerability", "hazard", "critical", "seriousness", "attack", "strike", "harm", "fatal", "life-threatening", "grave", "menacing"]
+  },
+  {
+    "text": "Ringing ears, blurred vision - the end approaches...",
+    "slug": "ringing-ears-blurred-vision",
+    "sentiment": "Negative",
+    "emotion_matrix": [
+      {"emotion": "Irritation", "temperature": 2},
+      {"emotion": "Frustration", "temperature": 1},
+      {"emotion": "Despair", "temperature": 5},
+      {"emotion": "Loneliness", "temperature": 2},
+      {"emotion": "Sorrow", "temperature": 1},
+      {"emotion": "Melancholy", "temperature": 2},
+      {"emotion": "Anxiety", "temperature": 4},
+      {"emotion": "Terror", "temperature": 1},
+      {"emotion": "Fright", "temperature": 2},
+      {"emotion": "Panic", "temperature": 3},
+      {"emotion": "Shock", "temperature": 4},
+      {"emotion": "Wonder", "temperature": 1}
+    ],
+    "tags": ["ringing", "ears", "blurred", "vision", "end", "approaches", "fear", "despair", "anxiety", "terror", "dread", "danger", "threat", "peril", "risk", "vulnerability", "hazard", "critical", "seriousness", "fatal", "life-threatening", "inevitability", "hopelessness", "apprehension"]
+  },
+  {
+    "text": "Dazed, reeling, about to break...",
+    "slug": "about-to-break",
+    "sentiment": "Negative",
+    "emotion_matrix": [
+      {"emotion": "Irritation", "temperature": 2},
+      {"emotion": "Rage", "temperature": 1},
+      {"emotion": "Despair", "temperature": 5},
+      {"emotion": "Anxiety", "temperature": 3},
+      {"emotion": "Panic", "temperature": 5},
+      {"emotion": "Terror", "temperature": 2},
+      {"emotion": "Shock", "temperature": 3},
+      {"emotion": "Embarrassment", "temperature": 3},
+      {"emotion": "Regret", "temperature": 1},
+      {"emotion": "Remorse", "temperature": 2}
+    ],
+    "tags": ["dazed", "reeling", "break", "despair", "fright", "anxiety", "grief", "sorrow", "shock", "irritation", "weakness", "confusion", "helplessness", "collapse", "stress", "vulnerability", "overwhelmed", "struggle", "instability", "panic", "disoriented", "trauma", "crisis", "emergency", "fear", "fatigue", "trouble", "danger", "turmoil", "distress"]
+  },
+  {
+    "text": "Unnerved, unbalanced...",
+    "slug": "unnerved-unbalanced",
+    "sentiment": "Negative",
+    "emotion_matrix": [
+      {"emotion": "Irritation", "temperature": 1},
+      {"emotion": "Melancholy", "temperature": 2},
+      {"emotion": "Despair", "temperature": 3},
+      {"emotion": "Anxiety", "temperature": 4},
+      {"emotion": "Panic", "temperature": 2},
+      {"emotion": "Terror", "temperature": 2},
+      {"emotion": "Fright", "temperature": 3},
+      {"emotion": "Shock", "temperature": 3},
+      {"emotion": "Embarrassment", "temperature": 2}
+    ],
+    "tags": ["unnerved", "unbalanced", "anxiety", "fright", "despair", "grief", "shock", "irritation", "unease", "discomfort", "fear", "disturbance", "stress", "panic", "tension", "nervousness", "vulnerability", "turmoil", "imbalance", "disarray", "chaos", "distress", "concern", "trouble", "apprehension", "uncertainty", "worry", "alarm", "disquiet", "disorientation"]
+  },
+  {
+    "text": "A dizzying blow to body and brain!",
+    "slug": "a-dizzying-blow",
+    "sentiment": "Negative",
+    "emotion_matrix": [
+      {"emotion": "Wrath", "temperature": 4},
+      {"emotion": "Despair", "temperature": 3},
+      {"emotion": "Terror", "temperature": 5},
+      {"emotion": "Fright", "temperature": 2},
+      {"emotion": "Panic", "temperature": 4},
+      {"emotion": "Anxiety", "temperature": 1},
+      {"emotion": "Shock", "temperature": 5}
+    ],
+    "tags": ["dizzying", "blow", "body", "brain", "shock", "fright", "anxiety", "despair", "irritation", "injury", "trauma", "pain", "weakness", "confusion", "disorientation", "helplessness", "impact", "attack", "damage", "stress", "fear", "panic", "disturbance", "vulnerability", "suffering", "harm", "trouble", "danger", "distress", "alarm"]
+  },
+  {
+    "text": "Weakened!",
+    "slug": "weakened",
+    "sentiment": "Negative",
+    "emotion_matrix": [
+      {"emotion": "Wrath", "temperature": 2},
+      {"emotion": "Frustration", "temperature": 2},
+      {"emotion": "Despair", "temperature": 3},
+      {"emotion": "Panic", "temperature": 3},
+      {"emotion": "Terror", "temperature": 1},
+      {"emotion": "Fright", "temperature": 2},
+      {"emotion": "Anxiety", "temperature": 1},
+      {"emotion": "Shock", "temperature": 4}
+    ],
+    "tags": ["weakened", "despair", "sorrow", "grief", "anxiety", "shock", "weakness", "helplessness", "fatigue", "vulnerability", "struggle", "pain", "suffering", "trouble", "stress", "danger", "fragility", "fragile", "compromise", "difficulty", "issue", "problem", "struggle", "trauma", "crisis", "risk", "distress", "trouble", "challenge", "barrier"]
+  },
+  {
+    "text": "Diminished!",
+    "slug": "diminished",
+    "sentiment": "Negative",
+    "emotion_matrix": [
+      {"emotion": "Frustration", "temperature": 3},
+      {"emotion": "Wrath", "temperature": 3},
+      {"emotion": "Sorrow", "temperature": 2},
+      {"emotion": "Grief", "temperature": 1},
+      {"emotion": "Despair", "temperature": 4},
+      {"emotion": "Loneliness", "temperature": 4},
+      {"emotion": "Terror", "temperature": 1},
+      {"emotion": "Panic", "temperature": 3},
+      {"emotion": "Fright", "temperature": 2},
+      {"emotion": "Shock", "temperature": 4}
+    ],
+    "tags": ["diminished", "despair", "sorrow", "grief", "anxiety", "shock", "weakness", "helplessness", "fatigue", "vulnerability", "struggle", "pain", "suffering", "trouble", "stress", "danger", "fragility", "fragile", "compromise", "difficulty", "issue", "problem", "struggle", "trauma", "crisis", "risk", "distress", "trouble", "challenge", "barrier"]
+  },
+  {
+    "text": "The will to fight falters!",
+    "slug": "will-to-fight-falters",
+    "sentiment": "Negative",
+    "emotion_matrix": [
+      {"emotion": "Frustration", "temperature": 2},
+      {"emotion": "Melancholy", "temperature": 4},
+      {"emotion": "Despair", "temperature": 5},
+      {"emotion": "Grief", "temperature": 3},
+      {"emotion": "Sorrow", "temperature": 3},
+      {"emotion": "Anxiety", "temperature": 2},
+      {"emotion": "Fright", "temperature": 3},
+      {"emotion": "Shock", "temperature": 3},
+      {"emotion": "Contempt", "temperature": 2},
+      {"emotion": "Embarrassment", "temperature": 4},
+      {"emotion": "Acceptance", "temperature": 4},
+      {"emotion": "Guilt", "temperature": 3}
+    ],
+    "tags": ["will", "fight", "falters", "despair", "grief", "sorrow", "anxiety", "shock", "weakness", "helplessness", "struggle", "defeat", "loss", "trouble", "stress", "danger", "fear", "fragility", "compromise", "difficulty", "issue", "problem", "crisis", "risk", "distress", "challenge", "barrier", "instability", "collapse", "overwhelmed", "turmoil", "uncertainty"]
+  },
+  {
+    "text": "Confusion, nerves, and panic!",
+    "slug": "confusion-nerves-and-panic",
+    "sentiment": "Negative",
+    "emotion_matrix": [
+      {"emotion": "Frustration", "temperature": 2},
+      {"emotion": "Rage", "temperature": 2},
+      {"emotion": "Despair", "temperature": 3},
+      {"emotion": "Anxiety", "temperature": 3},
+      {"emotion": "Panic", "temperature": 5},
+      {"emotion": "Fright", "temperature": 2},
+      {"emotion": "Shock", "temperature": 5}
+    ],
+    "tags": ["confusion", "nerves", "panic", "anxiety", "fright", "despair", "grief", "shock", "fear", "stress", "vulnerability", "disturbance", "turmoil", "tension", "trouble", "alarm", "worry", "uncertainty", "apprehension", "crisis", "danger", "instability", "chaos", "disorientation", "trouble", "distress", "concern", "struggle", "emergency", "fear"]
+  },
+  {
+    "text": "Gnawing uncertainty - the birthplace of dread.",
+    "slug": "gnawing-uncertainty",
+    "sentiment": "Negative",
+    "emotion_matrix": [
+      {"emotion": "Despair", "temperature": 1},
+      {"emotion": "Grief", "temperature": 2},
+      {"emotion": "Anxiety", "temperature": 5},
+      {"emotion": "Panic", "temperature": 1},
+      {"emotion": "Fright", "temperature": 3},
+      {"emotion": "Wonder", "temperature": 4},
+      {"emotion": "Remorse", "temperature": 1}
+    ],
+    "tags": ["gnawing", "uncertainty", "birthplace", "dread", "anxiety", "fright", "despair", "grief", "shock", "fear", "stress", "vulnerability", "turmoil", "tension", "trouble", "alarm", "worry", "uncertainty", "apprehension", "crisis", "danger", "instability", "chaos", "disorientation", "trouble", "distress", "concern", "struggle", "emergency", "fear", "worry", "apprehension"]
+  },
+  {
+    "text": "Festering fear consumes the mind!",
+    "slug": "festering-fear",
+    "sentiment": "Negative",
+    "emotion_matrix": [
+      {"emotion": "Despair", "temperature": 2},
+      {"emotion": "Loneliness", "temperature": 1},
+      {"emotion": "Melancholy", "temperature": 1},
+      {"emotion": "Anxiety", "temperature": 5},
+      {"emotion": "Fright", "temperature": 5},
+      {"emotion": "Panic", "temperature": 3},
+      {"emotion": "Shock", "temperature": 4},
+      {"emotion": "Wonder", "temperature": 3},
+      {"emotion": "Guilt", "temperature": 3}
+    ],
+    "tags": ["festering", "fear", "consumes", "mind", "fright", "anxiety", "despair", "grief", "shock", "terror", "panic", "horror", "stress", "vulnerability", "turmoil", "tension", "trouble", "alarm", "worry", "uncertainty", "apprehension", "crisis", "danger", "instability", "chaos", "disorientation", "trouble", "distress", "concern", "struggle", "emergency", "fear", "apprehension"]
+  },
+  {
+    "text": "The horror...",
+    "slug": "the-horror",
+    "sentiment": "Negative",
+    "emotion_matrix": [
+      {"emotion": "Despair", "temperature": 2},
+      {"emotion": "Fright", "temperature": 4},
+      {"emotion": "Terror", "temperature": 5},
+      {"emotion": "Panic", "temperature": 2},
+      {"emotion": "Anxiety", "temperature": 3},
+      {"emotion": "Shock", "temperature": 5},
+      {"emotion": "Wonder", "temperature": 2}
+    ],
+    "tags": ["horror", "fright", "shock", "despair", "anxiety", "grief", "fear", "terror", "panic", "stress", "alarm", "distress", "unease", "worry", "concern", "turmoil", "apprehension", "nervousness", "crisis", "trouble", "danger", "vulnerability", "helplessness", "struggle", "trauma"]
+  },
+  {
+    "text": "The abyss returns even the boldest gaze.",
+    "slug": "the-boldest-gaze",
+    "sentiment": "Neutral",
+    "emotion_matrix": [
+      {"emotion": "Despair", "temperature": 3},
+      {"emotion": "Melancholy", "temperature": 2},
+      {"emotion": "Terror", "temperature": 2},
+      {"emotion": "Fright", "temperature": 3},
+      {"emotion": "Shock", "temperature": 2},
+      {"emotion": "Wonder", "temperature": 5},
+      {"emotion": "Acceptance", "temperature": 5}
+    ],
+    "tags": ["abyss", "returns", "boldest", "gaze", "wonder", "shock", "amazement", "fear", "anxiety", "depths", "mystery", "unknown", "stare", "courage", "bravery", "introspection", "darkness", "challenge", "confrontation", "power", "strength", "determination", "resolve", "endurance"]
+  },
+  {
+    "text": "The blood quickens!",
+    "slug": "the-blood-quickens",
+    "sentiment": "Neutral",
+    "emotion_matrix": [
+      {"emotion": "Fury", "temperature": 1},
+      {"emotion": "Rage", "temperature": 3},
+      {"emotion": "Panic", "temperature": 3},
+      {"emotion": "Thrill", "temperature": 5},
+      {"emotion": "Shock", "temperature": 3}
+    ],
+    "tags": ["blood", "quickens", "thrill", "excitement", "energy", "anticipation", "amazement", "vitality", "life", "action", "passion", "drive", "strength", "power", "intensity", "focus", "alertness", "readiness", "enthusiasm", "eagerness", "zeal", "spirit", "invigoration"]
+  },
+  {
+    "text": "A brilliant confluence of skill and purpose!",
+    "slug": "a-brilliant-confluence",
+    "sentiment": "Positive",
+    "emotion_matrix": [
+      {"emotion": "Happiness", "temperature": 5},
+      {"emotion": "Relief", "temperature": 2},
+      {"emotion": "Thrill", "temperature": 5},
+      {"emotion": "Ecstasy", "temperature": 3},
+      {"emotion": "Acceptance", "temperature": 5},
+      {"emotion": "Kindness", "temperature": 5},
+      {"emotion": "Trust", "temperature": 3},
+      {"emotion": "Friendliness", "temperature": 3},
+      {"emotion": "Amazement", "temperature": 5},
+      {"emotion": "Wonder", "temperature": 3},
+      {"emotion": "Wonder", "temperature": 3}
+    ],
+    "tags": ["brilliant", "confluence", "skill", "purpose", "admiration", "amazement", "happiness", "inspiration", "wonder", "achievement", "mastery", "proficiency", "excellence", "dedication", "focus", "drive", "determination", "success", "synergy", "coordination", "collaboration", "harmony", "perfection"]
+  },
+  {
+    "text": "A time to perform beyond one's limits!",
+    "slug": "time-to-perform",
+    "sentiment": "Positive",
+    "emotion_matrix": [
+      {"emotion": "Fury", "temperature": 1},
+      {"emotion": "Rage", "temperature": 2},
+      {"emotion": "Thrill", "temperature": 5},
+      {"emotion": "Relief", "temperature": 1},
+      {"emotion": "Acceptance", "temperature": 4},
+      {"emotion": "Friendliness", "temperature": 3},
+      {"emotion": "Trust", "temperature": 5},
+      {"emotion": "Shock", "temperature": 3},
+      {"emotion": "Amazement", "temperature": 2},
+      {"emotion": "Wonder", "temperature": 4}
+    ],
+    "tags": ["perform", "beyond", "limits", "determination", "inspiration", "thrill", "excitement", "confidence", "effort", "persistence", "resilience", "strength", "challenge", "achievement", "endurance", "focus", "drive", "success", "overcoming", "exceeding", "pushing", "boundaries", "ambition"]
+  },
+  {
+    "text": "Inspiration and improvement!",
+    "slug": "inspiration-and-improvement",
+    "sentiment": "Positive",
+    "emotion_matrix": [
+      {"emotion": "Happiness", "temperature": 3},
+      {"emotion": "Enjoyment", "temperature": 2},
+      {"emotion": "Relief", "temperature": 5},
+      {"emotion": "Thrill", "temperature": 3},
+      {"emotion": "Ecstasy", "temperature": 2},
+      {"emotion": "Amazement", "temperature": 4},
+      {"emotion": "Shock", "temperature": 1},
+      {"emotion": "Wonder", "temperature": 2}
+    ],
+    "tags": ["inspiration", "improvement", "happiness", "admiration", "excitement", "hope", "growth", "progress", "development", "motivation", "achievement", "success", "dedication", "focus", "drive", "aspiration", "learning", "advancement", "enhancement", "evolution", "transformation", "positivity"]
+  },
+  {
+    "text": "Perched at the very precipice of oblivion...",
+    "slug": "precipice-of-oblivion",
+    "sentiment": "Negative",
+    "emotion_matrix": [
+      {"emotion": "Despair", "temperature": 5},
+      {"emotion": "Loneliness", "temperature": 2},
+      {"emotion": "Grief", "temperature": 2},
+      {"emotion": "Terror", "temperature": 3},
+      {"emotion": "Fright", "temperature": 4},
+      {"emotion": "Wonder", "temperature": 3}
+    ],
+    "tags": ["perched", "precipice", "oblivion", "despair", "fear", "anxiety", "terror", "hopelessness", "danger", "risk", "peril", "uncertainty", "dread", "doom", "vulnerability", "precarious", "crisis", "critical", "tenuous", "unstable", "perilous", "dire", "ominous", "foreboding", "threatening", "hazardous"]
+  },
+  {
+    "text": "A hand-breadth from becoming unwound...",
+    "slug": "becoming-unwound",
+    "sentiment": "Negative",
+    "emotion_matrix": [
+      {"emotion": "Frustration", "temperature": 2},
+      {"emotion": "Grief", "temperature": 3},
+      {"emotion": "Sorrow", "temperature": 2},
+      {"emotion": "Melancholy", "temperature": 3},
+      {"emotion": "Anxiety", "temperature": 4},
+      {"emotion": "Fright", "temperature": 3},
+      {"emotion": "Panic", "temperature": 1},
+      {"emotion": "Acceptance", "temperature": 3},
+      {"emotion": "Shock", "temperature": 2},
+      {"emotion": "Amazement", "temperature": 2},
+      {"emotion": "Guilt", "temperature": 3},
+      {"emotion": "Remorse", "temperature": 1},
+      {"emotion": "Regret", "temperature": 2}
+    ],
+    "tags": ["hand-breadth", "becoming", "unwound", "anxiety", "fear", "despair", "terror", "panic", "tense", "fragile", "delicate", "vulnerable", "critical", "precarious", "unstable", "dangerous", "risky", "hazardous", "threatening", "dire", "emergency", "crisis", "dread", "foreboding", "ominous"]
+  },
+  {
+    "text": "Teetering on the brink, facing the abyss...",
+    "slug": "facing-the-abyss",
+    "sentiment": "Negative",
+    "emotion_matrix": [
+      {"emotion": "Frustration", "temperature": 2},
+      {"emotion": "Melancholy", "temperature": 3},
+      {"emotion": "Despair", "temperature": 4},
+      {"emotion": "Terror", "temperature": 3},
+      {"emotion": "Fright", "temperature": 4},
+      {"emotion": "Panic", "temperature": 2},
+      {"emotion": "Shock", "temperature": 1}
+    ],
+    "tags": ["teetering", "brink", "facing", "abyss", "fear", "anxiety", "despair", "terror", "hopelessness", "vulnerability", "precarious", "unstable", "dangerous", "risky", "hazardous", "threatening", "dire", "crisis", "emergency", "dread", "foreboding", "ominous", "uncertainty", "perilous", "critical"]
+  },
+  {
+    "text": "And now the true test... hold fast, or expire?",
+    "slug": "now-the-true-test",
+    "sentiment": "Neutral",
+    "emotion_matrix": [
+      {"emotion": "Despair", "temperature": 2},
+      {"emotion": "Anxiety", "temperature": 5},
+      {"emotion": "Terror", "temperature": 3},
+      {"emotion": "Fright", "temperature": 4},
+      {"emotion": "Panic", "temperature": 2},
+      {"emotion": "Thrill", "temperature": 4},
+      {"emotion": "Acceptance", "temperature": 3},
+      {"emotion": "Trust", "temperature": 1},
+      {"emotion": "Wonder", "temperature": 5}
+    ],
+    "tags": ["true", "test", "hold", "fast", "expire", "anxiety", "fear", "determination", "terror", "resolve", "challenge", "struggle", "trial", "resilience", "endurance", "courage", "bravery", "perseverance", "strength", "survival", "tenacity", "vulnerability", "critical", "precarious", "unstable", "dangerous"]
+  },
+  {
+    "text": "As life ebbs, terrible vistas of emptiness reveal themselves.",
+    "slug": "as-life-ebbs",
+    "sentiment": "Negative",
+    "emotion_matrix": [
+      {"emotion": "Frustration", "temperature": 2},
+      {"emotion": "Despair", "temperature": 5},
+      {"emotion": "Melancholy", "temperature": 3},
+      {"emotion": "Loneliness", "temperature": 5},
+      {"emotion": "Sorrow", "temperature": 4},
+      {"emotion": "Grief", "temperature": 4},
+      {"emotion": "Terror", "temperature": 2},
+      {"emotion": "Contempt", "temperature": 3},
+      {"emotion": "Remorse", "temperature": 4}
+    ],
+    "tags": ["life", "ebbs", "terrible", "vistas", "emptiness", "reveal", "themselves", "despair", "melancholy", "sorrow", "fear", "hopelessness", "loss", "end", "death", "finality", "grief", "sadness", "void", "darkness", "nothingness", "isolation", "dread", "foreboding", "ominous", "bleakness", "hopeless", "emptiness", "futility", "infinity"]
+  },
+  {
+    "text": "Survival is a tenuous proposition in this sprawling tomb.",
+    "slug": "sprawling-tomb",
+    "sentiment": "Negative",
+    "emotion_matrix": [
+      {"emotion": "Frustration", "temperature": 2},
+      {"emotion": "Irritation", "temperature": 1},
+      {"emotion": "Melancholy", "temperature": 3},
+      {"emotion": "Despair", "temperature": 5},
+      {"emotion": "Grief", "temperature": 2},
+      {"emotion": "Sorrow", "temperature": 3},
+      {"emotion": "Anxiety", "temperature": 1},
+      {"emotion": "Terror", "temperature": 1},
+      {"emotion": "Contempt", "temperature": 1},
+      {"emotion": "Remorse", "temperature": 4},
+      {"emotion": "Embarrassment", "temperature": 1}
+    ],
+    "tags": ["survival", "tenuous", "proposition", "sprawling", "tomb", "fear", "anxiety", "despair", "hopelessness", "vulnerability", "danger", "risk", "peril", "uncertainty", "dread", "vulnerable", "critical", "precarious", "unstable", "hazardous", "ominous", "threatening", "dire", "perilous", "emergency", "crisis", "struggle", "challenge", "endurance", "resilience"]
+  },
+  {
+    "text": "More blood soaks the soil, feeding the evil therein.",
+    "slug": "blood-soaks-the-soil",
+    "sentiment": "Negative",
+    "emotion_matrix": [
+      {"emotion": "Frustration", "temperature": 3},
+      {"emotion": "Grief", "temperature": 4},
+      {"emotion": "Sorrow", "temperature": 5},
+      {"emotion": "Melancholy", "temperature": 3},
+      {"emotion": "Despair", "temperature": 2},
+      {"emotion": "Terror", "temperature": 1},
+      {"emotion": "Wonder", "temperature": 3},
+      {"emotion": "Contempt", "temperature": 1},
+      {"emotion": "Scorn", "temperature": 2},
+      {"emotion": "Remorse", "temperature": 4},
+      {"emotion": "Embarrassment", "temperature": 1},
+      {"emotion": "Regret", "temperature": 4},
+      {"emotion": "Guilt", "temperature": 2}
+    ],
+    "tags": ["blood", "soaks", "soil", "feeding", "evil", "fear", "despair", "sorrow", "horror", "hopelessness", "darkness", "malevolence", "corruption", "death", "sacrifice", "violence", "danger", "dread", "foreboding", "ominous", "grim", "mournful", "tragic", "desolation", "gloom", "terror", "misery", "bleakness"]
+  },
+  {
+    "text": "Another life wasted in the pursuit of glory and gold.",
+    "slug": "another-life-wasted",
+    "sentiment": "Negative",
+    "emotion_matrix": [
+      {"emotion": "Loneliness", "temperature": 1},
+      {"emotion": "Frustration", "temperature": 3},
+      {"emotion": "Wrath", "temperature": 2},
+      {"emotion": "Despair", "temperature": 3},
+      {"emotion": "Grief", "temperature": 5},
+      {"emotion": "Sorrow", "temperature": 5},
+      {"emotion": "Melancholy", "temperature": 1},
+      {"emotion": "Terror", "temperature": 2},
+      {"emotion": "Wonder", "temperature": 4},
+      {"emotion": "Remorse", "temperature": 5},
+      {"emotion": "Guilt", "temperature": 3},
+      {"emotion": "Regret", "temperature": 4},
+      {"emotion": "Embarrassment", "temperature": 3}
+    ],
+    "tags": ["kicked","destroyed","waste","wasted","killed","removed","fall","life", "wasted", "pursuit", "glory", "gold", "despair", "sorrow", "regret", "grief", "hopelessness", "loss", "sacrifice", "tragedy", "failure", "futility", "pointless", "vanity", "misfortune", "misery", "sadness", "lament", "melancholy", "bitter", "disappointment", "disillusionment", "downfall", "ruin", "dismay", "discontent"]
+  },
+  {
+    "text": "This is no place for the weak, or the foolhardy.",
+    "slug": "weak-or-the-foolhardy",
+    "sentiment": "Negative",
+    "emotion_matrix": [
+      {"emotion": "Frustration", "temperature": 2},
+      {"emotion": "Wrath", "temperature": 4},
+      {"emotion": "Irritation", "temperature": 5},
+      {"emotion": "Grief", "temperature": 4},
+      {"emotion": "Sorrow", "temperature": 3},
+      {"emotion": "Despair", "temperature": 4},
+      {"emotion": "Loneliness", "temperature": 2},
+      {"emotion": "Anxiety", "temperature": 4},
+      {"emotion": "Fright", "temperature": 2},
+      {"emotion": "Terror", "temperature": 3},
+      {"emotion": "Panic", "temperature": 1},
+      {"emotion": "Wonder", "temperature": 2},
+      {"emotion": "Scorn", "temperature": 3},
+      {"emotion": "Contempt", "temperature": 4},
+      {"emotion": "Remorse", "temperature": 2},
+      {"emotion": "Embarrassment", "temperature": 5},
+      {"emotion": "Guilt", "temperature": 2}
+    ],
+    "tags": ["place", "weak", "foolhardy", "fear", "anxiety", "doubt", "caution", "vulnerability", "danger", "risk", "peril", "uncertainty", "dread", "foreboding", "vulnerable", "critical", "precarious", "unstable", "hazardous", "ominous", "threatening", "dire", "perilous", "emergency", "crisis", "struggle", "challenge", "endurance", "resilience"]
+  },
+  {
+    "text": "This is no place for the weak, or foolhardy.",
+    "slug": "weak-or-foolhardy",
+    "sentiment": "Negative",
+    "emotion_matrix": [
+      {"emotion": "Frustration", "temperature": 2},
+      {"emotion": "Wrath", "temperature": 4},
+      {"emotion": "Irritation", "temperature": 5},
+      {"emotion": "Grief", "temperature": 4},
+      {"emotion": "Sorrow", "temperature": 3},
+      {"emotion": "Despair", "temperature": 4},
+      {"emotion": "Loneliness", "temperature": 2},
+      {"emotion": "Anxiety", "temperature": 4},
+      {"emotion": "Fright", "temperature": 2},
+      {"emotion": "Terror", "temperature": 3},
+      {"emotion": "Panic", "temperature": 1},
+      {"emotion": "Wonder", "temperature": 2},
+      {"emotion": "Scorn", "temperature": 3},
+      {"emotion": "Contempt", "temperature": 4},
+      {"emotion": "Remorse", "temperature": 2},
+      {"emotion": "Embarrassment", "temperature": 5},
+      {"emotion": "Guilt", "temperature": 2}
+    ],
+    "tags": ["place", "weak", "foolhardy", "fear", "anxiety", "doubt", "caution", "vulnerability", "danger", "risk", "peril", "uncertainty", "dread", "foreboding", "vulnerable", "critical", "precarious", "unstable", "hazardous", "ominous", "threatening", "dire", "perilous", "emergency", "crisis", "struggle", "challenge", "endurance", "resilience"]
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
