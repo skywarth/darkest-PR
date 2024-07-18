@@ -52,8 +52,6 @@ Could be applied, would be decent in future expansion:
 ## Use-case analysis
 
 
-
-
 - [X] Issue
   - [X] Assignee
     - [X] Added
