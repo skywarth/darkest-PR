@@ -5863,7 +5863,7 @@
       {"emotion": "Acceptance", "temperature": 2},
       {"emotion": "Amazement", "temperature": 3},
       {"emotion": "Wonder", "temperature": 1},
-      {"emotion": "Hatred", "temperature": 4},
+      {"emotion": "Hatred", "temperature": 4}
     ],
     "tags": ["frustration", "fury", "destruction", "anger", "rage", "violence", "wrath", "ire", "vengeance", "hostility", "fierceness", "animosity", "antagonism", "bitterness", "outburst", "explosion", "eruption", "havoc", "ruin", "catastrophe", "tumult", "disorder", "chaos", "conflict", "aggression", "combat", "battle", "war", "onslaught", "demolition"]
   },
