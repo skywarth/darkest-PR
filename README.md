@@ -138,7 +138,7 @@ Hey ancestor @Darkest-PR, give me a cool line!
 ## Roadmap
 
 - [ ] Including voice lines as sound file to comments
-- [ ] Refactor comment create action
+- [X] Refactor comment create action
 - [X] Config
   - [X] Env
   - [X] Repository
@@ -146,15 +146,24 @@ Hey ancestor @Darkest-PR, give me a cool line!
   - Replacing pronouns with respective usernames
     - By parameter
     - By context
+  - Introduce main subject/person for each strategy, which will be used for reply-to
 - [ ] Barrelization (is that even a thing?) of the imports/exports
   - Especially for external dependencies since they can be due to change
   - consider `@octokit/webhooks` instead of `@octokit/webhooks/dist-types/types`
 - [ ] Public REST API for quotes
-- [ ] Introduce main subject/person for each strategy, which will be used for reply-to
 - [X] Deployment
-- [ ] Quotes
+- [X] Quotes
   - Story-like quotes are excluded intentionally 
 - [ ] Non-app usage via a GitHub bot user, like `CodiumAI-Agent`
+- [ ] Documentation
+  - [ ] README
+  - [ ] Github pages site
+  - [ ] Marketplace description, tags, title, logo
+- [ ] Publishing
+  - [ ] Marketplace
+  - [ ] Reddit
+  - [ ] DEV.to
+  - [ ] Medium
 
 ## Notes to self
 
