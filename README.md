@@ -165,7 +165,11 @@ Hey ancestor @Darkest-PR, give me a cool line!
   - [ ] DEV.to
   - [ ] Medium
 
+
+
 ## Notes to self
+
+<details><summary>Notes to self</summary>
 
 ### Smee.io
 
@@ -249,9 +253,12 @@ In conclusion, refrain from using static variables and singletons as they may le
 - Spying: you "spy" a method, method of a class or an object. Alter/define its implementation.
 
 Mocking/spying allow you to register calls and responses. It also enables you to implement them numerous times as needed. It is actually such a strong capability.
- 
+
 
 ### Deployment
 
 - https://probot.github.io/docs/deployment/
 - https://github.com/probot/example-vercel
+
+</details>
+
