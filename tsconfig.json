@@ -2,7 +2,7 @@
   "compilerOptions": {
     "incremental": true,
     "target": "es2022",
-    "module": "ES2020",
+    "module": "esnext",
     "declaration": true,
     "sourceMap": true,
     "outDir": "./lib",
@@ -18,7 +18,8 @@
 
     "moduleResolution": "bundler",
     "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true
   },
   "include": ["src/"],
   "compileOnSave": false

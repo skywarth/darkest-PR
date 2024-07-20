@@ -1,6 +1,7 @@
 
 import {Quote,QuoteCollection} from "./Quote.js";
-import { createRequire } from "module";
+
+import quoteDataJson from "./quote-data.json"  with { type: "json" }; //This required changing "module": "ES2020" to "esnext"
 
 export default class QuoteRepository{
     #quotes:QuoteCollection=new QuoteCollection([]);
@@ -22,8 +23,8 @@ export default class QuoteRepository{
 
 
     private loadQuotes(){
-        const require = createRequire(import.meta.url);
-        const rawQuoteData = require("./quote-data.json");
+        const rawQuoteData = quoteDataJson
+
         let quoteArray:Array<Quote>=[];
         rawQuoteData.forEach(function (rawQuote:any){
             quoteArray.push(new Quote(rawQuote.text,rawQuote.slug,rawQuote.sentiment,rawQuote.emotion_matrix,rawQuote.tags))
