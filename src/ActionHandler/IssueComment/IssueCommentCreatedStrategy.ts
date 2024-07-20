@@ -60,6 +60,7 @@ export default class IssueCommentCreatedStrategy extends IssueCommentStrategy<'i
         let actionContext:ActionContextDTO;
 
         if(matchingJsonString){
+            caseSlug=CaseSlugs.Issue.Comment.Created.BotTagged.ParametersProvided;
             try{
                 const dataRaw:Partial<ActionContextDTO>=JSON.parse(matchingJsonString??'{}');
                 actionContext=new ActionContextDTO(dataRaw.emotionMatrix,dataRaw.sentiment,dataRaw.tags,dataRaw.quoteSlugs)
@@ -68,17 +69,8 @@ export default class IssueCommentCreatedStrategy extends IssueCommentStrategy<'i
                 warnings.push('Malformed Input Package Detected! Please format your input package according to the README specification, and check your JSON format for syntax.');
             }
         }else{
-            actionContext=defaultActionContext;
-        }
-
-
-
-
-
-        if(matchingJsonString){
-            caseSlug=CaseSlugs.Issue.Comment.Created.BotTagged.ParametersProvided;
-        }else{
             caseSlug=CaseSlugs.Issue.Comment.Created.BotTagged.ParametersNotProvided;
+            actionContext=defaultActionContext;
         }
 
         const comment = commentFactory.create(caseSlug,actionContext,replyContext,warnings);
