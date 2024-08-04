@@ -32,7 +32,7 @@ GitHub app/bot for responding to actions and events in your repository using con
   - Installation
   - Configuration
 - [Info for nerds](#info-for-nerds)
-  - How does it work
+  - [How does it work](#how-does-it-work)
   - [Design](#design)
 - [Roadmap & TODOs](#roadmap)
   - [Roadmap](#roadmap) 
@@ -43,7 +43,7 @@ GitHub app/bot for responding to actions and events in your repository using con
   - Privacy concerns
 - [Development](#development)
   - [Running locally](#running-locally)
-- Notes to self
+- [Notes to self](#notes-to-self)
 
 ## Preface
 
@@ -87,6 +87,16 @@ And for this reason, Darkest-PR has come to life. To make development process mo
 
 
 ## Info for nerds
+
+### How does it work
+
+Whenever an event occurs in your repository, it is dispatched to the corresponding webhooks of the installed apps. If the corresponding GitHub app has a respective webhook defined for this event, it is fired.
+Darkest-PR several GitHub event webhooks defined and listening to, so whenever such event occurs the app/bot takes action. This infrastructure is provided thanks to [Probot](https://probot.github.io/). So basically; on event occurrence, GitHub calls the webhook URL of the app (Darkest-PR) with data payload consisting details about the event and the repository itself. Then this call is routed to corresponding event handler to handle the event, utilizing the data in the payload. 
+
+After an event that is being listened to is fired, payload is digested forwarded to the corresponding strategy pattern implementation to handle the event. Each child strategy is responsible for generating a comment by asserting certain conditions, environment and variables to assess the situation and return a fitting comment about the situation.
+Abstract parent strategy then takes the comment returned from the child strategy class and then posts this comment to the respective issue/PR. 
+
+Comments are currently stored in a JSON along with their respective emotion matrix, these comments are loaded into a repository pattern implementation to later be utilized by the strategy classes.
 
 ### Design
 
@@ -224,6 +234,15 @@ Hey ancestor @Darkest-PR, give me a cool line!
 
 - [ ] Release
 
+
+## Credits, references and acknowledgements
+
+This project has been developed using JetBrains products.
+Thanks for their [support for open-source development](https://www.jetbrains.com/community/opensource/#support).
+
+
+| <img width="150" src="https://resources.jetbrains.com/storage/products/company/brand/logos/jb_beam.svg" alt="JetBrains Logo (Main) logo."> | <img width="200" src="https://resources.jetbrains.com/storage/products/company/brand/logos/WebStorm.svg" alt="PhpStorm logo."> |
+|--------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------|
 
 
 ## Development
