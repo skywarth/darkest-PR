@@ -37,10 +37,10 @@ GitHub app/bot for responding to actions and events in your repository using con
 - [Roadmap & TODOs](#roadmap)
   - [Roadmap](#roadmap) 
   - [Use case analysis](#use-case-analysis)
-- Credits
-- Disclaimer & legal
-  - Disclaimer
-  - Privacy concerns
+- [Credits](#credits)
+- [Disclaimer & legal](#disclaimer--legal)
+  - [Disclaimer](#disclaimer)
+  - [Privacy concerns](#privacy-concerns)
 - [Development](#development)
   - [Running locally](#running-locally)
 - [Notes to self](#notes-to-self)
@@ -235,8 +235,15 @@ Hey ancestor @Darkest-PR, give me a cool line!
 - [ ] Release
 
 
-## Credits, references and acknowledgements
+## Credits
 
+### Darkest Dungeon®
+
+Many thanks to [Red Hook Studios](https://www.redhookgames.com/) for developing this amazing game ([Darkest Dungeon®](https://www.darkestdungeon.com/)), it's been a great inspiration for this project.
+
+I would also like to acknowledge the great performance put through by Wayne June, voice actor for the narrator of Darkest Dungeon. I strongly believe his incredible voice acting and strong command of English is what made the game a marvelous one.
+
+### JetBrains
 This project has been developed using JetBrains products.
 Thanks for their [support for open-source development](https://www.jetbrains.com/community/opensource/#support).
 
@@ -244,6 +251,46 @@ Thanks for their [support for open-source development](https://www.jetbrains.com
 | <img width="150" src="https://resources.jetbrains.com/storage/products/company/brand/logos/jb_beam.svg" alt="JetBrains Logo (Main) logo."> | <img width="200" src="https://resources.jetbrains.com/storage/products/company/brand/logos/WebStorm.svg" alt="PhpStorm logo."> |
 |--------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------|
 
+### Probot
+
+This project is built using [Probot](https://probot.github.io/) framework, which made it incredibly easy to develop, test and deploy GitHub Apps.
+
+
+## Disclaimer & Legal
+
+### Disclaimer
+
+This project is an open-source GitHub app developed for public use. It essentially publishes comments on GitHub based on emotion matrix of the situation. These comments consist of quotes from the Darkest Dungeon® video game developed by [Red Hook Studios]((https://www.redhookgames.com/)).
+
+This project is not an extension nor a derivative version of the game.
+
+Neither the project (Darkest-PR) nor the developers of this project are affiliated with Red Hook Studios, or endorsed by them in any way. Darkest Dungeon® game, it's trademark, and it's content (e.g: quotes) are a property of Red Hook Studios. The quotes that this project utilizes are from the Darkest Dungeon® game, and is used under the following policy and points:
+
+- Fair use policy
+- Non-commercial, non-profit use
+- Proper credit, acknowledgement, and attribution to the rightful owners of intellectual property and trademark (see [credits](#credits) and [motivation](#motivation))
+- Usage of the quotes may be considered as `transformative nature`
+- Aforementioned quotes are publicly available for anyone, and is not pried nor extracted from the source code of the game. They are not subject to piracy
+
+If you are Red Hook Studios or a legal representative thereof, and believe this project infringes on your intellectual property rights, please contact me. I will promptly address your concerns and take immediate action if any required.  
+
+### Privacy Concerns
+
+This is an open-source project where all the source code is laid bare. It doesn't have any database connection, encrypted files or caching system (other than serverless request caching). It doesn't save any event payload to a third party database or storage deliberately. No user data is persisted, stored or collected for the purposes other than processing the event occurrence.  
+
+Data this app gathers from you and your repository are:
+
+- Your repository details
+  - repository name
+  - link to repository
+  - owner user/organization
+  - ID
+- Event payload (corresponding PR or Issue)
+  - No code! Only details of the PR/Issue (ID, name, assignees, date opened etc.)
+
+This app doesn't clone or copy your project, doesn't record project history. I'm also a person who is keen on privacy, and I tried my best to use only necessary amount of data. Moreover, in respect to your privacy no data is stored on a persistent storage, database, or a third-party app. But don't take my word for it, codes are there, go ahead and review each and every single one. If you find a privacy concern, please let me know ASAP, so we can address it immediately. I strive to develop private and secure open-source projects.
+
+Bottom line is, it is safe (in terms of privacy) to use this app on both your public and private projects. 
 
 ## Development
 
