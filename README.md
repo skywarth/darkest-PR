@@ -1,6 +1,6 @@
 # Darkest-PR
 
-![Darkest-PR Banner](/resc/banner-wide-medium.png "Darkest-PR Banner")
+![Darkest-PR Banner](/resc/banner-ultra-wide-medium.png "Darkest-PR Banner")
 
 
 > Ruin has come to your repository! 
