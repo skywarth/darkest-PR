@@ -1,5 +1,8 @@
 # Darkest-PR
 
+![Darkest-PR Banner](/resc/banner-alt.png "Darkest-PR Banner")
+
+
 > Ruin has come to your repository! 
 
 Ever wanted the ancestor from Darkest Dungeon to narrate your development in his eccentric way?
