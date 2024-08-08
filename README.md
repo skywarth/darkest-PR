@@ -7,7 +7,7 @@
 
 Ever wanted the ancestor from Darkest Dungeon to narrate your development in his eccentric way?
 
-GitHub app/bot for responding to actions and events in your repository using contextual quotes from Darkest Dungeon.
+Darkest-PR is a GitHub app/bot for responding to actions and events in your repository using contextual quotes from Darkest Dungeon.
 
 [![codecov](https://codecov.io/gh/skywarth/darkest-PR/graph/badge.svg?token=Z86VA7I4HH)](https://codecov.io/gh/skywarth/darkest-PR)
 [![Known Vulnerabilities](https://snyk.io/test/github/skywarth/darkest-PR/badge.svg)](https://snyk.io/test/github/skywarth/darkest-PR)
@@ -28,9 +28,8 @@ GitHub app/bot for responding to actions and events in your repository using con
 - [Preface](#preface)
   - [What is this?](#what-is-this)
   - [Motivation](#motivation)
-- Usage
-  - Demo
-  - Use-cases
+- [Usage](#usage)
+  - [Demo](#demo)
   - ActionContext parameter
   - Installation
   - Configuration
@@ -39,11 +38,12 @@ GitHub app/bot for responding to actions and events in your repository using con
   - [Design](#design)
 - [Roadmap & TODOs](#roadmap)
   - [Roadmap](#roadmap) 
-  - [Use case analysis](#use-case-analysis)
+  - [Use cases](#use-cases)
 - [Credits](#credits)
 - [Disclaimer & legal](#disclaimer--legal)
   - [Disclaimer](#disclaimer)
   - [Privacy concerns](#privacy-concerns)
+  - [About the production deployment](#about-the-production-deployment)
 - [Development](#development)
   - [Running locally](#running-locally)
 - [Notes to self](#notes-to-self)
@@ -88,39 +88,60 @@ Then I realized, each development is very similar to Darkest Dungeon runs. Your 
 
 And for this reason, Darkest-PR has come to life. To make development process more interactive, more fun, more story-like, an epic tale.
 
+## Usage
 
-## Info for nerds
+### Demo
 
-### How does it work
+#### Demo Repository
+There is a [demo repository](https://github.com/skywarth/bot-test-repo) I've been using since the development of the project.
+- [Demo PR](https://github.com/skywarth/bot-test-repo/pull/7)
+- [Demo issue](https://github.com/skywarth/bot-test-repo/issues/10)
 
-Whenever an event occurs in your repository, it is dispatched to the corresponding webhooks of the installed apps. If the corresponding GitHub app has a respective webhook defined for this event, it is fired.
-Darkest-PR several GitHub event webhooks defined and listening to, so whenever such event occurs the app/bot takes action. This infrastructure is provided thanks to [Probot](https://probot.github.io/). So basically; on event occurrence, GitHub calls the webhook URL of the app (Darkest-PR) with data payload consisting details about the event and the repository itself. Then this call is routed to corresponding event handler to handle the event, utilizing the data in the payload. 
+Go ahead and take a look at it there, maybe even add a comment tagging the app like `@Darkest-PR` and you will get a quote from the ancestor.
 
-After an event that is being listened to is fired, payload is digested forwarded to the corresponding strategy pattern implementation to handle the event. Each child strategy is responsible for generating a comment by asserting certain conditions, environment and variables to assess the situation and return a fitting comment about the situation.
-Abstract parent strategy then takes the comment returned from the child strategy class and then posts this comment to the respective issue/PR. 
+#### Screenshots
 
-Comments are currently stored in a JSON along with their respective emotion matrix, these comments are loaded into a repository pattern implementation to later be utilized by the strategy classes.
+See below screenshots or navigate to [screenshots directory](/resc/screenshots) to see it in action.
 
-### Design
-
-#### Patterns
-
-Applied and active:
-- Repository pattern
-- Strategy pattern
-- Singleton pattern
-- Facade pattern
-- Chain of Responsibility pattern
-  - I'll admit it's a bit forced, just wanted to implement it for the purpose of practice
-- Factory pattern 
-
-Could be applied, would be decent in future expansion:
-- Factory or Abstract factory pattern, for strategies 
+<details>
+  <summary><b>Click here to see the screenshots</b></summary>
 
 
-## Tagging Input 
+- PR approved
 
-### Sample
+  ![Pull Request Approved](/resc/screenshots/approve-1.png)
+
+- PR request change (rejected)
+
+  ![PR request change #1](/resc/screenshots/request-change-1.png)
+
+  ![PR request change #2](/resc/screenshots/request-change-2.png)
+
+- PR review comment
+
+  ![Pull Request review comment](/resc/screenshots/review-comment.png)
+
+
+- PR assignee added
+
+  ![Pull Request Assignee added](/resc/screenshots/assigned-1.png)
+
+- PR assignee removed
+
+  ![Pull Request Assignee removed](/resc/screenshots/unassigned-1.png)
+
+
+- Tagging the app
+
+  ![Comment tagging the app](/resc/screenshots/tag-comment-overconfidence.png)
+
+
+</details>
+
+### ActionContext Parameter
+
+
+#### Sample
 
 Sample comment below, between the separation lines
 
@@ -158,6 +179,33 @@ Hey ancestor @Darkest-PR, give me a cool line!
 ---
 
 
+## Info for nerds
+
+### How does it work
+
+Whenever an event occurs in your repository, it is dispatched to the corresponding webhooks of the installed apps. If the corresponding GitHub app has a respective webhook defined for this event, it is fired.
+Darkest-PR several GitHub event webhooks defined and listening to, so whenever such event occurs the app/bot takes action. This infrastructure is provided thanks to [Probot](https://probot.github.io/). So basically; on event occurrence, GitHub calls the webhook URL of the app (Darkest-PR) with data payload consisting details about the event and the repository itself. Then this call is routed to corresponding event handler to handle the event, utilizing the data in the payload. 
+
+After an event that is being listened to is fired, payload is digested forwarded to the corresponding strategy pattern implementation to handle the event. Each child strategy is responsible for generating a comment by asserting certain conditions, environment and variables to assess the situation and return a fitting comment about the situation.
+Abstract parent strategy then takes the comment returned from the child strategy class and then posts this comment to the respective issue/PR. 
+
+Comments are currently stored in a JSON along with their respective emotion matrix, these comments are loaded into a repository pattern implementation to later be utilized by the strategy classes.
+
+### Design
+
+#### Patterns
+
+Applied and active:
+- Repository pattern
+- Strategy pattern
+- Singleton pattern
+- Facade pattern
+- Chain of Responsibility pattern
+  - I'll admit it's a bit forced, just wanted to implement it for the purpose of practice
+- Factory pattern 
+
+Could be applied, would be decent in future expansion:
+- Factory or Abstract factory pattern, for strategies 
 
 ## Roadmap
 
@@ -194,7 +242,9 @@ Hey ancestor @Darkest-PR, give me a cool line!
 
 ---
 
-### Use-case analysis
+### Use-cases
+
+Below you may find the use-cases currently integrated and those that are planned for future. If you want to make a feature request for use-cases, please open a discussion or issue. I would be glad to address your needs.
 
 - [X] Issue
   - [X] Assignee
@@ -227,15 +277,14 @@ Hey ancestor @Darkest-PR, give me a cool line!
     - [X] Rejected (change request)
       - [ ] Distinguish/variate by requested change amount
     - [X] Just comment
-
-
 - [X] Issue/PR comment
   - Tagging the bot
     - [X] No input package param provided
     - [X] Input package param provided
     - [X] Partial input package param provided
-
 - [ ] Release
+
+
 
 
 ## Credits
@@ -294,6 +343,15 @@ Data this app gathers from you and your repository are:
 This app doesn't clone or copy your project, doesn't record project history. I'm also a person who is keen on privacy, and I tried my best to use only necessary amount of data. Moreover, in respect to your privacy no data is stored on a persistent storage, database, or a third-party app. But don't take my word for it, codes are there, go ahead and review each and every single one. If you find a privacy concern, please let me know ASAP, so we can address it immediately. I strive to develop private and secure open-source projects.
 
 Bottom line is, it is safe (in terms of privacy) to use this app on both your public and private projects. 
+
+### About the production deployment
+
+Current production deployment is on Vercel, it is running for free tier. If the app gathers enough attraction and high amounts of traffic, I'll try to move into a paid tier from my own pocket.
+
+The app is developed and maintained on a zero dime, just so you can enjoy it for free. Policy and the philosophy for the project is [FOSS](https://en.wikipedia.org/wiki/Free_and_open-source_software).
+
+I'm just trying to build things that people enjoy using. **So please be nice and do not abuse the app.**  
+
 
 ## Development
 
