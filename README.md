@@ -34,6 +34,8 @@ Darkest-PR is a GitHub app/bot for responding to actions and events in your repo
   - [Motivation](#motivation)
 - [Usage](#usage)
   - [Demo](#demo)
+    - [Demo Repository](#demo-repository)
+    - [Screenshots](#screenshots)
   - [Installation](#installation)
   - [Configuration](#configuration)
   - [ActionContext parameter](#actioncontext-parameter)
@@ -56,7 +58,7 @@ Darkest-PR is a GitHub app/bot for responding to actions and events in your repo
 
 ### What is this?
 
-Darkest-PR is a GitHub app/bot to narrate your development, making development more exciting *or desperate*.
+Darkest-PR (PR stands for Pull-Request) is a GitHub app/bot to narrate your development, making development more exciting *or desperate*.
 
 When certain events occur in the repository, Darkest-PR automatically evaluates the situation and responds with a ***fitting*** quote of ancestor from Darkest Dungeon.
 Making the development more like a dungeon crawler run, a sensational journey, more *alive*, more sentimental, more thrilling and more depressing...
@@ -98,8 +100,9 @@ And for this reason, Darkest-PR has come to life. To make development process mo
 
 #### Demo Repository
 There is a [demo repository](https://github.com/skywarth/bot-test-repo) I've been using since the development of the project.
-- [Demo PR](https://github.com/skywarth/bot-test-repo/pull/7)
-- [Demo issue](https://github.com/skywarth/bot-test-repo/issues/10)
+- [Demo PR](https://github.com/skywarth/bot-test-repo/pull/13)
+- [Demo issue (Issue events)](https://github.com/skywarth/bot-test-repo/issues/12)
+- [Demo issue (by comment)](https://github.com/skywarth/bot-test-repo/issues/11)
 
 Go ahead and take a look at it there, maybe even add a comment tagging the app like `@Darkest-PR` and you will get a quote from the ancestor.
 
@@ -114,6 +117,10 @@ See below screenshots or navigate to [screenshots directory](/resc/screenshots) 
 - PR approved
 
   ![Pull Request Approved](/resc/screenshots/approve-1.png)
+
+- PR closed without merge
+
+  ![Pull Request Closed without merge](/resc/screenshots/PR-closed-no-merge-1.png)
 
 - PR request change (rejected)
 
@@ -144,17 +151,30 @@ See below screenshots or navigate to [screenshots directory](/resc/screenshots) 
 
 ### Installation
 
-Installation is pretty straightforward and instantaneous. 
+Installation is pretty straightforward and instantaneous. There are two methods to install:
 
-1. Visit the public GitHub Marketplace listing: https://github.com/marketplace/darkest-pr
+#### Method #1
+
+1. Go to the Darkest-PR's [GitHub App page](https://github.com/apps/darkest-pr)
+2. Click 'Install' button
+3. Select the repositories you want to install the app
+4. Confirm the permission and click 'Install'
+5. Done! Enjoy.
+- So now whenever a [use-case](#use-cases) event occurs, or whenever you mention the app like `@Darkest-PR` it will respond to you!
+- Give it a try, submit a comment in any issue/PR in your repository mentioning the app. E.g: `@Darkest-PR ancestor, do your thing.`
+
+
+#### Method #2
+
+1. Visit the public [GitHub Marketplace listing](https://github.com/marketplace/darkest-pr)
 2. Click `add` button
 3. Confirm the user/organization to install the app to
 4. Select the repositories you want the app to be installed
 5. Done! Enjoy.
-   - So now whenever a [use-case](#use-cases) event occurs, or whenever you mention the app like `@Darkest-PR` it will respond to you!
-   - Give it a try, submit a comment in any issue/PR in your repository mentioning the app. E.g: `@Darkest-PR ancestor, do your thing.`
 
-Alternatively, head over to [app's page on GitHub](https://github.com/apps/darkest-pr) to install.
+
+
+**Alternatively, head over to [app's page on GitHub](https://github.com/apps/darkest-pr) to install.**
 
 ### Configuration
 
@@ -501,7 +521,7 @@ Below you may find the use-cases currently integrated and those that are planned
 
 Many thanks to [Red Hook Studios](https://www.redhookgames.com/) for developing this amazing game ([Darkest Dungeon®](https://www.darkestdungeon.com/)), it's been a great inspiration for this project.
 
-I would also like to acknowledge the great performance put through by Wayne June, voice actor for the narrator of Darkest Dungeon. I strongly believe his incredible voice acting and strong command of English is what made the game a marvelous one.
+I would also like to acknowledge the great performance put through by Wayne June, voice actor for the narrator (ancestor) of Darkest Dungeon. I strongly believe his incredible voice acting and strong command of English is what made the game a marvelous one.
 
 ### JetBrains
 This project has been developed using JetBrains products.
