@@ -23,6 +23,10 @@ Darkest-PR is a GitHub app/bot for responding to actions and events in your repo
 
 <!--- ![Vercel](https://vercelbadge.vercel.app/api/skywarth/darkest-pr) -->
 
+## Links:
+- GitHub Marketplace listing: https://github.com/marketplace/darkest-pr
+- GitHub App Page: https://github.com/apps/darkest-pr
+
 ## Table of Contents
 
 - [Preface](#preface)
@@ -30,9 +34,9 @@ Darkest-PR is a GitHub app/bot for responding to actions and events in your repo
   - [Motivation](#motivation)
 - [Usage](#usage)
   - [Demo](#demo)
-  - ActionContext parameter
-  - Installation
-  - Configuration
+  - [Installation](#installation)
+  - [Configuration](#configuration)
+  - [ActionContext parameter](#actioncontext-parameter)
 - [Info for nerds](#info-for-nerds)
   - [How does it work](#how-does-it-work)
   - [Design](#design)
@@ -138,12 +142,209 @@ See below screenshots or navigate to [screenshots directory](/resc/screenshots) 
 
 </details>
 
+### Installation
+
+Installation is pretty straightforward and instantaneous. 
+
+1. Visit the public GitHub Marketplace listing: https://github.com/marketplace/darkest-pr
+2. Click `add` button
+3. Confirm the user/organization to install the app to
+4. Select the repositories you want the app to be installed
+5. Done! Enjoy.
+   - So now whenever a [use-case](#use-cases) event occurs, or whenever you mention the app like `@Darkest-PR` it will respond to you!
+   - Give it a try, submit a comment in any issue/PR in your repository mentioning the app. E.g: `@Darkest-PR ancestor, do your thing.`
+
+Alternatively, head over to [app's page on GitHub](https://github.com/apps/darkest-pr) to install.
+
+### Configuration
+
+You can configure the behavior of the Darkest-PR via configuration file. 
+
+**Configuration is totally optional, you don't have to define it.**
+
+
+#### Configuration options
+
+These are the list of values and settings you can adjust which effects how Darkest-PR will act.
+
+| Key                   | Type      | Default              | Description                                                                                                                                                                                                                                                                                                                                   |
+|-----------------------|-----------|----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `debug_mode`          | `boolean` | `false`              | Controls the debug mode. When debug mode is activated, each comment made by the Darkest-PR will have metrics, details and debug data available along with the quote.                                                                                                                                                                          |
+| `emojis`              | `boolean` | `true`               | Controls whether to include emojis in the comments or in any other interaction. When set to false, Darkest-PR will never use emojis for any interaction.                                                                                                                                                                                      |
+| `event_subscriptions` | `object`  | (all events enabled) | By default, all event subscriptions are enabled. Use this config to toggle certain event subscriptions. It's expected to be `object` with type `EventSubscriptionsDTO`. `EventSubscriptionsDTO` is basically: keys are event names, values are boolean. You don't have to define every single event, just define the ones you want to adjust. |
+
+#### Event subscriptions
+
+By default, all event subscriptions are enabled and being listened to.
+
+Example `event_subscriptions` definition (don't forget to remove the comments if you're going to use it):
+```json5
+{
+  "event_subscriptions": {
+    "pull_request.opened": false, 
+    //PR opened event sub disabled, app will ignore such event. 
+    "issue_comment.created": true,
+    //Issue comment created event sub enabled. Same as default. Makes no difference. App will listen to the event.
+    "pull_request_review.submitted": false
+    //Pull Request Review submitted event subscription disabled. 
+  }
+}
+```
+
+List of event subscription slugs:
+
+For up-to-date event subscriptions, visit the `index.ts` file.
+
+- `pull_request.opened`
+- `pull_request.closed`
+- `pull_request_review.submitted`
+- `pull_request.review_requested`
+- `pull_request.review_request_removed`
+- `pull_request.assigned`
+- `pull_request.unassigned`
+- `issue_comment.created`
+- `issues.assigned`
+- `issues.unassigned`
+
+#### Default config
+
+This is the default config if you don't define any configuration file in your repository:
+
+```
+{
+  "debug_mode":false,
+  "emojis":true,
+  "event_subscriptions":{
+        "pull_request.opened":true,
+        "pull_request.closed":true,
+        "pull_request_review.submitted":true,
+        "pull_request.review_requested":true,
+        "pull_request.review_request_removed":true,
+        "pull_request.assigned":true,
+        "pull_request.unassigned":true,
+        "issue_comment.created":true,
+        "issues.assigned":true,
+        "issues.unassigned":true
+  }
+}
+
+```
+
+#### Configuration file specifications:
+- Must be located at **the root of the repository**, 
+- File is to be named `.darkest-pr.json`.
+- Make sure file content is valid JSON
+  - Watch out for line endings, double-quotes, commas etc.
+  - [Validate here](https://jsonlint.com/) if you need to
+- Always the configuration file on the main/default branch is utilized. If your configuration doesn't take place, make sure it is in master/main/default branch.
+
+Possible reasons why your configuration is ignored by the app:
+- Invalid JSON format/structure, contains errors. Cannot be parsed.
+- Filename or path is incorrect
+- An error occurred while fetching the configuration file from your repository, GitHub or provider related.
+
+
 ### ActionContext Parameter
 
+When you want to invoke Darkest-PR on demand, you can simply mention the app in your comment like so `Gimme quote RN! @Darkest-PR` and it will respond.
 
-#### Sample
+But if you want some zest to your response, then you can instruct the app on what kind of quote you're looking for. You may do this by adding a parameter JSON in your comment, and it'll be utilized as long as it is valid. This parameter is called **ActionContext**.
 
-Sample comment below, between the separation lines
+ActionContext is essentially a DTO in form of JSON. It features various parameters to get your desired quote.
+
+- > ActionContext payload requires a key-value pair for correctly identifying the parameter payload. Make sure to include `"identifier":"Darkest-PR-input-package"` in your JSON.
+- Each and every parameter in the `ActionContext` is optional, except the `identifier`.
+- Don't forget to begin the parameter payload with **```json**
+
+#### ActionContext Structure
+
+```json5
+{
+  "identifier":"Darkest-PR-input-package",//REQUIRED
+  "sentiment": "Negative",//Optional "Negative", "Positive", "Neutral" 
+  "emotionMatrix": [//Optional, Array of objects, aka (EmotionMatrix)
+    {
+      "emotion": "Frustration",//A valid emotion enum from Emotion namespace
+      "temperature": 4 //Between 1-5, inclusive
+    },
+    {
+      "emotion": "Fury",
+      "temperature": 5
+    },
+    {
+      "emotion": "Wrath",
+      "temperature": 3
+    }
+  ],
+  "quoteSlugs":[//Optional, Array of strings of Quote slugs, see `quote-data.json` for quote slugs list.
+    //Doesn't guarantee the quote will be one of the given slugs, if ActionContext contains other parameters.
+    //It guarantees quote to be one of these only when quoteSlug parameter is given alone with no additional filters
+    "overconfidence-is-a-slow-killer",
+    "madness-our-old-friend",
+    "triumphant-pride",
+  ],
+  "tags": [//Optional, array of strings. It doesn't guarantee the quote to have these tags. 
+    //Quotes with the given tags score higher and are likely to be selected
+    "destroyed",
+    "obliterated",
+    "victory"
+  ]
+}
+
+```
+
+
+#### Sample ActionContext #1
+
+Let's say we want an exact quote. That is easy:
+
+**Between the separation lines**.
+
+---
+
+@Darkest-PR, what was that quote about 'grotesque'?
+
+```json
+{
+  "identifier":"Darkest-PR-input-package",
+  "quoteSlugs":["grotesque-in-death"]
+}
+
+```
+
+---
+
+
+#### Sample ActionContext #2
+
+Say you want a random positive quote to rally the spirits of your colleagues.
+
+**Between the separation lines**.
+
+---
+
+Great success, @Darkest-PR give us something nice!
+
+```json
+{
+  "identifier":"Darkest-PR-input-package",
+  "sentiment":"Positive"
+}
+
+```
+
+---
+
+
+#### Sample ActionContext #3
+
+Sample comment below, **between the separation lines**.
+
+To explain this one semantically: we instruct the app to give us a random quote that:
+- Has negative sentiment, scores high based on the given emotions (temperature represent intensity of the emotion) and the tags
+- OR has one of the given slugs
+
+The quote we receive from the following input would align precisely with the above statement.
 
 ---
 
@@ -167,6 +368,11 @@ Hey ancestor @Darkest-PR, give me a cool line!
       "temperature": 3
     }
   ],
+  "quoteSlugs":[
+    "overconfidence-is-a-slow-killer",
+    "madness-our-old-friend",
+    "triumphant-pride"
+  ],
   "tags": [
     "destroyed",
     "obliterated",
@@ -177,6 +383,7 @@ Hey ancestor @Darkest-PR, give me a cool line!
 ```
 
 ---
+
 
 
 ## Info for nerds
@@ -233,9 +440,9 @@ Could be applied, would be decent in future expansion:
 - [ ] Documentation
   - [ ] README
   - [ ] Github pages site
-  - [ ] Marketplace description, tags, title, logo
+  - [X] Marketplace description, tags, title, logo
 - [ ] Publishing
-  - [ ] Marketplace
+  - [X] Marketplace
   - [ ] Reddit
   - [ ] DEV.to
   - [ ] Medium
