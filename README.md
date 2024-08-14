@@ -26,6 +26,7 @@ Darkest-PR is a GitHub app/bot for responding to actions and events in your repo
 ## Links:
 - GitHub Marketplace listing: https://github.com/marketplace/darkest-pr
 - GitHub App Page: https://github.com/apps/darkest-pr
+- Probot featured apps listing: https://probot.github.io/apps/darkest-pr/
 
 ## Table of Contents
 
@@ -457,15 +458,16 @@ Could be applied, would be decent in future expansion:
     - Story-like quotes are excluded intentionally
   - [ ] Darkest Dungeon 2 quotes 
 - [ ] Non-app usage via a GitHub bot user, like `CodiumAI-Agent`
-- [ ] Documentation
-  - [ ] README
+- [X] Documentation
+  - [X] README
   - [ ] Github pages site
   - [X] Marketplace description, tags, title, logo
 - [ ] Publishing
   - [X] Marketplace
-  - [ ] Reddit
+  - [X] Reddit
   - [ ] DEV.to
   - [ ] Medium
+  - [X] [Probot featured apps](https://probot.github.io/apps/darkest-pr/)
 
 ---
 
