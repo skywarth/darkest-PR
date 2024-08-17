@@ -20,13 +20,15 @@ Darkest-PR is a GitHub app/bot for responding to actions and events in your repo
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=skywarth_darkest-PR&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=skywarth_darkest-PR)
 
 [![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=skywarth_darkest-PR)](https://sonarcloud.io/summary/new_code?id=skywarth_darkest-PR)
+<a href="https://www.producthunt.com/posts/darkest-pr?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-darkest&#0045;pr" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=480852&theme=light" alt="Darkest&#0045;PR - Darkest&#0045;PR&#0032;is&#0032;a&#0032;GitHub&#0032;app&#0032;to&#0032;narrate&#0032;your&#0032;development&#0046; | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
 
 <!--- ![Vercel](https://vercelbadge.vercel.app/api/skywarth/darkest-pr) -->
 
 ## Links:
-- GitHub Marketplace listing: https://github.com/marketplace/darkest-pr
-- GitHub App Page: https://github.com/apps/darkest-pr
-- Probot featured apps listing: https://probot.github.io/apps/darkest-pr/
+- [GitHub Marketplace listing](https://github.com/marketplace/darkest-pr)
+- [GitHub App Page](https://github.com/apps/darkest-pr)
+- [Probot featured apps listing](https://probot.github.io/apps/darkest-pr/)
+- [ProductHunt](https://www.producthunt.com/posts/darkest-pr)
 
 ## Table of Contents
 
