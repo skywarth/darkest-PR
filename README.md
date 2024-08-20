@@ -539,6 +539,22 @@ Thanks for their [support for open-source development](https://www.jetbrains.com
 
 This project is built using [Probot](https://probot.github.io/) framework, which made it incredibly easy to develop, test and deploy GitHub Apps.
 
+### ProductHunt
+
+A round of applause for both ProductHunt platform and all the supporters of the project there. Thanks to them, this project has reached a wider audience and received feedback.
+
+<a href="https://www.producthunt.com/posts/darkest-pr?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-darkest&#0045;pr" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=480852&theme=light" alt="Darkest&#0045;PR - Darkest&#0045;PR&#0032;is&#0032;a&#0032;GitHub&#0032;app&#0032;to&#0032;narrate&#0032;your&#0032;development&#0046; | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
+
+#### ProductHunt promoters
+
+List of people who volunteered to promote this project on various ProductHunt related channels. I appreciate their support for open-source initiative and good of their hearts. They helped gather attraction for the project.
+
+- [Anuj](https://www.linkedin.com/in/anuj-99419b212/)
+- [Mayank Jain](https://www.linkedin.com/in/mayank-jain-8bb762149/)
+- [Sandhya Mishra](https://www.linkedin.com/in/sandhyamishra25/)
+- [Luka Mikeladze](https://www.linkedin.com/in/luka-mikeladze-1b4975204/)
+
+
 
 ## Disclaimer & Legal
 
