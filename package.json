@@ -22,7 +22,7 @@
     "cheerio": "^1.0.0-rc.12",
     "marked": "^12.0.2",
     "probot": "^13.4.3",
-    "sanitize-html": "^2.14.0"
+    "sanitize-html": "^2.15.0"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
